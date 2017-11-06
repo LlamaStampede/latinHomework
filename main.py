@@ -1,4 +1,4 @@
-#copyright Michael Lembck and co. ©
+#copyright © Michael Lembck and Aiden Bailey
 #Steel is baad
 
 possibleThing = "paratus, parans, parabaris, parent, paravisse, parat, parabuntur, paraverint".split(", ")
@@ -105,6 +105,3 @@ while stay:
                 print("Dictionary Entry: ", verb[0], "\nTranslation: ", verb[1])
             else:
                 stop = participal(x, verb[0].split(', '))
-
-
-
