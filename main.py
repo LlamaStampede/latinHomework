@@ -5,9 +5,9 @@ possibleThing = "paratus, parans, parabaris, parent, paravisse, parat, parabuntu
 verb = "paro, parare, paravi, paratus".split(", ")
 
 def indicative(word, verb): # checks all indicatives except perfect system of passives because they are 2 words
-    # verb is [paro, parare, paravi, paratus]
+    # verb is [paro, parare, paravi, paratus] {thx -a}
     curword = ""
-    endings = ["o, s, t, mus, tis, nt".split(", "), "or, ris, tur, mur, mini, ntur".split(", ")]
+    endings = ["o, s, t, mus, tis, nt".split(", "), "r, ris, tur, mur, mini, ntur".split(", ")] # {modified passive endings: or --> r. is this right? -a}
     futEnding = ", i, i, i, i, u".split(", ")
     stem = verb[1][:-2]#stem = parare - re = para
     perfStem = verb[2][:-1] #stem = parvi - i = parav
