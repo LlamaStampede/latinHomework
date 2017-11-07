@@ -1,0 +1,145 @@
+amo, amare, amavi, amatum	to love	1
+cogito, cogitare, cogitavi, cogitatum	to think, ponder, consider, plan	1
+debeo, debere, debui, debitum	to owe, ought, must should	2
+do , dare, dedi, datum	to give, offer	1
+erro, errare, erravi erratum	to wander, err, go astray	1
+laudo, laudare, laudavi, laudatum	to praise	1
+moneo, monere, monui, monitum	to remind, advise, warn	2
+salveo, salvere	to be well, to be in good health	2
+servo, servare, servavi, servatum	to preserve, save, keep, guard	1
+conservo, conservare, conservavi, conservatum	to preserve, conserve, maintain	1
+terreo, terrere, terrui, territum	to frighten, terrify	2
+valeo, valere, valui, valiturum	to be strong, have power, be well	2
+video, videre, vidi, visum	to see, observe, understand	2
+voco, vocare, vocavi, vocatum	to call, summon	1
+habeo, habere, habui, habitum	to have, hold, possess, consider, regard	2
+satio, satiare, satiavi, satiatum	to satisfy, sate	1
+iuvo, iuvare, iuvi, iutum	to help, aid, assist	1
+ceno, cenare, cenavi, cenatum	to dine	1
+culpo, culpare, culpavi, culpatum	to blame, censure	1
+maneo, manere, mansi, mansum	to remain, stay, stay behind, abide, continue	2
+supero, superare, superavi, superatum	to be above, surpass, conquer	1
+possum, posse, potui, 	to be able, can, could, have power	I
+tolero, tolerare, toleravi, toleratum	to bear, endure	1
+audeo, audere, ausus sum, -	to dare	2D
+neco, necare, necavi, necatum	to murder, kill	1
+ago, agere, egi, actum	to drive, lead, do, act; pass, spend (gratias agere: to give thanks)	3
+demonstro, demonstrare, demonstravi, demonstratum	to point out, show, demonstrate	1
+disco, discere, didici, -	to learn	3
+doceo, docere, docui, doctum	to teach	2
+duco, ducere, duxi, ductum	to lead; consider, regard; prolong	3
+gero, gerere, gessi, gestum	to carry, carry on, manage, conduct, accomplish, perform	3
+scribo, scribere, scripsi, scriptum	to write, compose	3
+traho, trahere, traxi, tractum	to draw, drag, derive	3
+vinco, vincere, vici, victum	to conquer, overcome	3
+audio, audire, audivi, auditum	to hear, listen to	4
+capio, capere, cepi, captum	to take, capture, seize, get	5
+dico, dicere, dixi, dictum	to say, tell, speak; name, call	3
+facio, facere, feci, factum	to make, do, accomplish	3
+fugio, fugere, fugi, fugiturum	to flee, hurry away; go into exile; avoid, shun	5
+venio, venire, veni, ventum	to come	5
+invenio, invenire, inveni, inventum	to come upon, find	5
+vivo, vivere, vixi, victum	to live	3
+intellego, intellegere, intellexi, intellectum	to understand	3
+mitto, mittere, misi, missum	to send, let go	3
+sentio, sentire, sensi, sensum	to feel, perceive, think, experience	4
+amitto, amittere, amisi, amissum	to lose, let go	3
+cado, cadere, cecidi, casurum	to fall ('casum' is an alternative fourth principal part)	3
+creo, creare, creavi, creatum	to create	1
+alo, alere, alui, altum	to nourish, support, sustain, increase, cherish	3
+diligo, diligere, dilexi, dilectum	to esteem, love	3
+iungo, iungere, iunxi, iunctum	to join	3
+sto, stare, steti, statum	to stand, stand still, stand firm	1
+appello, appellare, appellavi, appellatum	to speak to, address (as), call, name	1
+curro, currere, cucurri, cursum	to run, rush, move quickly	3
+muto, mutare, mutavi, mutatum	to change, alter; exchange	1
+teneo, tenere, tenui, tentum	to hold, keep, possess; restrain	3
+vito, vitare, vitavi, vitatum	to avoid, shun	1
+committo, committere, commisi, commissum	to entrust, commit	3
+exspecto, exspectare, exspectavi, exspectatum	to look for, expect, await	1
+iacio, iacere, ieci, iectum	to throw, hurl	3
+eicio, eicere, eieci, eiectum	to throw out, drive out	3
+timeo, timere, timui, -	to fear, be afraid of, be afraid	3
+rego, regere, rexi, rectum	to rule, guide, direct	3
+admitto, admittere, admisi, admissum	to admit, receive, let in	3
+-, coepisse, coepi, coeptum	began (only used in the perfect system)	6
+cupio, cupere, cupivi, cupitum	to desire, wish, long for	3
+deleo, delere, delevi, deletum	to destroy, wipe out, erase	3
+desidero, desiderare, desideravi, desideratum	to desire, long for, miss	1
+incipio, incipere, incepi, inceptum	to begin	3
+navigo, navigare, navigavi, navigatum	to sail, navigate	1
+neglego, neglegere, neglexi, neglectum	to neglect, disregard	3
+recito, recitare, recitavi, recitatum	to read aloud, recite	1
+fluo, fluere, fluxi, fluxum	to flow	3
+lego, legere, legi, lectum	to pick out, choose; read	3
+misceo, miscere, miscui, mixtum	to mix, stir up, disturb	3
+moveo, movere, movi, motum	to move; arouse, affect	2
+videor, videri, visus sum, -	to be seen, seem, appear
+delecto, delectare, delectavi, delectatum	to delight, charm, please
+libero, liberare, liberavi, liberatum	to free, liberate
+paro, parare, paravi, paratum	to prepare, provide, get, obtain
+careo, carere, carui, cariturum	to be without, be deprived of, want, lack; be free from (takes ablative of separation)
+defendo, defendere, defendi, defensum	to ward off; defend, protect
+discedo, discedere, discessi, discessum	to go away, depart
+-, odisse, odi, osurum	to hate
+prohibeo, prohibere, prohibui, prohibitum	to keep (back), prevent, hinder, restrain, prohibit
+pronuntio, pronuntiare, pronuntiavi, pronuntiatum	to proclaim, announce; declaim; pronounce
+contineo, continere, continui, contentum	to hold together, contain, keep, enclose, restrain
+iubeo, iubere, iussi, iussum	to bid, order, command
+laboro, laborare, laboravi, laboratum	to labor, be in distress
+rapio, rapere, rapui, raptum	to seize, snatch, carry away
+relinquo, relinquere, reliqui, relictum	to leave behind, leave, abandon, desert
+scio, scire, scivi, scitum	to know
+tango, tangere, tetigi, tactum	to touch
+cerno, cernere, crevi, cretum	to distinguish, discern, perceive
+eripio, eripere, eripui, ereptum	to snatch away, take away; rescue
+inquit, -, -, -	he says, he said (defective verb placed after one or more words of direct quotation)
+tollo, tollere, sustuli, sublatum	to raise, lift up; take away, remove, destroy
+educo, educare, educavi, educatum	to bring up, educate
+gaudeo, gaudere, gavisus sum, -	to be glad, rejoice
+ostendo, ostendere, ostendi, ostentum	to exhibit, show, display
+peto, petere, petivi, petitum	to seek, aim at, beg, beseech
+premo, premere, pressi, pressum	to press, press hard, pursue
+opprimo, opprimere, oppressi, oppressum	to suppress, overwhelm, overpower, check
+verto, vertere, verti, versum	to turn; change
+accipio, accipere, accepi, acceptum	to take (to one's self), receive, accept
+excipio, excipere, excepi, exceptum	to take out, except; take, receive, capture
+recipio, recipere, recepi, receptum	to take back, regain, admit, receive
+pello, pellere, pepuli, pulsum	to strike, push, drive out, banish
+expello, expellere, expuli, expulsum	to drive out, expel, banish
+narro, narrare, narravi, narratum	to tell, report, narrate
+quaero, quaerere, quaesivi, quaesitum	to seek, look for, strive for; ask, inquire, inquire into
+rideo, ridere, risi, risum	to laugh, laugh at
+ait, -, -, -	he says, they say, assert (or aiunt)
+credo, credere, credidi, creditum	to believe, trust
+iaceo, iacere, iacui, -	to lie, lie prostrate, lie dead
+nego, negare, negavi, negatum	to deny, say that...not
+nescio, nescire, nescivi, nescitum	not to know, be ignorant
+nuntio, nuntiare, nuntiavi, nuntiatum	to announce, report, relate
+patefacio, patefacere, patefeci, patefactum	to make open, open; disclose, expose
+puto, putare, putavi, putatum	to clean, trim; reckon, suppose, judge, think, imagine
+spero, sperare, speravi, speratum	to hope for, hope
+suscipio, suscipere, suscepi, susceptum	to undertake
+invito, invitare, invitavi, invitatum	to entertain, invite, summon
+pono, ponere, posui, positum	to put, place, set
+probo, probare, probavi, probatum	to test, approve, recommend
+cedo, cedere, cessi, cessum	to go, withdraw; yield to, grant, submit
+dedico, dedicare, dedicavi, dedicatum	to dedicate
+egeo, egere, egui, -	to need, lack, want
+expleo, explere, explevi, expletum	to fill, fill up, complete
+praesto, praestare, praestiti, praestitum	to excel; exhibit, show, offer, supply, furnish
+taceo, tacere, tacui, tacitum	to be silent, leave unmentioned
+condo, condere, condidi, conditum	to put together, put into, store; found, establish
+contendo, contendere, contendi, contenditum	to strive, struggle, contend; hasten
+mollio, mollire, mollivi, mollitum	to soften; make calm, make less hostile
+pugno, pugnare, pugnavi, pugnatum	to fight
+respondeo, respondere, respondi, responsum	to answer
+surgo, surgere, surrexi, surrectum	to get up, arise
+bibo, bibere, bibi, -	to drink
+cognosco, cognoscere, cognovi, cognitum	to become acquainted with, learn, recognize; (in perf.) know
+comprehendo, comprehendere, comprehendi, comprehensum	to grasp, seize, arrest; comprehend, understand
+consumo, consumere, consumpsi, consumptum	to consume, use up
+dubito, dubitare, dubitavi, dubitatum	to doubt, hesitate
+expono, exponere, exposui, expositum	to set forth, explain, expose
+minuo, minuere, minui, minutum	to lessen, diminish
+rogo, rogare, rogavi, rogatum	to ask
