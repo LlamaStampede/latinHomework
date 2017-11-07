@@ -80,9 +80,9 @@ def checkVerb(word, verb):
         return(True)
     return(False)
 
-f = open("/Users/mlembck/Desktop/verbs.txt", "r")
+f = open("verbs.txt", "r")
 verbList = f.read().split("\n")
-for i in range(0, len(verbList)):
+for i in range(len(verbList)): #I get why you did this
     verbList[i] = verbList[i].split("\t")
     #print(verbList[i])
 f.close()
@@ -90,11 +90,11 @@ f.close()
 #print(indicative(possibleThing[7], verb))
 
 while True:
-    x = input("Enter a verb: ")
+    x = raw_input("Enter a verb: ") #Ignore this edit, I'm looking into how to upgrade my python
     if x == "stop":
         break
     for verb in verbList:
-        #stop = False
+        stop = False # The merge I mention below would eliminate the need for this line
         #print(verb[0][0])
         if verb[0][0] == x[0]:
             stop = checkVerb(x, verb[0].split(", "))
@@ -102,7 +102,7 @@ while True:
         if stop == True:
             print("Dictionary Entry: ", verb[0], "\nTranslation: ", verb[1])
         else:
-            stop = participal(x, verb[0].split(', ')) #This line can't affect anything: the verb is about to change and "stop" is about to be reset (on line 100)
+            stop = participal(x, verb[0].split(', ')) # This line can't affect anything: the verb is about to change and "stop" is about to be reset (on line 100). Also it caused an error.
             #Also, I feel like lines 99, 100, and 102 could be combined:
-            # if (verb[0][0] == x[0] or verb[2][0] == x[0]) and checkVerb(x, verb[0].split(", ")):
-            # Note: I added {checkVerb(x, verb[0].split(", "))} because some verbs changetheir first letter int the perfect, ie. ago agere egi actus
+                # if (verb[0][0] == x[0] or verb[2][0] == x[0]) and checkVerb(x, verb[0].split(", ")):
+                # Note: I added {verb[2][0]} because some verbs change their first letter in the perfect (ago agere EGI actus)
