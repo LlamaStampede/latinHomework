@@ -1,3 +1,5 @@
+#feel free to delete this comment, looked over this, doesn't look fully completed but looks like you know what you're doing, i added some files, you might have to do something with the grouping of prepositions and adverbs
+
 def inc(term,list): # efficiently returns (term in list) boolean
     for item in list:
         if term == item[0]:
@@ -11,8 +13,8 @@ def glossary(url):
         gloss[i] = gloss[i].split("\t")
     return gloss
 
-verbList = glossary("aiden_verbs.txt")
-preps = glossary("preps.txt")
+verbList = glossary("verbs.txt")
+preps = glossary("prepAcc.txt")
 advs = glossary("adverbs.txt")
 
 term = raw_input("Enter a verb: ") # You might need to change this to input() for your python version
@@ -70,9 +72,11 @@ for verb in verbList:
 for index in len([term]): # i dont know why (i forgot)
     pos = []
     adv = inc(term,advs) #in reality adv = (is term an adverb?)
-    if adv[0]: pos.append(adv[1]])
-    prep = inc(term,preps)
-    if prep[0]: pos.append(prep[1])
+    if adv[0]:
+        pos.append(adv[1])
+        prep = inc(term, preps)
+    if prep[0]:
+        pos.append(prep[1])
 
     for stem in vstems: #Order of checking: adv, prep, n, adj, v
         if stem[0][0] == term[0]:
@@ -83,3 +87,4 @@ for index in len([term]): # i dont know why (i forgot)
                     break
             if val: prs(term,)
         elif stem[2][0] == term[0]:
+            print("whuh")

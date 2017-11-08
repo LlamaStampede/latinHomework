@@ -9,7 +9,7 @@ example_list = [
 [61,62,63,64,65]
 ] # This is an example list.
 # In reality we would plug in a list of anlyzed terms, something that included elements like ["bonarum","us-a-um","F-G-P","good",""] (format not final)
-
+#################### very intuitive ######################
 col_widths = []
 for col_id in range(len(example_list)):
     lens = [] # used for appending spaces later on
@@ -18,7 +18,7 @@ for col_id in range(len(example_list)):
         l = len(str(row))
         lens.append(l)
         if l > width: width = l
-    col_widths.append(width)
+    col_widths.append(width) #col_width = [longest length of each row segment for each column, ...]
     for row_id in range(len(example_list[col_id])):
         example_list[col_id][row_id] = str(example_list[col_id][row_id])
         for b in range(width - lens[row_id]):
