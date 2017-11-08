@@ -7,7 +7,7 @@ verb = "paro, parare, paravi, paratus".split(", ")
 def indicative(word, verb): # checks all indicatives except perfect system of passives because they are 2 words
     # verb is [paro, parare, paravi, paratus] {thx -a}
     curword = ""
-    endings = ["o, s, t, mus, tis, nt".split(", "), "or, ris, tur, mur, mini, ntur".split(", ")] # {modified passive endings: or --> r. is this right? -a}
+    endings = ["o, s, t, mus, tis, nt".split(", "), "or, ris, tur, mur, mini, ntur".split(", ")] # {modified passive endings: or --> r. is this right? -a} {you're right ~m}
     futEnding = ", i, i, i, i, u".split(", ")
     stem = verb[1][:-2]#stem = parare - re = para
     perfStem = verb[2][:-1] #stem = parvi - i = parav
@@ -50,11 +50,11 @@ def indicative(word, verb): # checks all indicatives except perfect system of pa
 
 
 def participal(word, verb):
-    noun = "ns, ntis, nti, ntem, nte, ntes, ntium, ntibus, ntes, ntia".split(", ") #{I deleted a repeat of ntibus, edited the genitive plural (i-stem), and added the neuter plural -a}
+    noun = "ns, ntis, nti, ntem, nte, ntes, ntium, ntibus, ntes, ntia".split(", ") #{I deleted a repeat of ntibus, edited the genitive plural (i-stem), and added the neuter plural -a}{ok ~m}
     for i in noun:
-        preAct = verb[1][:-2] + i #good thinking
+        preAct = verb[1][:-2] + i #good thinking{thanks ~m}
         if word == preAct:
-            return(True) #We might want to return more than just True
+            return(True) #We might want to return more than just True {yes if we want to do the parsing, when i made this i thought we weren't gonna have the program do that ~m}
 
     endings = "us, i, o, um, orum, is, os, a, ae, am, arum, as".split(', ')
     for i in endings:
@@ -69,7 +69,7 @@ def participal(word, verb):
             return(True)
     return(False)
 
-def infinitives(word, verb): #there is a mess up here with 2nd conjugation verbs having moni instead of moneri
+def infinitives(word, verb): #there is a mess up here with 2nd conjugation verbs having moni instead of moneri {This problem will be removed with your conjugation identifier ~m}
     if word == verb[1]:
         return(True)
     elif word == verb[2] + "sse":
@@ -82,7 +82,7 @@ def checkVerb(word, verb):
 
 f = open("verbs.txt", "r")
 verbList = f.read().split("\n")
-for i in range(len(verbList)): #I get why you did this
+for i in range(len(verbList)): #I get why you did this {ok ~m}
     verbList[i] = verbList[i].split("\t")
     #print(verbList[i])
 f.close()
@@ -90,7 +90,7 @@ f.close()
 #print(indicative(possibleThing[7], verb))
 
 while True:
-    x = raw_input("Enter a verb: ") #Ignore this edit, I'm looking into how to upgrade my python
+    x = raw_input("Enter a verb: ") #Ignore this edit, I'm looking into how to upgrade my python {yeah pls do ~m}
     if x == "stop":
         break
     for verb in verbList:
@@ -104,5 +104,5 @@ while True:
         else:
             stop = participal(x, verb[0].split(', ')) # This line can't affect anything: the verb is about to change and "stop" is about to be reset (on line 100). Also it caused an error.
             #Also, I feel like lines 99, 100, and 102 could be combined:
-                # if (verb[0][0] == x[0] or verb[2][0] == x[0]) and checkVerb(x, verb[0].split(", ")):
+                # if (verb[0][0] == x[0] or verb[2][0] == x[0]) and checkVerb(x, verb[0].split(", ")): {Sounds good, go for it ~m}
                 # Note: I added {verb[2][0]} because some verbs change their first letter in the perfect (ago agere EGI actus)
