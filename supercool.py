@@ -1,9 +1,19 @@
-f = open("aiden_verbs.txt", "r")
-verbList = f.read().split("\n")
-f.close
-for i in range(len(verbList)):
-    verbList[i] = verbList[i].split("\t")
-#print verbList
+def inc(term,list): # efficiently returns (term in list) boolean
+    for item in list:
+        if term == item[0]:
+            return [True,item]
+    return [False]
+
+def glossary(url):
+    f = open(url,"r")
+    gloss = f.read().split("\n")
+    for i in range(len(gloss)):
+        gloss[i] = gloss[i].split("\t")
+    return gloss
+
+verbList = glossary("aiden_verbs.txt")
+preps = glossary("preps.txt")
+advs = glossary("adverbs.txt")
 
 term = raw_input("Enter a verb: ") # You might need to change this to input() for your python version
 
@@ -51,12 +61,25 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
 print conj("paro parare paravi paratus prepare".split(" "))
 print conj("sequor sequi secutus_sum follow".split(" "))
 
-stems = []
+vstems = []
 for verb in verbList:
-    stems.append(conj(verb))
+    vstems.append(conj(verb))
 #if you run this, you might get an error here
 #that's because of some irregular verbs in the  list
 
-for verb in verbList: #I'll add to this later
-    if verb[0][0] == term[0] or verb[2][0] == term[0]:
-        print "Another one bites the dust"
+for index in len([term]): # i dont know why (i forgot)
+    pos = []
+    adv = inc(term,advs) #in reality adv = (is term an adverb?)
+    if adv[0]: pos.append(adv[1]])
+    prep = inc(term,preps)
+    if prep[0]: pos.append(prep[1])
+
+    for stem in vstems: #Order of checking: adv, prep, n, adj, v
+        if stem[0][0] == term[0]:
+            val = False
+            for stem in stems:
+                if stem[0] in term:
+                    val = True
+                    break
+            if val: prs(term,)
+        elif stem[2][0] == term[0]:
