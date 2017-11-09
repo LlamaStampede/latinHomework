@@ -1,0 +1,10 @@
+A (AB)	"from", "by"	
+SINE	"without"
+DE	"down from", "concerning", "on"	
+PRO	"for", "on behalf of"
+CUM	"with"	
+PRAE	"before", "in front of"
+E (EX)	"out of", "away from"	
+SUB	"under"
+IN	"in", "on"	
+SUPER	"above" [with verbs of 'rest']

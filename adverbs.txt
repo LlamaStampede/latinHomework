@@ -1,0 +1,57 @@
+adverbs of time	Adverbia temporis
+yesterday	Heri
+today	hodie
+tomorrow	cras
+now	nunc
+then	tunc
+later	postea
+tonight	hac nocte
+right now	nunc ipsum
+last night	hesterna nocte
+this morning	hodie mane
+next week	prossimi septem dies
+already	iam
+recently	nuper
+lately	tarde
+soon	cito
+immediately	statim
+still	etiam
+yet	etiamnunc
+ago	abhinc
+adverbs of place	adverbia loci
+here	hic
+there	illic
+over there	illac
+everywhere	undique
+anywhere	usquam
+nowhere	nusquam
+home	domus
+away	longe
+out	foris
+adverbs of manner	adverbia rationis
+very	valde
+quite	satis
+pretty	satis
+really	vere
+fast	velox
+well	recte
+hard	difficilis
+quickly	velociter
+slowly	sensim
+carefully	diligenter
+hardly	aegre
+barely	vix
+mostly	plerumque
+almost	fere
+absolutely	absolute
+together	una
+alone	unus
+adverbs of frequency	adverbia frequentiae
+always	semper
+frequently	saepe
+usually	solite
+sometimes	interdum
+occasionally	aliquando
+seldom	rare
+rarely	rare
+never	numquam
