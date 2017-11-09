@@ -5,7 +5,7 @@ do	dare	dedi	datum	give	1
 erro	errare	erravi	erratum	wander	1
 laudo	laudare	laudavi	laudatum	praise	1
 moneo	monere	monui	monitum	warn	2
-salveo	salvere	-	-	be well	2
+salveo	salvere	-	-	be well	2 DEF
 servo	servare	servavi	servatum	preserve	1
 conservo	conservare	conservavi	conservatum	conserve	1
 terreo	terrere	terrui	territum	frighten	2

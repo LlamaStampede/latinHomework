@@ -1,10 +1,21 @@
+paro	parare	paravi	paratum	prepare
+moneo	monere	monui	monitum	warn
+rego	regere	rexi	rectum	rule
+capio	capere	cepi	captum	seize
+audio	audire	audivi	auditum	hear
+conor	conari	conatum sum	-	attempt
+fateor	fateri	fassum sum	-	confess
+sequor	sequi	secutum sum	-	follow
+patior	pati	passum sum	-	endure
+molior	moliri	molitus sum	-	work at
+hortor	hortari	hortatum sum	-	urge
+loquor	loqui	locutum sum	-	speak
 amo	amare	amavi	amatum	love
 cogito	cogitare	cogitavi	cogitatum	consider
 debeo	debere	debui	debitum	ought, hesitate
 do	dare	dedi	datum	give
 erro	errare	erravi	erratum	wander
 laudo	laudare	laudavi	laudatum	praise
-moneo	monere	monui	monitum	warn
 salveo	salvere	-	-	be well
 servo	servare	servavi	servatum	preserve
 conservo	conservare	conservavi	conservatum	conserve
@@ -21,7 +32,7 @@ maneo	manere	mansi	mansum	remain
 supero	superare	superavi	superatum	surpass
 possum	posse	potui	-	be able
 tolero	tolerare	toleravi	toleratum	tolerate
-audeo	audere	ausus sum	-	dare
+audeo	audere	ausum sum	-	dare
 neco	necare	necavi	necatum	kill
 ago	agere	egi	actum	do
 demonstro	demonstrare	demonstravi	demonstratum	demonstrate
@@ -32,8 +43,6 @@ gero	gerere	gessi	gestum	accomplish
 scribo	scribere	scripsi	scriptum	write
 traho	trahere	traxi	tractum	drag
 vinco	vincere	vici	victum	conquer
-audio	audire	audivi	auditum	hear
-capio	capere	cepi	captum	seize
 dico	dicere	dixi	dictum	speak
 facio	facere	feci	factum	make
 fugio	fugere	fugi	fugiturum	flee
@@ -60,7 +69,6 @@ exspecto	exspectare	exspectavi	exspectatum	wait for
 iacio	iacere	ieci	iectum	throw, hurl
 eicio	eicere	eieci	eiectum	throw out
 timeo	timere	timui	-	be afraid
-rego	regere	rexi	rectum	rule
 admitto	admittere	admisi	admissum	receive
 -	coepisse	coepi	coeptum	began
 cupio	cupere	cupivi	cupitum	desire
@@ -74,7 +82,7 @@ fluo	fluere	fluxi	fluxum	flow
 lego	legere	legi	lectum	choose, read
 misceo	miscere	miscui	mixtum	mix
 moveo	movere	movi	motum	move
-videor	videri	visus sum	-	seem
+videor	videri	visum sum	-	seem
 delecto	delectare	delectavi	delectatum	please
 libero	liberare	liberavi	liberatum	free/liberate
 paro	parare	paravi	paratum	prepare
@@ -95,7 +103,7 @@ eripio	eripere	eripui	ereptum	snatch away
 inquit	-	-	-	he said
 tollo	tollere	sustuli	sublatum	lift, destroy
 educo	educare	educavi	educatum	educate
-gaudeo	gaudere	gavisus sum	-	rejoice
+gaudeo	gaudere	gavisum sum	-	rejoice
 ostendo	ostendere	ostendi	ostentum	display
 peto	petere	petivi	petitum	aim at, attack
 premo	premere	pressi	pressum	press
@@ -142,5 +150,5 @@ dubito	dubitare	dubitavi	dubitatum	doubt, hesitate
 expono	exponere	exposui	expositum	set forth/expose
 minuo	minuere	minui	minutum	diminish
 rogo	rogare	rogavi	rogatum	ask
-nosco	noscere	novi	notus	know
+nosco	noscere	novi	notum	know
 -	meminisse	memini	-	remember

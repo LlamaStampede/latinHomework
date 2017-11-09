@@ -12,23 +12,28 @@ def glossary(url):
     return gloss
 
 verbList = glossary("aiden_verbs.txt")
-#preps = glossary("preps.txt")
-#advs = glossary("adverbs.txt")
+prepList = glossary("preps.txt")
+advList = glossary("adverbs.txt")
 
-#fake
-for verb in verbList:
-    if len(verb) != 5: print verb
+term = raw_input("Enter a term: ") # You might need to change this to input() for your python version
 
-term = raw_input("Enter a verb: ") # You might need to change this to input() for your python version
-
-for verb in verbList: #troubleshooting, ignore this block
-    if len(verb) != 6 and not verb[-1][-1] in ["I","6","D","*","P","F","S"]:
-        its_the_ = "EYE OF THE TIGER"
-        its_the_ += "THRILL OF THE FIGHT"
+preps = []
+for prep in prepList:
+    if len(prep) == 1:
+        phase = prep[0]
+    else:
+        preps.append([prep[0].lower(),prep[1],phase])
+advs = []
+for adv in advList:
+    advs.append(adv[::-1])
 
 def irreg(verb): #ignore this part too
     if verb[0] == "-":
         return ["3P","-",verb[2][:-1],"-",verb[3][:-2],"to " + verb[4]]
+    elif verb[0][-1] == "m":
+        return "sumthing"
+    elif verb[0][-1] == "t":
+        return "imp" + "indecl"
 
 # Phase: Conjugate
 def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,parav,para,parat,to prepare]
@@ -52,6 +57,7 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         if dep: primary = verb[0][:-2]
         secondary = verb[2][:-1]
         if dep or semidep: secondary = verb[2][:-6] #CONATus sum
+        if verb[2] == "-": secondary = "-"
 
         impf = primary
         if conj[:2] == "3i" or conj[0] == "4": impf += "i"
@@ -59,6 +65,7 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         else: impf += "e"
 
         if dep: ppp = secondary
+        elif verb[3] == "-": ppp = "-"
         else: ppp = verb[3][:-2]
 
         dct = "to " + verb[4]
@@ -66,8 +73,8 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         return [conj,primary,secondary,impf,ppp,dct]
     else: return irreg(verb)
 
-print conj("paro parare paravi paratus prepare".split(" "))
-print conj("sequor_sequi_secutus sum_-_follow".split("_"))
+#print conj("paro parare paravi paratus prepare".split(" "))
+#print conj("sequor_sequi_secutus sum_-_follow".split("_"))
 
 vstems = []
 for verb in verbList:
@@ -75,20 +82,21 @@ for verb in verbList:
 #if you run this, you might get an error here
 #that's because of some irregular verbs in the  list
 
+#Phase: Identify
 for term in [term]: #Order of checking: adv, prep, v, n, adj, prn
     pos = []
+
     adv = inc(term,advs) #in reality adv = (is term an adverb?)
     if adv[0]: pos.append(adv[1])
     prep = inc(term,preps)
     if prep[0]: pos.append(prep[1])
 
     for stem in vstems:
-        if stem[0][0] == term[0]:
-            val = False
-            for stem in stems:
-                if stem[0] in term:
-                    val = True
-                    break
-            if val: prs(term,)
-        elif stem[2][0] == term[0]:
-            print "Later."
+        print "Fake:",stem
+        if term[0] in [stem[1][0],stem[2][0]]:
+            fake = True
+            if stem[1] == term[:len(stem[1])]: fake = ["p",stem]
+            if stem[2][:-1] == term[:len(stem[2])-1]: fake = ["pf",stem]
+            if fake != True: pos.append(fake)
+
+    print pos
