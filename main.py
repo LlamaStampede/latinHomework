@@ -1,42 +1,42 @@
 #copyright Michael Lembck and Aiden Bailey
 #Steel is baad
 
-possibleThing = "paratus, parans, parabaris, parent, paravisse, parat, parabuntur, paraverint".split(", ")
-verb = "paro, parare, paravi, paratus".split(", ")
+possibleWords = "paratus, parans, parabaris, parent, paravisse, parat, parabuntur, paraverint".split(", ")
+exampleVerb = "paro, parare, paravi, paratus".split(", ")
 
 def indicative(word, verb): # checks all indicatives except perfect system of passives because they are 2 words
+    #print(word, verb)
     # verb is [paro, parare, paravi, paratus] {thx -a}
-    curword = ""
+    presWord = ""
     endings = ["o, s, t, mus, tis, nt".split(", "), "or, ris, tur, mur, mini, ntur".split(", ")] # {modified passive endings: or --> r. is this right? -a} {you're right ~m}
     futEnding = ", i, i, i, i, u".split(", ")
     stem = verb[1][:-2]#stem = parare - re = para
     perfStem = verb[2][:-1] #stem = parvi - i = parav
     perfEndings = "i, isti, it, imus, istis, erunt".split(", ")
-    weird = ["m", "r"]
-    for i in range(0, 6):
+    OneSgEndings = ["m", "r"]
+    for i in range(0, 6): # 6 is for the amount of endings
         for j in range(0, len(endings)):
             if i == 0:
-                curword = stem[:-1] + endings[j][i]
+                presWord = stem[:-1] + endings[j][i]
             else:
-                curword = stem + endings[j][i]
-            if word == curword:
+                presWord = stem + endings[j][i]
+            if word == presWord: #{should I combine lines 22, 28, and 34? ~m}
                 return(True)
             if i == 0:
-                currword = stem + "ba" + weird[j]
+                perfWord = stem + "ba" + OneSgEndings[j]
             else:
-                currword = stem + "ba" + endings[j][i]
-            if word == currword:
+                perfWord = stem + "ba" + endings[j][i]
+            if word == perfWord:
                 return(True)
             if i == 0:
-                curreword = stem + "b" + endings[j][i]
+                futWord = stem + "b" + endings[j][i]
             else:
-                curreword = stem + "b" + futEnding[i] + endings[j][i]
-            if word == curreword:
+                futWord = stem + "b" + futEnding[i] + endings[j][i]
+            if word == futWord:
                 return(True)
-        #print(curword, currword, curreword)
         perf = perfStem + perfEndings[i]
         if i == 0:
-            pperf = perfStem + "era" + weird[0]
+            pperf = perfStem + "era" + OneSgEndings[0]
             fperf = perfStem + "er" + endings[0][i]
         else:
             pperf = perfStem + "era" + endings[0][i]
@@ -44,8 +44,7 @@ def indicative(word, verb): # checks all indicatives except perfect system of pa
 
         if pperf == word or perf == word or fperf == word:
             return(True)
-        #print(perf, pperf, fperf, jdf)
-        return(False)
+    return(False)
 
 
 
@@ -76,6 +75,7 @@ def infinitives(word, verb): #there is a mess up here with 2nd conjugation verbs
         return(True)
 
 def checkVerb(word, verb):
+    #print(word, verb)
     if indicative(word, verb) or infinitives(word, verb) or participal(word, verb):
         return(True)
     return(False)
@@ -83,26 +83,29 @@ def checkVerb(word, verb):
 f = open("verbs.txt", "r")
 verbList = f.read().split("\n")
 for i in range(len(verbList)): #I get why you did this {ok ~m}
-    verbList[i] = verbList[i].split("\t")
     #print(verbList[i])
+    temp = verbList[i].split("\t")
+    verbList[i] = [[temp[0], temp[1], temp[2], temp[3]], temp[4], temp[5]]
+
 f.close()
 #verbList = [["4 prinparts", "definition"], [...]]
-#print(indicative(possibleThing[7], verb))
+#print(indicative(possibleWords[7], verb))
 
 while True:
     x = raw_input("Enter a verb: ") #Ignore this edit, I'm looking into how to upgrade my python {yeah pls do ~m}
     if x == "stop":
         break
     for verb in verbList:
-        stop = False # The merge I mention below would eliminate the need for this line
         #print(verb[0][0])
-        if verb[0][0] == x[0]:
-            stop = checkVerb(x, verb[0].split(", "))
+        stop = False # The merge I mention below would eliminate the need for this line
+        if verb[0][0][0] == x[0]:
+            #print(verb[0][0])
+            stop = checkVerb(x, verb[0])
             #print(verb)
         if stop == True:
             print("Dictionary Entry: ", verb[0], "\nTranslation: ", verb[1])
         else:
-            stop = participal(x, verb[0].split(', ')) # This line can't affect anything: the verb is about to change and "stop" is about to be reset (on line 100). Also it caused an error.
+            stop = participal(x, verb[0]) # This line can't affect anything: the verb is about to change and "stop" is about to be reset (on line 100). Also it caused an error.
             #Also, I feel like lines 99, 100, and 102 could be combined:
                 # if (verb[0][0] == x[0] or verb[2][0] == x[0]) and checkVerb(x, verb[0].split(", ")): {Sounds good, go for it ~m}
                 # Note: I added {verb[2][0]} because some verbs change their first letter in the perfect (ago agere EGI actus)

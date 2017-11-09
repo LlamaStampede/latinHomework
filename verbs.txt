@@ -5,7 +5,7 @@ do	dare	dedi	datum	give	1
 erro	errare	erravi	erratum	wander	1
 laudo	laudare	laudavi	laudatum	praise	1
 moneo	monere	monui	monitum	warn	2
-salveo	salvere	be well	2 *
+salveo	salvere			be well	2 *
 servo	servare	servavi	servatum	preserve	1
 conservo	conservare	conservavi	conservatum	conserve	1
 terreo	terrere	terrui	territum	frighten	2
@@ -19,13 +19,13 @@ ceno	cenare	cenavi	cenatum	dine	1
 culpo	culpare	culpavi	culpatum	blame	1
 maneo	manere	mansi	mansum	remain	2
 supero	superare	superavi	superatum	surpass	1
-possum	posse	potui	be able	I
+possum	posse	potui		be able	I
 tolero	tolerare	toleravi	toleratum	tolerate	1
-audeo	audere	ausus sum	dare	2S
+audeo	audere	ausus sum		dare	2S
 neco	necare	necavi	necatum	kill	1
 ago	agere	egi	actum	do	3
 demonstro	demonstrare	demonstravi	demonstratum	demonstrate	1
-disco	discere	didici	learn	3 *
+disco	discere	didici		learn	3 *
 doceo	docere	docui	doctum	teach	2
 duco	ducere	duxi	ductum	lead	3
 gero	gerere	gessi	gestum	accomplish	3
@@ -59,7 +59,7 @@ committo	committere	commisi	commissum	entrust	3
 exspecto	exspectare	exspectavi	exspectatum	wait for	1
 iacio	iacere	ieci	iectum	throw, hurl	3I
 eicio	eicere	eieci	eiectum	throw out	3I
-timeo	timere	timui	be afraid	3 *
+timeo	timere	timui		be afraid	3 *
 rego	regere	rexi	rectum	rule	3
 admitto	admittere	admisi	admissum	receive	3
 -	coepisse	coepi	coeptum	began	P
@@ -74,7 +74,7 @@ fluo	fluere	fluxi	fluxum	flow	3
 lego	legere	legi	lectum	choose, read	3 *
 misceo	miscere	miscui	mixtum	mix	3
 moveo	movere	movi	motum	move	2
-videor	videri	visus sum	seem	2D *
+videor	videri	visus sum		seem	2D *
 delecto	delectare	delectavi	delectatum	please	1
 libero	liberare	liberavi	liberatum	free/liberate	1
 paro	parare	paravi	paratum	prepare	1
@@ -82,7 +82,7 @@ careo	carere	carui	cariturum	be free (from)	2
 defendo	defendere	defendi	defensum	defend/protect	3
 discedo	discedere	discessi	discessum	depart	3
 -	odisse	odi	osurum	hate	P
-prohibeo	prohibere	prohibui	prevent/hinder/restrain/prohibit	2 *
+prohibeo	prohibere	prohibui		prevent/hinder/restrain/prohibit	2 *
 pronuntio	pronuntiare	pronuntiavi	pronuntiatum	proclaim	1
 contineo	continere	continui	contentum	contain/restrain	2
 iubeo	iubere	iussi	iussum	order	2

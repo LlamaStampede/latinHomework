@@ -1,4 +1,4 @@
-adverbs of time	Adverbia temporis
+-adverbs of time	adverbia temporis
 yesterday	Heri
 today	hodie
 tomorrow	cras
@@ -18,7 +18,7 @@ immediately	statim
 still	etiam
 yet	etiamnunc
 ago	abhinc
-adverbs of place	adverbia loci
+-adverbs of place	adverbia loci
 here	hic
 there	illic
 over there	illac
@@ -28,7 +28,7 @@ nowhere	nusquam
 home	domus
 away	longe
 out	foris
-adverbs of manner	adverbia rationis
+-adverbs of manner	adverbia rationis
 very	valde
 quite	satis
 pretty	satis
@@ -46,7 +46,7 @@ almost	fere
 absolutely	absolute
 together	una
 alone	unus
-adverbs of frequency	adverbia frequentiae
+-adverbs of frequency	adverbia frequentiae
 always	semper
 frequently	saepe
 usually	solite
