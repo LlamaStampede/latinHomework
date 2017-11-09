@@ -1,12 +1,13 @@
 def inc(term,list): # efficiently returns (term in list) boolean
     for item in list:
-        if term == item[0]:
+        if term == item[0]: # [0] important
             return [True,item]
     return [False]
 
 def glossary(url):
     f = open(url,"r")
     gloss = f.read().split("\n")
+    f.close()
     for i in range(len(gloss)):
         gloss[i] = gloss[i].split("\t")
     return gloss
@@ -27,14 +28,7 @@ advs = []
 for adv in advList:
     advs.append(adv[::-1])
 
-def irreg(verb): #ignore this part too
-    if verb[0] == "-":
-        return ["3P","-",verb[2][:-1],"-",verb[3][:-2],"to " + verb[4]]
-    elif verb[0][-1] == "m":
-        return "sumthing"
-    elif verb[0][-1] == "t":
-        return "imp" + "indecl"
-
+#to do: non-passive, "virtual deponent"
 # Phase: Conjugate
 def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,parav,para,parat,to prepare]
     if verb[0][-1] in ["o","r"]:
@@ -47,11 +41,12 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         if dep: addit = 1
         if verb[1][-3] == "a": conj = "1"
         elif verb[1][-3] == "i": conj = "4"
-        elif verb[0][-1-addit] == "e": conj = "2"
-        elif verb[0][-1-addit] == "i": conj = "3i"
+        elif verb[0][-2-addit] == "e": conj = "2"
+        elif verb[0][-2-addit] == "i": conj = "3i"
         else: conj = "3"
         if dep: conj += "D"
         elif semidep: conj += "S"
+        if "-" in verb: conj = "def"
 
         primary = verb[0][:-1]
         if dep: primary = verb[0][:-2]
@@ -62,7 +57,7 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         impf = primary
         if conj[:2] == "3i" or conj[0] == "4": impf += "i"
         if conj[0] == "1": impf += "a"
-        else: impf += "e"
+        elif conj in ["3","3i","4"]: impf += "e"
 
         if dep: ppp = secondary
         elif verb[3] == "-": ppp = "-"
@@ -71,10 +66,17 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         dct = "to " + verb[4]
 
         return [conj,primary,secondary,impf,ppp,dct]
-    else: return irreg(verb)
+    elif verb[0] == "-": return ["3P","-",verb[2][:-1],"-",verb[3][:-2],"to " + verb[4]] #preterate
+    elif verb[0][-1] == "m": return "sumthing" #sum-thing
+    elif verb[0][-1] == "t":
+        if verb[1] == "-": conj = "imp" #impersonal
+        else: conj = "third" #third-only
+        return [conj,verb[0],verb[1],"-","-","to "+verb[4]]
 
 #print conj("paro parare paravi paratus prepare".split(" "))
 #print conj("sequor_sequi_secutus sum_-_follow".split("_"))
+#print conj("moneo monere monui monitus warn".split(" "))
+#print conj("salveo salvere - - be_healthy".split(" "))
 
 vstems = []
 for verb in verbList:
@@ -83,7 +85,7 @@ for verb in verbList:
 #that's because of some irregular verbs in the  list
 
 #Phase: Identify
-for term in [term]: #Order of checking: adv, prep, v, n, adj, prn
+for term in [term]:
     pos = []
 
     adv = inc(term,advs) #in reality adv = (is term an adverb?)
@@ -92,11 +94,23 @@ for term in [term]: #Order of checking: adv, prep, v, n, adj, prn
     if prep[0]: pos.append(prep[1])
 
     for stem in vstems:
-        print "Fake:",stem
-        if term[0] in [stem[1][0],stem[2][0]]:
+        #print "Fake:",stem
+        if inc(term[0],stem[1:3]):
             fake = True
             if stem[1] == term[:len(stem[1])]: fake = ["p",stem]
             if stem[2][:-1] == term[:len(stem[2])-1]: fake = ["pf",stem]
             if fake != True: pos.append(fake)
 
+    prns = [["hic","this",5],["qui","-",6],["is","weak dem",3]]
+    pres = [["h"],["qu","cui"],["i","e"]]
+    for i in range(len(pres)):
+        for pre in pres[i]:
+            if len(term) <= prns[i][2] and term[:len(pre)] == pre: pos.append([prns[i][:2]])
+
+    #nouns
+
+    #adjectives
+
     print pos
+
+#for p in pos:

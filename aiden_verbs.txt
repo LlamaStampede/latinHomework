@@ -7,23 +7,26 @@ conor	conari	conatum sum	-	attempt
 fateor	fateri	fassum sum	-	confess
 sequor	sequi	secutum sum	-	follow
 patior	pati	passum sum	-	endure
-molior	moliri	molitus sum	-	work at
+molior	moliri	molitum sum	-	work at
 hortor	hortari	hortatum sum	-	urge
 loquor	loqui	locutum sum	-	speak
+labor	labi	lapsum sum	-	glide
+caedo	caedere	cecidi	caesum	-	cut
+servio	servire	servivi	servitum	serve
 amo	amare	amavi	amatum	love
 cogito	cogitare	cogitavi	cogitatum	consider
 debeo	debere	debui	debitum	ought, hesitate
 do	dare	dedi	datum	give
 erro	errare	erravi	erratum	wander
 laudo	laudare	laudavi	laudatum	praise
-salveo	salvere	-	-	be well
-servo	servare	servavi	servatum	preserve
+salveo	salvere	-	-	be healthy
+servo	servare	servavi	servatum	save, preserve
 conservo	conservare	conservavi	conservatum	conserve
 terreo	terrere	terrui	territum	frighten
 valeo	valere	valui	valiturum	be strong
 video	videre	vidi	visum	see
 voco	vocare	vocavi	vocatum	call
-habeo	habere	habui	SUPhabitum	have, hold
+habeo	habere	habui	habitum	have, hold
 satio	satiare	satiavi	satiatum	satisfy
 iuvo	iuvare	iuvi	iutum	help
 ceno	cenare	cenavi	cenatum	dine
@@ -37,7 +40,7 @@ neco	necare	necavi	necatum	kill
 ago	agere	egi	actum	do
 demonstro	demonstrare	demonstravi	demonstratum	demonstrate
 disco	discere	didici	-	learn
-doceo	docere	docui	SUP?doctum	teach
+doceo	docere	docui	doctum	teach
 duco	ducere	duxi	ductum	lead
 gero	gerere	gessi	gestum	accomplish
 scribo	scribere	scripsi	scriptum	write
@@ -53,7 +56,7 @@ intellego	intellegere	intellexi	intellectum	understand
 mitto	mittere	misi	missum	send
 sentio	sentire	sensi	sensum	sense
 amitto	amittere	amisi	amissum	lose
-cado	cadere	cecidi	cas(ur)um	fall
+cado	cadere	cecidi	casum	fall
 creo	creare	creavi	creatum	create
 alo	alere	alui	altum	nourish
 diligo	diligere	dilexi	dilectum	esteem
@@ -84,23 +87,22 @@ misceo	miscere	miscui	mixtum	mix
 moveo	movere	movi	motum	move
 videor	videri	visum sum	-	seem
 delecto	delectare	delectavi	delectatum	please
-libero	liberare	liberavi	liberatum	free/liberate
-paro	parare	paravi	paratum	prepare
+libero	liberare	liberavi	liberatum	free
 careo	carere	carui	cariturum	be free (from)
-defendo	defendere	defendi	defensum	defend/protect
+defendo	defendere	defendi	defensum	defend
 discedo	discedere	discessi	discessum	depart
--	odisse	odi	os(ur)um	hate
-prohibeo	prohibere	prohibui	SUPprohibitum	prevent/hinder/restrain/prohibit
+-	odisse	odi	-	hate
+prohibeo	prohibere	prohibui	prohibitum	prohibit
 pronuntio	pronuntiare	pronuntiavi	pronuntiatum	proclaim
-contineo	continere	continui	contentum	contain/restrain
+contineo	continere	continui	contentum	contain
 iubeo	iubere	iussi	iussum	order
-laboro	laborare	laboravi	laboratum	labor/work
+laboro	laborare	laboravi	laboratum	work
 relinquo	relinquere	reliqui	relictum	leave
 scio	scire	scivi	scitum	know
 tango	tangere	tetigi	tactum	touch
 cerno	cernere	crevi	cretum	discern
 eripio	eripere	eripui	ereptum	snatch away
-inquit	-	-	-	he said
+inquit	inquiunt	-	-	he said
 tollo	tollere	sustuli	sublatum	lift, destroy
 educo	educare	educavi	educatum	educate
 gaudeo	gaudere	gavisum sum	-	rejoice
@@ -117,24 +119,24 @@ expello	expellere	expuli	expulsum	drive out
 narro	narrare	narravi	narratum	report
 quaero	quaerere	quaesivi	quaesitum	look for
 rideo	ridere	risi	risum	laugh
-ait/aiunt	-	-	-	he says
-credo	credere	credidi	creditum	believe/trust
-iaceo	iacere	iacui	SUPiacitum	lie
+ait	aiunt	-	-	he says
+credo	credere	credidi	creditum	believe
+iaceo	iacere	iacui	iacitum	lie
 nego	negare	negavi	negatum	deny
 nescio	nescire	nescivi	nescitum	be ignorant
 nuntio	nuntiare	nuntiavi	nuntiatum	report
-patefacio	patefacere	patefeci	patefactum	open/disclose
-puto	putare	putavi	putatum	clean/think
+patefacio	patefacere	patefeci	patefactum	reveal
+puto	putare	putavi	putatum	think
 spero	sperare	speravi	speratum	hope
 suscipio	suscipere	suscepi	susceptum	undertake
 invito	invitare	invitavi	invitatum	invite
 pono	ponere	posui	positum	place
 probo	probare	probavi	probatum	approve
-cedo	cedere	cessi	cessum	go/submit
+cedo	cedere	cessi	cessum	go, yield
 dedico	dedicare	dedicavi	dedicatum	dedicate
-egeo	egere	egui	-	need/lack
+egeo	egere	egui	-	lack
 expleo	explere	explevi	expletum	fill
-praesto	praestare	praestiti	SUPpraestitum	excel
+praesto	praestare	praestiti	praestitum	excel
 taceo	tacere	tacui	tacitum	be silent
 condo	condere	condidi	conditum	establish
 contendo	contendere	contendi	contenditum	strive, hasten
@@ -142,13 +144,18 @@ mollio	mollire	mollivi	mollitum	soften
 pugno	pugnare	pugnavi	pugnatum	fight
 respondeo	respondere	respondi	responsum	answer
 surgo	surgere	surrexi	surrectum	arise
-bibo	bibere	bibi	SUPbibitum	drink
+bibo	bibere	bibi	bibitum	drink
 cognosco	cognoscere	cognovi	cognitum	recognize
 comprehendo	comprehendere	comprehendi	comprehensum	understand
 consumo	consumere	consumpsi	consumptum	consume
 dubito	dubitare	dubitavi	dubitatum	doubt, hesitate
-expono	exponere	exposui	expositum	set forth/expose
+expono	exponere	exposui	expositum	set forth
 minuo	minuere	minui	minutum	diminish
 rogo	rogare	rogavi	rogatum	ask
 nosco	noscere	novi	notum	know
 -	meminisse	memini	-	remember
+fido	fidere	fisum sum	-	trust
+pateo	patere	patui	-	lie open
+placet	-	-	-	be pleasing
+opportet	-	-	-	be proper
+licet	-	-	-	be permitted
