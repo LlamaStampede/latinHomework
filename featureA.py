@@ -20,4 +20,6 @@ def getUsableText(file):
     usableText = "".join(usableText)
     usableText = usableText.split(" ")
     return(usableText)
-print(getUsableText("rawText.txt"))
+#print(getUsableText("rawText.txt"))
+#getUsableText returns in this example:
+#['quae', 'cum', 'ita', 'sint', 'Catilina', 'dubitas', 'si', 'emori', 'aequo', 'animo', 'non', 'potes', 'abire', 'in', 'aliquas', 'terras', 'et', 'vitam', 'istam', 'multis', 'suppliciis', 'iustis', 'debitisque', 'ereptam', 'fugae', 'solitudinique', 'mandare']
