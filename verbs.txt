@@ -12,7 +12,7 @@ terreo	terrere	terrui	territum	frighten	2
 valeo	valere	valui	valiturum	be strong	2
 video	videre	vidi	visum	see	2
 voco	vocare	vocavi	vocatum	call	1
-habeo	habere	habui	SUPhabitum	have, hold	2
+habeo	habere	habui	habitum	have, hold	2SUP
 satio	satiare	satiavi	satiatum	satisfy	1
 iuvo	iuvare	iuvi	iutum	help	1
 ceno	cenare	cenavi	cenatum	dine	1
@@ -26,7 +26,7 @@ neco	necare	necavi	necatum	kill	1
 ago	agere	egi	actum	do	3
 demonstro	demonstrare	demonstravi	demonstratum	demonstrate	1
 disco	discere	didici	-	learn	3 NO_P
-doceo	docere	docui	SUP?doctum	teach	2
+doceo	docere	docui	doctum	teach	2SUP
 duco	ducere	duxi	ductum	lead	3
 gero	gerere	gessi	gestum	accomplish	3
 scribo	scribere	scripsi	scriptum	write	3
@@ -81,8 +81,8 @@ paro	parare	paravi	paratum	prepare	1
 careo	carere	carui	cariturum	be free (from)	2
 defendo	defendere	defendi	defensum	defend/protect	3
 discedo	discedere	discessi	discessum	depart	3
--	odisse	odi	os(ur)um	hate	P
-prohibeo	prohibere	prohibui	SUPprohibitum	prevent/hinder/restrain/prohibit	2
+-	odisse	odi	osum	hate	P
+prohibeo	prohibere	prohibui  prohibitum	prevent/hinder/restrain/prohibit	2SUP
 pronuntio	pronuntiare	pronuntiavi	pronuntiatum	proclaim	1
 contineo	continere	continui	contentum	contain/restrain	2
 iubeo	iubere	iussi	iussum	order	2
@@ -144,3 +144,4 @@ minuo	minuere	minui	minutum	diminish	3
 rogo	rogare	rogavi	rogatum	ask	1
 nosco	noscere	novi	notus	know	3?P?
 -	meminisse	memini	-	remember	P
+mando	mandare	mandavi	mandatus	entrust	1
