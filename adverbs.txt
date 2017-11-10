@@ -43,7 +43,7 @@ almost	fere
 absolutely	absolute
 together	una
 alone	unus
-adverbs of frequency	adverbia frequentiae
+-adverbs of frequency	adverbia frequentiae
 always	semper
 frequently	saepe
 usually	solite
