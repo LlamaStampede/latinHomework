@@ -144,3 +144,4 @@ minuo	minuere	minui	minutum	diminish	3
 rogo	rogare	rogavi	rogatum	ask	1
 -	novisse	novi	__	know	P
 -	meminisse	memini	__	remember	P
+mando	mandare	mandavi	mandatus	entrust	1

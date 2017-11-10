@@ -1,8 +1,8 @@
 #copyright Michael Lembck and Aiden Bailey
 #Steel is baad
 
-possibleWords = "paratus, parans, parabaris, parent, paravisse, parat, parabuntur, paraverint".split(", ")
-exampleVerb = "paro, parare, paravi, paratus".split(", ")
+#possibleWords = "paratus, parans, parabaris, parent, paravisse, parat, parabuntur, paraverint".split(", ")
+#exampleVerb = "paro, parare, paravi, paratus".split(", ")
 
 def indicative(word, verb): # checks all indicatives except perfect system of passives because they are 2 words
     #print(word, verb)
