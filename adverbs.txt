@@ -1,14 +1,9 @@
-yesterday	Heri
+yesterday	heri
 today	hodie
 tomorrow	cras
 now	nunc
 then	tunc
 later	postea
-tonight	hac nocte
-right now	nunc ipsum
-last night	hesterna nocte
-this morning	hodie mane
-next week	prossimi septem dies
 already	iam
 recently	nuper
 lately	tarde
@@ -43,7 +38,6 @@ almost	fere
 absolutely	absolute
 together	una
 alone	unus
--adverbs of frequency	adverbia frequentiae
 always	semper
 frequently	saepe
 usually	solite

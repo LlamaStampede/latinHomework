@@ -1,6 +1,3 @@
-# feel free to rename file
-
-
 def flipped(block):
     table = []
     for height in block[0]:
@@ -59,8 +56,6 @@ def main(example_list):
         indent += col_widths[col_id] + 1
     line_group.insert(0,["txt","dct","prs","trn","cmt"])
     all_lines.append(line_group)
-
-
 
     horizon = ""
     for i in range(doc_width):
