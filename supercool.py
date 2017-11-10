@@ -114,7 +114,7 @@ for term in [ex_term]:
 
 #Phase: Select
 final_list = []
-conflict
+conflict = []
 personal = ["o","s","t","mus","tis","nt","or","ris","tur","mur","mini","ntur"]
 persons = ["1S","2S","3S","1P","2P","3P"]
 for pts in pos: #possible terms
@@ -134,21 +134,21 @@ for pts in pos: #possible terms
                 for end_id in range(len(pers)):
                     if end_id < 6: voice = "A"
                     else: voice = "P"
-                    forms.append([stem[1]+pers[end_id],"%s-P-I-%s" % (persons[end_id],voice])
+                    forms.append([stem[1]+pers[end_id],"%s-P-I-%s" % (persons[end_id],voice)])
 
                 pers = personal
                 pers[0] = "m"
                 for end_id in range(len(pers)):
                     if end_id < 6: voice = "A"
                     else: voice = "P"
-                    forms.append([stem[3]+"ba"+pers[end_id],"%s-Impf-I-%s" % (persons[end_id],voice])
+                    forms.append([stem[3]+"ba"+pers[end_id],"%s-Impf-I-%s" % (persons[end_id],voice)])
                 #not done yet
             else:
-                #perfect
+                print "hashtag perfect"
         elif p[0] == "prn":
             stem = p[1]
         elif p[0] == "n":
-
+            print "hashtag text was needed so I'm printing a script"
         elif p[0] == "adj":
-
+            print "same thing here"
     if len(fins) != 1: fins.insert(0,"conf") #conflict
