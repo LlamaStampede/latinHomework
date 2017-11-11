@@ -1,3 +1,4 @@
+# Prelude
 def inc(term,list): # efficiently returns (term in list) boolean
     for item in list:
         if term == item[0]: #[0] important
@@ -12,10 +13,10 @@ def glossary(url):
         gloss[i] = gloss[i].split("\t")
     return gloss
 
-verbList = glossary("aiden_verbs.txt")
+verbList = glossary("verbs.txt")
 prepList = glossary("preps.txt")
 advList = glossary("adverbs.txt")
-nounList = [] #glossary("nouns.txt")
+nounList = glossary("nouns.txt")
 
 ex_term = raw_input("Enter a term: ") # You might need to change this to input() for your python version
 
@@ -28,6 +29,7 @@ for prep in prepList:
 advs = []
 for adv in advList:
     advs.append(adv[::-1])
+
 
 #to do: non-passive, "virtual deponent"
 # Phase: Conjugate
@@ -71,30 +73,38 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         if verb[1] == "-": conj = "imp" #impersonal
         else: conj = "third" #third-only
         return [conj,verb[0],verb[1],"-","-",trn]
-
 #print conj("paro parare paravi paratus prepare".split(" "))
 #print conj("sequor_sequi_secutus sum_-_follow".split("_"))
 #print conj("moneo monere monui monitus warn".split(" "))
 #print conj("salveo salvere - - be_healthy".split(" "))
-
 vstems = []
 for verb in verbList:
     vstems.append(conj(verb))
-#if you run this, you might get an error here
-#that's because of some irregular verbs in the  list
 
-decls = {"ae":1,"i":2,"is":3,"us":4,"ei":5}
-for i in range(10):
-    print decls
 def decl(noun):
-    [nom,gen,gend] = noun
-    for s in decls:
+    decls = {"ae":1,"i":2,"is":3,"us":4,"ei":5}
+    pls = {"arum":1,"orum":2,"um":3,"uum":4,"erum":5}
+    noms = [0,1,2,2,2,2]
+    [nom,gen,gend,trn] = noun
+    if gend == "n": noms[4] = 1
+    if gen[-1] == "m": sufs = pls
+    else: sufs = decls
+    for s in sufs:
         if s == gen[-len(s):]: suf = s
-    return [decls[suf],nom,gen[:-len(suf)],gend.upper()]
+    if gen == "-" + suf: root = nom[:-noms[sufs[suf]]]
+    elif "-" in gen:
+        mark = 0
+        for l in range(len(nom)):
+            if nom[l] == gen[1]: mark = l
+        if mark == 0: mark = len(nom)-noms[sufs[suf]]
+        root = nom[:mark] + gen[1:-len(suf)]
+    else: root = gen[:-len(suf)]
+    return [sufs[suf],nom,root,gend.upper(),trn]
 
 nstems = []
 for noun in nounList:
     nstems.append(decl(noun))
+
 
 #Phase: Assemble
 pos = []
@@ -120,14 +130,15 @@ for term in [ex_term]:
             if len(term) <= prns[i][2] and term[:len(pre)] == pre: pos[-1].append(["prn",prns[i][:2]])
 
     #nouns
-    for noun in nstems:
-        if inc(term[0],stem[1:3])[0]: pos[-1].append(["n",noun])
+    for stem in nstems:
+        if stem[2] == term[:len(stem[2])] or term == stem[1]: pos[-1].append(["n",stem])
 
     #adjectives
 
 for pts in pos:
     for p in pts[1:]:
         print p
+
 
 #Phase: Select
 final_list = []
@@ -179,12 +190,13 @@ for pts in pos: #possible terms
                                 else: pers[i] = "e" + pers[i]
 
                         forms.append([root+pers[i],"%s-%s-I-%s"%(persons[i%6],tense,voice)])
+                        if (root+pers[i])[-3:] == "ris": forms.append([(root+pers[i])[-2:]+"e","%s-%s-I-%s"%(persons[i%6],tense,voice)])
                 c = stem[0][0]
                 if c == "1": end = "are"
                 elif c == "3": end = "ere"
                 else: end = "re"
                 root = stem[1]
-                if stem[0][2] == "i": root = root[:-1] #any error at this line probably occurs because nounList is empty
+                if len(stem[0]) > 1 and stem[0][1] == "i": root = root[:-1]
                 forms.append([root+end,"P-Inf-A"])
                 if c == "3": end = end[:-3]+"i"
                 else: stem = end[:-1]+"i"
@@ -217,9 +229,11 @@ for pts in pos: #possible terms
             elif stem == "is":
                 print "is ea id"
         elif p[0] == "n":
+            apls = []
             stem = p[1]
             ends = sufs[stem[0]][:]
-            if stem[3] == "N": [ends[5],ends[8]] = ["a","a"]
+            if stem[3] == "N" and stem[0] == 4: [ends[5],ends[8]] = ["ua","ua"]
+            elif stem[3] == "N": [ends[5],ends[8]] = ["a","a"]
             istem = False
             if stem[0] == 3:
                 if (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)): istem = True
@@ -236,7 +250,24 @@ for pts in pos: #possible terms
                 if i == 0 or [i,stem[3]] == [3,"N"]: word = stem[1]
                 forms.append([word,"%s-%s-%s" % (stem[3],case[i%5],number[i/5])])
             for form in forms:
-                if form[0] == term: fins.append([stem,form[1]])
+                if form[0] == term: apls.append([stem,form[1]])
+            difs = [[],[],[]]
+            prsf = ""
+            for apl in apls:
+                prs = apl[1].split("-")
+                for l in range(len(prs)):
+                    difs[l].append(prs[l])
+            for l in difs:
+                value = True
+                cur = 0
+                for x in l:
+                    if cur == 0: cur = x
+                    elif cur != x:
+                        value = False
+                        conflict.append(term,difs)
+                if value: prsf += cur + "-"
+                else: value += "   -"
+            prsf = prsf[:-1] # eliminates extra dash
         elif p[0] == "adj":
             print "same thing here"
     if len(fins) > 1: fins.insert(0,"conf") #conflict
