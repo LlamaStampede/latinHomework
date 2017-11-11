@@ -121,7 +121,7 @@ for term in [ex_term]:
 
     #nouns
     for noun in nstems:
-        if inc(term[0],stem[1:3]): pos[-1].append(["n",noun])
+        if inc(term[0],stem[1:3])[0]: pos[-1].append(["n",noun])
 
     #adjectives
 
