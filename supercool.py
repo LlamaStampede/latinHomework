@@ -31,6 +31,7 @@ for adv in advList:
 #to do: non-passive, "virtual deponent"
 # Phase: Conjugate
 def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,parav,para,parat,to prepare]
+    trn = "to "+verb[4]
     if verb[0][-1] in ["o","r"]:
         dep = False
         semidep = False
@@ -55,7 +56,6 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         if verb[2] == "-": secondary = "-"
 
         impf = primary
-        if conj[:2] == "3i" or conj[0] == "4": impf += "i"
         if conj[0] == "1": impf += "a"
         elif conj in ["3","3i","4"]: impf += "e"
 
@@ -63,15 +63,13 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         elif verb[3] == "-": ppp = "-"
         else: ppp = verb[3][:-2]
 
-        dct = "to " + verb[4]
-
-        return [conj,primary,secondary,impf,ppp,dct]
-    elif verb[0] == "-": return ["3P","-",verb[2][:-1],"-",verb[3][:-2],"to " + verb[4]] #preterate
-    elif verb[0][-1] == "m": return "sumthing" #sum-thing
+        return [conj,primary,secondary,impf,ppp,trn]
+    elif verb[0] == "-": return ["3P","-",verb[2][:-1],"-",verb[3][:-2],trn] #preterate
+    elif verb[0][-1] == "m": return ["sum",verb[0],verb[2][:-1],verb[1],"-",trn] #sum-thing
     elif verb[0][-1] == "t":
         if verb[1] == "-": conj = "imp" #impersonal
         else: conj = "third" #third-only
-        return [conj,verb[0],verb[1],"-","-","to "+verb[4]]
+        return [conj,verb[0],verb[1],"-","-",trn]
 
 #print conj("paro parare paravi paratus prepare".split(" "))
 #print conj("sequor_sequi_secutus sum_-_follow".split("_"))
@@ -98,7 +96,7 @@ for term in [ex_term]:
         #print "Fake:",stem
         if inc(term[0],stem[1:3]):
             if stem[1] == term[:len(stem[1])]: pos[-1].append(["v","p",stem])
-            if stem[2][:-1] == term[:len(stem[2])-1]: pos[-1].append(["v","pf",stem])
+            if stem[2] != "-" and stem[2][:-1] == term[:len(stem[2])-1]: pos[-1].append(["v","pf",stem])
 
     prns = [["hic","this",5],["qui","-",6],["is","weak dem",3]] #id, def, max length
     pres = [["h"],["qu","cui"],["i","e"]] #prefixes (word-beginnings)
@@ -110,12 +108,15 @@ for term in [ex_term]:
 
     #adjectives
 
-    print pos
+for pts in pos:
+    for p in pts[1:]:
+        print p
 
 #Phase: Select
 final_list = []
 conflict = []
 personal = ["o","s","t","mus","tis","nt","or","ris","tur","mur","mini","ntur"]
+perfects = ["i","isti","it","imus","istis","erunt"]
 persons = ["1S","2S","3S","1P","2P","3P"]
 for pts in pos: #possible terms
     fins = [] #finalists
@@ -127,24 +128,47 @@ for pts in pos: #possible terms
             forms = []
             stem = p[2]
             if p[1] == "p":
-                pers = personal
-                if stem[0] == "1": pers[1:].insert(0,"a")
-                elif stem[0] == "3": pers[1:-1].insert(0,"i")
-                if  stem[0] in ["3","3i","4"]: pers[-1].insert(0,"u")
-                for end_id in range(len(pers)):
-                    if end_id < 6: voice = "A"
-                    else: voice = "P"
-                    forms.append([stem[1]+pers[end_id],"%s-P-I-%s" % (persons[end_id],voice)])
+                for tense in ["P","Impf","F"]:
+                    pers = personal[:]
+                    if tense == "P": root = stem[1]
+                    else: root = stem[3] + "b"
+                    if tense == "Impf": root += "a"
+                    for i in range(12):
+                        if i<6: voice = "A"
+                        else: voice = "P"
 
-                pers = personal
-                pers[0] = "m"
-                for end_id in range(len(pers)):
-                    if end_id < 6: voice = "A"
-                    else: voice = "P"
-                    forms.append([stem[3]+"ba"+pers[end_id],"%s-Impf-I-%s" % (persons[end_id],voice)])
-                #not done yet
+                        if tense == "P":
+                            if stem[0] == "1" and i%6 != 0: pers[i] = "a" + pers[i]
+                            elif stem[0] == "3" and i%6 in range(1,5): pers[i] = "i" + pers[i]
+                            elif stem[0] in ["3","3i","4"] and i%6 == 5: pers[i] = "u" + pers[i]
+                        elif tense == "Impf": pers[::6] = ["m","r"]
+                        elif tense == "F":
+                            if stem[0] in ["1","2"]:
+                                if i%6 in range(1,5): pers[i] = "i" + pers[i]
+                                elif i%6 == 5: pers[i] = "u" + pers[i]
+                                pers[7] = "eris"
+                            else:
+                                pers[0] = "m"
+                                if i%6 == 0: pers[i] = "a" + pers[i]
+                                else: pers[i] = "e" + pers[i]
+
+                        forms.append([root+pers[i],"%s-%s-I-%s"%(persons[i%6],tense,voice)])
             else:
-                print "hashtag perfect"
+                print stem
+                for tense in ["Pf","Ppf","Fp"]:
+                    root = stem[2]
+                    pers = personal[:6]
+                    if tense == "Ppf": pers[0] = "m"
+                    for i in range(6):
+                        if tense == "Pf": pers = perfects[:]
+                        elif tense == "Ppf": pers[i] = "a" + pers[i]
+                        elif i != 0: pers[i] = "i" + pers[i]
+                        if tense != "Pf": pers[i] = "er" + pers[i]
+                        forms.append([root+pers[i],"%s-%s-I-A" % (persons[i%6],tense)])
+                        if stem[2][-1] == "v": forms.append([root[:-1]+pers[i][1:],"%s-%s-I-A" % (persons[i%6],tense),"sync"]) #syncopation
+
+            for form in forms:
+                if len(form) != 3: print form
         elif p[0] == "prn":
             stem = p[1]
         elif p[0] == "n":
