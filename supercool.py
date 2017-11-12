@@ -18,7 +18,7 @@ prepList = glossary("preps.txt")
 advList = glossary("adverbs.txt")
 nounList = glossary("nouns.txt")
 
-ex_term = raw_input("Enter a term: ") # You might need to change this to input() for your python version
+ex_terms = raw_input("Enter a term: ").split(" ") # You might need to change this to input() for your python version
 
 preps = []
 for prep in prepList:
@@ -113,7 +113,7 @@ for noun in nounList:
 
 #Phase: Assemble
 pos = []
-for term in [ex_term]:
+for term in ex_terms:
     pos.append([term])
 
     adv = inc(term,advs) #in reality adv = (is term an adverb?)
@@ -122,9 +122,10 @@ for term in [ex_term]:
     if prep[0]: pos[-1].append(["prep",prep[1]])
 
     for stem in vstems:
-        #print "Fake:",stem
+        if stem[2][-1] == "v": addit = 1
+        else: addit = 0
         if stem[1] == term[:len(stem[1])]: pos[-1].append(["v","p",stem])
-        if stem[2] != "-" and stem[2][:-1] == term[:len(stem[2])-1]: pos[-1].append(["v","pf",stem])
+        if stem[0][-1] != "D" and stem[2] != "-" and stem[2][:-addit] == term[:len(stem[2])-1]: pos[-1].append(["v","pf",stem])
         if stem[3] == term[:len(stem[3])] or stem[4] == term[:len(stem[4])]: pos[-1].append(["v","ppl",stem])
 
     prns = [["hic","this",5],["qui","-",6],["is","weak dem",3]] #id, def, max length
@@ -146,7 +147,7 @@ for pts in pos:
 
 #Phase: Select
 final_list = []
-conflict = []
+report = []
 personal = ["o","s","t","mus","tis","nt","or","ris","tur","mur","mini","ntur"]
 perfects = ["i","isti","it","imus","istis","erunt"]
 persons = ["1S","2S","3S","1P","2P","3P"]
@@ -168,7 +169,8 @@ for pts in pos: #possible terms
     for p in pts: #possibility
         apls = []
         forms = []
-        if p[0] in ["adv","prep"]: fins.append(p)
+        if p[0] == "prep": fins.append([term,term,"Prep w/"+p[1][2],p[1][1],""])
+        elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
         elif p[0] == "v":
             #Intensive verb identifier, all tenses
             stem = p[2]
@@ -176,8 +178,8 @@ for pts in pos: #possible terms
                 c = stem[0][0]
                 for tense in ["P","Impf","F"]:
                     pers = personal[:]
-                    if tense == "P": root = stem[1]
-                    elif tense == "Impf" or c in ["1","2"]: root = stem[3] + "b"
+                    if tense in ["P","F"]: root = stem[1]
+                    if tense == "Impf" or c in ["1","2"]: root = stem[3] + "b"
                     if tense == "Impf": root += "a"
                     for i in range(12):
                         if i<6: voice = "A"
@@ -216,6 +218,25 @@ for pts in pos: #possible terms
                 else: end = end[:-1]+"i"
                 if stem[0][-1] != "D": forms.append([root+end,"P-Inf-P"])
                 else: forms.append([root+end,"P-Inf-D"])
+
+                for tense in ["P","Impf"]:
+                    root = stem[1]
+                    pers = personal[:]
+                    pers[::6] = ["m","r"]
+                    for i in range(12):
+                        if i<6: voice = "A"
+                        else: voice = "P"
+                        if stem[0][-1] == "D": voice = "D"
+
+                        if tense == "P":
+                            if c == "1" and i%6 != 0: pers[i] = "e" + pers[i]
+                            else: pers[i] = "a" + pers[i]
+                        else: root = pai
+                        if deply(stem[0],i):
+                            forms.append([root+pers[i],"%s-%s-S-%s"%(persons[i%6],tense,voice)])
+                            if (root+pers[i])[-3:] == "ris": forms.append([root+pers[i][:-2]+"e","%s-%s-S-%s"%(persons[i%6],tense,voice)])
+
+
             elif p[1] == "pf":
                 for tense in ["Pf","Ppf","Fp"]:
                     root = stem[2]
@@ -227,13 +248,22 @@ for pts in pos: #possible terms
                         elif i != 0: pers[i] = "i" + pers[i]
                         if tense != "Pf": pers[i] = "er" + pers[i]
 
-                        if stem[0][-1] != "D":
-                            forms.append([root+pers[i],"%s-%s-I-A" % (persons[i%6],tense)])
-                            if pers[i][-3:] == "ris": forms.append([(root+pers[i])[:-2]+"e","%s-%s-I-A"%(persons[i%6],tense)])
-                            if stem[2][-1] == "v" and i != 0: forms.append([root[:-1]+pers[i][1:],"%s-%s-I-A" % (persons[i%6],tense)]) #syncopation
-                            if pers[i][-3:] == "ris" and stem[2][-1] == "v": forms.append([root[:-1]+pers[i][1:-2]+"e","%s-%s-I-A" % (persons[i%6],tense)])
+                        forms.append([root+pers[i],"%s-%s-I-A" % (persons[i%6],tense)])
+                        if pers[i][-3:] == "ris": forms.append([(root+pers[i])[:-2]+"e","%s-%s-I-A"%(persons[i%6],tense)])
+                        if stem[2][-1] == "v" and i != 0: forms.append([root[:-1]+pers[i][1:],"%s-%s-I-A" % (persons[i%6],tense)]) #syncopation
+                        if pers[i][-3:] == "ris" and stem[2][-1] == "v": forms.append([root[:-1]+pers[i][1:-2]+"e","%s-%s-I-A" % (persons[i%6],tense)])
 
-                forms.append([stem[2]+"isse","Pf-Inf-A"])
+                pfi = stem[2]+"isse"
+                forms.append([pfi,"Pf-Inf-A"])
+
+                for tense in ["Pf","Ppf"]:
+                    pers = personal[:6]
+                    pers[0] = "m"
+                    for i in range(6):
+                        if tense == "Pf": root = stem[2] + "eri"
+                        else: root = pfi
+                        forms.append([root+pers[i],"%s-%s-S-A"%(persons[i%6],tense)])
+                        if (root+pers[i])[-3:] == "ris": forms.append([root+pers[i][:-2]+"e","%s-%s-S-A"%(persons[i%6],tense)])
             elif p[1] == "ppl":
                 for n in range(4):
                     nom = stem[[3,4][n/2]] + ["ns","nd","ur",""][n]
@@ -308,7 +338,7 @@ for pts in pos: #possible terms
                         if cur == 0: cur = x
                         elif cur != x:
                             value = False
-                            conflict.append([term,difs])
+                            report.append([term,difs])
                     if value and len(l) != 0: prsf += l[0] + "-"
                     elif len(l) != 0: prsf += "   -"
                     if len(l) != 0 and l[0][-1] == "/": prsf = prsf[:-1]
@@ -318,7 +348,12 @@ for pts in pos: #possible terms
                 else: dct = stem[1]+"o,"+pai+","+stem[2]+"i,"+stem[4]+"us"
                 fins.append([term,dct,prsf,stem[{"n":4,"v":5}[p[0]]],""])
                 print "F:", fins, "\F"
-    if len(fins) > 1: fins.insert(0,"conf") #conflict
-    elif len(fins) == 0: fins = ["unknown"]
+    if len(fins) > 2:
+        final_list.append([term,"","","",""])
+        report.append[fins]
+    elif len(fins) == 1:
+        final_list.append([term,"","","",""])
+        report.append([term,"unknown"])
     final_list.append(fins)
+print final_list
 #final_list goes to format.py
