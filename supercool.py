@@ -60,7 +60,7 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
 
         impf = primary
         if conj[0] == "1": impf += "a"
-        elif conj in ["3","3i","4"]: impf += "e"
+        elif conj[0] in ["3","4"]: impf += "e"
 
         if dep: ppp = secondary
         elif verb[3] == "-": ppp = "-"
@@ -159,53 +159,63 @@ sufs = ["placeholder",
 case = ["N","G","D","Ac","Ab"]
 number = ["S","P"]
 vowels = ["a","e","i","o","u"]
+def deply(conj,voice):
+    return (conj[-1] == "D" and voice/6 == 1) or conj[-1] != "D"
+print pos, "KL"
 for pts in pos: #possible terms
-    fins = [] #finalists
     term = pts.pop(0)
+    fins = [term] #finalists
     for p in pts: #possibility
         apls = []
+        forms = []
         if p[0] in ["adv","prep"]: fins.append(p)
         elif p[0] == "v":
             #Intensive verb identifier, all tenses
-            forms = []
             stem = p[2]
             if p[1] == "p":
+                c = stem[0][0]
                 for tense in ["P","Impf","F"]:
                     pers = personal[:]
                     if tense == "P": root = stem[1]
-                    else: root = stem[3] + "b"
+                    elif tense == "Impf" or c in ["1","2"]: root = stem[3] + "b"
                     if tense == "Impf": root += "a"
                     for i in range(12):
                         if i<6: voice = "A"
                         else: voice = "P"
+                        if stem[0][-1] == "D": voice = "D"
 
                         if tense == "P":
-                            if stem[0] == "1" and i%6 != 0: pers[i] = "a" + pers[i]
-                            elif stem[0] == "3" and i%6 in range(1,5): pers[i] = "i" + pers[i]
-                            elif stem[0] in ["3","3i","4"] and i%6 == 5: pers[i] = "u" + pers[i]
-                        elif tense == "Impf": pers[::6] = ["m","r"]
+                            if c == "1" and i%6 != 0: pers[i] = "a" + pers[i]
+                            elif c in ["3","4"] and i == 7: pers[i] = "e" + pers[i]
+                            elif c == "3" and not "i" in stem[0] and i%6 in range(1,5): pers[i] = "i" + pers[i]
+                            elif c in ["3","4"] and i%6 == 5: pers[i] = "u" + pers[i]
+
+                        elif tense == "Impf":
+                            pers[::6] = ["m","r"]
                         elif tense == "F":
-                            if stem[0] in ["1","2"]:
+                            if c in ["1","2"]:
                                 if i%6 in range(1,5): pers[i] = "i" + pers[i]
                                 elif i%6 == 5: pers[i] = "u" + pers[i]
                                 pers[7] = "eris"
                             else:
-                                pers[0] = "m"
+                                pers[::6] = ["m","r"]
                                 if i%6 == 0: pers[i] = "a" + pers[i]
                                 else: pers[i] = "e" + pers[i]
 
-                        forms.append([root+pers[i],"%s-%s-I-%s"%(persons[i%6],tense,voice)])
-                        if pers[i][-3:] == "ris": forms.append([(root+pers[i])[:-2]+"e","%s-%s-I-%s"%(persons[i%6],tense,voice)])
-                c = stem[0][0]
+                        if deply(stem[0],i):
+                            forms.append([root+pers[i],"%s-%s-I-%s"%(persons[i%6],tense,voice)])
+                            if (root+pers[i])[-3:] == "ris": forms.append([root+pers[i][:-2]+"e","%s-%s-I-%s"%(persons[i%6],tense,voice)])
                 if c == "1": end = "are"
                 elif c == "3": end = "ere"
                 else: end = "re"
                 root = stem[1]
                 if len(stem[0]) > 1 and stem[0][1] == "i": root = root[:-1]
-                forms.append([root+end,"P-Inf-A"])
+                pai = root+end
+                if stem[0][-1] != "D": forms.append([root+end,"P-Inf-A"])
                 if c == "3": end = end[:-3]+"i"
                 else: end = end[:-1]+"i"
-                forms.append([root+end,"P-Inf-P"])
+                if stem[0][-1] != "D": forms.append([root+end,"P-Inf-P"])
+                else: forms.append([root+end,"P-Inf-D"])
             elif p[1] == "pf":
                 for tense in ["Pf","Ppf","Fp"]:
                     root = stem[2]
@@ -217,33 +227,73 @@ for pts in pos: #possible terms
                         elif i != 0: pers[i] = "i" + pers[i]
                         if tense != "Pf": pers[i] = "er" + pers[i]
 
-                        forms.append([root+pers[i],"%s-%s-I-A" % (persons[i%6],tense)])
-                        if pers[i][-3:] == "ris": forms.append([(root+pers[i])[:-2]+"e","%s-%s-I-A"%(persons[i%6],tense)])
-                        if stem[2][-1] == "v": forms.append([root[:-1]+pers[i][1:],"%s-%s-I-A" % (persons[i%6],tense)]) #syncopation
-                        if pers[i][-3:] == "ris" and stem[2][-1] == "v": forms.append([root[:-1]+pers[i][1:-2]+"e","%s-%s-I-A" % (persons[i%6],tense)])
+                        if stem[0][-1] != "D":
+                            forms.append([root+pers[i],"%s-%s-I-A" % (persons[i%6],tense)])
+                            if pers[i][-3:] == "ris": forms.append([(root+pers[i])[:-2]+"e","%s-%s-I-A"%(persons[i%6],tense)])
+                            if stem[2][-1] == "v" and i != 0: forms.append([root[:-1]+pers[i][1:],"%s-%s-I-A" % (persons[i%6],tense)]) #syncopation
+                            if pers[i][-3:] == "ris" and stem[2][-1] == "v": forms.append([root[:-1]+pers[i][1:-2]+"e","%s-%s-I-A" % (persons[i%6],tense)])
 
                 forms.append([stem[2]+"isse","Pf-Inf-A"])
             elif p[1] == "ppl":
                 for n in range(4):
-                    nom = stem[[3,4][n/2]] + ["ns","ndus","urus","us"][n]
+                    nom = stem[[3,4][n/2]] + ["ns","nd","ur",""][n]
                     root = stem[[3,4][n/2]] + ["nt","nd","ur",""][n]
                     voice = ["A","P"][n%2]
                     for g in ["M","F","N"]:
                         for i in range(10):
                             if i%5 == 3 and g == "N": i -= 3
                             end = sufs[2][i]
+                            if stem[3] == "N" and i == 5: end = "a"
                             if n == 0:
                                 end = sufs[3][i]
                                 if i == 6 or (g == "N" and i == 5): end = "i" + end
                                 if i == 4: end = "i"
                                 word = stem[2] + end
                             elif g == "F": end = sufs[1][i]
-                            if i == 0: word = nom
+                            if n != 0 and i == 0: end = {"M":"us","F":"a","N":"um"}[g]
+                            if i == 0: word = nom + end
                             else: word = root + end
                             forms.append([word,"%s-Ppl-%s/-%s-%s-%s" % (["P","F","F","Pf"][n],voice,g,case[i%5],number[i/5])])
+        elif p[0] == "prn":
+            stem = p[1][0]
+            if stem == "hic":
+                print "hic haec hoc"
+            elif stem == "qui":
+                print "qui quae quod"
+            elif stem == "is":
+                print "is ea id"
+        elif p[0] == "n":
+            print forms
+            stem = p[1]
+            ends = sufs[stem[0]][:]
+            if stem[3] == "N" and stem[0] == 4: ends[5] = "ua"
+            elif stem[3] == "N": ends[5] = "a"
+            istem = False
+            if stem[0] == 3:
+                if (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)): istem = True
+                elif len(stem[1]) > len(stem[2]): istem = True
+                elif stem[3] == "N" and (nom[-2:] in ["al","ar"] or nom[-1] == ["e"]): istem = True
+            for i in range(10):
+                if i%5 == 3 and stem[3] == "N": i -= 3
+                end = ends[i]
+                if istem and i in [4,5,6]:
+                    if stem[3] == "N":
+                        if i == 4: end = "i"
+                        elif i == 5: end = "i" + end
+                    if i == 6: end = "i" + end
+                word = stem[2] + end
+                if i == 0 or [i,stem[3]] == [3,"N"]: word = stem[1]
+
+                forms.append([word,"%s-%s-%s" % (stem[3],case[i%5],number[i/5])])
+        elif p[0] == "adj":
+            print "same thing here"
+        if p[0] in ["v","n"]:
             for form in forms:
+                print form
                 if form[0] == term: apls.append([stem,form[1]])
             difs = [[],[],[],[],[],[]]
+            for i in range({"n":3,"v":6}[p[0]]):
+                difs.append([])
             prsf = ""
             for apl in apls:
                 prs = apl[1].split("-")
@@ -261,59 +311,13 @@ for pts in pos: #possible terms
                             conflict.append([term,difs])
                     if value and len(l) != 0: prsf += l[0] + "-"
                     elif len(l) != 0: prsf += "   -"
-                    if len(difs) == 6 and l[0][-1] == "/": prsf = prsf[:-1]
+                    if len(l) != 0 and l[0][-1] == "/": prsf = prsf[:-1]
                 prsf = prsf[:-1] # eliminates extra dash
-            print prsf
-        elif p[0] == "prn":
-            stem = p[1][0]
-            if stem == "hic":
-                print "hic haec hoc"
-            elif stem == "qui":
-                print "qui quae quod"
-            elif stem == "is":
-                print "is ea id"
-        elif p[0] == "n":
-            stem = p[1]
-            ends = sufs[stem[0]][:]
-            if stem[3] == "N" and stem[0] == 4: [ends[5],ends[8]] = ["ua","ua"]
-            elif stem[3] == "N": [ends[5],ends[8]] = ["a","a"]
-            istem = False
-            if stem[0] == 3:
-                if (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)): istem = True
-                elif len(stem[1]) > len(stem[2]): istem = True
-                elif stem[3] == "N" and (nom[-2:] in ["al","ar"] or nom[-1] == ["e"]): istem = True
-            for i in range(10):
-                end = ends[i]
-                if istem and i in [4,5,6,8]:
-                    if stem[3] == "N":
-                        if i == 4: end = "i"
-                        elif i!= 6: end = "i" + end
-                    if i == 6: end = "i" + end
-                word = stem[2] + end
-                if i == 0 or [i,stem[3]] == [3,"N"]: word = stem[1]
-
-                forms.append([word,"%s-%s-%s" % (stem[3],case[i%5],number[i/5])])
-            for form in forms:
-                if form[0] == term: apls.append([stem,form[1]])
-            difs = [[],[],[]]
-            prsf = ""
-            for apl in apls:
-                prs = apl[1].split("-")
-                for l in range(len(prs)):
-                    difs[l].append(prs[l])
-            for l in difs:
-                value = True
-                cur = 0
-                for x in l:
-                    if cur == 0: cur = x
-                    elif cur != x:
-                        value = False
-                        conflict.append(term,difs)
-                if value: prsf += l[0] + "-"
-                else: prsf += "   -"
-            prsf = prsf[:-1] # eliminates extra dash
-        elif p[0] == "adj":
-            print "same thing here"
+                stem = apls[0][0]
+                if p[0] == "n": dct = stem[1]+","+stem[2]+sufs[stem[0]][1]
+                else: dct = stem[1]+"o,"+pai+","+stem[2]+"i,"+stem[4]+"us"
+                fins.append([term,dct,prsf,stem[{"n":4,"v":5}[p[0]]],""])
+                print "F:", fins, "\F"
     if len(fins) > 1: fins.insert(0,"conf") #conflict
     elif len(fins) == 0: fins = ["unknown"]
     final_list.append(fins)
