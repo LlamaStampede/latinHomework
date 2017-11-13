@@ -58,14 +58,14 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         primary = verb[0][:-1]
         if dep: primary = verb[0][:-2]
         secondary = verb[2][:-1]
-        if dep or semidep: secondary = verb[2][:-6] #CONATus sum
+        if dep or semidep: secondary = "-"
         if verb[2] == "-": secondary = "-"
 
         impf = primary
         if conj[0] == "1": impf += "a"
         elif conj[0] in ["3","4"]: impf += "e"
 
-        if dep: ppp = secondary
+        if dep: ppp = verb[2][:-6] #CONATus sum
         elif verb[3] == "-": ppp = "-"
         else: ppp = verb[3][:-2]
 
@@ -76,7 +76,11 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         else:
             ppl = verb[3][:-2]
         return ["3P","-",verb[2][:-1],"-",ppl,trn] #preterate
-    elif verb[0][-1] == "m": return ["sum",verb[0],verb[2][:-1],verb[1],"-",trn] #sum-thing
+    elif verb[0][-1] == "m":
+        root = verb[0][:-3]
+        print "/"+str(root)+"/"
+        if len(root) != 0 and root[-1] == "s": root = root[:-1] + "t"
+        return ["sum",root,verb[2][:-1],verb[1],"-",trn] #sum-thing
     elif verb[0][-1] == "t":
         if verb[1] == "-": conj = "imp" #impersonal
         else: conj = "third" #third-only
@@ -128,7 +132,8 @@ for term in ex_terms:
     for stem in vstems: #every append statement only happens if term begins with verb's root
         if stem[2][-1] == "v": addit = 1 #to account for syncopation eliminating the "v"
         else: addit = 0 #ie. monui has no "v"
-        if stem[1] == term[:len(stem[1])]: pos[-1].append(["v","p",stem]) #program checks the present system
+        if stem[0] == "sum" and stem[1] == term[:len(stem[1])]: pos[-1].append(["v","sum",stem])
+        elif stem[1] == term[:len(stem[1])]: pos[-1].append(["v","p",stem]) #program checks the present system
         if not stem[0][-1] in ["D","S"] and stem[2] != "-" and stem[2][:len(stem[2])-addit] == term[:len(stem[2])-addit]: pos[-1].append(["v","pf",stem]) #checks the perfect system if neither semidep nor dep
         if stem[3] == term[:len(stem[3])] or stem[4] == term[:len(stem[4])]: pos[-1].append(["v","ppl",stem]) #checks all resulting participles if either "capie" or "capt" begins the term
 
@@ -155,6 +160,7 @@ report = []
 personal = ["o","s","t","mus","tis","nt","or","ris","tur","mur","mini","ntur"] #personal endings
 perfects = ["i","isti","it","imus","istis","erunt"] #perfect endings
 persons = ["1S","2S","3S","1P","2P","3P"] #1st/2nd/3rd Sg/Pl
+sums = ["sum","es","est","sumus","estis","sunt"] #sum in the present
 sufs = ["placeholder", #so that a word's suffixes can be called via sufs[decl] instead of sufs[decl-1]
 ["a","ae","ae","am","a","ae","arum","is","as","is"],
 ["","i","o","um","o","i","orum","is","os","is"],
@@ -166,6 +172,18 @@ number = ["S","P"]
 vowels = ["a","e","i","o","u"]
 def deply(conj,voice):
     return (conj[-1] == "D" and voice/6 == 1) or conj[-1] != "D"
+def infin(c,stem):
+    if c == "1": end = "are"
+    elif c == "3": end = "ere"
+    else: end = "re"
+    root = stem[1]
+    if len(stem[0]) > 1 and stem[0][1] == "i": root = root[:-1] #CAPi
+    if c == "s": [root,end] = [stem[3],""]
+    pai = root+end #pai = Present Active Infinitive
+    if c == "3": end = end[:-3]+"i"
+    else: end = end[:-1]+"i"
+    ppi = root+end #ppi = Present Passive Infinitive
+    return [pai,ppi]
 print pos, "KL"
 for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     term = pts.pop(0)
@@ -211,17 +229,10 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
                         if deply(stem[0],i): #deply ensures that if the verb is deponent, forms gets no active endings
                             forms.append([root+pers[i],"%s-%s-I-%s"%(persons[i%6],tense,voice)])
                             if (root+pers[i])[-3:] == "ris": forms.append([root+pers[i][:-2]+"e","%s-%s-I-%s"%(persons[i%6],tense,voice)])
-                if c == "1": end = "are"
-                elif c == "3": end = "ere"
-                else: end = "re"
-                root = stem[1]
-                if len(stem[0]) > 1 and stem[0][1] == "i": root = root[:-1] #parare
-                pai = root+end #pai = Present Active Infinitive
-                if stem[0][-1] != "D": forms.append([root+end,"P-Inf-A"])
-                if c == "3": end = end[:-3]+"i"
-                else: end = end[:-1]+"i"
-                if stem[0][-1] != "D": forms.append([root+end,"P-Inf-P"]) #parari
-                else: forms.append([root+end,"P-Inf-D"]) #hortari
+                [pai,ppi] = infin(c,stem)
+                if stem[0][-1] != "D": forms.append([pai,"P-Inf-A"])
+                if stem[0][-1] != "D": forms.append([ppi,"P-Inf-P"]) #parari
+                else: forms.append([ppi,"P-Inf-D"]) #hortari
 
                 for tense in ["P","Impf"]: #subjunctives
                     root = stem[1]
@@ -277,7 +288,7 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
                         for i in range(10): #range(10) = Nom/Gen/Dat/Acc/Abl Sg/Pl
                             if i%5 == 3 and g == "N": i -= 3 #Neuter Golden Rule 1: Nom=Acc
                             end = sufs[2][i] #2nd Declension
-                            if stem[3] == "N" and i == 5: end = "a" #Neuter Golden Rule 2: Nom/Acc "a" in the plural
+                            if g == "N" and i == 5: end = "a" #Neuter Golden Rule 2: Nom/Acc "a" in the plural
                             if n == 0:
                                 end = sufs[3][i] #3rd Declension
                                 if i == 6 or (g == "N" and i == 5): end = "i" + end #parantium
@@ -287,7 +298,33 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
                             if n != 0 and i == 0: end = {"M":"us","F":"a","N":"um"}[g] #us-a-um in nom
                             if i == 0: word = nom + end #All (nominative/neuter-accusative) singulars
                             else: word = root + end #Everything else
-                            forms.append([word,"%s-Ppl-%s/-%s-%s-%s" % (["P","F","F","Pf"][n],voice,g,case[i%5],number[i/5])])
+                            if not "-" in word: forms.append([word, "%s-Ppl-%s/-%s-%s-%s" % (["P","F","F","Pf"][n], voice,g,case[i%5],number[i/5])])
+            elif p[1] == "sum": #For verbs that come from sum (possum,posse) in the present
+                pai = stem[3]
+                if len(stem[1]) != 0: pot = stem[1]
+                else: pot = "-"
+                for tense in ["P","Impf","F"]:
+                    pers = personal[:6]
+                    if tense == "Impf": pers[0] = "m"
+                    for i in range(6):
+                        root = pot
+                        if tense == "P": end = sums[i]
+                        else:
+                            end = "er"
+                            if tense == "Impf": end += "a"
+                            elif i != 0: end += "i"
+                            end += pers[i]
+                        if end[0] == "s" and pot[-1] == "t": root = pot[:-1] + "s" #possum,potest
+                        elif pot == "-": root = ""
+                        forms.append([root+end,"%s-%s-I-A" % (persons[i], tense)])
+
+                        if tense == "P": #Actually these are subjunctives
+                            pers[0] = "m"
+                            if pot[-1] == "t": root = pot[:-1] + "s"
+                            elif pot == "-": root = ""
+                            forms.append([root+"si"+pers[i],persons[i]+"-P-S-A"])
+                            forms.append([pai+pers[i],persons[i]+"-Impf-S-A"])
+                forms.append([pai,"P-Inf-A"])
         elif p[0] == "prn": #This section not written yet
             stem = p[1][0]
             if stem == "hic":
@@ -348,8 +385,12 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
                     if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
             prsf = prsf[:-1] # eliminates extra dash: ...-G-P-
             stem = apls[0][0]
-            if p[0] == "n": dct = stem[1]+","+stem[2]+sufs[stem[0]][1] #rex,regis
-            else: dct = stem[1]+"o,"+pai+","+stem[2]+"i,"+stem[4]+"us" #paro,parare,paravi,paratus. Note, this does not yet account for deponents.
+            [pai,ppi] = infin(stem[0][0],stem)
+            if p[0] == "n": dct = [stem[1],stem[2]+sufs[stem[0]][1]] #rex,regis
+            elif stem[0][-1] == "D": dct = [stem[1]+"or",ppi,stem[4]+"us sum","-"] #sequor,sequi,secutus sum,-
+            else: dct = [stem[1]+"o",pai,stem[2]+"i",stem[4]+"us"] #paro,parare,paravi,paratus
+            if stem[0] == "sum": dct[0] = stem[1]+"sum"
+            dct = ",".join(dct)
             fins.append([term,dct,prsf,stem[{"n":4,"v":5}[p[0]]],""]) #["regum","rex,regis","M-G-S","to rule",""]
             print "tag:", fins, "/tag"
     if len(fins) > 2: #Conflict: Multiple Possibilities (ie.rei from res,rei:thing or reus,rei:defendant)

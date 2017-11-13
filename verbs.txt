@@ -34,6 +34,8 @@ culpo	culpare	culpavi	culpatum	blame
 maneo	manere	mansi	mansum	remain
 supero	superare	superavi	superatum	surpass
 possum	posse	potui	-	be able
+sum	esse	fui	-	be
+absum	abesse	abfui	-	be away
 tolero	tolerare	toleravi	toleratum	tolerate
 audeo	audere	ausum sum	-	dare
 neco	necare	necavi	necatum	kill
