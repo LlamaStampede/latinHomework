@@ -78,7 +78,6 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         return ["3P","-",verb[2][:-1],"-",ppl,trn] #preterate
     elif verb[0][-1] == "m":
         root = verb[0][:-3]
-        print "/"+str(root)+"/"
         if len(root) != 0 and root[-1] == "s": root = root[:-1] + "t"
         return ["sum",root,verb[2][:-1],verb[1],"-",trn] #sum-thing
     elif verb[0][-1] == "t":
@@ -149,10 +148,6 @@ for term in ex_terms:
 
     #adjectives
 
-for pts in pos:
-    for p in pts[1:]:
-        print p
-
 
 #Phase: Select
 final_list = []
@@ -184,7 +179,6 @@ def infin(c,stem):
     else: end = end[:-1]+"i"
     ppi = root+end #ppi = Present Passive Infinitive
     return [pai,ppi]
-print pos, "KL"
 for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     term = pts.pop(0)
     fins = [term] #finalists, all aplicable forms will later be appended
@@ -359,18 +353,20 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
             print "no glossary yet"
         if p[0] in ["v","n"]: #conflict resolution/error reporting
             for form in forms:
-                print form
+                #print form
                 if form[0] == term: apls.append([stem,form[1]]) #checks if term and form spelled the same
         if len(apls) != 0:
             difs = [] #for conflicting parsings (dat/abl pl)
-            for i in range({"n":3,"v":6}[p[0]]):
-                difs.append([]) #verbs can have at most 6 (participles). nouns only ever have 3 (gender,case,number)
+            ld = {"n":3,"v":6}[p[0]] #verbs can have at most 6 (participles). nouns only ever have 3 (gender,case,number)
+            for i in range(ld):
+                difs.append([])
+
             prsf = "" #prsf = Final Parsing (will include blankspaces)
             for apl in apls: #aplicable forms
                 prs = apl[1].split("-")
-                print prs
+                #print prs
                 for l in range(len(prs)):
-                    difs[l+6-len(prs)].append(prs[l]) #separating parsings into different columns for comparison
+                    difs[l+ld-len(prs)].append(prs[l]) #separating parsings into different columns for comparison
             for l in difs: #l is a value location (Gender,Case,Tense,etc.)
                 value = True
                 cur = 0 #cur = current value (sg,masc,dat,fem,gen,etc.)
@@ -378,28 +374,119 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
                     if cur == 0: cur = x
                     elif cur != x: #Conflicting values in the same word
                         value = False #means that neither value is printed in the final cut
-                        report.append([term,difs]) #error reporting is notified
+                        report.append(["minor",term,stem,difs]) #error reporting is notified
                 if len(l) != 0:
                     if value: prsf += l[0] + "-" #if value is certain
                     else: prsf += "   -" #if value is indefinite
                     if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
             prsf = prsf[:-1] # eliminates extra dash: ...-G-P-
             stem = apls[0][0]
-            [pai,ppi] = infin(stem[0][0],stem)
+            if p[0] == "v": [pai,ppi] = infin(stem[0][0],stem)
             if p[0] == "n": dct = [stem[1],stem[2]+sufs[stem[0]][1]] #rex,regis
             elif stem[0][-1] == "D": dct = [stem[1]+"or",ppi,stem[4]+"us sum","-"] #sequor,sequi,secutus sum,-
             else: dct = [stem[1]+"o",pai,stem[2]+"i",stem[4]+"us"] #paro,parare,paravi,paratus
             if stem[0] == "sum": dct[0] = stem[1]+"sum"
             dct = ",".join(dct)
             fins.append([term,dct,prsf,stem[{"n":4,"v":5}[p[0]]],""]) #["regum","rex,regis","M-G-S","to rule",""]
-            print "tag:", fins, "/tag"
     if len(fins) > 2: #Conflict: Multiple Possibilities (ie.rei from res,rei:thing or reus,rei:defendant)
         final_list.append([term,"","","",""]) #leaves blank spaces b/c origin unknown
-        report.append[fins] #error reporting is notified
+        words = [fins[0]]
+        for fin in fins[1:]:
+            words.append(fin[1])
+        report.append(["multi"]+words) #error reporting is notified
     elif len(fins) == 1: #Error: Term Unknown (new word not in glossaries)
         final_list.append([term,"","","",""]) #leaves blank spaces b/c origin unknown
-        report.append([term,"unknown"]) #error reporting is notified
+        report.append(["unknown",term]) #error reporting is notified
     else: final_list.append(fins[1]) #when program is running smoothly
-print final_list
-print report
-#final_list goes to format.py
+
+
+#Phase: Format
+parsing = raw_input("Parsing, y/n? ")
+errors = raw_input("Report errors, y/n? ")
+if parsing == "n":
+    for col in range(len(final_list)):
+        final_list[col][2] = ""
+elif errors == "y":
+    minor = raw_input("Report parsing inconsistencies, y/n? ")
+    if minor == "y": minors = {}
+
+def flipped(block):
+    table = []
+    for height in block[0]:
+        table.append([]) # this just appends 5 []'s
+    for col in block:
+        for row_id in range(len(col)):
+            table[row_id].append(col[row_id])
+    return table
+col_widths = []
+for col_id in range(len(final_list)):
+    lens = [] # used for appending spaces later on
+    width = 0
+    for row in final_list[col_id]:
+        l = len(str(row))
+        lens.append(l)
+        if l > width: width = l
+    col_widths.append(width) #col_width = [longest length of each row segment for each column, ...]
+    for row_id in range(len(final_list[col_id])):
+        final_list[col_id][row_id] = str(final_list[col_id][row_id])
+        for b in range(width - lens[row_id]):
+            final_list[col_id][row_id] += " "
+# Modifies each term to be equal length. For example: [
+# "bonarum"
+# "us-a-um"
+# "F-G-P  "
+# "good   "
+# "       "]
+
+doc_width = 70 # change this to widen or lengthen the final product
+indent = 4
+all_lines = []
+line_group = []
+block_count = 0
+for col_id in range(len(final_list)):
+    if indent + col_widths[col_id] > doc_width:
+        line_group.insert(0,["txt","dct","prs","trn","cmt"])
+        all_lines.append(line_group) # archives old line
+        indent = 4
+        line_group = [] # begins new line
+    if block_count == 8: print "\n\n"
+    line_group.append(final_list[col_id])
+    indent += col_widths[col_id] + 1
+line_group.insert(0,["txt","dct","prs","trn","cmt"])
+all_lines.append(line_group)
+
+horizon = ""
+for i in range(doc_width):
+    horizon += "-"
+
+for line_group in all_lines:
+    for row in flipped(line_group):
+        for col_id in range(len(row)):
+            if col_id == len(row) - 1:
+                print row[col_id]
+            else:
+                print row[col_id], "|",
+    print horizon
+
+if errors == "y":
+    for err in report:
+        if err[0] == "unknown": print "Unknown:",err[1]
+        elif err[0] == "multi":
+            print "Conflict:",err[1],"might be from",
+            for w in err[2:]: #w = each individual dictionary entry
+                print w
+        elif minor == "y": #ignore code from here down, i haven't figured out how to report minor errors in the way I want yet
+            if err[1] in minors: minors[err[1]].append([err[2],err[3]])
+            else: minors[err[1]] = [[err[2],err[3]]]
+    if len(minors) != 0:
+        discs = []
+        #print minors
+        log = {}
+        for mini in minors: #Minor discrpancy (Dat vs Abl)
+            if not mini in log: log[mini] = [minors[mini]]
+            elif log[mini][-1][0] == minors[mini][0]: log[mini] += minors[mini][1]
+            else: log[mini].append([minors[mini]]) #separates minor discs by word origin
+        #for mini in log:
+            #print mini, log[mini]
+
+        #print mini, "might be",
