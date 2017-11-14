@@ -1,15 +1,9 @@
--adverbs of time	adverbia temporis
-yesterday	Heri
+yesterday	heri
 today	hodie
 tomorrow	cras
 now	nunc
 then	tunc
 later	postea
-tonight	hac nocte
-right now	nunc ipsum
-last night	hesterna nocte
-this morning	hodie mane
-next week	prossimi septem dies
 already	iam
 recently	nuper
 lately	tarde
@@ -18,7 +12,6 @@ immediately	statim
 still	etiam
 yet	etiamnunc
 ago	abhinc
--adverbs of place	adverbia loci
 here	hic
 there	illic
 over there	illac
@@ -28,7 +21,6 @@ nowhere	nusquam
 home	domus
 away	longe
 out	foris
--adverbs of manner	adverbia rationis
 very	valde
 quite	satis
 pretty	satis
@@ -46,7 +38,6 @@ almost	fere
 absolutely	absolute
 together	una
 alone	unus
--adverbs of frequency	adverbia frequentiae
 always	semper
 frequently	saepe
 usually	solite
