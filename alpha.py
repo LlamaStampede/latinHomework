@@ -1,4 +1,5 @@
 # Prelude
+<<<<<<< HEAD
 def getLines(file):
     f = open(file, "r")
     lines = f.read()
@@ -19,6 +20,8 @@ def getUsableText(file):
     return(usableText)
 
 
+=======
+>>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
 def inc(term,list): # efficiently returns (term in list) boolean
     for item in list:
         if term == item[0]: #[0] important
@@ -38,7 +41,11 @@ prepList = glossary("preps.txt")
 advList = glossary("adverbs.txt")
 nounList = glossary("nouns.txt")
 
+<<<<<<< HEAD
 ex_terms = getUsableText("due11-14.txt")#raw_input("Enter a term: ").split(" ") # You might need to change this to input() for your python version
+=======
+ex_terms = raw_input("Enter a term: ").split(" ") # You might need to change this to input() for your python version
+>>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
 
 preps = []
 for prep in prepList:
@@ -349,14 +356,21 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
                 print "is ea id"
         elif p[0] == "n":
             stem = p[1]
+<<<<<<< HEAD
             nom = stem[1]
+=======
+>>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
             ends = sufs[stem[0]][:] #Specific to the word's declension
             if stem[3] == "N" and stem[0] == 4: ends[5] = "ua" #4th Declension neuter plural
             elif stem[3] == "N": ends[5] = "a" #N.G.R.2
             istem = False
             if stem[0] == 3:
+<<<<<<< HEAD
                 if len(stem[2]) > 1 and (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)):
                     istem = True #base in 2 consonants
+=======
+                if (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)): istem = True #base in 2 consonants
+>>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
                 elif len(stem[1]) > len(stem[2]): istem = True #monosyllabic (not actually functional, idk how to)
                 elif stem[3] == "N" and (nom[-2:] in ["al","ar"] or nom[-1] == ["e"]): istem = True #neuter ending in -al,-ar,-e
             for i in range(10):
@@ -460,7 +474,11 @@ for col_id in range(len(final_list)):
 # "good   "
 # "       "]
 
+<<<<<<< HEAD
 doc_width = 140 # change this to widen or lengthen the final product
+=======
+doc_width = 70 # change this to widen or lengthen the final product
+>>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
 indent = 4
 all_lines = []
 line_group = []
