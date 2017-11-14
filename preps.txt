@@ -1,4 +1,4 @@
-ac
+Ac
 ANTE	before
 PER	through, because of
 AD	to, toward
@@ -14,15 +14,17 @@ POST	after, behind
 SUB	under
 OB	on account of
 PRAETER	except for
-ab
-A(AB)	from, by
+Ab
+A	from, by
+AB	from, by
 SINE	without
 DE	down from, about
 PRO	for
 CUM	with
 PRAE	before, in front of
-E(EX)	out from
+E	out from
+EX	out from
 SUB	under
-b
+Both
 IN	in, on/into, onto
 SUPER	above
