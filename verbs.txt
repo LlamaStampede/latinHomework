@@ -161,3 +161,9 @@ pateo	patere	patui	-	lie open
 placet	-	-	-	be pleasing
 opportet	-	-	-	be proper
 licet	-	-	-	be permitted
+clamo	clamare	clamavi	clamatus	call
+fero	ferre	tuli	latus	carry, bear
+infer	inferre	intuli	illatus	bear
+quiesco	quiescere	quievi	quietus	be quiet
+probo	probare	probavi	probatus	approve
+vasto	vastare	vastavi	vastatus	vacate
