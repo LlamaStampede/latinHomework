@@ -87,7 +87,6 @@ fluo	fluere	fluxi	fluxum	flow
 lego	legere	legi	lectum	choose, read
 misceo	miscere	miscui	mixtum	mix
 moveo	movere	movi	motum	move
-videor	videri	visum sum	-	seem
 delecto	delectare	delectavi	delectatum	please
 libero	liberare	liberavi	liberatum	free
 careo	carere	carui	cariturum	be free (from)
