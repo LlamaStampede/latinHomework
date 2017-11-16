@@ -490,7 +490,7 @@ for col_id in range(len(final_list)):
     if indent + col_widths[col_id] > doc_width:
         line_group.insert(0,["txt","dct","prs","trn","cmt"])
         all_lines.append(line_group) # archives old line
-        indent = 4
+        indent = 6
         line_group = [] # begins new line
     if block_count == 8: print "\n\n"
     line_group.append(final_list[col_id])
@@ -502,19 +502,20 @@ horizon = ""
 for i in range(doc_width):
     horizon += "-"
 
+chapter = raw_input("Chapter number: ")
+output = open("chapter-"+chapter+".txt","w+")
 for line_group in all_lines:
     for row in flipped(line_group):
         for col_id in range(len(row)):
-            if col_id == len(row) - 1:
-                print row[col_id]
-            else:
-                print row[col_id], "|",
-    print horizon
+            if col_id == len(row) - 1: output.write(row[col_id]+"\n")
+            else: output.write(row[col_id]+" | ")
+    output.write(horizon+"\n")
 
 if errors == "y":
     for err in report:
-        if err[0] == "unknown": print "Unknown:",err[1]
+        if err[0] == "unknown": output.write("Unknown: "+err[1]+"\n")
         elif err[0] == "multi":
-            print "Conflict:",err[1],"might be from: "
+            output.write("Conflict: "+err[1]+" might be from:\n")
             for w in err[2:]: #w = each individual dictionary entry
-                print "-",w[0],w[1]
+                output.write("- "+w[0]+" "+w[1]+"\n")
+output.close()
