@@ -1,4 +1,24 @@
-# Prelude
+# Phase: Prepare
+f = open("rawText.txt", "r")
+lines = f.read()
+f.close()
+
+usableText = []
+for i in range(0, len(lines)):
+    if lines[i].isalpha() or lines[i] == " ":
+        usableText.append(lines[i])
+while usableText[0] == " ":
+    usableText.pop(0)
+usableText = "".join(usableText)
+usableText = usableText.split(" ")
+
+realText = []
+for term in usableText:
+    if len(term) > 3 and term[-3:] == "que": realText += [term[:-3],"+que"]
+    else: realText.append(term)
+
+
+# Phase: Collect
 def inc(term,list): # efficiently returns (term in list) boolean
     for item in list:
         if term == item[0]: #[0] important
@@ -18,7 +38,7 @@ prepList = glossary("preps.txt")
 advList = glossary("adverbs.txt")
 nounList = glossary("nouns.txt")
 
-ex_terms = raw_input("Enter a term: ").split(" ") # You might need to change this to input() for your python version
+ex_terms = realText #raw_input("Enter a term: ").split(" ")
 
 preps = []
 for prep in prepList:
@@ -148,6 +168,8 @@ for term in ex_terms:
 
     #adjectives
 
+    if term in ["atque","+que","ac","et","sed"]: pos[-1].append(["conj"])
+
 
 #Phase: Select
 final_list = []
@@ -187,7 +209,16 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
         forms = [] #every form of the word will be added
         if p[0] == "prep": fins.append([term,term,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
         elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
-        elif p[0] == "conj": fins.append([term,term,"Conj",p[1][1],""])
+        elif p[0] == "conj":
+            if term == "sed":
+                trn = "but"
+            else:
+                trn = "and"
+            if term == "ac":
+                dct = "atque"
+            else:
+                dct = term
+            fins.append([term,dct,"Conj",trn,""])
         elif p[0] == "v": #Intensive verb identifier, all tenses
             stem = p[2]
             if p[1] == "p": #present system (P,Impf,F)
@@ -411,9 +442,16 @@ if parsing == "n":
     for col in range(len(final_list)):
         final_list[col][2] = ""
 for col in range(len(final_list)): #1st conj compression
-    temp_stem = final_list[col][1].split(",")
-    if temp_stem[1][-3:] == "are": final_list[col][1] = temp_stem[0]+"(1)"
-    elif temp_stem[1][-3:] == "ari": final_list[col][1] = temp_stem[0]+"(1D)"
+    stem = final_list[col][1].split(",")
+    if len(stem) > 1 and len(stem[1]) >= 3:
+        if stem[1][-3:] == "are": final_list[col][1] = stem[0]+"(1)"
+        elif stem[1][-3:] == "ari": final_list[col][1] = stem[0]+"(1D)"
+        elif not "-" in stem and stem[1][-2:] == "re" and [stem[0][-2:],stem[1][-3]] != ["eo","i"]:
+            root = stem[1][:-3]
+            [two,three,four] = ["-"+stem[1][-3:],stem[2],stem[3]]
+            if len(stem[2]) > root and root == stem[2][:len(root)]: three = "-" + stem[2][len(root):]
+            if len(stem[3]) > root and root == stem[3][:len(root)]: four = "-" + stem[3][len(root):]
+            final_list[col][1] = ",".join([stem[0],two,three,four])
 
 def flipped(block):
     table = []
