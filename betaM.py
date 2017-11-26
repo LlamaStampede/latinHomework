@@ -1,89 +1,16 @@
 import betaIdentify
 import format
+import noun
 import os
 try:
     os.remove('betaIdentify.pyc')
     os.remove('format.pyc')
+    os.remove('noun.pyc')
 except:
     print()
 
 terms = betaIdentify.getTerms()
 final = []
-nounSuffixesM = ["placeholder", #so that a word's suffixes can be called via sufs[decl] instead of sufs[decl-1]
-                ["a","ae","ae","am","a","ae","arum","is","as","is"],#because poeta
-                ["","i","o","um","o","i","orum","is","os","is"],
-                ["","is","i","em","e","es","um","ibus","es","ibus"],
-                ["","us","ui","um","u","us","uum","ibus","us","ibus"],
-                ["","ei","ei","em","e","es","erum","ebus","es","ebus"]]
-
-nounSuffixesF = ["placeholder", #so that a word's suffixes can be called via sufs[decl] instead of sufs[decl-1]
-                ["a","ae","ae","am","a","ae","arum","is","as","is"],
-                ["placeholder"],
-                ["","is","i","em","e","es","um","ibus","es","ibus"],
-                ["","us","ui","um","u","us","uum","ibus","us","ibus"],
-                ["","ei","ei","em","e","es","erum","ebus","es","ebus"]]
-
-nounSuffixesN = ["placeholder", #so that a word's suffixes can be called via sufs[decl] instead of sufs[decl-1]
-                ["placeholder"],
-                ["","i","o","","o","a","orum","is","a","is"],
-                ["","is","i","","e","a","um","ibus","a","ibus"],
-                ["","us","ui","um","u","us","uum","ibus","us","ibus"], #because cornu
-                ["placeholder"]]
-
-cases = ["N", "G", "D", "Acc", "Abl"]
-
-def getCase(endingId):
-    new = endingId % 5
-    return(cases[new])
-
-def getList(gender):
-    if gender == "m" or gender == "c":
-        nounSuffixes = nounSuffixesM
-    if gender == "f":
-        nounSuffixes = nounSuffixesF
-    if gender == "n":
-        nounSuffixes = nounSuffixesN
-    return(nounSuffixes)
-
-def findDeclension(genitive, gender):
-    nounSuffixes = getList(gender)
-    for i in range(1, len(nounSuffixes)):
-        if nounSuffixes[i] == ["placeholder"]:
-            continue
-        curEnding = nounSuffixes[i][1] #the genitive term for each suffix declension
-        curPlEnding = nounSuffixes[i][6]#the plural genitive term for each declensoin
-        curGenEnding = genitive[-1 * len(curEnding):]
-        curGenPlEnding = genitive[-1 * len(curPlEnding):]
-        if curGenEnding == curEnding or curGenPlEnding == curPlEnding:
-            return(i)
-
-def findStem(nominative, genitive, declension, onlyPlural):
-    if genitive[0] == "-":#no 3rd dec all 4th some 1, some 2, some 5
-        if declension == 1:
-            return(nominative[:-1])
-        elif declension == 2 or declension == 5:
-            if onlyPlural:
-                return(nominative[:-1])
-            else:
-                return(nominative[:-2])
-        elif declension == 4:
-            if nominative[-2:] == "us":
-                return(nominative[:-2])
-            else:
-                return(nominative[:-1])
-    else:
-        if declension == 3:
-            return(genitive[:-2])
-        elif declension == 1:
-            return(genitive[:-4])#only plural subtracts -arum
-        elif declension == 2:
-            if onlyPlural:
-                return(genitive[:-4])
-            else:
-                return(genitive[:-1])
-        elif declension == 5:
-            return(genitive[:-1])
-#print(findStem("divitiae", "divitiarum", 1, True))
 
 #s = "123456"
 #print(s[:2]) -> 12
@@ -91,59 +18,128 @@ def findStem(nominative, genitive, declension, onlyPlural):
 #print(s[2:]) -> 3456
 #print(s[-2:]) -> 56
 
+cases = ["N", "G", "D", "Ac", "Ab"]
+def parsing(endingsId, endingId):
+    if endingsId == 0:
+        gender = "F"
+    elif endingsId == 1:
+        gender = "M"
+    else:
+        gender = "N"
+    case = cases[endingId % 5]
+    if endingId < 5:
+        number = "Sg"
+    else:
+        number = "Pl"
+    prs = "-".join([gender, case, number])
+    return(prs)
+
 def main(possibleTerms):
+    empty = " "
     currentTerm = possibleTerms[0]
+    word = possibleTerms[0] #yes i realize this is a duplicate lol idk why
     dct, prs, trn = "", "", ""
-    #print(possibleTerms)
-    word = possibleTerms[0]
+    confirmedTerms = []
     for termId in range(1, len(possibleTerms)):
         partOfSpeech = possibleTerms[termId][0]
         if partOfSpeech == "p":
             dct = possibleTerms[1][1][1]
             prs = "prep w/ %s"%(possibleTerms[1][1][0])
             trn = possibleTerms[1][1][2]
+            confirmedTerms.append([currentTerm, dct, prs, trn, ""])
         if partOfSpeech == "adv":
             dct = possibleTerms[1][1][1]
             prs = possibleTerms[1][0]
             trn = possibleTerms[1][1][0]
+            confirmedTerms.append([currentTerm, dct, prs, trn, ""])
         if partOfSpeech == "c":
             dct = possibleTerms[1][1][0]
             prs = "conj"
             trn = possibleTerms[1][1][1]
+            confirmedTerms.append([currentTerm, dct, prs, trn, ""])
         if partOfSpeech == "adj":
-            x = "x"
+
+            allEndings = [["a","ae","ae","am","a","ae","arum","is","as","is"],
+                          ["us","i","o","um","o","i","orum","is","os","is"],
+                          ["um","i","o","um","o","a","orum","is","a","is"]]
+            #possibleTerms[termId]  is ['adj', ['longus, a, um', 'long']] or ['adj', ['miser, misera, miserum', 'sad, wretched']] or ['adj', ['noster, nostra, nostrum', 'our, ours']]
+            curTerm = possibleTerms[termId][1][0]
+            #print(word, curTerm)
+            if curTerm[-7:] == ", a, um": #if like longus a um
+                stem = curTerm[:-9]
+                for endingsId in range(0, len(allEndings)):
+                    for endingId in range(0, len(allEndings[endingsId])):
+                        curWord = stem + allEndings[endingsId][endingId]
+                        #print(curWord)
+                        if word == curWord:
+                            confirmedTerms.append([currentTerm, curTerm, parsing(endingsId, endingId), possibleTerms[termId][1][1], ""])
+            else:
+                print(curTerm)
         if partOfSpeech == "v":
             x = "x"
-        if partOfSpeech == "n": #possibleTerms[i] = ['n', ['tribunus', '-i', 'm', 'tribune']] If term is noun
+        if partOfSpeech == "n": #possibleTerms[termId] = ['n', ['tribunus', '-i', 'm', 'tribune']] If term is noun
             genitive = possibleTerms[termId][1][1]
             gender = possibleTerms[termId][1][2]
             definition = possibleTerms[termId][1][3]
             if gender == "pl": #in case it is ['n', ['divitiae', 'divitiarum', 'pl', 'f', 'wealth']] with pl
                 gender = possibleTerms[termId][1][3]
                 definition = possibleTerms[termId][1][4]
-            declension = findDeclension(genitive, gender)
+            declension = noun.findDeclension(genitive, gender)
             nominative = possibleTerms[termId][1][0]
             onlyPlural = False
             if possibleTerms[termId][1][2] == "pl": #if noun only exists in the plural
                 onlyPlural = True
-            stem = findStem(nominative, genitive, declension, onlyPlural)
-            endings = getList(gender)
+            stem = noun.findStem(nominative, genitive, declension, onlyPlural)
+            endings = noun.getList(gender)
             endings = endings[declension]
             for endingId in range(0, 10):
-                currentWord = stem + endings[endingId]
+                if endings[endingId] == "":
+                    currentWord = nominative
+                else:
+                    currentWord = stem + endings[endingId]
                 if word == currentWord:
                     dct = ", ".join([nominative, genitive])
-                    case = getCase(endingId)
+                    case = noun.getCase(endingId)
                     if endingId < 5:
                         number = "Sg"
                     else:
                         number = "Pl"
                     prs = "-".join([gender.upper(), case, number])
                     trn = definition
+                    confirmedTerms.append([currentTerm, dct, prs, trn, ""])
 
     #print("")
             #print(possibleTerms[i])
-    lisOfFive = [currentTerm, dct, prs, trn, ""]
+    lisOfFive = []
+    errors = []
+    if len(confirmedTerms) == 0:
+        confirmedTerms.append([currentTerm, dct, prs, trn, ""])
+    if len(confirmedTerms) == 1:
+        lisOfFive = confirmedTerms[0]
+    else:
+        for termId in range(0, len(confirmedTerms)): # a term is ['metus', 'metus, -us', 'M-G-Sg', 'fear', '']
+            term = confirmedTerms[termId]
+            prs = term[2].split("-")
+            if termId == 0:
+                w = term[0]
+                d = term[1]
+                p = prs
+                t = term[3]
+            else: #if any extra term, probably there is an easier way to write this
+                if w != term[0]:
+                    w = empty
+                if d != term[1]:
+                    d = empty
+                if p[0] != prs[0]:
+                    p[0] = empty
+                if p[1] != prs[1]:
+                    p[1] = empty
+                if p[2] != prs[2]:
+                    p[2] = empty
+                if t != term[3]:
+                    t = empty
+        lisOfFive = [w, d, "-".join(p), t, ""]
+        errors.append([word, confirmedTerms])
     return(lisOfFive)
 
 
