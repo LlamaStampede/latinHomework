@@ -34,10 +34,11 @@ ex_terms = featureA.getUsableText("due11-14.txt")#raw_input("Enter a term: ").sp
 
 preps = []
 for prep in prepList:
+    print(prep)
     if len(prep) == 1:
         phase = prep[0]
     else:
-        preps.append([prep[0].lower(),prep[1],phase])
+        preps.append([prep[0].lower(),prep[1]])
 advs = []
 for adv in advList:
     advs.append(adv[::-1])
@@ -197,8 +198,8 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     for p in pts: #p = possibile word ([do,dare,...])
         apls = [] #apls=aplicable forms
         forms = [] #every form of the word will be added
-        if p[0] == "prep": fins.append([term,term,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
-        elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
+        #if p[0] == "prep": fins.append([term,term,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
+        if p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
         elif p[0] == "conj": fins.append([term,term,"Conj",p[1][1],""])
         elif p[0] == "v": #Intensive verb identifier, all tenses
             #print(p)

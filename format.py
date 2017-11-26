@@ -42,7 +42,7 @@ def main(example_list):
     #print col_widths
     # (debugging)
 
-    doc_width = 60 # change this to widen or lengthen the final product
+    doc_width = 140 # change this to widen or lengthen the final product
     indent = 4
     all_lines = []
     line_group = []

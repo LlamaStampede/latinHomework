@@ -1,0 +1,15 @@
+ANTE	before
+PER	through, because of
+AD	to, toward
+PROPTER	on account of
+CIRCUM	around
+CONTRA	against
+VERSUS	against
+INTER	between
+EXTRA	outside of
+INTRA	within
+TRANS	across
+POST	after, behind
+SUB	under
+OB	on account of
+PRAETER	except for

@@ -15,8 +15,12 @@ def getUsableText(file):
         if lines[i].isalpha() or lines[i] == " ":
             usableText.append(lines[i])
     while usableText[0] == " ":
-        if usableText[0] == " ":
-            usableText.pop(0)
+        usableText.pop(0)
+    newLis = [usableText[0]]#this whole newLis section is for removing double spaces
+    for i in range(1, len(usableText)):
+        if usableText[i] != " " or usableText[i-1] != " ":
+            newLis.append(usableText[i])
+    usableText = newLis
     usableText = "".join(usableText)
     usableText = usableText.split(" ")
     return(usableText)
