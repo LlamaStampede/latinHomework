@@ -23,6 +23,7 @@ advList = glossary("adverbs.txt")#[['yesterday', 'heri'], ['today', 'hodie']]
 nounList = glossary("nouns.txt")#[['terra', '-ae', 'f', 'land'], ['vita', '-ae', 'f', 'life']]
 conjList = glossary("conjunctions.txt")#et	and, que	and, si	if
 adjList = glossary("2-1-2adjectives.txt")
+pronounList = glossary("pronouns.txt")
 #print(adjList)
 
 def getPossibleWords(term):
@@ -51,4 +52,9 @@ def getPossibleWords(term):
     for adj in adjList:
         if beginning == adj[0][0:2]:
             lis.append(["adj", adj])
+    for pronoun in pronounList:
+        for subb in range(0, len(pronoun) - 2):
+            if beginning == pronoun[subb][0:2]:
+                lis.append(["pro", pronoun])
+                break
     return(lis)

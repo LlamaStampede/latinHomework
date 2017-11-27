@@ -53,7 +53,7 @@ def main(example_list):
             indent = 4
             line_group = [] # begins new line
         line_group.append(example_list[col_id])
-        indent += col_widths[col_id] + 1
+        indent += col_widths[col_id] + 4
     line_group.insert(0,["txt","dct","prs","trn","cmt"])
     all_lines.append(line_group)
 

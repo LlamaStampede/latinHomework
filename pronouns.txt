@@ -1,0 +1,6 @@
+ego	mei	mihi	me	me	me	Sg
+nos	nostri	nobis	nos	nobis	we	Pl
+tu	tui	tibi	te	te	you	Sg
+vos	vestri	vobis	vos	vobis	y'all	Pl
+- 	sui	sibi	se	se	he/she/it	Sg
+- 	sui	sibi	se	se	they	Pl

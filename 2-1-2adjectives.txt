@@ -45,3 +45,4 @@ noster, nostra, nostrum	our, ours
 novus, a, um	new
 parvus, a, um	small
 plenus, a, um	full
+tuus, a, um	your

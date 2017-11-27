@@ -57,6 +57,15 @@ def main(possibleTerms):
             prs = "conj"
             trn = possibleTerms[1][1][1]
             confirmedTerms.append([currentTerm, dct, prs, trn, ""])
+        if partOfSpeech == "pro": # current term looks like -> ['pro', ['- ', 'sui', 'sibi', 'se', 'se', 'he/she/it', Sg]]
+            currentSetOfTerms = possibleTerms[termId][1] #['- ', 'sui', 'sibi', 'se', 'se', 'he/she/it', Sg]
+            for termId in range(0, len(currentSetOfTerms) - 2):
+                if word == currentSetOfTerms[termId]:
+                    nominative, genitive = currentSetOfTerms[0], currentSetOfTerms[1]
+                    dct = ", ".join([nominative, genitive])
+                    prs = "-".join([" " , cases[termId] , currentSetOfTerms[6]])
+                    trn = currentSetOfTerms[5]
+                    confirmedTerms.append([currentTerm, dct, prs, trn, ""])
         if partOfSpeech == "adj":
 
             allEndings = [["a","ae","ae","am","a","ae","arum","is","as","is"],
@@ -67,14 +76,19 @@ def main(possibleTerms):
             #print(word, curTerm)
             if curTerm[-7:] == ", a, um": #if like longus a um
                 stem = curTerm[:-9]
-                for endingsId in range(0, len(allEndings)):
-                    for endingId in range(0, len(allEndings[endingsId])):
-                        curWord = stem + allEndings[endingsId][endingId]
-                        #print(curWord)
-                        if word == curWord:
-                            confirmedTerms.append([currentTerm, curTerm, parsing(endingsId, endingId), possibleTerms[termId][1][1], ""])
             else:
-                print(curTerm)
+                curTerms = curTerm.split(", ")
+                if curTerms[0] == curTerms[1][:-1] == curTerms[2][:-2]:
+                    stem == curTerm
+                else:
+                    stem = curTerms[1][:-1]
+
+            for endingsId in range(0, len(allEndings)):
+                for endingId in range(0, len(allEndings[endingsId])):
+                    curWord = stem + allEndings[endingsId][endingId]
+                    #print(curWord)
+                    if word == curWord:
+                        confirmedTerms.append([currentTerm, curTerm, parsing(endingsId, endingId), possibleTerms[termId][1][1], ""])
         if partOfSpeech == "v":
             x = "x"
         if partOfSpeech == "n": #possibleTerms[termId] = ['n', ['tribunus', '-i', 'm', 'tribune']] If term is noun
