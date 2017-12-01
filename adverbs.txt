@@ -46,3 +46,4 @@ occasionally	aliquando
 seldom	rare
 rarely	rare
 never	numquam
+not	non

@@ -17,6 +17,8 @@ amo	amare	amavi	amatum	love
 cogito	cogitare	cogitavi	cogitatum	consider
 debeo	debere	debui	debitum	ought, hesitate
 do	dare	dedi	datum	give
+eo	ire	ivi	itus	go
+abeo	abire	abivi	abitus	leave
 erro	errare	erravi	erratum	wander
 laudo	laudare	laudavi	laudatum	praise
 salveo	salvere	-	-	be healthy

@@ -153,7 +153,8 @@ aevum	-i	n	eternity
 reus	-i	m	defendant
 liber	libri	m	book
 nuntius	-i	m	messenger
-convivium	-ii	n	feast
+convivium	-i	n	feast
+latrocinium	-i	n	robbery
 damnum	-i	n	damage
 magister	magistri	m	master
 frumentum	-i	n	grain
