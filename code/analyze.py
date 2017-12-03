@@ -126,9 +126,10 @@ errors = raw_input("Report errors, y/n? ")
 for col in range(len(final_list)):
     if parsing == "n": final_list[col][2] = ""
     elif "Ppl" in final_list[col][2]:
-        ppls.append(final_list[col][0:3])
+        ppls.append(final_list[col][0:4])
         final_list[col][2] = ""
-for col in range(len(final_list)): #1st conj compression
+
+for col in range(len(final_list)): #dct compression
     stem = final_list[col][1].split(",")
     if len(stem) > 1 and len(stem[1]) >= 3:
         if stem[1][-3:] == "are": final_list[col][1] = stem[0]+"(1)"
@@ -189,8 +190,9 @@ horizon = ""
 for i in range(doc_width):
     horizon += "-"
 
-chapter = raw_input("Chapter number: ")
-output = open("chapter-"+chapter+".txt","w+")
+name = raw_input("Output file name: ")
+if name in ["","y"]: name = "output"
+output = open(name+".txt","w+")
 for line_group in all_lines:
     for row in flipped(line_group):
         for col_id in range(len(row)):
@@ -200,12 +202,16 @@ for line_group in all_lines:
 
 if errors == "y":
     for err in report:
-        if err[0] == "unknown": output.write("Unknown: "+err[1]+"\n")
+        if err[0] == "unknown": output.write("UNKNOWN: "+err[1]+"\n")
         elif err[0] == "multi":
             output.write("Conflict: "+err[1]+" might be from:\n")
             for w in err[2:]: #w = each individual dictionary entry
-                output.write("- "+w[0]+" "+w[1]+"\n")
+                output.write("- "+w[0]+" "+w[1]+" "+w[2]+"\n")
 if parsing == "y":
     for ppl in ppls:
         output.write("Participle: "+": ".join(ppl)+"\n")
 output.close()
+
+import os
+os.remove("describe.pyc")
+os.remove("expand.pyc")

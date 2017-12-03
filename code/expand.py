@@ -333,7 +333,7 @@ def expand(pts):
         final = [term,cur,"",dfn,""] #leaves blank spaces b/c origin unknown
         words = [fins[0]]
         for fin in fins[1:]:
-            words.append([fin[1],fin[2]])
+            words.append(fin[1:4])
         rep = ["multi"]+words #error reporting is notified
     elif len(fins) == 1: #Error: Term Unknown (new word not in glossaries)
         final = [term,"","","",""] #leaves blank spaces b/c origin unknown
