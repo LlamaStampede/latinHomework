@@ -1,27 +1,14 @@
+#PYTHONDONTWRITEBYTECODE=True
+#export PYTHONDONTWRITEBYTECODE
+import featureA
+import os
+try:
+    os.remove('featureA.pyc')
+except:
+    print()
+
 # Prelude
-<<<<<<< HEAD
-def getLines(file):
-    f = open(file, "r")
-    lines = f.read()
-    f.close()
-    return(lines)
 
-def getUsableText(file):
-    lines = getLines(file)
-    usableText = []
-    for i in range(0, len(lines)):
-        if lines[i].isalpha() or lines[i] == " ":
-            usableText.append(lines[i])
-    while usableText[0] == " ":
-        if usableText[0] == " ":
-            usableText.pop(0)
-    usableText = "".join(usableText)
-    usableText = usableText.split(" ")
-    return(usableText)
-
-
-=======
->>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
 def inc(term,list): # efficiently returns (term in list) boolean
     for item in list:
         if term == item[0]: #[0] important
@@ -41,18 +28,17 @@ prepList = glossary("preps.txt")
 advList = glossary("adverbs.txt")
 nounList = glossary("nouns.txt")
 
-<<<<<<< HEAD
-ex_terms = getUsableText("due11-14.txt")#raw_input("Enter a term: ").split(" ") # You might need to change this to input() for your python version
-=======
-ex_terms = raw_input("Enter a term: ").split(" ") # You might need to change this to input() for your python version
->>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
+
+ex_terms = featureA.getUsableText("due11-14.txt")#raw_input("Enter a term: ").split(" ") # You might need to change this to input() for your python version
+
 
 preps = []
 for prep in prepList:
+    print(prep)
     if len(prep) == 1:
         phase = prep[0]
     else:
-        preps.append([prep[0].lower(),prep[1],phase])
+        preps.append([prep[0].lower(),prep[1]])
 advs = []
 for adv in advList:
     advs.append(adv[::-1])
@@ -212,10 +198,11 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     for p in pts: #p = possibile word ([do,dare,...])
         apls = [] #apls=aplicable forms
         forms = [] #every form of the word will be added
-        if p[0] == "prep": fins.append([term,term,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
-        elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
+        #if p[0] == "prep": fins.append([term,term,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
+        if p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
         elif p[0] == "conj": fins.append([term,term,"Conj",p[1][1],""])
         elif p[0] == "v": #Intensive verb identifier, all tenses
+            #print(p)
             stem = p[2]
             if p[1] == "p": #present system (P,Impf,F)
             #this section is only enabled if the term begins with some verb's present stem
@@ -356,21 +343,15 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
                 print "is ea id"
         elif p[0] == "n":
             stem = p[1]
-<<<<<<< HEAD
             nom = stem[1]
-=======
->>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
             ends = sufs[stem[0]][:] #Specific to the word's declension
             if stem[3] == "N" and stem[0] == 4: ends[5] = "ua" #4th Declension neuter plural
             elif stem[3] == "N": ends[5] = "a" #N.G.R.2
             istem = False
             if stem[0] == 3:
-<<<<<<< HEAD
                 if len(stem[2]) > 1 and (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)):
                     istem = True #base in 2 consonants
-=======
-                if (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)): istem = True #base in 2 consonants
->>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
+
                 elif len(stem[1]) > len(stem[2]): istem = True #monosyllabic (not actually functional, idk how to)
                 elif stem[3] == "N" and (nom[-2:] in ["al","ar"] or nom[-1] == ["e"]): istem = True #neuter ending in -al,-ar,-e
             for i in range(10):
@@ -439,6 +420,7 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
 #Phase: Format
 parsing = raw_input("Parsing, y/n? ")
 errors = raw_input("Report errors, y/n? ")
+leng = raw_input("Fitted lines, y/n?")
 if parsing == "n":
     for col in range(len(final_list)):
         final_list[col][2] = ""
@@ -474,11 +456,8 @@ for col_id in range(len(final_list)):
 # "good   "
 # "       "]
 
-<<<<<<< HEAD
+
 doc_width = 140 # change this to widen or lengthen the final product
-=======
-doc_width = 70 # change this to widen or lengthen the final product
->>>>>>> b39e6140a08c20eca2d7e7e10216cb27e245a2f5
 indent = 4
 all_lines = []
 line_group = []
@@ -491,23 +470,42 @@ for col_id in range(len(final_list)):
         line_group = [] # begins new line
     if block_count == 8: print "\n\n"
     line_group.append(final_list[col_id])
-    indent += col_widths[col_id] + 1
+    indent += col_widths[col_id] + 3
 line_group.insert(0,["txt","dct","prs","trn","cmt"])
 all_lines.append(line_group)
 
-horizon = ""
-for i in range(doc_width):
-    horizon += "-"
-
+horizon = [] #each row has its own length which is at minimum 140 get each one is added len(row)
+temp = 0
+lis = []
+liss = []
 for line_group in all_lines:
+    lis = []
     for row in flipped(line_group):
+        temp = 0
+        for col_id in range(0, len(row)):
+            temp += len(row[col_id])
+            temp += 3
+        lis.append(temp-3)
+    liss.append(lis)
+print(liss)
+for i in range(0, len(liss)):
+    horizon.append("-"*liss[i][0])
+#print(len("     | te | autem | Catilina"))
+#
+#I noticed that the amount of | columns times two is the amount that it is off for each line in most cases?! {~m}
+#
+
+for line_group in range(0, len(all_lines)):
+    for row in flipped(all_lines[line_group]):
         for col_id in range(len(row)):
             if col_id == len(row) - 1:
                 print row[col_id]
             else:
-                print row[col_id], "|",
-    print horizon
-
+                print row[col_id], "|",# len(row),
+    if leng == "y":
+        print horizon[line_group]
+    else:
+        print "-" * doc_width
 if errors == "y":
     for err in report:
         if err[0] == "unknown": print "Unknown:",err[1]

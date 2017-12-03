@@ -24,17 +24,19 @@ def writeVerbs(listOfVerbs, lines): #here listOfVerbs is [['par', 161, 'prepare'
         lines.pop(i[1])
         prinParts = [i[0] + "o", i[0] + "are", i[0] + "avi", i[0] + "atus", i[2]]
         lines.insert(i[1], prinParts)
+        print(i[1], prinParts)
 
     for i in range(0, len(lines)):
         lines[i] = "\t".join(lines[i])
     lines = "\n".join(lines)
 
-    f = open("verbs.txt", "a")
+    f = open("verbs.txt", "w")
     f.write(lines)
     f.close()
 
 
 
 x, y = getVerbs()
+print(x)
 writeVerbs(x, y)
 print("Completed reformatting verbs such as [paro 1 prepare] to ['paro', 'parare', 'paravi', 'paratus', 'prepare']")
