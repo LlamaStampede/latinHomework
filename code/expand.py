@@ -8,6 +8,14 @@ sufs = ["placeholder", #so that a word's suffixes can be called via sufs[1/2/3/4
 ["","is","i","em","e","es","um","ibus","es","ibus"],
 ["","us","ui","um","u","us","uum","ibus","us","ibus"],
 ["","ei","ei","em","e","es","erum","ebus","es","ebus"]]
+hics = [["ic","aec","oc"],
+["uius","uius","uius"],
+["uic","uic","uic"],
+["unc","anc","oc"],
+["oc","ac","oc"],
+["is","as","aec"],
+["ic","aec","oc"],
+]
 case = ["N","G","D","Ac","Ab"]
 number = ["S","P"]
 vowels = ["a","e","i","o","u"]
@@ -34,14 +42,21 @@ def expand(pts):
     for p in pts: #p = possibile word ([do,dare,...])
         apls = [term] #apls=aplicable forms
         forms = [] #every form of the word will be added
-        if p[0] == "prep": fins.append([term,term,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
+        if p[0] == "prep":
+            if term == "a": dfn = "ab"
+            elif term == "e": dfn = "ex"
+            else: dfn = term
+            fins.append([term,dfn,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
         elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
         elif p[0] == "conj":
             if term in ["sed","at"]: trn = "but"
             elif term == "autem": trn = "moreover"
             elif term == "tamen": trn = "however"
+            elif term == "neque": trn = "neither, nor"
             elif term == "si": trn = "if"
             elif term in ["tam","ita","sic"]: trn = "so, thus"
+            elif term in ["enim","nam"]: trn = "for"
+            elif term in ["ut"]: trn = "."
             else: trn = "and"
 
             if term == "ac": dct = "atque"
@@ -111,6 +126,10 @@ def expand(pts):
                             forms.append([beg+pers[i],"%s-%s-S-%s"%(persons[i%6],tense,voice)])
                             if (root+pers[i])[-3:] == "ris": forms.append([beg+pers[i][:-2]+"e","%s-%s-S-%s" % (persons[i%6],tense,voice)]) #alternative 2ndPlP form (looks like p.a.i. in the present)
 
+                if deply(stem[0],0):
+                    forms.append([pai[:-2],"2S-P-Imp-A"])
+                    if c == "3": forms.append([pai[:-3]+"ite","2P-P-Imp-A"])
+                    else: forms.append([pai[:-2]+"te","2P-P-Imp-A"])
 
             elif p[1] == "pf": #perfect system (Pf,PPf,Fp). Also, note that no deponents have perfect active forms
                 for tense in ["Pf","Ppf","Fp"]:
@@ -217,14 +236,47 @@ def expand(pts):
                             forms.append([root+"si"+pers[i],persons[i]+"-P-S-A"])
                             forms.append([pai+pers[i],persons[i]+"-Impf-S-A"])
                 forms.append([pai,"P-Inf-A"])
-        elif p[0] == "prn": #This section not written yet
-            stem = p[1][0]
-            if stem == "hic":
-                print "hic haec hoc"
-            elif stem == "qui":
-                print "qui quae quod"
-            elif stem == "is":
-                print "is ea id"
+        elif p[0] in ["prn","unus"]: #This section not written yet
+            stem = p[1]
+            masc = p[1][0]
+            for gender in ["M","F","N"]:
+                for i in range(10):
+                    if gender == "N" and i%5 == 3: i -= 3
+
+                    if masc[-2:] == "us": root = masc[:-2]
+                    elif masc[-2:] == "er": root = masc[:-2] + "r"
+                    elif masc[-1] == "e": root = masc[:-1]
+                    if masc == "is": root = "e"
+                    if masc == "qui": root = "qu"
+                    if root == "qu" and i in [1,2]: root = "cu"
+                    if masc == "hic": root = "h"
+
+                    if masc == "hic" and i < 6: end = hics[i][{"M":0,"F":1,"N":2}[gender]]
+                    elif gender == "F": end = sufs[1][i]
+                    else: end = sufs[2][i]
+                    if i == 5 and gender == "N": end = "a"
+                    if root == "qu" and [i,gender] in [[5,"N"],[0,"F"]]: end = "ae"
+                    if root == "qu" and i in [7,9]: end = "ibus"
+                    if i in [1,2]: end = [0,"ius","i"][i]
+                    if i == 0 and gender == "N":
+                        if root in ["ali","ill","ist"]: end = "ud"
+                        else: end = "um"
+                    if [root,i,gender] == ["qu",3,"M"]: end = "em"
+
+                    if i == 0 and gender == "M": word = masc
+                    else: word = root + end
+                    if word == "aliius": word = "alius"
+                    if [root,i,gender] == ["e",0,"N"]: word = "id"
+
+                    forms.append([word,"%s-%s-%s"%(gender,case[i%5],number[i/5])])
+                    if root == "e" and (i in [7,9] or [gender,i] == ["M",5]): forms.append(["i"+end,"%s-%s-%s"%(gender,case[i%5],number[i/5])])
+                    if root == "qu" and i == 0:
+                        if gender == "N": word = "quid"
+                        else: word = "quis"
+                        forms.append([word,"%s-%s-%s"%(gender,case[i%5],number[i/5])])
+
+                    if [gender,i] == ["N",0]: neut = word
+
         elif p[0] == "n":
             stem = p[1]
             nom = stem[1]
@@ -280,6 +332,7 @@ def expand(pts):
                     if i == 0: word = nom
 
                     if i < 5 or len(trn) < 4 or trn[-4:] != "(pl)": forms.append([word,"%s-%s-%s" % (gen,case[i%5],number[i/5])]) #gender-case-number
+        #print term, "()"
         for form in forms:
             #print form
             if form[0] == term: apls.append([stem,form[1]]) #checks if term and form spelled the same
@@ -310,18 +363,21 @@ def expand(pts):
             stem = apls[1][0]
             if p[0] == "v": [pai,ppi] = infin(stem[0][0],stem)
             if p[0] == "n": dct = [stem[1],stem[2]+sufs[stem[0]][1]] #rex,regis
-            elif p[0] == "adj":
-                if decl == "212": dct = [masc,root+"a",neut]
-                else: dct = [root+"is"]
-                if decl in ["32","33"]: dct.append(neut)
-                if decl in ["31","33"]: dct.insert(0,masc)
-            elif stem[0][-1] == "D": dct = [stem[1]+"or",ppi,stem[4]+"us sum","-"] #sequor,sequi,secutus sum,-
-            else: dct = [stem[1]+"o",pai,stem[2]+"i",stem[4]+"us"] #paro,parare,paravi,paratus
-            if stem[0] == "sum":
-                dct[0] = stem[1]+"sum"
-                dct[3] = "-"
-            elif stem[0] == "4E":
-                dct[0] = dct[0][:-1] + "eo"
+            elif p[0] in ["adj","unus","prn"]:
+                if p[0] != "adj" or decl == "212": dct = [masc,root+"a",neut]
+                else:
+                    dct = [root+"is"]
+                    if decl in ["32","33"]: dct.append(neut)
+                    if decl in ["31","33"]: dct.insert(0,masc)
+                if masc == "qui": dct = ["qui","quae","quod"]
+            else:
+                if stem[0][-1] == "D": dct = [stem[1]+"or",ppi,stem[4]+"us sum","-"] #sequor,sequi,secutus sum,-
+                else: dct = [stem[1]+"o",pai,stem[2]+"i",stem[4]+"us"] #paro,parare,paravi,paratus
+                if stem[0] == "sum":
+                    dct[0] = stem[1]+"sum"
+                    dct[3] = "-"
+                elif stem[0] == "4E":
+                    dct[0] = dct[0][:-1] + "eo"
             dct = ",".join(dct)
             fins.append([term,dct,prsf,stem[-1],""]) #["regum","rex,regis","M-G-S","to rule",""]
     if len(fins) > 2: #Conflict: Multiple Possibilities (ie.rei from res,rei:thing or reus,rei:defendant)

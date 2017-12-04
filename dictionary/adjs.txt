@@ -24,15 +24,6 @@ salvus	-a	-um	safe
 secundus	-a	-um	second
 vester	vestra	vestrum	your
 novus	-a	-um	new
-alius	alia	aliud	other
-alter	altera	alterum	the other
-neuter	neutra	neutrum	neither
-nullus	-a	-um	none
-solus	-a	-um	alone
-totus	-a	-um	entire
-ullus	-a	-um	any
-unus	-a	-um	one
-uter	utra	utrum	whichever
 beatus	-a	-um	happy
 amicus	-a	-um	friendly
 carus	-a	-um	dear

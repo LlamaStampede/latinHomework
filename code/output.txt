@@ -1,0 +1,370 @@
+txt | ibis            | tandem | aliquando    | quo           | te
+dct | eo,ire,ivi,itus |        | aliquando    | qui,quae,quod |   
+prs | 2S-F-I-A        |        | Adv          |    -Ab-S      |   
+trn | to go           |        | occasionally | rel./inq.     |   
+cmt |                 |        |              |               |   
+----------------------------------------------------------------------
+txt | iam     | pridem | tua           | ista            | cupiditas
+dct | iam     |        | tuus,tua,tuum | iste,ista,istud |          
+prs | Adv     |        |    -   -      |    -   -        |          
+trn | already |        | your          | that            |          
+cmt |         |        |               |                 |          
+----------------------------------------------------------------------
+txt | effrenata | ac    | furiosa | rapiebat | neque        | enim
+dct |           | atque |         |          | neque        | enim
+prs |           | Conj  |         |          | Conj         | Conj
+trn |           | and   |         |          | neither, nor | for 
+cmt |           |       |         |          |              |     
+----------------------------------------------------------------------
+txt | tibi | haec       | res       | adfert | dolorem       | sed 
+dct |      | hic,ha,hum | res,rei   |        | dolor,doloris | sed 
+prs |      | F-N-S      | F-   -    |        | M-Ac-S        | Conj
+trn |      | this       | thing     |        | pain          | but 
+cmt |      |            |           |        |               |     
+----------------------------------------------------------------------
+txt | quandam | incredibilem | voluptatem          | ad        
+dct |         |              | voluptas,voluptatis | ad        
+prs |         |              | F-Ac-S              | Prep w/Ac 
+trn |         |              | pleasure            | to, toward
+cmt |         |              |                     |           
+----------------------------------------------------------------------
+txt | hanc       | te | amentiam | natura         | peperit
+dct | hic,ha,hum |    |          | natura,naturae |        
+prs | F-Ac-S     |    |          | F-   -S        |        
+trn | this       |    |          | nature         |        
+cmt |            |    |          |                |        
+----------------------------------------------------------------------
+txt | voluntas            | exercuit | fortuna         
+dct | voluntas,voluntatis |          | fortuna,fortunae
+prs | F-N-S               |          | F-   -S         
+trn | desire              |          | fortune         
+cmt |                     |          |                 
+----------------------------------------------------------------------
+txt | servavit          | numquam | tu | non | modo       | otium     
+dct | servo(1)          | numquam |    | non | modus,modi | otium,otii
+prs | 3S-Pf-I-A         | Adv     |    | Adv | M-   -S    | N-N-S     
+trn | to save, preserve | never   |    | not | measure    | leisure   
+cmt |                   |         |    |     |            |           
+----------------------------------------------------------------------
+
+
+txt | sed  | ne | bellum | quidem | nisi | nefarium | concupisti
+dct | sed  |    |        |        |      |          |           
+prs | Conj |    |        |        |      |          |           
+trn | but  |    |        |        |      |          |           
+cmt |      |    |        |        |      |          |           
+----------------------------------------------------------------------
+txt | nactus | es             | ex        | perditis | atque
+dct |        | sum,esse,fui,- | ex        |          | atque
+prs |        | 2S-P-I-A       | Prep w/Ab |          | Conj 
+trn |        | to be          | out from  |          | and  
+cmt |        |                |           |          |      
+----------------------------------------------------------------------
+txt | ab        | omni       | non | modo       | fortuna         
+dct | ab        | omnis,omne | non | modus,modi | fortuna,fortunae
+prs | Prep w/Ab |    -   -S  | Adv | M-   -S    | F-   -S         
+trn | from, by  | all        | not | measure    | fortune         
+cmt |           |            |     |            |                 
+----------------------------------------------------------------------
+txt | verum            | etiam | spe       | derelictis | conflatam
+dct | verus,vera,verum | etiam | spes,spei |            |          
+prs |    -   -S        | Adv   | F-Ab-S    |            |          
+trn | true             | still | hope      |            |          
+cmt |                  |       |           |            |          
+----------------------------------------------------------------------
+txt | improborum | manum       | hic | tu | qua           | laetitia
+dct |            | manus,manus |     |    | qui,quae,quod |         
+prs |            | F-Ac-S      |     |    | F-Ab-S        |         
+trn |            | hand, band  |     |    | rel./inq.     |         
+cmt |            |             |     |    |               |         
+----------------------------------------------------------------------
+txt | perfruere | quibus        | gaudiis        | exsultabis
+dct |           | qui,quae,quod | gaudium,gaudii |           
+prs |           |    -   -P     | N-   -P        |           
+trn |           | rel./inq.     | delight        |           
+cmt |           |               |                |           
+----------------------------------------------------------------------
+txt | quanta                 | in                | voluptate          
+dct | quantus,quanta,quantum | in                | voluptas,voluptatis
+prs |    -   -               | Prep w/Ac/Ab      | F-Ab-S             
+trn | how great              | in, on/into, onto | pleasure           
+cmt |                        |                   |                    
+----------------------------------------------------------------------
+txt | bacchabere | cum       | in                | tanto              
+dct |            | cum       | in                | tantus,tanta,tantum
+prs |            | Prep w/Ab | Prep w/Ac/Ab      |    -   -S          
+trn |            | with      | in, on/into, onto | so great           
+cmt |            |           |                   |                    
+----------------------------------------------------------------------
+
+
+txt | numero         | tuorum        | neque       
+dct | numerus,numeri | tuus,tua,tuum | neque       
+prs | M-   -S        |    -G-P       | Conj        
+trn | number         | your          | neither, nor
+cmt |                |               |             
+----------------------------------------------------------------------
+txt | audies                    | virum    | bonum           
+dct | audio,-ire,audivi,auditus | vir,viri | bonus,bona,bonum
+prs | 2S-F-I-A                  | M-Ac-S   |    -   -S       
+trn | to hear                   | man      | good            
+cmt |                           |          |                 
+----------------------------------------------------------------------
+txt | quemquam | neque        | videbis               | ad        
+dct |          | neque        | video,-ere,vidi,visus | ad        
+prs |          | Conj         | 2S-F-I-A              | Prep w/Ac 
+trn |          | neither, nor | to see                | to, toward
+cmt |          |              |                       |           
+----------------------------------------------------------------------
+txt | huius | vitae      | studium        | meditati | illi           
+dct |       | vita,vitae | studium,studii |          | ille,illa,illud
+prs |       | F-   -     | N-N-S          |          |    -   -       
+trn |       | life       | eagerness      |          | that           
+cmt |       |            |                |          |                
+----------------------------------------------------------------------
+txt | sunt           | qui           | feruntur | labores
+dct | sum,esse,fui,- | qui,quae,quod |          |        
+prs | 3P-P-I-A       | M-N-          |          |        
+trn | to be          | rel./inq.     |          |        
+cmt |                |               |          |        
+----------------------------------------------------------------------
+txt | tui           | iacere                   | humi       | non
+dct | tuus,tua,tuum | iaceo,-ere,iacui,iacitus | humus,humi | non
+prs |    -   -      | 2S-P-   -                | F-   -     | Adv
+trn | your          | to lie                   | ground     | not
+cmt |               |                          |            |    
+----------------------------------------------------------------------
+txt | solum | ad         | obsidendum | stuprum | verum           
+dct |       | ad         |            |         | verus,vera,verum
+prs |       | Prep w/Ac  |            |         |    -   -S       
+trn |       | to, toward |            |         | true            
+cmt |       |            |            |         |                 
+----------------------------------------------------------------------
+txt | etiam | ad         | facinus           | obeundum | vigilare
+dct | etiam | ad         | facinus,facinoris |          |         
+prs | Adv   | Prep w/Ac  | N-N-S             |          |         
+trn | still | to, toward | passionate act?   |          |         
+cmt |       |            |                   |          |         
+----------------------------------------------------------------------
+
+
+txt | non | solum | insidiantem | somno        | maritorum     
+dct | non |       |             | somnus,somni | maritus,mariti
+prs | Adv |       |             | M-   -S      | M-G-P         
+trn | not |       |             | sleep        | husband       
+cmt |     |       |             |              |               
+----------------------------------------------------------------------
+txt | verum            | etiam | bonis            | otiosorum
+dct | verus,vera,verum | etiam | bonus,bona,bonum |          
+prs |    -   -S        | Adv   |    -   -P        |          
+trn | true             | still | good             |          
+cmt |                  |       |                  |          
+----------------------------------------------------------------------
+txt | habes                    | ubi | ostentes | tuam         
+dct | habeo,-ere,habui,habitus |     |          | tuus,tua,tuum
+prs | 2S-P-I-A                 |     |          | F-Ac-S       
+trn | to have, hold            |     |          | your         
+cmt |                          |     |          |              
+----------------------------------------------------------------------
+txt | illam           | praeclaram | patientiam | famis | frigoris
+dct | ille,illa,illud |            |            |       |         
+prs | F-Ac-S          |            |            |       |         
+trn | that            |            |            |       |         
+cmt |                 |            |            |       |         
+----------------------------------------------------------------------
+txt | inopiae | rerum   | omnium     | quibus        | te
+dct |         | res,rei | omnis,omne | qui,quae,quod |   
+prs |         | F-G-P   |    -G-P    |    -   -P     |   
+trn |         | thing   | all        | rel./inq.     |   
+cmt |         |         |            |               |   
+----------------------------------------------------------------------
+txt | brevi        | tempore         | confectum | esse          
+dct | brevis,breve | tempus,temporis |           | sum,esse,fui,-
+prs |    -   -S    | N-Ab-S          |           | P-Inf-A       
+trn | short        | time            |           | to be         
+cmt |              |                 |           |               
+----------------------------------------------------------------------
+txt | senties                  | tantum              | profeci
+dct | sentio,-ire,sensi,sensus | tantus,tanta,tantum |        
+prs | 2S-F-I-A                 |    -   -S           |        
+trn | to sense                 | so great            |        
+cmt |                          |                     |        
+----------------------------------------------------------------------
+txt | cum       | te | a         | consulatu | reppuli | ut   | exsul
+dct | cum       |    | ab        |           |         | ut   |      
+prs | Prep w/Ab |    | Prep w/Ab |           |         | Conj |      
+trn | with      |    | from, by  |           |         | .    |      
+cmt |           |    |           |           |         |      |      
+----------------------------------------------------------------------
+
+
+txt | potius | temptare | quam          | consul          | vexare
+dct |        |          | qui,quae,quod | consul,consulis |       
+prs |        |          | F-Ac-S        | M-N-S           |       
+trn |        |          | rel./inq.     | consul          |       
+cmt |        |          |               |                 |       
+----------------------------------------------------------------------
+txt | rem     | publicam | posses | atque | ut   | id        | quod
+dct | res,rei |          |        | atque | ut   | is,ea,id  |     
+prs | F-Ac-S  |          |        | Conj  | Conj | N-N-S     |     
+trn | thing   |          |        | and   | .    | weak dem. |     
+cmt |         |          |        |       |      |           |     
+----------------------------------------------------------------------
+txt | esset          | a         | te | scelerate
+dct | sum,esse,fui,- | ab        |    |          
+prs | 3S-Impf-S-A    | Prep w/Ab |    |          
+trn | to be          | from, by  |    |          
+cmt |                |           |    |          
+----------------------------------------------------------------------
+txt | susceptum                       | latrocinium           
+dct | suscipio,-ere,suscepi,susceptus | latrocinium,latrocinii
+prs |                                 | N-N-S                 
+trn | to undertake                    | robbery               
+cmt |                                 |                       
+----------------------------------------------------------------------
+txt | potius | quam          | bellum | nominaretur | nunc | ut  
+dct |        | qui,quae,quod |        |             | nunc | ut  
+prs |        | F-Ac-S        |        |             | Adv  | Conj
+trn |        | rel./inq.     |        |             | now  | .   
+cmt |        |               |        |             |      |     
+----------------------------------------------------------------------
+txt | a         | me | patres       | conscripti | quandam | prope
+dct | ab        |    | pater,patris |            |         |      
+prs | Prep w/Ab |    | M-   -P      |            |         |      
+trn | from, by  |    | father       |            |         |      
+cmt |           |    |              |            |         |      
+----------------------------------------------------------------------
+txt | iustam              | patriae        | querimoniam | detester
+dct | iustus,iusta,iustum | patria,patriae |             |         
+prs | F-Ac-S              | F-   -         |             |         
+trn | just                | fatherland     |             |         
+cmt |                     |                |             |         
+----------------------------------------------------------------------
+txt | ac    | deprecer | percipite | quaeso | diligenter
+dct | atque |          |           |        | diligenter
+prs | Conj  |          |           |        | Adv       
+trn | and   |          |           |        | carefully 
+cmt |       |          |           |        |           
+----------------------------------------------------------------------
+
+
+txt | quae          | dicam                 | et   | ea         
+dct | qui,quae,quod | dico,-ere,dixi,dictus | et   | is,ea,id   
+prs |    -N-        | 1S-   -   -A          | Conj |    -   -   
+trn | rel./inq.     | to speak              | and  | weak dem.  
+cmt |               |                       |      |            
+----------------------------------------------------------------------
+txt | penitus | animis | vestris               | mentibus    | +que
+dct |         |        | vester,vestra,vestrum | mens,mentis | +que
+prs |         |        |    -   -P             | F-   -P     | Conj
+trn |         |        | your                  | mind        | and 
+cmt |         |        |                       |             |     
+----------------------------------------------------------------------
+txt | mandate
+dct |        
+prs |        
+trn |        
+cmt |        
+----------------------------------------------------------------------
+
+
+UNKNOWN: tandem
+UNKNOWN: te
+UNKNOWN: pridem
+UNKNOWN: cupiditas
+UNKNOWN: effrenata
+UNKNOWN: furiosa
+UNKNOWN: rapiebat
+UNKNOWN: tibi
+UNKNOWN: adfert
+UNKNOWN: quandam
+UNKNOWN: incredibilem
+UNKNOWN: te
+UNKNOWN: amentiam
+UNKNOWN: peperit
+UNKNOWN: exercuit
+UNKNOWN: tu
+UNKNOWN: ne
+Conflict: bellum might be from:
+- bellum,belli N-N-S war
+- bellus,bella,bellum    -   -S handsome
+UNKNOWN: quidem
+UNKNOWN: nisi
+UNKNOWN: nefarium
+UNKNOWN: concupisti
+UNKNOWN: nactus
+UNKNOWN: perditis
+UNKNOWN: derelictis
+UNKNOWN: conflatam
+UNKNOWN: improborum
+Conflict: hic might be from:
+- hic Adv here
+- hic,ha,hum M-N-S this
+UNKNOWN: tu
+UNKNOWN: laetitia
+UNKNOWN: perfruere
+UNKNOWN: exsultabis
+UNKNOWN: bacchabere
+UNKNOWN: quemquam
+UNKNOWN: huius
+UNKNOWN: meditati
+UNKNOWN: feruntur
+Conflict: labores might be from:
+- laboro,laborare,laboravi,laboratus 2S-P-S-A to work
+- labor,laboris M-   -P toil
+Conflict: solum might be from:
+- solus,sola,solum    -   -S alone
+- sol,solis M-G-P sun
+UNKNOWN: obsidendum
+UNKNOWN: stuprum
+UNKNOWN: obeundum
+UNKNOWN: vigilare
+Conflict: solum might be from:
+- solus,sola,solum    -   -S alone
+- sol,solis M-G-P sun
+UNKNOWN: insidiantem
+UNKNOWN: otiosorum
+UNKNOWN: ubi
+UNKNOWN: ostentes
+UNKNOWN: praeclaram
+UNKNOWN: patientiam
+Conflict: famis might be from:
+- fama,famae F-   -P rumor
+- fames,famis F-G-S famine
+UNKNOWN: frigoris
+UNKNOWN: inopiae
+UNKNOWN: te
+UNKNOWN: confectum
+UNKNOWN: profeci
+UNKNOWN: te
+UNKNOWN: consulatu
+UNKNOWN: reppuli
+UNKNOWN: exsul
+UNKNOWN: potius
+UNKNOWN: temptare
+UNKNOWN: vexare
+UNKNOWN: publicam
+UNKNOWN: posses
+UNKNOWN: quod
+UNKNOWN: te
+UNKNOWN: scelerate
+UNKNOWN: potius
+Conflict: bellum might be from:
+- bellum,belli N-N-S war
+- bellus,bella,bellum    -   -S handsome
+UNKNOWN: nominaretur
+UNKNOWN: me
+UNKNOWN: conscripti
+UNKNOWN: quandam
+UNKNOWN: prope
+UNKNOWN: querimoniam
+UNKNOWN: detester
+UNKNOWN: deprecer
+UNKNOWN: percipite
+UNKNOWN: quaeso
+UNKNOWN: penitus
+Conflict: animis might be from:
+- anima,animae F-   -P spirit
+- animus,animi M-   -P mind
+UNKNOWN: mandate
+Participle: susceptum: suscipio,suscipere,suscepi,susceptus: Pf-Ppl-P/   -   -S: to undertake

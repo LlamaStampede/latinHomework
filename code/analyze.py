@@ -4,9 +4,12 @@ lines = f.read()
 f.close()
 
 usableText = []
+lastspace = False #prevents double spaces
 for i in range(0, len(lines)):
-    if lines[i].isalpha() or lines[i] == " ":
+    if lines[i].isalpha() or (lines[i] == " " and not lastspace):
         usableText.append(lines[i])
+        if lines[i] == " ": lastspace = True
+        else: lastspace = False
 while usableText[0] == " ":
     usableText.pop(0)
 usableText = "".join(usableText)
@@ -14,7 +17,7 @@ usableText = usableText.split(" ")
 
 realText = []
 for term in usableText:
-    if len(term) > 3 and term[-3:] == "que" and not term in ["atque","quemque"]: realText += [term[:-3],"+que"]
+    if len(term) > 3 and term[-3:] == "que" and not term in ["atque", "quemque", "neque", "plerumque"]: realText += [term[:-3],"+que"]
     else: realText.append(term)
 
 from describe import *
@@ -92,10 +95,15 @@ for term in ex_terms:
         if stem[3] == term[:len(stem[3])] or stem[4] == term[:len(stem[4])]:
             pos[-1].append(["v","ppl",stem]) #checks all resulting participles if either "capie" or "capt" begins the term
 
-    prns = [["hic","this",5],["qui","rel./inq.",6],["is","weak dem.",3]] #word, def, max length
-    pres = [["h"],["qu","cui"],["i","e"]] #prefixes (word-beginnings)
-    for i in range(len(pres)):
-        for pre in pres[i]: #checks if term begins with same initial letters as any pronouns
+    #pronouns and special adjectives
+    unus = [["unus","one"],["nullus","none"],["ullus","any"],["solus","alone"],["neuter","neither"],["alter","either"],["uter","whichever"],["totus","all"],["alius","other"]] #unus nauta
+    for un in unus:
+        if term[:len(un[0])-2] == un[0][:-2]: pos[-1].append(["unus",un])
+
+    prns = [["hic","this",5],["ille","that",7],["iste","that",7], ["qui","rel./inq.",6],["is","weak dem.",3]] #word, def, max length
+    first = [["h"],["ill"],["ist"],["qu","cui"],["i","e"]] #first letters (pre = prefix)
+    for i in range(len(first)):
+        for pre in first[i]: #checks if term begins w/ same letters as any pronoun
             if len(term) <= prns[i][2] and term[:len(pre)] == pre: pos[-1].append(["prn",prns[i][:2]])
 
     #nouns
@@ -106,7 +114,9 @@ for term in ex_terms:
     for stem in astems:
         if term in stem[2:4] or term[:len(stem[1])] == stem[1]: pos[-1].append(["adj",stem])
 
-    if term in ["atque","+que","ac","et","sed","at","autem","tamen","si","tam","ita","sic"]: pos[-1].append(["conj"])
+    #conjunctions
+    conjs = ["atque", "+que", "ac", "et", "sed", "at", "autem", "tamen", "si", "tam", "ita", "sic", "ut", "neque", "enim", "nam"]
+    if term in conjs: pos[-1].append(["conj"])
 
 
 #Phase: Select
@@ -118,11 +128,23 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     final_list.append(final)
     if rep != []: report.append(rep)
 
+import os
+os.remove("describe.pyc")
+os.remove("expand.pyc")
 
 #Phase: Format
 ppls = []
-parsing = raw_input("Parsing, y/n? ")
-errors = raw_input("Report errors, y/n? ")
+while True:
+    parsing = raw_input("Parsing, y/n? ")
+    if parsing == "": parsing = "y"
+    if parsing in ["y","n"]: break
+    print "Invalid Response"
+while True:
+    errors = raw_input("Report errors, y/n? ")
+    if errors == "": errors = "y"
+    if errors in ["y","n"]: break
+    print "Invalid Response"
+
 for col in range(len(final_list)):
     if parsing == "n": final_list[col][2] = ""
     elif "Ppl" in final_list[col][2]:
@@ -173,18 +195,21 @@ doc_width = 70 # change this to widen or lengthen the final product
 indent = 6
 all_lines = []
 line_group = []
-block_count = 0
+page = []
 for col_id in range(len(final_list)):
     if indent + col_widths[col_id] > doc_width:
         line_group.insert(0,["txt","dct","prs","trn","cmt"])
-        all_lines.append(line_group) # archives old line
+        page.append(line_group) # archives old line
         indent = 6
         line_group = [] # begins new line
-    #if block_count == 8: print "\n\n"
+        if len(page) == 8:
+            all_lines.append(page)
+            page = []
     line_group.append(final_list[col_id])
     indent += col_widths[col_id] + 3
 line_group.insert(0,["txt","dct","prs","trn","cmt"])
-all_lines.append(line_group)
+page.append(line_group)
+all_lines.append(page)
 
 horizon = ""
 for i in range(doc_width):
@@ -193,12 +218,15 @@ for i in range(doc_width):
 name = raw_input("Output file name: ")
 if name in ["","y"]: name = "output"
 output = open(name+".txt","w+")
-for line_group in all_lines:
-    for row in flipped(line_group):
-        for col_id in range(len(row)):
-            if col_id == len(row) - 1: output.write(row[col_id]+"\n")
-            else: output.write(row[col_id]+" | ")
-    output.write(horizon+"\n")
+for pg in all_lines:
+    for line_group in pg:
+        for row in flipped(line_group):
+            for col_id in range(len(row)):
+                output.write(row[col_id])
+                if col_id == len(row) - 1: output.write("\n")
+                else: output.write(" | ")
+        output.write(horizon+"\n")
+    output.write("\n\n")
 
 if errors == "y":
     for err in report:
@@ -211,7 +239,3 @@ if parsing == "y":
     for ppl in ppls:
         output.write("Participle: "+": ".join(ppl)+"\n")
 output.close()
-
-import os
-os.remove("describe.pyc")
-os.remove("expand.pyc")
