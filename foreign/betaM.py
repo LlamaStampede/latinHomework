@@ -19,20 +19,11 @@ final = []
 #print(s[-2:]) -> 56
 
 cases = ["N", "G", "D", "Ac", "Ab"]
-def parsing(endingsId, endingId):
-    if endingsId == 0:
-        gender = "F"
-    elif endingsId == 1:
-        gender = "M"
-    else:
-        gender = "N"
-    case = cases[endingId % 5]
-    if endingId < 5:
-        number = "Sg"
-    else:
-        number = "Pl"
-    prs = "-".join([gender, case, number])
-    return(prs)
+def parsing(genderId, endingId):
+    gender = ["F","M","N"][genderId]
+    case = cases[endingId%5]
+    number = ["Sg","Pl"][endingId/5]
+    return "-".join([gender, case, number])
 
 def main(possibleTerms):
     empty = " "
@@ -140,18 +131,13 @@ def main(possibleTerms):
                 p = prs
                 t = term[3]
             else: #if any extra term, probably there is an easier way to write this
-                if w != term[0]:
-                    w = empty
-                if d != term[1]:
-                    d = empty
-                if p[0] != prs[0]:
-                    p[0] = empty
-                if p[1] != prs[1]:
-                    p[1] = empty
-                if p[2] != prs[2]:
-                    p[2] = empty
-                if t != term[3]:
-                    t = empty
+                if w != term[0]: w = empty
+                if d != term[1]: d = empty
+                if p[0] != prs[0]: p[0] = empty
+                if p[1] != prs[1]: p[1] = empty
+                if p[2] != prs[2]: p[2] = empty
+                if t != term[3]: t = empty
+                #actually, this might be useful
         lisOfFive = [w, d, "-".join(p), t, ""]
         errors.append([word, confirmedTerms])
     return(lisOfFive)

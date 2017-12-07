@@ -1,3 +1,5 @@
+fero	ferre	tuli	latus	bear, speak
+adfero	adferre	attuli	allatus	bring forth
 paro	parare	paravi	paratum	prepare
 moneo	monere	monui	monitum	warn
 rego	regere	rexi	rectum	rule
@@ -13,6 +15,12 @@ loquor	loqui	locutum sum	-	speak
 labor	labi	lapsum sum	-	glide
 caedo	caedere	cecidi	caesum	-	cut
 servio	servire	servivi	servitum	serve
+effreno	effrenare	effrenavi	effrenatum	unbridle
+rapio	rapere	rapui	raptum	snatch, hasten
+pario	parere	peperi	partum	produce
+exerceo	exercere	exercui	exercitum	drive, work
+utor	uti	usus sum	-	use
+perdo	perdere	perdidi	perditum	destroy?waste?lose
 amo	amare	amavi	amatum	love
 cogito	cogitare	cogitavi	cogitatum	consider
 debeo	debere	debui	debitum	ought, hesitate

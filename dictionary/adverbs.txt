@@ -47,3 +47,8 @@ seldom	rare
 rarely	rare
 never	numquam
 not	non
+finally	tandem
+previously	pridem
+indeed	quidem
+only	non_modo
+near	prope

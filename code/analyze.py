@@ -18,6 +18,7 @@ usableText = usableText.split(" ")
 realText = []
 for term in usableText:
     if len(term) > 3 and term[-3:] == "que" and not term in ["atque", "quemque", "neque", "plerumque"]: realText += [term[:-3],"+que"]
+    elif term == "modo" and realText[-1] == "non": realText[-1] = "non_modo"
     else: realText.append(term)
 
 from describe import *
@@ -115,8 +116,13 @@ for term in ex_terms:
         if term in stem[2:4] or term[:len(stem[1])] == stem[1]: pos[-1].append(["adj",stem])
 
     #conjunctions
-    conjs = ["atque", "+que", "ac", "et", "sed", "at", "autem", "tamen", "si", "tam", "ita", "sic", "ut", "neque", "enim", "nam"]
+    conjs = ["atque","+que","ac","et","sed","at","aut","autem","tamen","si","tam","ita","sic","ut","neque","enim","nam","dum","cum","quod"]
     if term in conjs: pos[-1].append(["conj"])
+    
+    #personal pronouns
+    for letter in ["m","t","s","n","v"]:
+        if term[0] == letter: pos[-1].append(["pers"])
+    if term == "ego": pos[-1].append(["pers"])
 
 
 #Phase: Select
@@ -159,9 +165,19 @@ for col in range(len(final_list)): #dct compression
         elif not "-" in stem and stem[1][-2:] == "re" and [stem[0][-2:],stem[1][-3]] != ["eo","i"]:
             root = stem[1][:-3]
             [two,three,four] = ["-"+stem[1][-3:],stem[2],stem[3]]
-            if len(stem[2]) > root and root == stem[2][:len(root)]: three = "-" + stem[2][len(root):]
-            if len(stem[3]) > root and root == stem[3][:len(root)]: four = "-" + stem[3][len(root):]
+            if len(stem[2]) > len(root) and root == stem[2][:len(root)]: three = "-" + stem[2][len(root):]
+            if len(stem[3]) > len(root) and root == stem[3][:len(root)]: four = "-" + stem[3][len(root):]
             final_list[col][1] = ",".join([stem[0],two,three,four])
+    if len(stem) == 3 and [stem[0][-2:],stem[1][-1],stem[2][-2:]] == ["us","a","um"]: final_list[col][1] = stem[0]+",-a,-um"
+    if len(stem) == 2:
+        if [stem[0][-1],stem[1][-2:]] == ["a","ae"]: final_list[col][1] = stem[0]+",-ae"
+        elif [stem[0][-2:],stem[1][-1]] == ["us","i"]: final_list[col][1] = stem[0]+",-i"
+        elif [stem[0][-2:],stem[1][-2:]] == ["us","us"]: final_list[col][1] = stem[0]+",-us"
+        elif [stem[0][-2:],stem[1][-2:]] == ["es","ei"]: final_list[col][1] = stem[0]+",-ei"
+        else:
+            for t in [["tas","tatis"],["tio","tionis"],["or","oris"],["is","e"]]:
+                if [stem[0][-len(t[0]):],stem[1][-len(t[1]):]] == t:
+                    final_list[col][1] = stem[0]+",-"+t[1]
 
 def flipped(block):
     table = []
@@ -191,7 +207,13 @@ for col_id in range(len(final_list)):
 # "good   "
 # "       "]
 
-doc_width = 70 # change this to widen or lengthen the final product
+doc_width = raw_input("Document Width: ")
+try:
+    if doc_width == "": doc_width = 70
+    elif doc_width == " ": doc_width = 182
+    else: doc_width = int(doc_width)
+except:
+    doc_width = 70
 indent = 6
 all_lines = []
 line_group = []
@@ -228,6 +250,10 @@ for pg in all_lines:
         output.write(horizon+"\n")
     output.write("\n\n")
 
+if parsing == "y":
+    for ppl in ppls:
+        ppl[2] = "\n" + ppl[2]
+        output.write("Participle: "+": ".join(ppl)+"\n")
 if errors == "y":
     for err in report:
         if err[0] == "unknown": output.write("UNKNOWN: "+err[1]+"\n")
@@ -235,7 +261,4 @@ if errors == "y":
             output.write("Conflict: "+err[1]+" might be from:\n")
             for w in err[2:]: #w = each individual dictionary entry
                 output.write("- "+w[0]+" "+w[1]+" "+w[2]+"\n")
-if parsing == "y":
-    for ppl in ppls:
-        output.write("Participle: "+": ".join(ppl)+"\n")
 output.close()

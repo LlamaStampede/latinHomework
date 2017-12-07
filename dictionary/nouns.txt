@@ -61,6 +61,7 @@ epistula	-ae	f	letter
 fabula	-ae	f	story
 scientia	-ae	f	knowledge
 disciplina	-ae	f	discipline
+amentia	-ae	f	madness?insanity
 amicus	-i	m	friend
 animus	-i	m	mind
 deus	-i	m	god
@@ -81,6 +82,7 @@ modus	-i	m	measure
 imperium	-i	n	command
 oculus	-i	m	eye
 natus	-i	m	son
+derelictus	-i	m	derelict
 consilium	-i	n	plan council
 castrum	-i	n	fortress (pl)camp
 ferrum	-i	n	iron
@@ -133,7 +135,7 @@ supplicium	-i	n	penalty
 astrum	-i	n	star
 dolus	-i	m	device
 superi	-orum	m	gods
-otium	-i	n	leisure
+otium	-i	n	leisure, peace
 vestigium	-i	n	footstep
 gaudium	-i	n	delight
 humus	-i	f	ground
@@ -160,6 +162,7 @@ magister	magistri	m	master
 frumentum	-i	n	grain
 principium	-i	n	beginning
 sepulcrum	-i	n	tomb?grave
+cupiditas	cupiditatis	f	desire
 rex	regis	m	king
 pars	partis	f	part
 pater	patris	m	father

@@ -4,11 +4,12 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
     if verb[0][-1] in ["o","r"]:
         dep = False
         semidep = False
-        addit = 0
+
         if verb[0][-1] == "r": dep = True
         elif " " in verb[2]: semidep = True
-
+        addit = 0
         if dep: addit = 1
+        
         if verb[1][-3] == "a": conj = "1"
         elif verb[1][-3] == "i": conj = "4"
         elif verb[0][-2-addit] == "e": conj = "2"
@@ -22,12 +23,12 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         elif verb[3] == "-" and not "-" in verb[:3]: conj += "A"
         elif "-" in verb: conj = "def"
         if [verb[0][-2:],conj] == ["eo","4"]: conj += "E"
+        if len(verb[0]) >= 4 and verb[0][-4:] == "fero": conj += "F"
 
         primary = verb[0][:-1]
         if dep or conj == "4E": primary = verb[0][:-2]
         secondary = verb[2][:-1]
-        if dep or semidep: secondary = "-"
-        if verb[2] == "-": secondary = "-"
+        if dep or semidep or verb[2] == "-": secondary = "-"
 
         impf = primary
         if conj[0] == "1": impf += "a"
