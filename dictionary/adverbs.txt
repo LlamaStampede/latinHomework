@@ -52,3 +52,4 @@ previously	pridem
 indeed	quidem
 only	non_modo
 near	prope
+then	tum

@@ -15,7 +15,7 @@ hics = [["ic","aec","oc"],
 ["oc","ac","oc"],
 ["i","ae","aec"],
 ]
-case = ["N","G","D","Ac","Ab"]
+cases = ["N","G","D","Ac","Ab"]
 number = ["S","P"]
 vowels = ["a","e","i","o","u"]
 def deply(conj,voice):
@@ -40,6 +40,191 @@ def infin(c,stem):
     if stem[1] == "faci": ppi = "fieri"
     return [pai,ppi]
 
+def present(stem):
+    forms = []
+    [conj,primary,secondary,impf,ppp,dfn] = stem
+    c = conj[0]
+    for tense in ["P","Impf","F"]:
+        for i in range(12): #range(12) means 1st/2nd/3rd Sg/Pl Active/Passive
+            if i<6: voice = "A"
+            else: voice = "P"
+            if stem[0][-1] == "D": voice = "D"
+            
+            bam = tense == "Impf" or (tense == "F" and (c in ["1","2"] or conj == "4E"))
+            root = primary
+            if bam: root = impf + "b"#This line undoes the last one for parabit, monebit, etc.
+            fio = primary == "faci" and i >= 6
+            if fio:
+                root = "fi"
+                if bam: root = "fieb"
+                i -= 6
+            if tense == "Impf": root += "a"
+
+            end = personal[i]
+            if tense == "P":
+                if c in ["3","4"]:
+                    if i%6 == 5: end = "u" + end #capiunt
+                    if not (conj == "3F" and i in [1,2,4,7,8]):
+                        if i == 7: end = "eris" #avoid "iri" in the 2ndSgP
+                        elif c == "3" and not "i" in conj and i%6 in range(1,5): end = "i" + end #regit, not regunt
+                if c == "1" and i%6 != 0: end = "a" + end
+                if stem[0] == "4E":
+                    if i in range(1,5): end = "i" + end
+                    else: end = "e" + end
+
+            elif tense == "Impf":
+                if i%6 == 0: end = ["m","r"][i/6] #parabam
+            elif tense == "F":
+                if c in ["1","2"] or conj == "4E": #bo bis bit
+                    if i%6 in range(1,5): end = "i" + end
+                    elif i%6 == 5: end = "u" + end
+                    if i == 7: end = "eris"
+                else: #ham and 5 eggs
+                    if i%6 == 0: end = ["m","r"][i/6]
+                    if i%6 == 0: end = "a" + end #ham
+                    else: end = "e" + end #5 eggs
+
+            if deply(conj,i): #deply ensures that if the verb is deponent, forms gets no active endings
+                forms.append([root+end,"%s-%s-I-%s"%(persons[i%6],tense,voice)])
+                if (root+end)[-3:] == "ris": forms.append([(root+end)[:-2]+"e","%s-%s-I-%s"%(persons[i%6],tense,voice)])
+    [pai,ppi] = infin(c,stem)
+    if stem[0][-1] != "D":
+        forms.append([pai,"P-Inf-A"])
+        forms.append([ppi,"P-Inf-P"]) #parari
+    else: forms.append([ppi,"P-Inf-D"]) #hortari
+
+    for tense in ["P","Impf"]: #subjunctives
+        for i in range(12):
+            if i<6: voice = "A"
+            else: voice = "P"
+            if stem[0][-1] == "D": voice = "D"
+            
+            root = primary
+            end = personal[i]
+            if i%6 == 0: end = ["m","r"][i/6]
+            
+            fio = primary == "faci" and i >= 6
+            if fio:
+                root = "fi"
+                i -= 6
+                if i == 0: end = "m"
+
+            if tense == "P": #lets eat caviar
+                if stem[0] == "4E": root = root + "e"
+                if c == "1" and i%6 != 0: end = "e" + end #lets
+                else: end = "a" + end #eat caviar
+            else: root = pai #imperfect subjuntives are the p.a.i. plus personal endings
+            if fio and tense == "Impf": root = "fiere"
+            if deply(stem[0],i):
+                forms.append([root+end,"%s-%s-S-%s"%(persons[i%6],tense,voice)])
+                if (root+end)[-3:] == "ris": forms.append([(root+end)[:-2]+"e","%s-%s-S-%s" % (persons[i%6],tense,voice)]) #alternative 2ndPlP form (looks like p.a.i. in the present)
+
+    if deply(stem[0],0):
+        forms.append([pai[:-2],"2S-P-Imp-A"])
+        if c == "3" and conj != "3F": forms.append([pai[:-3]+"ite","2P-P-Imp-A"])
+        else: forms.append([pai[:-2]+"te","2P-P-Imp-A"])
+    return forms
+def perfect(stem):
+    forms = []
+    for tense in ["Pf","Ppf","Fp"]:
+        root = stem[2] #perfect stem (parav,monu,dux)
+        for i in range(6): #range(6) is 1st/2nd/3rd Sg/Pl Active
+            end = personal[i]
+            if i == 0: end = "m"
+            if tense == "Pf": end = perfects[i] #i isti it
+            elif tense == "Ppf": end = "a" + end #rexeramus
+            elif i != 0: end = "i" + end #rexerimus
+            if tense != "Pf": end = "er" + end #rexeramus and rexerimus
+
+            [la,lb] = [1,1] #syncopation, alternative forms
+            if end[-3:] == "ris": la += 1
+            if stem[2][-1] == "v" and end != "i": lb += 1
+            if stem[0][0] == "4": lb += 1
+            for a in range(la):
+                for b in range(lb):
+                    fin = end
+                    if a == 1: fin = fin[:-2] + "e"
+                    if b == 0: beg = root
+                    else: beg = root[:-1]
+                    if b == 1 and end != "i": fin = fin[1:]
+                    forms.append([beg+fin,"%s-%s-I-A" % (persons[i%6],tense)])
+
+    pfi = [] #pfi = PerFect active Infinitive
+    lb = 1
+    if stem[2][-1] == "v": lb += 1
+    if stem[0][0] == "4": lb += 1
+    for b in range(lb):
+        end = "isse"
+        if b == 0: beg = stem[2]
+        else: beg = stem[2][:-1]
+        if b == 1: end = "sse"
+        pfi.append(beg+end)
+    for i in pfi:
+        forms.append([i,"Pf-I-A"])
+
+    for tense in ["Pf","Ppf"]: #subjunctives
+        for i in range(6):
+            end = personal[i]
+            if i == 0: end = "m"
+            if tense == "Pf":
+                roots = []
+                lb = 1
+                if stem[2][-1] == "v": lb += 1
+                if stem[0][0] == "4": lb += 1
+                for b in range(lb):
+                    mid = "eri"
+                    if b == 0: beg = stem[2]
+                    else: beg = stem[2][:-1]
+                    if b == 1: mid = mid[1:]
+                    roots.append(beg + mid) #pf subjunctive perfect stem + "eri" + personal endings
+            else: roots = pfi #ppf subjunctives = p.f.i. + personal endings
+            for root in roots:
+                forms.append([root+end,"%s-%s-S-A"%(persons[i%6],tense)])
+                if (root+end)[-3:] == "ris": forms.append([(root+end)[:-2]+"e","%s-%s-S-A"%(persons[i%6],tense)]) #alt 2-Pl...P form
+    return forms
+def case(stem): #nouns, pronouns, adjectives, participles
+    forms = []
+    [decl,nom,root,gender,pos] = stem
+    ends = sufs[decl][:] #Specific to the word's declension
+    if [decl,gender] == [4,"N"]: ends[5] = "ua" #4th Declension neuter plural
+    elif stem[3] == "N": ends[5] = "a" #N.G.R.2
+    istem = False
+    if decl == 3:
+        if len(root) > 1 and (nom[-1] in ["s","x"] and not (root[-1] in vowels or root[-2] in vowels)): istem = True #base in 2 consonants
+        elif len(nom) > len(root): istem = True #monosyllabic (not actually functional, idk how to)
+        elif gender == "N" and (nom[-2:] in ["al","ar"] or nom[-1] == ["e"]): istem = True #neuter ending in -al,-ar,-e
+    if nom in ["mater","pater","frater"]: istem = False
+    for i in range(10): #todo (istem ab sg rules)
+        if i%5 == 3 and gender == "N": i -= 3 #N.G.R.1
+        end = ends[i]
+        if root == "qu":
+            if i in [1,2]: root = "cu"
+            if [i,gender] in [[5,"N"],[0,"F"]]: end = "ae"
+            if i in [7,9]: end = "ibus"
+        if pos in ["prn","unus"] and i in [1,2]: end = [0,"ius","i"][i]
+        if [root,i,gender] == ["qu",3,"M"]: end = "em"
+        if root == "h" and i < 6: end = hics[i][{"M":0,"F":1,"N":2}[gender]]
+        
+        if istem: #AblSg, Nom/AccPl, GenPl
+            if gender == "N" and i == 5:end = "i" + end #maria, sapientia
+            if (gender == "N" or pos == "adj") and i == 4: end = "i" #mari, sapienti
+            if i == 6: end = "i" + end #marium, sapientium
+        
+        word = root + end
+        if i == 0: word = nom #(nom/n-acc) sg
+        if word == "aliius": word = "alius"
+        if [root,i,gender] == ["e",0,"N"]: word = "id"
+        
+        case = cases[i%5]
+        if [case,gender] == ["N","N"]: case = "   "
+        if pos != "adj" or i < 5:forms.append([word,"%s-%s-%s" % (gender,case,number[i/5])]) #gender-case-number #or len(trn) < 4 or trn[-4:] != "(pl)"
+        if root == "e" and (i in [7,9] or [gender,i] == ["M",5]): forms.append(["i"+end,"%s-%s-%s"%(gender,cases[i%5],number[i/5])])
+        if root == "qu" and i == 0:
+            if gender == "N": word = "quid"
+            else: word = "quis"
+            forms.append([word,"%s-%s-%s"%(gender,cases[i%5],number[i/5])])
+    return forms
+
 def expand(pts):
     rep = []
     term = pts.pop(0)
@@ -48,12 +233,12 @@ def expand(pts):
         apls = [term] #apls=aplicable forms
         forms = [] #every form of the word will be added
         if p[0] == "prep":
-            if term == "a": dfn = "ab"
-            elif term == "e": dfn = "ex"
-            else: dfn = term
-            fins.append([term,dfn,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
+            if term == "a": dct = "ab"
+            elif term == "e": dct = "ex"
+            else: dct = term
+            fins.append([term,dct,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
         elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
-        elif p[0] == "conj":
+        elif p[0] == "conj": #trn is the conj equivalent of dfn
             if term in ["sed","at"]: trn = "but"
             elif term == "autem": trn = "moreover"
             elif term == "tamen": trn = "however"
@@ -81,159 +266,20 @@ def expand(pts):
                 elif person in [2,3]: end = ["u","ui","ibi","e","e"][i]
                 else: end = ["os","ostrum","obis","os","obis"][i]
                 word = letter+end
-                if [i,person] != [0,3]: forms.append([word,"   -%s-%s"%(case[i],num)])
+                if [i,person] != [0,3]: forms.append([word,"   -%s-%s"%(cases[i],num)])
                 if [i,person] == [1,4]: forms.append(["nostri","   -G-P"])
                 if [i,person] == [1,5]: forms.append(["vestrum","   -G-P"])
             person = [3,1,2][person%3]
-            dct = [0,"me,mihi","tu,tui","-,sui"][person].split(",")
+            dct = [0,"ego,mihi","tu,tui","-,sui"][person].split(",")
             dfn = "%i%s person prn"%(person,["st","nd","rd"][person-1])
             stem = [dct,dfn]
         elif p[0] == "v": #Intensive verb identifier, all tenses
             stem = p[2]
             if p[1] == "p": #present system (P,Impf,F)
-            #this section is only enabled if the term begins with some verb's present stem
-                c = stem[0][0] #1st character of conjugation (1,2,3,4)
-                for tense in ["P","Impf","F"]:
-                    pers = personal[:]
-                    for i in range(12): #range(12) means 1st/2nd/3rd Sg/Pl Active/Passive
-                        if i<6: voice = "A"
-                        else: voice = "P"
-                        if stem[0][-1] == "D": voice = "D"
-                        
-                        bam = tense == "Impf" or (tense == "F" and (c in ["1","2"] or stem[0] == "4E"))
-                        if tense in ["P","F"]: root = stem[1]
-                        if bam: root = stem[3] #This line undoes the last one for parabit, monebit, etc.
-                        if stem[1] == "faci" and i >= 6:
-                            root = "fi"
-                            if bam: root = "fie"
-                            i -= 6
-                            pers = personal[:]
-                        if bam: root += "b"
-                        if tense == "Impf": root += "a"
-
-                        if tense == "P":
-                            if c in ["3","4"]:
-                                if i%6 == 5: pers[i] = "u" + pers[i] #capiunt
-                                if not (stem[0] == "3F" and i in [1,2,4,7,8]):
-                                    if i == 7: pers[i] = "e" + pers[i] #avoid "iri" in the 2ndSgP
-                                    elif c == "3" and not "i" in stem[0] and i%6 in range(1,5): pers[i] = "i" + pers[i] #regit, not regunt
-                            if c == "1" and i%6 != 0: pers[i] = "a" + pers[i]
-                            if stem[0] == "4E":
-                                if i in range(1,5): pers[i] = "i" + pers[i]
-                                else: pers[i] = "e" + pers[i]
-
-                        elif tense == "Impf":
-                            pers[::6] = ["m","r"] #parabam
-                        elif tense == "F":
-                            if c in ["1","2"] or stem[0] == "4E": #bo bis bit
-                                if i%6 in range(1,5): pers[i] = "i" + pers[i]
-                                elif i%6 == 5: pers[i] = "u" + pers[i]
-                                pers[7] = "eris"
-                            else: #ham and 5 eggs
-                                pers[::6] = ["m","r"]
-                                if i%6 == 0: pers[i] = "a" + pers[i] #ham
-                                else: pers[i] = "e" + pers[i] #5 eggs
-
-                        if deply(stem[0],i): #deply ensures that if the verb is deponent, forms gets no active endings
-                            forms.append([root+pers[i],"%s-%s-I-%s"%(persons[i%6],tense,voice)])
-                            if (root+pers[i])[-3:] == "ris": forms.append([root+pers[i][:-2]+"e","%s-%s-I-%s"%(persons[i%6],tense,voice)])
-                [pai,ppi] = infin(c,stem)
-                if stem[0][-1] != "D":
-                    forms.append([pai,"P-Inf-A"])
-                    forms.append([ppi,"P-Inf-P"]) #parari
-                else: forms.append([ppi,"P-Inf-D"]) #hortari
-
-                for tense in ["P","Impf"]: #subjunctives
-                    for n in range(12):
-                        i = n
-                        if i<6: voice = "A"
-                        else: voice = "P"
-                        if stem[0][-1] == "D": voice = "D"
-                        
-                        root = stem[1]
-                        pers = personal[:]
-                        pers[::6] = ["m","r"]
-                        
-                        if root == "faci" and i >= 6:
-                            root = "fi"
-                            i -= 6
-                            pers = ["m"]+personal[1:]
-
-                        if tense == "P": #lets eat caviar
-                            if stem[0] == "4E": beg = root + "e"
-                            else: beg = root
-                            if c == "1" and i%6 != 0: pers[i] = "e" + pers[i] #lets
-                            else: pers[i] = "a" + pers[i] #eat caviar
-                        else: beg = pai #imperfect subjuntives are the p.a.i. plus personal endings
-                        if beg == "facere" and voice == "P": beg = "fiere"
-                        if deply(stem[0],i):
-                            forms.append([beg+pers[i],"%s-%s-S-%s"%(persons[i%6],tense,voice)])
-                            if (beg+pers[i])[-3:] == "ris": forms.append([beg+pers[i][:-2]+"e","%s-%s-S-%s" % (persons[i%6],tense,voice)]) #alternative 2ndPlP form (looks like p.a.i. in the present)
-
-                if deply(stem[0],0):
-                    forms.append([pai[:-2],"2S-P-Imp-A"])
-                    if c == "3" and stem[0] != "3F": forms.append([pai[:-3]+"ite","2P-P-Imp-A"])
-                    else: forms.append([pai[:-2]+"te","2P-P-Imp-A"])
-
-            elif p[1] == "pf": #perfect system (Pf,PPf,Fp). Also, note that no deponents have perfect active forms
-                for tense in ["Pf","Ppf","Fp"]:
-                    root = stem[2] #perfect stem (parav,monu,dux)
-                    pers = personal[:6]
-                    if tense == "Ppf": pers[0] = "m" #paraveram
-                    for i in range(6): #range(6) is 1st/2nd/3rd Sg/Pl Active
-                        if tense == "Pf": pers = perfects[:] #i isti it
-                        elif tense == "Ppf": pers[i] = "a" + pers[i] #rexeramus
-                        elif i != 0: pers[i] = "i" + pers[i] #rexerimus
-                        if tense != "Pf": pers[i] = "er" + pers[i] #rexeramus and rexerimus
-
-                        [la,lb] = [1,1]
-                        if pers[i][-3:] == "ris": la += 1
-                        if stem[2][-1] == "v" and pers[i] != "i": lb += 1
-                        if stem[0][0] == "4": lb += 1
-                        for a in range(la):
-                            for b in range(lb):
-                                end = pers[i]
-                                if a == 1: end = pers[i][:-2] + "e"
-                                if b == 0: beg = root
-                                else: beg = root[:-1]
-                                if b == 1 and pers[i] != "i": end = end[1:]
-                                forms.append([beg+end,"%s-%s-I-A" % (persons[i%6],tense)])
-
-                pfi = stem[2]+"isse"
-                lb = 1
-                pfi = [] #pfi = PerFect active Infinitive
-                lb = 1
-                if stem[2][-1] == "v": lb += 1
-                if stem[0][0] == "4": lb += 1
-                for b in range(lb):
-                    end = "isse"
-                    if b == 0: beg = stem[2]
-                    else: beg = stem[2][:-1]
-                    if b == 1: end = "sse"
-                    pfi.append(beg+end)
-                for i in pfi:
-                    forms.append([i,"Pf-I-A"])
-
-                for tense in ["Pf","Ppf"]: #subjunctives
-                    pers = personal[:6]
-                    pers[0] = "m"
-                    for i in range(6):
-                        if tense == "Pf":
-                            roots = []
-                            lb = 1
-                            if stem[2][-1] == "v": lb += 1
-                            if stem[0][0] == "4": lb += 1
-                            for b in range(lb):
-                                end = "eri"
-                                if b == 0: beg = stem[2]
-                                else: beg = stem[2][:-1]
-                                if b == 1: end = end[1:]
-                                roots.append(beg + end) #pf subjunctive perfect stem + "eri" + personal endings
-                        else: roots = pfi #ppf subjunctives = p.f.i. + personal endings
-                        for root in roots:
-                            forms.append([root+pers[i],"%s-%s-S-A"%(persons[i%6],tense)])
-                            if pers[i][-3:] == "ris": forms.append([root+pers[i][:-2]+"e","%s-%s-S-A"%(persons[i%6],tense)]) #alt 2-Pl...P form
-            elif p[1] == "ppl": #All participles, enabled if term contains impf stem (CAPIEbam) or p.p.p. stem (CAPTus)
+                forms += present(stem)
+            elif p[1] == "pf": #perfect system (Pf,PPf,Fp)
+                forms += perfect(stem)
+            elif p[1] == "ppl": #All participles, activated if term contains impf stem (CAPIEbam) or p.p.p. stem (CAPTus)
                 for n in range(4): #0:PPplA 1:FPplP 2:FPplA 3:PfPplP
                     nom = stem[[3,4][n/2]] + ["ns","nd","ur",""][n] #0:parans 1:parand(us-a-um) 2:paratur(us-a-um) 3:parat(us-a-um)
                     root = stem[[3,4][n/2]] + ["nt","nd","ur",""][n] #0:parant(is) 1:parand(i-ae) 2:paratur(i-ae) 3:parat(i-ae)
@@ -253,14 +299,12 @@ def expand(pts):
                             if n != 0 and i == 0: end = {"M":"us","F":"a","N":"um"}[g] #us-a-um in nom
                             if i == 0: word = nom + end #All (nominative/neuter-accusative) singulars
                             else: word = root + end #Everything else
-                            if not "-" in word: forms.append([word, "%s-Ppl-%s/-%s-%s-%s" % (["P","F","F","Pf"][n], voice,g,case[i%5],number[i/5])])
+                            if not "-" in word: forms.append([word, "%s-Ppl-%s/-%s-%s-%s" % (["P","F","F","Pf"][n], voice,g,cases[i%5],number[i/5])])
             elif p[1] == "sum": #For verbs that come from sum (possum,posse) in the present
                 pai = stem[3]
                 if len(stem[1]) != 0: pot = stem[1]
                 else: pot = "-"
                 for tense in ["P","Impf","F"]:
-                    pers = personal[:6]
-                    if tense == "Impf": pers[0] = "m"
                     for i in range(6):
                         root = pot
                         if tense == "P": end = sums[i]
@@ -268,118 +312,63 @@ def expand(pts):
                             end = "er"
                             if tense == "Impf": end += "a"
                             elif i != 0: end += "i"
-                            end += pers[i]
+                            if [i,tense] == [0,"Impf"]: end += "m"
+                            else: end += personal[i]
                         if end[0] == "s" and pot[-1] == "t": root = pot[:-1] + "s" #possum,potest
                         elif pot == "-": root = ""
                         forms.append([root+end,"%s-%s-I-A" % (persons[i], tense)])
 
                         if tense == "P": #Actually these are subjunctives
-                            pers[0] = "m"
+                            end = personal[i]
+                            if i == 0: end = "m"
                             if pot[-1] == "t": root = pot[:-1] + "s"
                             elif pot == "-": root = ""
-                            forms.append([root+"si"+pers[i],persons[i]+"-P-S-A"])
-                            forms.append([pai+pers[i],persons[i]+"-Impf-S-A"])
+                            forms.append([root+"si"+end,persons[i]+"-P-S-A"])
+                            forms.append([pai+end,persons[i]+"-Impf-S-A"])
                 forms.append([pai,"P-Inf-A"])
         elif p[0] in ["prn","unus"]: #This section not written yet
             stem = p[1]
+            [masc,dfn] = stem
             masc = p[1][0]
             for gender in ["M","F","N"]:
-                for i in range(10):
-                    if gender == "N" and i%5 == 3: i -= 3
-
-                    if masc[-2:] == "us": root = masc[:-2]
-                    elif masc[-2:] == "er": root = masc[:-2] + "r"
-                    elif masc[-1] == "e": root = masc[:-1]
-                    if masc == "is": root = "e"
-                    if masc == "hic": root = "h"
-                    if masc == "qui": root = "qu"
-                    if root == "qu" and i in [1,2]: root = "cu"
-
-                    if gender == "F": end = sufs[1][i]
-                    else: end = sufs[2][i]
-                    if i == 5 and gender == "N": end = "a"
-                    if root == "qu" and [i,gender] in [[5,"N"],[0,"F"]]: end = "ae"
-                    if root == "qu" and i in [7,9]: end = "ibus"
-                    if i in [1,2]: end = [0,"ius","i"][i]
-                    if i == 0 and gender == "N":
-                        if root in ["ali","ill","ist"]: end = "ud"
-                        elif root == "qu": end = "od"
-                        else: end = "um"
-                    if [root,i,gender] == ["qu",3,"M"]: end = "em"
-                    if masc == "hic" and i < 6: end = hics[i][{"M":0,"F":1,"N":2}[gender]]
-
-                    if i == 0 and gender == "M": word = masc
-                    else: word = root + end
-                    if word == "aliius": word = "alius"
-                    if [root,i,gender] == ["e",0,"N"]: word = "id"
-
-                    forms.append([word,"%s-%s-%s"%(gender,case[i%5],number[i/5])])
-                    if root == "e" and (i in [7,9] or [gender,i] == ["M",5]): forms.append(["i"+end,"%s-%s-%s"%(gender,case[i%5],number[i/5])])
-                    if root == "qu" and i == 0:
-                        if gender == "N": word = "quid"
-                        else: word = "quis"
-                        forms.append([word,"%s-%s-%s"%(gender,case[i%5],number[i/5])])
-
-                    if [gender,i] == ["N",0]: neut = word
-
+                if masc[-2:] == "us": root = masc[:-2]
+                elif masc[-2:] == "er": root = masc[:-2] + "r"
+                elif masc[-1] == "e": root = masc[:-1]
+                if masc == "is": root = "e"
+                if masc == "hic": root = "h"
+                if masc == "qui": root = "qu"
+                
+                if gender == "F": decl = 1
+                else: decl = 2
+                
+                if gender == "M": nom = masc
+                if gender == "N":
+                    if root in ["ali","ill","ist"]: nom = root + "ud"
+                    elif root == "qu": nom = "quod"
+                    else: nom = root + "um"
+                    neut = nom
+                if gender == "F": nom = root + "a"
+                
+                forms += case([decl,nom,root,gender,p[0]])
         elif p[0] == "n":
             stem = p[1]
-            nom = stem[1]
-            ends = sufs[stem[0]][:] #Specific to the word's declension
-            if stem[3] == "N" and stem[0] == 4: ends[5] = "ua" #4th Declension neuter plural
-            elif stem[3] == "N": ends[5] = "a" #N.G.R.2
-            istem = False
-            if stem[0] == 3:
-                if len(stem[2]) > 1 and (stem[1][-1] in ["s","x"] and not (stem[2][-1] in vowels or stem[2][-2] in vowels)): istem = True #base in 2 consonants
-                elif len(stem[1]) > len(stem[2]): istem = True #monosyllabic (not actually functional, idk how to)
-                elif stem[3] == "N" and (nom[-2:] in ["al","ar"] or nom[-1] == ["e"]): istem = True #neuter ending in -al,-ar,-e
-            for i in range(10):
-                if i%5 == 3 and stem[3] == "N": i -= 3 #N.G.R.1
-                end = ends[i]
-                if istem and i in [4,5,6]: #AblSg, Nom/AccPl, GenPl
-                    if stem[3] == "N":
-                        if i == 4: end = "i" #mari
-                        elif i == 5: end = "i" + end #maria
-                    if i == 6: end = "i" + end #marium
-                word = stem[2] + end
-                if i == 0: word = stem[1] #(nom/n-acc) sg
-
-                forms.append([word,"%s-%s-%s" % (stem[3],case[i%5],number[i/5])]) #gender,case,number
+            forms += case(stem[:4]+["n"])
         elif p[0] == "adj":
             stem = p[1]
             [decl,root,masc,neut,trn] = stem[:]
-            #print "rrroot:",root
-            #print stem, "()"
             for gen in ["M","F","N"]:
-                if decl[0] == "3": ends = sufs[3][:]
-                elif gen == "F": ends = sufs[1][:]
-                else: ends = sufs[2][:]
-                if gen == "N": ends[5] = "a" #N.G.R.2
-
                 if gen == "N": nom = neut
                 elif gen == "F" and decl in ["212","33"]: nom = root + [0,0,"a","is"][int(decl[0])]
                 else: nom = masc
-
-                istem = False
-                if decl[0] == "3": #!
-                    if len(nom) > 1 and (nom[-1] in ["s","x"] and not (root[-1] in vowels or root[-2] in vowels)): istem = True #base in 2 consonants
-                    elif len(nom) > len(root): istem = True #monosyllabic (not actually functional, idk how to)
-
-                for i in range(10):
-                    if i%5 == 3 and gen == "N": i -= 3 #N.G.R.1
-                    end = ends[i]
-                    if i == 5 and gen == "N": end = "a"
-                    if istem and i in [4,5,6]: #AblSg, Nom/AccPl, GenPl
-                        if gen == "N" and i == 5: end = "i" + end #sapientia
-                        if i == 4: end = "i" #sapienti
-                        if i == 6: end = "i" + end #sapientium
-                    word = root + end
-                    if i == 0: word = nom
-
-                    if i < 5 or len(trn) < 4 or trn[-4:] != "(pl)": forms.append([word,"%s-%s-%s" % (gen,case[i%5],number[i/5])]) #gender-case-number
+                
+                if decl[0] == "3": curdecl = 3
+                elif gen == "F": curdecl = 1
+                else: curdecl = 2
+                
+                forms += case([curdecl,nom,root,gen,"adj"])
         #print term, "()"
         for form in forms:
-            #print form
+            if term == "caperet": print form, stem
             if form[0] == term: apls.append([stem,form[1]]) #checks if term and form spelled the same
         if len(apls) != 1:
             difs = [] #for conflicting parsings (dat/abl pl)
@@ -394,7 +383,7 @@ def expand(pts):
                 #print prs
                 for l in range(len(prs)):
                     difs[l+ld-len(prs)].append(prs[l]) #separating parsings into different columns for comparison
-            for l in difs: #l is a value location (Gender,Case,Tense,etc.)
+            for l in difs: #l is a value location (Gender,case,Tense,etc.)
                 value = True
                 cur = 0 #cur = current value (sg,masc,dat,fem,gen,etc.)
                 value = True

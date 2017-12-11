@@ -26,6 +26,6 @@ PRAE	before, in front of
 E	out from
 EX	out from
 SUB	under
-Ac/Ab
+Ac&Ab
 IN	in, on/into, onto
 SUPER	above

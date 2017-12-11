@@ -89,7 +89,7 @@ for term in ex_terms:
         else: addit = 0 #ie. monui has no "v"
         if stem[0] == "sum" and stem[1] == term[:len(stem[1])]:
             pos[-1].append(["v","sum",stem])
-        elif stem[1] == term[:len(stem[1])] and (stem[0][-1] != "E" or term[:len(stem[1])+1] in ["i","e"]):
+        elif stem[1][:-1] == term[:len(stem[1])-1] and (stem[0][-1] != "E" or term[:len(stem[1])+1] in ["i","e"]) and stem[0][-1] != "P":
             pos[-1].append(["v","p",stem]) #program checks the present system
         if not stem[0][-1] in ["D","S"] and stem[2] != "-" and stem[2][:len(stem[2])-addit] == term[:len(stem[2])-addit]:
             pos[-1].append(["v","pf",stem]) #checks the perfect system if neither semidep nor dep
@@ -168,6 +168,7 @@ for col in range(len(final_list)): #dct compression
             if len(stem[2]) > len(root) and root == stem[2][:len(root)]: three = "-" + stem[2][len(root):]
             if len(stem[3]) > len(root) and root == stem[3][:len(root)]: four = "-" + stem[3][len(root):]
             final_list[col][1] = ",".join([stem[0],two,three,four])
+        elif final_list[col][1][-2:] == ",-": final_list[col][1] = final_list[col][1][:-2]
     if len(stem) == 3 and [stem[0][-2:],stem[1][-1],stem[2][-2:]] == ["us","a","um"]: final_list[col][1] = stem[0]+",-a,-um"
     if len(stem) == 2:
         if [stem[0][-1],stem[1][-2:]] == ["a","ae"]: final_list[col][1] = stem[0]+",-ae"
@@ -178,6 +179,9 @@ for col in range(len(final_list)): #dct compression
             for t in [["tas","tatis"],["tio","tionis"],["or","oris"],["is","e"]]:
                 if [stem[0][-len(t[0]):],stem[1][-len(t[1]):]] == t:
                     final_list[col][1] = stem[0]+",-"+t[1]
+    term = final_list[col][0]
+    names = {"M":"Marcus"}
+    if term in names: final_list[col][1] = names[term]
 
 def flipped(block):
     table = []
