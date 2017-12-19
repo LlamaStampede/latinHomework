@@ -18,6 +18,8 @@ hics = [["ic","aec","oc"],
 cases = ["N","G","D","Ac","Ab"]
 number = ["S","P"]
 vowels = ["a","e","i","o","u"]
+uau = {"M":"us","F":"a","N":"um"}
+specials = [["bonus","melior","optimus"],["malus","peior","pessimus"],["magnus","maior","maximus"],["parvus","minor","minimus"],["multus","pluror","plurimus"]]
 def deply(conj,voice):
     return (voice/6 == 1 or conj[-1] != "D") and (voice/6 == 0 or not conj[-1] in ["A","E"])
 def infin(c,stem):
@@ -29,6 +31,7 @@ def infin(c,stem):
     if len(stem[0]) > 1 and stem[0][1] == "i": root = root[:-1] #CAPi
     if c == "s": [root,end] = [stem[3],""]
     if stem[0] == "3F": end = "re"
+    if stem[0][-1] == "P": end = "isse"
     pai = root+end #pai = Present Active Infinitive
     if stem[0] == "sum":
         if len(stem[1]) > 0 and stem[1][-1] == "t": pai = stem[1][:-1] + "sse"
@@ -182,9 +185,12 @@ def perfect(stem):
                 forms.append([root+end,"%s-%s-S-A"%(persons[i%6],tense)])
                 if (root+end)[-3:] == "ris": forms.append([(root+end)[:-2]+"e","%s-%s-S-A"%(persons[i%6],tense)]) #alt 2-Pl...P form
     return forms
-def case(stem): #nouns, pronouns, adjectives, participles
+def case(stem,blank): #nouns, pronouns, adjectives, participles
     forms = []
-    [decl,nom,root,gender,pos] = stem
+    [decl,nom,oroot,gender,opos] = stem
+    [root,pos] = [oroot,opos]
+    if pos[0] == "a": pos = "adj"
+    if pos == "ppl": blank = "   "
     ends = sufs[decl][:] #Specific to the word's declension
     if [decl,gender] == [4,"N"]: ends[5] = "ua" #4th Declension neuter plural
     elif stem[3] == "N": ends[5] = "a" #N.G.R.2
@@ -195,6 +201,7 @@ def case(stem): #nouns, pronouns, adjectives, participles
         elif gender == "N" and (nom[-2:] in ["al","ar"] or nom[-1] == ["e"]): istem = True #neuter ending in -al,-ar,-e
     if nom in ["mater","pater","frater"]: istem = False
     for i in range(10): #todo (istem ab sg rules)
+        root = oroot
         if i%5 == 3 and gender == "N": i -= 3 #N.G.R.1
         end = ends[i]
         if root == "qu":
@@ -207,7 +214,7 @@ def case(stem): #nouns, pronouns, adjectives, participles
         
         if istem: #AblSg, Nom/AccPl, GenPl
             if gender == "N" and i == 5:end = "i" + end #maria, sapientia
-            if (gender == "N" or pos == "adj") and i == 4: end = "i" #mari, sapienti
+            if (gender == "N" or pos[0] == "adj") and i == 4: end = "i" #mari, sapienti
             if i == 6: end = "i" + end #marium, sapientium
         
         word = root + end
@@ -216,28 +223,44 @@ def case(stem): #nouns, pronouns, adjectives, participles
         if [root,i,gender] == ["e",0,"N"]: word = "id"
         
         case = cases[i%5]
-        if [case,gender] == ["N","N"]: case = "   "
-        if pos != "adj" or i < 5:forms.append([word,"%s-%s-%s" % (gender,case,number[i/5])]) #gender-case-number #or len(trn) < 4 or trn[-4:] != "(pl)"
-        if root == "e" and (i in [7,9] or [gender,i] == ["M",5]): forms.append(["i"+end,"%s-%s-%s"%(gender,cases[i%5],number[i/5])])
+        if [case,gender] == ["N","N"]: case = blank
+        degree = ""
+        if pos == "adj": degree = stem[-1][3:]
+        forms.append([word,"%s-%s-%s" % (gender,case,number[i/5])+degree]) #gender-case-number
+        if root == "e" and (i in [7,9] or [gender,i] == ["M",5]): forms.append(["i"+end,"%s-%s-%s"%(gender,cases[i%5],number[i/5])+degree])
         if root == "qu" and i == 0:
             if gender == "N": word = "quid"
             else: word = "quis"
             forms.append([word,"%s-%s-%s"%(gender,cases[i%5],number[i/5])])
+        if pos == "pers": forms.append([word+"cum","%s-%s-%s"%(gender,case,number[i/5])])
+        if [pos,i,gender] == ["adj",0,"N"]:
+            if degree == "Pos" and decl != 3:
+                if root[-2:] == "nt": adv = root + "er"
+                else: adv = root + "iter"
+            elif degree == "Comp": adv = word
+            else: adv = root + "e"
+            forms.append([adv,"Adv"])
     return forms
 
-def expand(pts):
+def expand(pts,method,nextword):
     rep = []
     term = pts.pop(0)
     fins = [term] #finalists, all aplicable forms will later be appended
     for p in pts: #p = possibile word ([do,dare,...])
+        if method == 1:
+            blank = "   "
+            comment = ""
+        elif method == 2:
+            blank = "<input type='text' class='mini'>"
+            comment = "<input type='text' class='comment'>"
         apls = [term] #apls=aplicable forms
         forms = [] #every form of the word will be added
         if p[0] == "prep":
             if term == "a": dct = "ab"
             elif term == "e": dct = "ex"
             else: dct = term
-            fins.append([term,dct,"Prep w/"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
-        elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],""])
+            fins.append([term,dct,"Prep+"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
+        elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],comment[:-1] + " value='w/'>"])
         elif p[0] == "conj": #trn is the conj equivalent of dfn
             if term in ["sed","at"]: trn = "but"
             elif term == "autem": trn = "moreover"
@@ -247,7 +270,7 @@ def expand(pts):
             elif term == "si": trn = "if"
             elif term in ["tam","ita","sic"]: trn = "so, thus"
             elif term in ["enim","nam"]: trn = "for"
-            elif term in ["ut"]: trn = "."
+            elif term in ["ut","num","ne"]: trn = "."
             elif term == "dum": trn = "while/until"
             elif term == "cum": trn = "when"
             elif term == "quod": trn = "because"
@@ -260,18 +283,21 @@ def expand(pts):
             letter = term[0]
             person = {"e":1,"m":1,"t":2,"s":3,"n":4,"v":5}[letter]
             num = number[(person-1)/3]
-            if person == 3: num = "   "
+            if person == 3: num = blank
             for i in range(5):
                 if person == 1: end = ["go","ei","ihi","e","e"][i]
                 elif person in [2,3]: end = ["u","ui","ibi","e","e"][i]
                 else: end = ["os","ostrum","obis","os","obis"][i]
-                word = letter+end
-                if [i,person] != [0,3]: forms.append([word,"   -%s-%s"%(cases[i],num)])
-                if [i,person] == [1,4]: forms.append(["nostri","   -G-P"])
-                if [i,person] == [1,5]: forms.append(["vestrum","   -G-P"])
+                words = [letter+end]
+                if [i,person] == [1,4]: words.append("nostri")
+                if [i,person] == [1,5]: words.append("vestrum")
+                if [i,person] != [0,3]:
+                    for word in words:
+                        forms.append([word,blank+"-%s-%s"%(cases[i],num)])
+                        forms.append([word+"cum",blank+"-%s-%s"%(cases[i],num)])
             person = [3,1,2][person%3]
             dct = [0,"ego,mihi","tu,tui","-,sui"][person].split(",")
-            dfn = "%i%s person prn"%(person,["st","nd","rd"][person-1])
+            dfn = "[%s]"%["I,me","you","he,she,it"][person-1]
             stem = [dct,dfn]
         elif p[0] == "v": #Intensive verb identifier, all tenses
             stem = p[2]
@@ -280,6 +306,7 @@ def expand(pts):
             elif p[1] == "pf": #perfect system (Pf,PPf,Fp)
                 forms += perfect(stem)
             elif p[1] == "ppl": #All participles, activated if term contains impf stem (CAPIEbam) or p.p.p. stem (CAPTus)
+                blank = "__"
                 for n in range(4): #0:PPplA 1:FPplP 2:FPplA 3:PfPplP
                     nom = stem[[3,4][n/2]] + ["ns","nd","ur",""][n] #0:parans 1:parand(us-a-um) 2:paratur(us-a-um) 3:parat(us-a-um)
                     root = stem[[3,4][n/2]] + ["nt","nd","ur",""][n] #0:parant(is) 1:parand(i-ae) 2:paratur(i-ae) 3:parat(i-ae)
@@ -296,7 +323,7 @@ def expand(pts):
                                 if i == 4: end = "i" #All participles are strong i-stems - paranti (AblSg)
                                 word = stem[2] + end
                             elif g == "F": end = sufs[1][i] #2-1-2 is 1st Decl in the feminine
-                            if n != 0 and i == 0: end = {"M":"us","F":"a","N":"um"}[g] #us-a-um in nom
+                            if n != 0 and i == 0: end = uau[g] #us-a-um in nom
                             if i == 0: word = nom + end #All (nominative/neuter-accusative) singulars
                             else: word = root + end #Everything else
                             if not "-" in word: forms.append([word, "%s-Ppl-%s/-%s-%s-%s" % (["P","F","F","Pf"][n], voice,g,cases[i%5],number[i/5])])
@@ -349,31 +376,53 @@ def expand(pts):
                     neut = nom
                 if gender == "F": nom = root + "a"
                 
-                forms += case([decl,nom,root,gender,p[0]])
+                forms += case([decl,nom,root,gender,p[0]],blank)
         elif p[0] == "n":
             stem = p[1]
-            forms += case(stem[:4]+["n"])
+            forms += case(stem[:4]+["n"],blank)
         elif p[0] == "adj":
             stem = p[1]
             [decl,root,masc,neut,trn] = stem[:]
-            for gen in ["M","F","N"]:
-                if gen == "N": nom = neut
-                elif gen == "F" and decl in ["212","33"]: nom = root + [0,0,"a","is"][int(decl[0])]
-                else: nom = masc
-                
-                if decl[0] == "3": curdecl = 3
-                elif gen == "F": curdecl = 1
-                else: curdecl = 2
-                
-                forms += case([curdecl,nom,root,gen,"adj"])
+            for degree in ["Pos","Comp","Sup"]: #Positive,Comparative,Superlative
+                for gen in ["M","F","N"]:
+                    if gen == "N": nom = neut
+                    elif gen == "F" and decl in ["212","33"]: nom = root + [0,0,"a","is"][int(decl[0])]
+                    else: nom = masc
+                    
+                    if decl[0] == "3": curdecl = 3
+                    elif gen == "F": curdecl = 1
+                    else: curdecl = 2
+                    
+                    [curnom,curroot] = [nom,root]
+                    if degree == "Comp":
+                        curdecl = 3
+                        curroot = root + "ior"
+                        curnom = curroot
+                        if gen == "N": curnom = root + "ius"
+                    if degree == "Sup":
+                        curdecl = 2
+                        curroot = root + "issim"
+                        curnom = curroot + uau[gen]
+                    for spec in specials:
+                        if root == spec[0][:-2] and degree != "Pos":
+                            ind = 5-len(degree)
+                            curroot = spec[ind][:-2]
+                            curnom = curroot+uau[gen]
+                            if degree == "Comp":
+                                curnom = spec[ind]
+                                if gen == "N": curnom = curroot + "us"
+                    
+                    forms += case([curdecl,curnom,curroot,gen,"adj(%s.)"%(degree)],blank)
         #print term, "()"
         for form in forms:
-            if term == "caperet": print form, stem
-            if form[0] == term: apls.append([stem,form[1]]) #checks if term and form spelled the same
+            #print form, stem
+            if term in [form[0],form[0][0].upper()+form[0][1:]]: apls.append([stem,form[1]]) #checks if term and form spelled the same
         if len(apls) != 1:
             difs = [] #for conflicting parsings (dat/abl pl)
             ld = 3
-            if p[0] == "v": ld = 6 #verbs can have at most 6 (participles). nouns only ever have 3 (gender,case,number)
+            if p[0] == "v":
+                ld = 4
+                if p[1] == "ppl": ld = 6
             for i in range(ld):
                 difs.append([])
 
@@ -385,17 +434,26 @@ def expand(pts):
                     difs[l+ld-len(prs)].append(prs[l]) #separating parsings into different columns for comparison
             for l in difs: #l is a value location (Gender,case,Tense,etc.)
                 value = True
-                cur = 0 #cur = current value (sg,masc,dat,fem,gen,etc.)
-                value = True
                 for x in l:
                     if x != l[0]: value = False
                 if len(l) != 0:
-                    if value: prsf += l[0] + "-" #if value is certain
-                    else: prsf += "   -" #if value is indefinite
-                    if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
+                    if value:
+                        prsf += l[0] + "-" #if value is certain
+                        if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
+                    else: prsf += (blank + "-") #if value is indefinite
             prsf = prsf[:-1] # eliminates extra dash: ...-G-P-
+            
+            degree = "" #For comparative/superlative adjectives
+            if prsf[-1] == ")":
+                if prsf[-6] == "(": cut = 6
+                else: cut = 7
+                degree = prsf[-cut:]
+                prsf = prsf[:-cut]
+            
             stem = apls[1][0]
-            if p[0] == "v": [pai,ppi] = infin(stem[0][0],stem)
+            if p[0] == "v":
+                if stem[0][-1] == "P": pai = stem[2]+"isse" #coepisse
+                else: [pai,ppi] = infin(stem[0][0],stem)
             if p[0] == "n": dct = [stem[1],stem[2]+sufs[stem[0]][1]] #rex,regis
             elif p[0] in ["adj","unus","prn"]:
                 if p[0] != "adj" or decl == "212": dct = [masc,root+"a",neut]
@@ -416,23 +474,38 @@ def expand(pts):
                     dct[3] = "-"
                 elif stem[0] == "4E":
                     dct[0] = dct[0][:-1] + "eo"
+                if stem[1] == "-": dct[0] = "-"
             dct = ",".join(dct)
-            fins.append([term,dct,prsf,stem[-1],""]) #["regum","rex,regis","M-G-S","to rule",""]
+            
+            if degree == "(Pos.)": degree = ""
+            elif degree != "": degree = " " + degree
+            trn = stem[-1] + degree
+            if prsf == "Adv": trn += " (Adv)"
+            if p[0] == "pers" and len(term)>3 and term[-3:] == "cum": trn = "with " + trn
+            if [trn,prsf[-1]] == ["to see","P"]: trn += "m"
+            if p[0]+prsf[-3] == "vI": comment = "<input type='text' class='comment' value='fact'>"
+            if prsf == "Adv": comment = "<input type='text' class='comment' value='w/'>"
+            fins.append([term,dct,prsf,trn,comment]) #["regum","rex,regis","M-G-S","to rule",""]
+    if len(fins) > 2 and term[:2] == "re" and len(nextword) > 6 and nextword[:6] == "public":
+        reals = [term]
+        for ind in range(1,len(fins)):
+            if fins[ind][1] == "res,rei": reals.append(fins[ind])
+        fins = reals
     if len(fins) > 2: #Conflict: Multiple Possibilities (ie.rei from res,rei:thing or reus,rei:defendant)
         cur = fins[1][1:5:2]
         for fin in fins[1:]:
-            if fin[1:5:2] != cur: cur = ""
-        if cur == "": dfn = ""
+            if fin[1:5:2] != cur: cur = comment
+        if cur == comment: dfn = comment
         else:
             cur = fins[1][1]
             dfn = fins[1][3]
-        final = [term,cur,"",dfn,""] #leaves blank spaces b/c origin unknown
+        final = [term,cur,comment,dfn,comment] #leaves blank spaces b/c origin unknown
         words = [fins[0]]
         for fin in fins[1:]:
             words.append(fin[1:4])
         rep = ["multi"]+words #error reporting is notified
     elif len(fins) == 1: #Error: Term Unknown (new word not in glossaries)
-        final = [term,"","","",""] #leaves blank spaces b/c origin unknown
+        final = [term,comment,comment,comment,comment] #leaves blank spaces b/c origin unknown
         rep = ["unknown",term] #error reporting is notified
     else: final = fins[1] #when program is running smoothly
     return [final,rep]

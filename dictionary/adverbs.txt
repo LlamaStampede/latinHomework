@@ -53,3 +53,8 @@ indeed	quidem
 only	non_modo
 near	prope
 then	tum
+now	etiam_num
+whether	num
+formerly	quondam
+todo	denique
+.	quam

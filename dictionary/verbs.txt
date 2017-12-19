@@ -85,7 +85,7 @@ iacio	iacere	ieci	iectum	throw, hurl
 eicio	eicere	eieci	eiectum	throw out
 timeo	timere	timui	-	be afraid
 admitto	admittere	admisi	admissum	receive
--	coepisse	coepi	coeptum	began
+-	coepisse	coepi	coeptum	begin
 cupio	cupere	cupivi	cupitum	desire
 deleo	delere	delevi	deletum	erase
 desidero	desiderare	desideravi	desideratum	desire
@@ -170,3 +170,11 @@ pateo	patere	patui	-	lie open
 placet	-	-	-	be pleasing
 opportet	-	-	-	be proper
 licet	-	-	-	be permitted
+decerno	decernere	decrevi	decretum	decree
+occido	occidere	occidi	occasum	fall
+occido	occidere	occidi	occisum	kill
+detero	deterere	detrivi	detritum	weaken
+intercedo	intercedere	intercessi	intercessum	intercede/interrupt
+interficio	interficere	interfeci	interfectum	kill
+suspicio	suspicere	suspexi	suspectum	suspect
+libo	libare	libavi	libatum	spill/dedicate

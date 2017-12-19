@@ -1,4 +1,4 @@
-#to do: non-passive, "virtual deponent", preterates
+#to do: non-passive, "virtual deponent"
 def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,parav,para,parat,to prepare]
     trn = "to "+verb[4]
     if verb[0][-1] in ["o","r"]:
@@ -40,12 +40,12 @@ def conj(verb): #takes [paro,parare,paravi,paratus,prepare,1] returns [1,par,par
         else: ppp = verb[3][:-2]
 
         return [conj,primary,secondary,impf,ppp,trn]
-    elif verb[0] == "-":
+    elif verb[0] == "-": #defectives (and preterates)
         if verb[3] == "-":
             ppl = "-"
         else:
             ppl = verb[3][:-2]
-        return ["3P","-",verb[2][:-1],"-",ppl,trn] #preterate
+        return ["3P","-",verb[2][:-1],"-",ppl,trn]
     elif verb[0][-1] == "m":
         root = verb[0][:-3]
         if len(root) != 0 and root[-1] == "s": root = root[:-1] + "t"

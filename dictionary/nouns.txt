@@ -346,3 +346,6 @@ spes	spei	f	hope
 acies	-ei	f	line
 facies	-ei	f	form
 species	-ei	f	aspect
+detrimentum	-i	n	damage
+seditio	seditionis	f	sedition
+suspicio	suspicionis	f	suspicion

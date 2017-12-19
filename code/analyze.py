@@ -17,12 +17,16 @@ usableText = usableText.split(" ")
 
 realText = []
 for term in usableText:
-    if len(term) > 3 and term[-3:] == "que" and not term in ["atque", "quemque", "neque", "plerumque"]: realText += [term[:-3],"+que"]
+    if len(term) > 3 and term[-3:] == "que" and not term in ["atque", "quemque", "neque", "plerumque","denique"]: realText += [term[:-3],"+que"]
     elif term == "modo" and realText[-1] == "non": realText[-1] = "non_modo"
     else: realText.append(term)
 
 from describe import *
 from expand import *
+
+method = raw_input("Output Method: ")
+if method == " ": method = 1
+else: method = 2
 
 # Phase: Collect
 def inc(term,list): # efficiently returns (term in list) boolean
@@ -75,6 +79,14 @@ for adj in adjList:
     astems.append(adecl(adj))
 
 #Phase: Assemble
+specials = [["bonus","melior","optimus"], ["malus","peior","pessimus"], ["magnus","maior","maximus"], ["parvus","minor","minimus"], ["multus","pluror","plurimus"]]
+def compable(term,adjroot):
+    for spec in specials:
+        if adjroot == spec[0][:-2]:
+            for i in range(1,3):
+                if term[:len(spec[i])-2] == spec[i][:-2]: return True
+    return False
+
 pos = [] #pos = list of all terms in passage and their possible stems
 for term in ex_terms:
     pos.append([term])
@@ -101,8 +113,8 @@ for term in ex_terms:
     for un in unus:
         if term[:len(un[0])-2] == un[0][:-2]: pos[-1].append(["unus",un])
 
-    prns = [["hic","this",5],["ille","that",7],["iste","that",7], ["qui","rel./inq.",6],["is","weak dem.",3]] #word, def, max length
-    first = [["h"],["ill"],["ist"],["qu","cui"],["i","e"]] #first letters (pre = prefix)
+    prns = [["hic","this",5],["ille","that",7],["iste","that",7], ["qui","rel./inq.",6],["is","weak dem.",8],["ipse","refl. adj.",7]] #word, def, max length
+    first = [["h"],["ill"],["ist"],["qu","cui"],["i","e"],["ips"]] #first letters (pre = prefix)
     for i in range(len(first)):
         for pre in first[i]: #checks if term begins w/ same letters as any pronoun
             if len(term) <= prns[i][2] and term[:len(pre)] == pre: pos[-1].append(["prn",prns[i][:2]])
@@ -112,11 +124,12 @@ for term in ex_terms:
         if stem[2] == term[:len(stem[2])] or term == stem[1]: pos[-1].append(["n",stem])
 
     #adjectives
+    
     for stem in astems:
-        if term in stem[2:4] or term[:len(stem[1])] == stem[1]: pos[-1].append(["adj",stem])
+        if term in stem[2:4] or term[:len(stem[1])] == stem[1] or compable(term,stem[1]): pos[-1].append(["adj",stem])
 
     #conjunctions
-    conjs = ["atque","+que","ac","et","sed","at","aut","autem","tamen","si","tam","ita","sic","ut","neque","enim","nam","dum","cum","quod"]
+    conjs = ["atque","+que","ac","et","sed","at","aut","autem","tamen","si","tam","ita","sic","ut","num","ne","neque","enim","nam","dum","cum","quod"]
     if term in conjs: pos[-1].append(["conj"])
     
     #personal pronouns
@@ -129,10 +142,14 @@ for term in ex_terms:
 final_list = []
 report = []
 #print pos
+ind = 0
 for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
-    [final,rep] = expand(pts)
+    if ind < len(pos) - 1: nextword = pos[ind+1][0]
+    else: nextword = "finish"
+    [final,rep] = expand(pts,method,nextword)
     final_list.append(final)
     if rep != []: report.append(rep)
+    ind += 1
 
 import os
 os.remove("describe.pyc")
@@ -155,7 +172,7 @@ for col in range(len(final_list)):
     if parsing == "n": final_list[col][2] = ""
     elif "Ppl" in final_list[col][2]:
         ppls.append(final_list[col][0:4])
-        final_list[col][2] = ""
+        final_list[col][2] = [0,"","<input type='text' value='%s'>"%(final_list[col][2])][method]
 
 for col in range(len(final_list)): #dct compression
     stem = final_list[col][1].split(",")
@@ -180,89 +197,13 @@ for col in range(len(final_list)): #dct compression
                 if [stem[0][-len(t[0]):],stem[1][-len(t[1]):]] == t:
                     final_list[col][1] = stem[0]+",-"+t[1]
     term = final_list[col][0]
-    names = {"M":"Marcus"}
+    names = {"M":"Marcus","L":"Lucius"}
     if term in names: final_list[col][1] = names[term]
 
-def flipped(block):
-    table = []
-    for height in range(5):
-        table.append([]) # this just appends 5 []'s
-    for col in block:
-        for row_id in range(len(col)):
-            table[row_id].append(col[row_id])
-    return table
-col_widths = []
-for col_id in range(len(final_list)):
-    lens = [] # used for appending spaces later on
-    width = 0
-    for row in final_list[col_id]:
-        l = len(str(row))
-        lens.append(l)
-        if l > width: width = l
-    col_widths.append(width) #col_width = [longest length of each row segment for each column, ...]
-    for row_id in range(len(final_list[col_id])):
-        final_list[col_id][row_id] = str(final_list[col_id][row_id])
-        for b in range(width - lens[row_id]):
-            final_list[col_id][row_id] += " "
-# Modifies each term to be equal length. For example: [
-# "bonarum"
-# "us-a-um"
-# "F-G-P  "
-# "good   "
-# "       "]
-
-doc_width = raw_input("Document Width: ")
-try:
-    if doc_width == "": doc_width = 70
-    elif doc_width == " ": doc_width = 182
-    else: doc_width = int(doc_width)
-except:
-    doc_width = 70
-indent = 6
-all_lines = []
-line_group = []
-page = []
-for col_id in range(len(final_list)):
-    if indent + col_widths[col_id] > doc_width:
-        line_group.insert(0,["txt","dct","prs","trn","cmt"])
-        page.append(line_group) # archives old line
-        indent = 6
-        line_group = [] # begins new line
-        if len(page) == 8:
-            all_lines.append(page)
-            page = []
-    line_group.append(final_list[col_id])
-    indent += col_widths[col_id] + 3
-line_group.insert(0,["txt","dct","prs","trn","cmt"])
-page.append(line_group)
-all_lines.append(page)
-
-horizon = ""
-for i in range(doc_width):
-    horizon += "-"
-
-name = raw_input("Output file name: ")
-if name in ["","y"]: name = "output"
-output = open(name+".txt","w+")
-for pg in all_lines:
-    for line_group in pg:
-        for row in flipped(line_group):
-            for col_id in range(len(row)):
-                output.write(row[col_id])
-                if col_id == len(row) - 1: output.write("\n")
-                else: output.write(" | ")
-        output.write(horizon+"\n")
-    output.write("\n\n")
-
-if parsing == "y":
-    for ppl in ppls:
-        ppl[2] = "\n" + ppl[2]
-        output.write("Participle: "+": ".join(ppl)+"\n")
-if errors == "y":
-    for err in report:
-        if err[0] == "unknown": output.write("UNKNOWN: "+err[1]+"\n")
-        elif err[0] == "multi":
-            output.write("Conflict: "+err[1]+" might be from:\n")
-            for w in err[2:]: #w = each individual dictionary entry
-                output.write("- "+w[0]+" "+w[1]+" "+w[2]+"\n")
-output.close()
+if method == 1:
+    from output1 import *
+    os.remove("output1.pyc")
+else:
+    from output2 import *
+    os.remove("output2.pyc")
+format(final_list,report,errors)
