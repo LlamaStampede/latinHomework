@@ -1,5 +1,5 @@
 # the_latin_do-er
-Overview
+Overview:
 The primary objective of this project is to translate latin.
 A helpful way to translate a language is via "analysis sheets", which are papers consisting of around 6 row of 5-row tables.
 It may be helpful to imagine an analysis sheet like a music sheet, a 5 or 6 into line tall block that would have a very long width but is cut into smaller pieces to fit on the page.
@@ -10,7 +10,7 @@ The fourth row contains the translation of the word in its simplest form. (ie. t
 The fifth row contains a comment on the context or use of this word. (ie. fact)
 This system of programs will be able to, given a large enough glossary of terms, take a 1st row element, find its corresponding 2nd and 4th row elements, and partially fill in its 3rd row element. It will probably not be able to find the 5th row element.
 
-Relevance
+Relevance:
 This project does not carry any significance to anyone not translating Latin for homework. It probably also does not help most Latin students, as it only outputs a very specific format of translated latin.
 
-Please do not edit this project unless you have the expressed permission of its creator.
+Please do not edit this project unless you have the expressed permission of its creators.
