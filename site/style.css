@@ -1,0 +1,98 @@
+body {
+  /*background-color: lightblue;*/
+  margin: 0;
+}
+h1 {
+  font-family: fantasy;
+  font-variant: small-caps;
+  font-size: 32pt;
+  margin: 0 40px;
+}
+#sheet {
+  width: 80%;
+  margin-left: 1.5%;
+  padding: 0 32px;
+  background-image: url(5x3v3.png);
+  background-repeat: repeat-y;
+}
+hr {
+  clear: left;
+  height: 0;
+  border: none;
+}
+ul {
+  border: solid 1px;
+  float: left;
+  padding: 0px;
+  margin: 0 -1px 2px;
+  min-width: 40px;
+}
+li {
+  text-decoration: none;
+  list-style: none;
+  border: solid 1px;
+  height: 12pt;
+  padding: 2px;
+  font-family: georgia, serif;
+  font-size: 11pt;
+}
+input {
+  width: 128px;
+  height: 10pt;
+  padding: 0;
+  margin: -2px 2px;
+  font-family: inherit;
+  font-size: 11pt;
+  background-color: lightgray;
+}
+input.mini {width: 15px; text-align: center;}
+input.comment {width: 55px;}
+ul:hover {background-color: lightgreen;}
+#sheet > ul > li:first-child {font-weight: bold;}
+li.error {
+  position: fixed;
+  top: 40%;
+  right: 1%;
+  background-color: lightgreen;
+  border: 2px solid red;
+  height: 80px;
+  visibility: hidden;
+}
+li.error p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 20pt;
+}
+ul:hover > li.error {visibility: visible;}
+/*li::selection {background-color: red;}
+li::selection ~ li {background-color: blue;}
+span::selection ~ li.error {visibility: visible;}*/
+li ul {
+  float: none;
+  border: none;
+}
+li ul li {
+  list-style: square;
+  border: none;
+  margin-left: 25px;
+}
+
+#report {
+  clear: left;
+}
+#report ul {
+  float: none;
+  padding: 0 5%;
+  column-count: 4;
+}
+#report ul:hover {background-color: transparent;}
+#report ul li {
+  float: none;
+  border: none;
+  position: static;
+  margin: 0;
+  padding-bottom: 10px;
+  overflow: hidden;
+  height: auto
+}
+#report li:hover {background-color: gold;}

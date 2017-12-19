@@ -1,0 +1,730 @@
+txt | decrevit | quondam | senatus     | uti               | L | Opimius | consul          | videret             | ne | quid          | res       | publica         | detrimenti
+dct |          |         | senatus,-us | utor,uti,usus sum |   |         | consul,consulis | video,-ere,-i,visus |    | qui,quae,quod | res,-ei   | publicus,-a,-um |           
+prs |          |         | M-   -      | P-Inf-D           |   |         | M-N-S           | 3S-Impf-S-A         |    | N-N-S         | F-   -    | F-   -S         |           
+trn |          |         | senate      | to use            |   |         | consul          | to see              |    | rel./inq.     | thing     | public          |           
+cmt |          |         |             |                   |   |         |                 |                     |    |               |           |                 |           
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | caperet              | nox        | nulla         | intercessit | interfectus | est          | propter       | quasdam | seditionum | suspiciones | C | Gracchus | clarissimo
+dct | capio,-ere,cepi,-tus | nox,noctis | nullus,-a,-um |             |             | sum,esse,fui | propter       |         |            |             |   |          |           
+prs | 3S-Impf-S-A          | F-N-S      |    -   -      |             |             | 3S-P-I-A     | Prep w/Ac     |         |            |             |   |          |           
+trn | to seize             | night      | none          |             |             | to be        | on account of |         |            |             |   |          |           
+cmt |                      |            |               |             |             |              |               |         |            |             |   |          |           
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | patre        | avo | maioribus | occisus | est          | cum | liberis | M      | Fulvius | consularis | simili     | senatus     | consulto | C | Mario | et   | L | Valerio
+dct | pater,patris |     |           |         | sum,esse,fui |     |         | Marcus |         |            | similis,-e | senatus,-us |          |   |       | et   |   |        
+prs | M-Ab-S       |     |           |         | 3S-P-I-A     |     |         |        |         |            |    -   -S  | M-   -      |          |   |       | Conj |   |        
+trn | father       |     |           |         | to be        |     |         |        |         |            | similar    | senate      |          |   |       | and  |   |        
+cmt |              |     |           |         |              |     |         |        |         |            |            |             |          |   |       |      |   |        
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | consulibus      | est          | permissa | res       | publica         | num | unum        | diem     | postea | L | Saturninum | tribunum    | plebis       | et   | C
+dct | consul,consulis | sum,esse,fui |          | res,-ei   | publicus,-a,-um |     | unus,-a,-um | dies,-ei | postea |   |            | tribunus,-i | plebs,plebis | et   |  
+prs | M-   -P         | 3S-P-I-A     |          | F-   -    | F-   -S         |     |             | C-Ac-S   | Adv    |   |            | M-Ac-S      | F-G-S        | Conj |  
+trn | consul          | to be        |          | thing     | public          |     | one         | day      | later  |   |            | tribune     | commoner     | and  |  
+cmt |                 |              |          |           |                 |     |             |          |        |   |            |             |              |      |  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | Servilium | praetorem     | mors        | ac    | rei | publicae        | poena      | remorata | est          | at   | vero         | nos            | vicesimum | iam    
+dct |           | praetor,-oris | mors,mortis | atque |     | publicus,-a,-um | poena,-ae  |          | sum,esse,fui | at   | verus,-a,-um | ego,mihi       |           | iam    
+prs |           | M-Ac-S        | F-N-S       | Conj  |     | F-   -S         | F-   -S    |          | 3S-P-I-A     | Conj |    -   -S    |    -   -P      |           | Adv    
+trn |           | praetor       | death       | and   |     | public          | punishment |          | to be        | but  | true         | 1st person prn |           | already
+cmt |           |               |             |       |     |                 |            |          |              |      |              |                |           |        
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | diem     | patimur                | hebescere | aciem     | horum        | auctoritatis      | habemus              | enim | eius | modi      | senatus     | consultum
+dct | dies,-ei | patior,pati,passus sum |           | acies,-ei | hic,haec,hoc | auctoritas,-tatis | habeo,-ere,-ui,-itus | enim |      | modus,-i  | senatus,-us |          
+prs | C-Ac-S   | 1P-P-I-D               |           | F-Ac-S    |    -G-P      | F-G-S             | 1P-P-I-A             | Conj |      | M-   -    | M-   -      |          
+trn | day      | to endure              |           | line      | this         | authority         | to have, hold        | for  |      | measure   | senate      |          
+cmt |          |                        |           |           |              |                   |                      |      |      |           |             |          
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | verum        | inclusum | in                | tabulis | tamquam | in                | vagina | reconditum | quo | ex        | senatus     | consulto | confestim
+dct | verus,-a,-um |          | in                |         |         | in                |        |            |     | ex        | senatus,-us |          |          
+prs |    -   -S    |          | Prep w/Ac&Ab      |         |         | Prep w/Ac&Ab      |        |            |     | Prep w/Ab | M-   -      |          |          
+trn | true         |          | in, on/into, onto |         |         | in, on/into, onto |        |            |     | out from  | senate      |          |          
+cmt |              |          |                   |         |         |                   |        |            |     |           |             |          |          
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | te             | interfectum | esse         | Catilina | convenit | vivis                 | et   | vivis                 | non | ad         | deponendam | sed  | ad        
+dct | tu,tui         |             | sum,esse,fui |          |          | vivo,-ere,vixi,victus | et   | vivo,-ere,vixi,victus | non | ad         |            | sed  | ad        
+prs |    -   -S      |             | P-Inf-A      |          |          | 2S-P-I-A              | Conj | 2S-P-I-A              | Adv | Prep w/Ac  |            | Conj | Prep w/Ac 
+trn | 2nd person prn |             | to be        |          |          | to live               | and  | to live               | not | to, toward |            | but  | to, toward
+cmt |                |             |              |          |          |                       |      |                       |     |            |            |      |           
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+txt | confirmandam | audaciam | cupio                 | patres       | conscripti | me             | esse         | clementem | cupio                 | in                | tantis
+dct |              |          | cupio,-ere,-ivi,-itus | pater,patris |            | ego,mihi       | sum,esse,fui |           | cupio,-ere,-ivi,-itus | in                |       
+prs |              |          | 1S-P-I-A              | M-   -P      |            |    -   -S      | P-Inf-A      |           | 1S-P-I-A              | Prep w/Ac&Ab      |       
+trn |              |          | to desire             | father       |            | 1st person prn | to be        |           | to desire             | in, on/into, onto |       
+cmt |              |          |                       |              |            |                |              |           |                       |                   |       
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | rei | publicae        | periculis          | non | dissolutum | videri              | sed  | iam     | me             | ipse | inertiae | nequitiae | +que | condemno
+dct |     | publicus,-a,-um | periculum,periculi | non |            | video,-ere,-i,visus | sed  | iam     | ego,mihi       |      |          |           | +que |         
+prs |     | F-   -S         | N-   -P            | Adv |            | P-Inf-P             | Conj | Adv     |    -   -S      |      |          |           | Conj |         
+trn |     | public          | danger             | not |            | to see              | but  | already | 1st person prn |      |          |           | and  |         
+cmt |     |                 |                    |     |            |                     |      |         |                |      |          |           |      |         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | castra            | sunt         | in                | Italia | contra    | populum    | Romanum        | in                | Etruriae | faucibus | conlocata | crescit
+dct | castrum,castri    | sum,esse,fui | in                |        | contra    | populus,-i | Romanus,-a,-um | in                |          |          |           |        
+prs | N-   -P           | 3P-P-I-A     | Prep w/Ac&Ab      |        | Prep w/Ac | M-Ac-S     |    -   -S      | Prep w/Ac&Ab      |          |          |           |        
+trn | fortress (pl)camp | to be        | in, on/into, onto |        | against   | people     | Roman          | in, on/into, onto |          |          |           |        
+cmt |                   |              |                   |        |           |            |                |                   |          |          |           |        
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | in                | dies      | singulos | hostium       | numerus    | eorum | autem    | castrorum         | imperatorem     | ducem     | +que | hostium       | intra    
+dct | in                | dies,-ei  |          | hostis,hostis | numerus,-i |       | autem    | castrum,castri    | imperator,-oris | dux,ducis | +que | hostis,hostis | intra    
+prs | Prep w/Ac&Ab      | C-   -    |          | C-G-P         | M-N-S      |       | Conj     | N-G-P             | M-Ac-S          | C-Ac-S    | Conj | C-G-P         | Prep w/Ac
+trn | in, on/into, onto | day       |          | enemy         | number     |       | moreover | fortress (pl)camp | commander       | leader    | and  | enemy         | within   
+cmt |                   |           |          |               |            |       |          |                   |                 |           |      |               |          
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | moenia         | atque | adeo | in                | senatu      | videtis             | intestinam | aliquam | cotidie | perniciem | rei | publicae       
+dct | moenia,moeniis | atque |      | in                | senatus,-us | video,-ere,-i,visus |            |         |         |           |     | publicus,-a,-um
+prs | N-   -S        | Conj  |      | Prep w/Ac&Ab      | M-Ab-S      | 2P-P-I-A            |            |         |         |           |     | F-   -S        
+trn | city walls     | and   |      | in, on/into, onto | senate      | to see              |            |         |         |           |     | public         
+cmt |                |       |      |                   |             |                     |            |         |         |           |     |                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | molientem                 | si   | te             | iam     | Catilina | comprehendi                      | si   | interfici | iussero | credo                 | erit        
+dct | molior,moliri,molitus sum | si   | tu,tui         | iam     |          | comprehendo,-ere,-i,comprehensus | si   |           |         | credo,-ere,-idi,-itus | sum,esse,fui
+prs |                           | Conj |    -   -S      | Adv     |          |                                  | Conj |           |         | 1S-P-I-A              | 3S-F-I-A    
+trn | to work at                | if   | 2nd person prn | already |          | to understand                    | if   |           |         | to believe            | to be       
+cmt |                           |      |                |         |          |                                  |      |           |         |                       |             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | verendum | mihi           | ne | non | hoc          | potius | omnes | boni         | serius | a         | me             | quam | quisquam | crudelius | factum | esse        
+dct |          | ego,mihi       |    | non | hic,haec,hoc |        |       | bonus,-a,-um |        | ab        | ego,mihi       |      |          |           |        | sum,esse,fui
+prs |          |    -D-S        |    | Adv |    -Ab-S     |        |       |    -G-S      |        | Prep w/Ab |    -   -S      |      |          |           |        | P-Inf-A     
+trn |          | 1st person prn |    | not | this         |        |       | good         |        | from, by  | 1st person prn |      |          |           |        | to be       
+cmt |          |                |    |     |              |        |       |              |        |           |                |      |          |           |        |             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | dicat               | verum        | ego            | hoc          | quod | iam     | pridem     | factum | esse         | oportuit | certa         | de              
+dct | dico,-ere,dixi,-tus | verus,-a,-um | ego,mihi       | hic,haec,hoc |      | iam     | pridem     |        | sum,esse,fui |          | certus,-a,-um | de              
+prs | 3S-P-S-A            |    -   -S    |    -N-S        |    -Ab-S     |      | Adv     | Adv        |        | P-Inf-A      |          | F-   -S       | Prep w/Ab       
+trn | to speak            | true         | 1st person prn | this         |      | already | previously |        | to be        |          | certain       | down from, about
+cmt |                     |              |                |              |      |         |            |        |              |          |               |                 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+txt | causa     | nondum | adducor | ut   | faciam               | tum  | deni | +que | interficiere | cum | iam     | nemo | tam      | improbus        | tam     
+dct | causa,-ae |        |         | ut   | facio,-ere,feci,-tus | tum  |      | +que |              |     | iam     |      | tam      | improbus,-a,-um | tam     
+prs | F-   -S   |        |         | Conj | 1S-   -   -A         | Adv  |      | Conj |              |     | Adv     |      | Conj     | M-N-S           | Conj    
+trn | cause     |        |         | .    | to make              | then |      | and  |              |     | already |      | so, thus | wicked          | so, thus
+cmt |           |        |         |      |                      |      |      |      |              |     |         |      |          |                 |         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | perditus              | tam      | tui | similis    | inveniri             | poterit            | qui           | id        | non | iure | factum | esse        
+dct | perdo,-ere,-idi,-itus | tam      |     | similis,-e | invenio,-ire,-i,-tus | potsum,posse,potui | qui,quae,quod | is,ea,eum | non |      |        | sum,esse,fui
+prs |                       | Conj     |     |    -   -S  | P-Inf-P              | 3S-F-I-A           | M-N-S         | N-   -S   | Adv |      |        | P-Inf-A     
+trn | to destroy?waste?lose | so, thus |     | similar    | to find              | to be able         | rel./inq.     | weak dem. | not |      |        | to be       
+cmt |                       |          |     |            |                      |                    |               |           |     |      |        |             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | fateatur                 | quam | diu | quisquam | erit         | qui           | te             | defendere                | audeat            | vives                 | et  
+dct | fateor,fateri,fassus sum |      |     |          | sum,esse,fui | qui,quae,quod | tu,tui         | defendo,-ere,-i,defensus | audeo,-ere,-i,-us | vivo,-ere,vixi,victus | et  
+prs | 3S-P-S-D                 |      |     |          | 3S-F-I-A     | M-N-S         |    -   -S      |                          | 3S-P-S-A          | 2S-F-I-A              | Conj
+trn | to confess               |      |     |          | to be        | rel./inq.     | 2nd person prn | to defend                | to dare           | to live               | and 
+cmt |                          |      |     |          |              |               |                |                          |                   |                       |     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | vives                 | ita | ut   | nunc | vivis                 | multis | meis | et   | firmis | praesidiis           | obsessus | ne | commovere | te            
+dct | vivo,-ere,vixi,victus |     | ut   | nunc | vivo,-ere,vixi,victus |        |      | et   |        | praesidium,praesidii |          |    |           | tu,tui        
+prs | 2S-F-I-A              |     | Conj | Adv  | 2S-P-I-A              |        |      | Conj |        | N-   -P              |          |    |           |    -   -S     
+trn | to live               |     | .    | now  | to live               |        |      | and  |        | garrison             |          |    |           | 2nd person prn
+cmt |                       |     |      |      |                       |        |      |      |        |                      |          |    |           |               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | contra    | rem     | publicam        | possis | multorum | te             | etiam | oculi     | et   | aures       | non | sentientem               | sicut | adhuc
+dct | contra    | res,-ei | publicus,-a,-um |        |          | tu,tui         | etiam | oculus,-i | et   | auris,auris | non | sentio,-ire,sensi,sensus |       |      
+prs | Prep w/Ac | F-Ac-S  | F-Ac-S          |        |          |    -   -S      | Adv   | M-   -    | Conj | F-   -P     | Adv |                          |       |      
+trn | against   | thing   | public          |        |          | 2nd person prn | still | eye       | and  | ear         | not | to sense                 |       |      
+cmt |           |         |                 |        |          |                |       |           |      |             |     |                          |       |      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | fecerunt             | speculabuntur | atque | custodient | etenim | quid          | est          | Catilina | quod | iam     | amplius | exspectes   | si   | neque       
+dct | facio,-ere,feci,-tus |               | atque |            |        | qui,quae,quod | sum,esse,fui |          |      | iam     |         | exspecto(1) | si   | neque       
+prs | 3P-Pf-I-A            |               | Conj  |            |        | N-N-S         | 3S-P-I-A     |          |      | Adv     |         | 2S-P-S-A    | Conj | Conj        
+trn | to make              |               | and   |            |        | rel./inq.     | to be        |          |      | already |         | to wait for | if   | neither, nor
+cmt |                      |               |       |            |        |               |              |          |      |         |         |             |      |             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | nox        | tenebris | obscurare | coetus | nefarios | nec | privata | domus | parietibus | continere                   | voces | coniurationis | tuae       
+dct | nox,noctis |          |           |        |          |     |         |       |            | contineo,-ere,-ui,contentus |       |               | tuus,-a,-um
+prs | F-N-S      |          |           |        |          |     |         |       |            | 2S-P-   -                   |       |               | F-   -S    
+trn | night      |          |           |        |          |     |         |       |            | to contain                  |       |               | your       
+cmt |            |          |           |        |          |     |         |       |            |                             |       |               |            
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | potest             | si   | inlustrantur | si   | erumpunt | omnia | muta       | iam     | istam           | mentem      | mihi           | crede                 | obliviscere
+dct | potsum,posse,potui | si   |              | si   |          |       | muto(1)    | iam     | iste,ista,istud | mens,mentis | ego,mihi       | credo,-ere,-idi,-itus |            
+prs | 3S-P-I-A           | Conj |              | Conj |          |       | 2S-P-Imp-A | Adv     | F-Ac-S          | F-Ac-S      |    -D-S        | 2S-P-Imp-A            |            
+trn | to be able         | if   |              | if   |          |       | to change  | already | that            | mind        | 1st person prn | to believe            |            
+cmt |                    |      |              |      |          |       |            |         |                 |             |                |                       |            
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+txt | caedis        | atque | incendiorum | teneris             | undi | +que | luce      | sunt         | clariora | nobis          | tua         | consilia           | omnia | quae
+dct | caedes,caedis | atque |             | teneo,-ere,-ui,-tus |      | +que | lux,lucis | sum,esse,fui |          | ego,mihi       | tuus,-a,-um | consilium,consilii |       |     
+prs | F-G-S         | Conj  |             | 2S-P-I-P            |      | Conj | F-Ab-S    | 3P-P-I-A     |          |    -   -P      | F-   -S     | N-   -P            |       |     
+trn | slaughter     | and   |             | to hold             |      | and  | light     | to be        |          | 1st person prn | your        | plan council       |       |     
+cmt |               |       |             |                     |      |      |           |              |          |                |             |                    |       |     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | iam     | mecum | licet              | recognoscas | meministine | me             | ante      | diem     | xii | Kalendas | Novembris | dicere              | in               
+dct | iam     |       | liceto,-tre,-i,-us |             |             | ego,mihi       | ante      | dies,-ei |     |          |           | dico,-ere,dixi,-tus | in               
+prs | Adv     |       | 2S-P-Imp-A         |             |             |    -   -S      | Prep w/Ac | C-Ac-S   |     |          |           | 2S-   -   -         | Prep w/Ac&Ab     
+trn | already |       | to be permitted    |             |             | 1st person prn | before    | day      |     |          |           | to speak            | in, on/into, onto
+cmt |         |       |                    |             |             |                |           |          |     |          |           |                     |                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | senatu      | fore | in                | armis | certo         | die      | qui           | dies      | futurus | esset        | ante      | diem     | vi                 | Kal
+dct | senatus,-us |      | in                |       | certus,-a,-um | dies,-ei | qui,quae,quod | dies,-ei  |         | sum,esse,fui | ante      | dies,-ei | vis,vis            |    
+prs | M-Ab-S      |      | Prep w/Ac&Ab      |       |    -   -S     | C-Ab-S   | M-N-S         | C-   -    |         | 3S-Impf-S-A  | Prep w/Ac | C-Ac-S   | F-D-S              |    
+trn | senate      |      | in, on/into, onto |       | certain       | day      | rel./inq.     | day       |         | to be        | before    | day      | force (pl)strength |    
+cmt |             |      |                   |       |               |          |               |           |         |              |           |          |                    |    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | Novembris | C | Manlium | audaciae | satellitem | atque | administrum | tuae        | num | me             | fefellit | Catilina | non_modo | res       | tanta        
+dct |           |   |         |          |            | atque |             | tuus,-a,-um |     | ego,mihi       |          |          | non_modo | res,-ei   | tantus,-a,-um
+prs |           |   |         |          |            | Conj  |             | F-   -S     |     |    -   -S      |          |          | Adv      | F-   -    | F-   -S      
+trn |           |   |         |          |            | and   |             | your        |     | 1st person prn |          |          | only     | thing     | so great     
+cmt |           |   |         |          |            |       |             |             |     |                |          |          |          |           |              
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | tam      | atrox | tam      | +que | incredibilis    | verum        | id        | quod | multo         | magis | est          | admirandum | dies      | dixi               
+dct | tam      |       | tam      | +que | incredibilis,-e | verus,-a,-um | is,ea,eum |      | multus,-a,-um |       | sum,esse,fui |            | dies,-ei  | dico,-ere,dixi,-tus
+prs | Conj     |       | Conj     | Conj |    -   -S       |    -   -S    | N-   -S   |      |    -   -S     |       | 3S-P-I-A     |            | C-   -    | 1S-Pf-I-A          
+trn | so, thus |       | so, thus | and  | incredible      | true         | weak dem. |      | many          |       | to be        |            | day       | to speak           
+cmt |          |       |          |      |                 |              |           |      |               |       |              |            |           |                    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | ego            | idem | in                | senatu      | caedem        | te             | optimatium | contulisse | in                | ante      | diem     | v | Kalendas
+dct | ego,mihi       |      | in                | senatus,-us | caedes,caedis | tu,tui         |            |            | in                | ante      | dies,-ei |   |         
+prs |    -N-S        |      | Prep w/Ac&Ab      | M-Ab-S      | F-Ac-S        |    -   -S      |            |            | Prep w/Ac&Ab      | Prep w/Ac | C-Ac-S   |   |         
+trn | 1st person prn |      | in, on/into, onto | senate      | slaughter     | 2nd person prn |            |            | in, on/into, onto | before    | day      |   |         
+cmt |                |      |                   |             |               |                |            |            |                   |           |          |   |         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | Novembris | tum  | cum | multi         | principes | civitatis      | Roma | non | tam      | sui | conservandi | quam | tuorum | consiliorum        | reprimendorum | causa    
+dct |           | tum  |     | multus,-a,-um |           | civitas,-tatis |      | non | tam      |     | conservo(1) |      |        | consilium,consilii |               | causa,-ae
+prs |           | Adv  |     |    -G-S       |           | F-G-S          |      | Adv | Conj     |     |             |      |        | N-G-P              |               | F-   -S  
+trn |           | then |     | many          |           | state          |      | not | so, thus |     | to conserve |      |        | plan council       |               | cause    
+cmt |           |      |     |               |           |                |      |     |          |     |             |      |        |                    |               |          
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | profugerunt | num | infitiari | potes              | te             | illo            | ipso | die      | meis | praesidiis           | mea         | diligentia | circumclusum
+dct |             |     |           | potsum,posse,potui | tu,tui         | ille,illa,illud |      | dies,-ei |      | praesidium,praesidii | meus,-a,-um |            |             
+prs |             |     |           | 2S-P-I-A           |    -   -S      |    -Ab-S        |      | C-Ab-S   |      | N-   -P              | F-   -S     |            |             
+trn |             |     |           | to be able         | 2nd person prn | that            |      | day      |      | garrison             | my          |            |             
+cmt |             |     |           |                    |                |                 |      |          |      |                      |             |            |             
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+txt | commovere | te             | contra    | rem     | publicam        | non | potuisse           | cum | tu             | discessu | ceterorum | nostra                | tamen  
+dct |           | tu,tui         | contra    | res,-ei | publicus,-a,-um | non | potsum,posse,potui |     | tu,tui         |          |           | noster,nostra,nostrum | tamen  
+prs |           |    -   -S      | Prep w/Ac | F-Ac-S  | F-Ac-S          | Adv | Pf-I-A             |     |    -N-S        |          |           | F-   -S               | Conj   
+trn |           | 2nd person prn | against   | thing   | public          | not | to be able         |     | 2nd person prn |          |           | our                   | however
+cmt |           |                |           |         |                 |     |                    |     |                |          |           |                       |        
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | qui           | remansissemus | caede         | contentum                   | te             | esse         | dicebas             | quid          | cum | te            
+dct | qui,quae,quod |               | caedes,caedis | contineo,-ere,-ui,contentus | tu,tui         | sum,esse,fui | dico,-ere,dixi,-tus | qui,quae,quod |     | tu,tui        
+prs | M-N-S         |               | F-Ab-S        |                             |    -   -S      | P-Inf-A      | 2S-Impf-I-A         | N-N-S         |     |    -   -S     
+trn | rel./inq.     |               | slaughter     | to contain                  | 2nd person prn | to be        | to speak            | rel./inq.     |     | 2nd person prn
+cmt |               |               |               |                             |                |              |                     |               |     |               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | Praeneste | Kalendis | ipsis | Novembribus | occupaturum | nocturno | impetu      | esse         | confideres | sensistin | illam           | coloniam | meo         | iussu
+dct |           |          |       |             |             |          | impetus,-us | sum,esse,fui |            |           | ille,illa,illud |          | meus,-a,-um |      
+prs |           |          |       |             |             |          | M-Ab-S      | P-Inf-A      |            |           | F-Ac-S          |          |    -   -S   |      
+trn |           |          |       |             |             |          | attack      | to be        |            |           | that            |          | my          |      
+cmt |           |          |       |             |             |          |             |              |            |           |                 |          |             |      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | meis | praesidiis           | custodiis | vigiliis | esse         | munitam | nihil | agis               | nihil | moliris | nihil | cogitas     | quod | non | ego           
+dct |      | praesidium,praesidii |           |          | sum,esse,fui |         |       | ago,-ere,egi,actus |       |         |       | cogito(1)   |      | non | ego,mihi      
+prs |      | N-   -P              |           |          | P-Inf-A      |         |       | 2S-P-I-A           |       |         |       | 2S-P-I-A    |      | Adv |    -N-S       
+trn |      | garrison             |           |          | to be        |         |       | to do              |       |         |       | to consider |      | not | 1st person prn
+cmt |      |                      |           |          |              |         |       |                    |       |         |       |             |      |     |               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | non_modo | audiam                | sed  | etiam | videam              | plane | +que | sentiam                  | recognosce | mecum | tandem  | noctem     | illam          
+dct | non_modo | audio,-ire,-ivi,-itus | sed  | etiam | video,-ere,-i,visus |       | +que | sentio,-ire,sensi,sensus |            |       | tandem  | nox,noctis | ille,illa,illud
+prs | Adv      | 1S-   -   -A          | Conj | Adv   | 1S-P-S-A            |       | Conj | 1S-   -   -A             |            |       | Adv     | F-Ac-S     | F-Ac-S         
+trn | only     | to hear               | but  | still | to see              |       | and  | to sense                 |            |       | finally | night      | that           
+cmt |          |                       |      |       |                     |       |      |                          |            |       |         |            |                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | superiorem | iam     | intelleges                           | multo         | me             | vigilare | acrius | ad         | salutem       | quam | te            
+dct |            | iam     | intellego,-ere,intellexi,intellectus | multus,-a,-um | ego,mihi       |          |        | ad         | salus,salutis |      | tu,tui        
+prs |            | Adv     | 2S-F-I-A                             |    -   -S     |    -   -S      |          |        | Prep w/Ac  | F-Ac-S        |      |    -   -S     
+trn |            | already | to understand                        | many          | 1st person prn |          |        | to, toward | health        |      | 2nd person prn
+cmt |            |         |                                      |               |                |          |        |            |               |      |               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | ad         | perniciem | rei | publicae        | dico                | te             | priore | nocte      | venisse            | inter     | falcarios | non
+dct | ad         |           |     | publicus,-a,-um | dico,-ere,dixi,-tus | tu,tui         |        | nox,noctis | venio,-ire,-i,-tus | inter     |           | non
+prs | Prep w/Ac  |           |     | F-   -S         | 1S-P-I-A            |    -   -S      |        | F-Ab-S     | Pf-I-A             | Prep w/Ac |           | Adv
+trn | to, toward |           |     | public          | to speak            | 2nd person prn |        | night      | to come            | between   |           | not
+cmt |            |           |     |                 |                     |                |        |            |                    |           |           |    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | agam               | obscure | in                | M      | Laecae | domum     | convenisse | eodem | compluris | eiusdem | amentiae         | sceleris        | +que | socios
+dct | ago,-ere,egi,actus |         | in                | Marcus |        | domus,-us |            |       |           |         | amentia,-ae      | scelus,sceleris | +que |       
+prs | 1S-   -   -A       |         | Prep w/Ac&Ab      |        |        | F-Ac-S    |            |       |           |         | F-   -           | N-G-S           | Conj |       
+trn | to do              |         | in, on/into, onto |        |        | home      |            |       |           |         | madness?insanity | crime           | and  |       
+cmt |                    |         |                   |        |        |           |            |       |           |         |                  |                 |      |       
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+txt | num | negare  | audes             | quid          | taces                | convincam | si   | negas    | video               | enim | esse         | hic | in               
+dct |     | nego(1) | audeo,-ere,-i,-us | qui,quae,quod | taceo,-ere,-ui,-itus |           | si   | nego(1)  | video,-ere,-i,visus | enim | sum,esse,fui |     | in               
+prs |     |         | 2S-P-I-A          | N-N-S         | 2S-P-I-A             |           | Conj | 2S-P-I-A | 1S-P-I-A            | Conj | P-Inf-A      |     | Prep w/Ac&Ab     
+trn |     | to deny | to dare           | rel./inq.     | to be silent         |           | if   | to deny  | to see              | for  | to be        |     | in, on/into, onto
+cmt |     |         |                   |               |                      |           |      |          |                     |      |              |     |                  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | senatu      | quosdam | qui           | tecum | una | fuerunt      | O | di | immortales | ubinam | gentium     | sumus        | quam | rem     | publicam       
+dct | senatus,-us |         | qui,quae,quod |       |     | sum,esse,fui |   |    |            |        | gens,gentis | sum,esse,fui |      | res,-ei | publicus,-a,-um
+prs | M-Ab-S      |         | M-N-S         |       |     | 3P-Pf-I-A    |   |    |            |        | F-G-P       | 1P-P-I-A     |      | F-Ac-S  | F-Ac-S         
+trn | senate      |         | rel./inq.     |       |     | to be        |   |    |            |        | clan        | to be        |      | thing   | public         
+cmt |             |         |               |       |     |              |   |    |            |        |             |              |      |         |                
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | habemus              | in                | qua           | urbe       | vivimus               | hic | hic | sunt         | in                | nostro               
+dct | habeo,-ere,-ui,-itus | in                | qui,quae,quod | urbs,urbis | vivo,-ere,vixi,victus |     |     | sum,esse,fui | in                | noster,nostra,nostrum
+prs | 1P-P-I-A             | Prep w/Ac&Ab      | F-N-S         | F-Ab-S     | 1P-P-I-A              |     |     | 3P-P-I-A     | Prep w/Ac&Ab      |    -   -S            
+trn | to have, hold        | in, on/into, onto | rel./inq.     | city       | to live               |     |     | to be        | in, on/into, onto | our                  
+cmt |                      |                   |               |            |                       |     |     |              |                   |                      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | numero     | patres       | conscripti | in                | hoc          | orbis       | terrae    | sanctissimo | gravissimo | +que | consilio           | qui          
+dct | numerus,-i | pater,patris |            | in                | hic,haec,hoc | orbis,orbis | terra,-ae |             |            | +que | consilium,consilii | qui,quae,quod
+prs | M-   -S    | M-   -P      |            | Prep w/Ac&Ab      |    -Ab-S     | M-   -S     | F-   -    |             |            | Conj | N-   -S            | M-N-S        
+trn | number     | father       |            | in, on/into, onto | this         | circle      | land      |             |            | and  | plan council       | rel./inq.    
+cmt |            |              |            |                   |              |             |           |             |            |      |                    |              
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | de               | nostro                | omnium | interitu | qui           | de               | huius        | urbis      | atque | adeo | de               | orbis      
+dct | de               | noster,nostra,nostrum |        |          | qui,quae,quod | de               | hic,haec,hoc | urbs,urbis | atque |      | de               | orbis,orbis
+prs | Prep w/Ab        |    -   -S             |        |          | M-N-S         | Prep w/Ab        |    -G-S      | F-G-S      | Conj  |      | Prep w/Ab        | M-   -S    
+trn | down from, about | our                   |        |          | rel./inq.     | down from, about | this         | city       | and   |      | down from, about | circle     
+cmt |                  |                       |        |          |               |                  |              |            |       |      |                  |            
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | terrarum  | exitio | cogitent    | hos          | ego            | video               | consul          | et   | de               | re      | publica         | sententiam   
+dct | terra,-ae |        | cogito(1)   | hic,haec,hoc | ego,mihi       | video,-ere,-i,visus | consul,consulis | et   | de               | res,-ei | publicus,-a,-um | sententia,-ae
+prs | F-G-P     |        | 3P-P-S-A    | M-Ac-P       |    -N-S        | 1S-P-I-A            | M-N-S           | Conj | Prep w/Ab        | F-Ab-S  | F-   -S         | F-Ac-S       
+trn | land      |        | to consider | this         | 1st person prn | to see              | consul          | and  | down from, about | thing   | public          | judgement    
+cmt |           |        |             |              |                |                     |                 |      |                  |         |                 |              
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | rogo     | et   | quos | ferro        | trucidari | oportebat | eos       | nondum | voce      | volnero | fuisti       | igitur | apud | Laecam | illa            | nocte     
+dct | rogo(1)  | et   |      | ferrum,ferri |           |           | is,ea,eum |        | vox,vocis |         | sum,esse,fui |        |      |        | ille,illa,illud | nox,noctis
+prs | 1S-P-I-A | Conj |      | N-   -S      |           |           | M-Ac-P    |        | F-Ab-S    |         | 2S-Pf-I-A    |        |      |        |    -   -        | F-Ab-S    
+trn | to ask   | and  |      | iron         |           |           | weak dem. |        | voice     |         | to be        |        |      |        | that            | night     
+cmt |          |      |      |              |           |           |           |        |           |         |              |        |      |        |                 |           
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | Catilina | distribuisti | partis | Italiae | statuisti | quo | quemque | proficisci | placeret | delegisti | quos | Romae | relinqueres                    | quos | tecum
+dct |          |              |        |         |           |     |         |            |          |           |      |       | relinquo,-ere,reliqui,relictus |      |      
+prs |          |              |        |         |           |     |         |            |          |           |      |       | 2S-Impf-S-A                    |      |      
+trn |          |              |        |         |           |     |         |            |          |           |      |       | to leave                       |      |      
+cmt |          |              |        |         |           |     |         |            |          |           |      |       |                                |      |      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+txt | educeres | discripsisti | urbis      | partis | ad         | incendia | confirmasti | te             | ipsum | iam     | esse         | exiturum | dixisti             | paulum
+dct |          |              | urbs,urbis |        | ad         |          |             | tu,tui         |       | iam     | sum,esse,fui |          | dico,-ere,dixi,-tus |       
+prs |          |              | F-G-S      |        | Prep w/Ac  |          |             |    -   -S      |       | Adv     | P-Inf-A      |          | 2S-Pf-I-A           |       
+trn |          |              | city       |        | to, toward |          |             | 2nd person prn |       | already | to be        |          | to speak            |       
+cmt |          |              |            |        |            |          |             |                |       |         |              |          |                     |       
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | tibi           | esse         | etiam | nunc | morae     | quod | ego            | viverem               | reperti | sunt         | duo | equites       | Romani        
+dct | tu,tui         | sum,esse,fui | etiam | nunc | mora,-ae  |      | ego,mihi       | vivo,-ere,vixi,victus |         | sum,esse,fui |     | eques,equitis | Romanus,-a,-um
+prs |    -D-S        | P-Inf-A      | Adv   | Adv  | F-   -    |      |    -N-S        | 1S-Impf-S-A           |         | 3P-P-I-A     |     | M-   -P       |    -G-S       
+trn | 2nd person prn | to be        | still | now  | delay     |      | 1st person prn | to live               |         | to be        |     | horseman      | Roman         
+cmt |                |              |       |      |           |      |                |                       |         |              |     |               |               
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | qui           | te             | ista            | cura     | liberarent  | et   | se             | illa            | ipsa | nocte      | paulo | ante      | lucem    
+dct | qui,quae,quod | tu,tui         | iste,ista,istud | cura,-ae | libero(1)   | et   | -,sui          | ille,illa,illud |      | nox,noctis |       | ante      | lux,lucis
+prs | M-N-S         |    -   -S      |    -   -        | F-   -S  | 3P-Impf-S-A | Conj |    -   -       |    -   -        |      | F-Ab-S     |       | Prep w/Ac | F-Ac-S   
+trn | rel./inq.     | 2nd person prn | that            | care     | to free     | and  | 3rd person prn | that            |      | night      |       | before    | light    
+cmt |               |                |                 |          |             |      |                |                 |      |            |       |           |          
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | me             | in                | meo         | lecto               | interfecturos | esse         | pollicerentur | haec         | ego            | omnia | vixdum | etiam
+dct | ego,mihi       | in                | meus,-a,-um | lego,-ere,-i,lectus |               | sum,esse,fui |               | hic,haec,hoc | ego,mihi       |       |        | etiam
+prs |    -   -S      | Prep w/Ac&Ab      |    -   -S   |                     |               | P-Inf-A      |               | N-   -P      |    -N-S        |       |        | Adv  
+trn | 1st person prn | in, on/into, onto | my          | to choose, read     |               | to be        |               | this         | 1st person prn |       |        | still
+cmt |                |                   |             |                     |               |              |               |              |                |       |        |      
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | coetu | vestro                | dimisso | comperi | domum     | meam        | maioribus | praesidiis           | munivi | atque | firmavi | exclusi | eos       | quos
+dct |       | vester,vestra,vestrum |         |         | domus,-us | meus,-a,-um |           | praesidium,praesidii |        | atque |         |         | is,ea,eum |     
+prs |       |    -   -S             |         |         | F-Ac-S    | F-Ac-S      |           | N-   -P              |        | Conj  |         |         | M-Ac-P    |     
+trn |       | your                  |         |         | home      | my          |           | garrison             |        | and   |         |         | weak dem. |     
+cmt |       |                       |         |         |           |             |           |                      |        |       |         |         |           |     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | tu             | ad         | me             | salutatum | mane                | miseras                | cum | illi            | ipsi | venissent          | quos
+dct | tu,tui         | ad         | ego,mihi       |           | maneo,-ere,-si,-sus | mitto,-ere,misi,missus |     | ille,illa,illud |      | venio,-ire,-i,-tus |     
+prs |    -N-S        | Prep w/Ac  |    -   -S      |           | 2S-P-Imp-A          | 2S-Ppf-I-A             |     |    -   -        |      | 3P-Ppf-S-A         |     
+trn | 2nd person prn | to, toward | 1st person prn |           | to remain           | to send                |     | that            |      | to come            |     
+cmt |                |            |                |           |                     |                        |     |                 |      |                    |     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+txt | ego            | iam     | multis | ac    | summis | viris    | ad         | me             | id        | temporis        | venturos           | esse         | praedixeram
+dct | ego,mihi       | iam     |        | atque |        | vir,viri | ad         | ego,mihi       | is,ea,eum | tempus,temporis | venio,-ire,-i,-tus | sum,esse,fui |            
+prs |    -N-S        | Adv     |        | Conj  |        | M-   -P  | Prep w/Ac  |    -   -S      | N-   -S   | N-G-S           |                    | P-Inf-A      |            
+trn | 1st person prn | already |        | and   |        | man      | to, toward | 1st person prn | weak dem. | time            | to come            | to be        |            
+cmt |                |         |        |       |        |          |            |                |           |                 |                    |              |            
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Participle: molientem: molior,moliri,molitus sum,-: 
+P-Ppl-A/   -Ac-S: to work at
+Participle: perditus: perdo,perdere,perdidi,perditus: 
+Pf-Ppl-P/M-N-S: to destroy?waste?lose
+Participle: sentientem: sentio,sentire,sensi,sensus: 
+P-Ppl-A/   -Ac-S: to sense
+Participle: conservandi: conservo,conservare,conservavi,conservatus: 
+F-Ppl-P/   -   -   : to conserve
+Participle: contentum: contineo,continere,continui,contentus: 
+Pf-Ppl-P/   -   -S: to contain
+Participle: lecto: lego,legere,legi,lectus: 
+Pf-Ppl-P/   -   -S: to choose, read
+Participle: venturos: venio,venire,veni,ventus: 
+F-Ppl-A/M-Ac-P: to come
+UNKNOWN: decrevit
+UNKNOWN: quondam
+UNKNOWN: L
+UNKNOWN: Opimius
+UNKNOWN: ne
+UNKNOWN: detrimenti
+UNKNOWN: intercessit
+UNKNOWN: interfectus
+UNKNOWN: quasdam
+UNKNOWN: seditionum
+UNKNOWN: suspiciones
+UNKNOWN: C
+UNKNOWN: Gracchus
+UNKNOWN: clarissimo
+UNKNOWN: avo
+UNKNOWN: maioribus
+UNKNOWN: occisus
+Conflict: cum might be from:
+- cum Prep w/Ab with
+- cum Conj when
+UNKNOWN: liberis
+UNKNOWN: M
+UNKNOWN: Fulvius
+UNKNOWN: consularis
+UNKNOWN: consulto
+UNKNOWN: C
+UNKNOWN: Mario
+UNKNOWN: L
+UNKNOWN: Valerio
+UNKNOWN: permissa
+UNKNOWN: num
+Conflict: unum might be from:
+- unus,una,unum    -   -S one
+- unus,una,unum    -   -S one
+UNKNOWN: L
+UNKNOWN: Saturninum
+UNKNOWN: C
+UNKNOWN: Servilium
+Conflict: rei might be from:
+- reus,rei M-   -    defendant
+- res,rei F-   -S thing
+UNKNOWN: remorata
+UNKNOWN: vicesimum
+UNKNOWN: hebescere
+UNKNOWN: eius
+UNKNOWN: consultum
+UNKNOWN: inclusum
+UNKNOWN: tabulis
+UNKNOWN: tamquam
+UNKNOWN: vagina
+UNKNOWN: reconditum
+UNKNOWN: quo
+UNKNOWN: consulto
+UNKNOWN: confestim
+UNKNOWN: interfectum
+UNKNOWN: Catilina
+UNKNOWN: convenit
+UNKNOWN: deponendam
+UNKNOWN: confirmandam
+UNKNOWN: audaciam
+UNKNOWN: conscripti
+UNKNOWN: clementem
+UNKNOWN: tantis
+Conflict: rei might be from:
+- reus,rei M-   -    defendant
+- res,rei F-   -S thing
+UNKNOWN: dissolutum
+UNKNOWN: ipse
+UNKNOWN: inertiae
+UNKNOWN: nequitiae
+UNKNOWN: condemno
+UNKNOWN: Italia
+UNKNOWN: Etruriae
+UNKNOWN: faucibus
+UNKNOWN: conlocata
+UNKNOWN: crescit
+UNKNOWN: singulos
+UNKNOWN: eorum
+UNKNOWN: adeo
+UNKNOWN: intestinam
+UNKNOWN: aliquam
+UNKNOWN: cotidie
+UNKNOWN: perniciem
+Conflict: rei might be from:
+- reus,rei M-   -    defendant
+- res,rei F-   -S thing
+UNKNOWN: Catilina
+Conflict: comprehendi might be from:
+- comprehendo,comprehendere,comprehendi,comprehensus P-Inf-P to understand
+- comprehendo,comprehendere,comprehendi,comprehensus 1S-Pf-I-A to understand
+UNKNOWN: interfici
+UNKNOWN: iussero
+UNKNOWN: verendum
+UNKNOWN: ne
+UNKNOWN: potius
+UNKNOWN: omnes
+UNKNOWN: serius
+UNKNOWN: quam
+UNKNOWN: quisquam
+UNKNOWN: crudelius
+Conflict: factum might be from:
+- facio,facere,feci,factus Pf-Ppl-P/   -   -S to make
+- factum,facti N-   -S deed
+Conflict: quod might be from:
+- qui,quae,quod N-   -S rel./inq.
+- quod Conj because
+Conflict: factum might be from:
+- facio,facere,feci,factus Pf-Ppl-P/   -   -S to make
+- factum,facti N-   -S deed
+UNKNOWN: oportuit
+UNKNOWN: nondum
+UNKNOWN: adducor
+UNKNOWN: deni
+UNKNOWN: interficiere
+Conflict: cum might be from:
+- cum Prep w/Ab with
+- cum Conj when
+UNKNOWN: nemo
+Conflict: tui might be from:
+- tuus,tua,tuum    -G-S your
+- tu,tui    -G-S 2nd person prn
+Conflict: iure might be from:
+- iuvo,iuvare,iuvi,iutus 2S-   -   -A to help
+- ius,iuris N-Ab-S right
+Conflict: factum might be from:
+- facio,facere,feci,factus Pf-Ppl-P/   -   -S to make
+- factum,facti N-   -S deed
+UNKNOWN: quam
+UNKNOWN: diu
+UNKNOWN: quisquam
+Conflict: defendere might be from:
+- defendo,defendere,defendi,defensus 2S-   -   -    to defend
+- defendo,defendere,defendi,defensus 2S-   -   -A to defend
+Conflict: ita might be from:
+- eo,ire,ivi,itus Pf-Ppl-P/   -   -    to go
+- ita Conj so, thus
+UNKNOWN: multis
+UNKNOWN: meis
+UNKNOWN: firmis
+UNKNOWN: obsessus
+UNKNOWN: ne
+UNKNOWN: commovere
+UNKNOWN: possis
+UNKNOWN: multorum
+UNKNOWN: sicut
+UNKNOWN: adhuc
+UNKNOWN: speculabuntur
+UNKNOWN: custodient
+UNKNOWN: etenim
+UNKNOWN: Catilina
+Conflict: quod might be from:
+- qui,quae,quod N-   -S rel./inq.
+- quod Conj because
+UNKNOWN: amplius
+UNKNOWN: tenebris
+UNKNOWN: obscurare
+UNKNOWN: coetus
+UNKNOWN: nefarios
+UNKNOWN: nec
+UNKNOWN: privata
+Conflict: domus might be from:
+- domus Adv home
+- domus,domus F-   -    home
+UNKNOWN: parietibus
+Conflict: voces might be from:
+- voco,vocare,vocavi,vocatus 2S-P-S-A to call
+- vox,vocis F-   -P voice
+UNKNOWN: coniurationis
+UNKNOWN: inlustrantur
+UNKNOWN: erumpunt
+UNKNOWN: omnia
+UNKNOWN: obliviscere
+UNKNOWN: incendiorum
+UNKNOWN: undi
+UNKNOWN: clariora
+UNKNOWN: omnia
+UNKNOWN: quae
+UNKNOWN: mecum
+UNKNOWN: recognoscas
+UNKNOWN: meministine
+UNKNOWN: xii
+UNKNOWN: Kalendas
+UNKNOWN: Novembris
+UNKNOWN: fore
+UNKNOWN: armis
+UNKNOWN: futurus
+UNKNOWN: Kal
+UNKNOWN: Novembris
+UNKNOWN: C
+UNKNOWN: Manlium
+UNKNOWN: audaciae
+UNKNOWN: satellitem
+UNKNOWN: administrum
+UNKNOWN: num
+UNKNOWN: fefellit
+UNKNOWN: Catilina
+UNKNOWN: atrox
+Conflict: quod might be from:
+- qui,quae,quod N-   -S rel./inq.
+- quod Conj because
+UNKNOWN: magis
+UNKNOWN: admirandum
+UNKNOWN: idem
+UNKNOWN: optimatium
+UNKNOWN: contulisse
+UNKNOWN: v
+UNKNOWN: Kalendas
+UNKNOWN: Novembris
+Conflict: cum might be from:
+- cum Prep w/Ab with
+- cum Conj when
+UNKNOWN: principes
+UNKNOWN: Roma
+Conflict: sui might be from:
+- suus,sua,suum    -G-S refl. adj.
+- -,sui    -G-    3rd person prn
+UNKNOWN: quam
+UNKNOWN: tuorum
+UNKNOWN: reprimendorum
+UNKNOWN: profugerunt
+UNKNOWN: num
+UNKNOWN: infitiari
+UNKNOWN: ipso
+UNKNOWN: meis
+UNKNOWN: diligentia
+UNKNOWN: circumclusum
+UNKNOWN: commovere
+Conflict: cum might be from:
+- cum Prep w/Ab with
+- cum Conj when
+UNKNOWN: discessu
+UNKNOWN: ceterorum
+UNKNOWN: remansissemus
+Conflict: cum might be from:
+- cum Prep w/Ab with
+- cum Conj when
+UNKNOWN: Praeneste
+UNKNOWN: Kalendis
+UNKNOWN: ipsis
+UNKNOWN: Novembribus
+UNKNOWN: occupaturum
+UNKNOWN: nocturno
+UNKNOWN: confideres
+UNKNOWN: sensistin
+UNKNOWN: coloniam
+UNKNOWN: iussu
+UNKNOWN: meis
+UNKNOWN: custodiis
+UNKNOWN: vigiliis
+UNKNOWN: munitam
+UNKNOWN: nihil
+UNKNOWN: nihil
+UNKNOWN: moliris
+UNKNOWN: nihil
+Conflict: quod might be from:
+- qui,quae,quod N-   -S rel./inq.
+- quod Conj because
+UNKNOWN: plane
+UNKNOWN: recognosce
+UNKNOWN: mecum
+UNKNOWN: superiorem
+UNKNOWN: vigilare
+UNKNOWN: acrius
+UNKNOWN: quam
+UNKNOWN: perniciem
+Conflict: rei might be from:
+- reus,rei M-   -    defendant
+- res,rei F-   -S thing
+UNKNOWN: priore
+UNKNOWN: falcarios
+UNKNOWN: obscure
+UNKNOWN: M
+UNKNOWN: Laecae
+UNKNOWN: convenisse
+UNKNOWN: eodem
+UNKNOWN: compluris
+UNKNOWN: eiusdem
+UNKNOWN: socios
+UNKNOWN: num
+Conflict: negare might be from:
+- nego,negare,negavi,negatus 2S-P-   -    to deny
+- nego,negare,negavi,negatus 2S-   -   -A to deny
+UNKNOWN: convincam
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+UNKNOWN: quosdam
+UNKNOWN: tecum
+Conflict: una might be from:
+- una Adv together
+- unus,una,unum    -   -    one
+- unus,una,unum F-   -S one
+UNKNOWN: O
+UNKNOWN: di
+UNKNOWN: immortales
+UNKNOWN: ubinam
+UNKNOWN: quam
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+UNKNOWN: conscripti
+UNKNOWN: sanctissimo
+UNKNOWN: gravissimo
+UNKNOWN: omnium
+UNKNOWN: interitu
+UNKNOWN: adeo
+UNKNOWN: exitio
+UNKNOWN: quos
+UNKNOWN: trucidari
+UNKNOWN: oportebat
+UNKNOWN: nondum
+UNKNOWN: volnero
+UNKNOWN: igitur
+UNKNOWN: apud
+UNKNOWN: Laecam
+UNKNOWN: Catilina
+UNKNOWN: distribuisti
+Conflict: partis might be from:
+- pario,parere,peperi,partus Pf-Ppl-P/   -   -P to produce
+- pars,partis F-G-S part
+UNKNOWN: Italiae
+UNKNOWN: statuisti
+UNKNOWN: quo
+UNKNOWN: quemque
+UNKNOWN: proficisci
+UNKNOWN: placeret
+UNKNOWN: delegisti
+UNKNOWN: quos
+UNKNOWN: Romae
+UNKNOWN: quos
+UNKNOWN: tecum
+UNKNOWN: educeres
+UNKNOWN: discripsisti
+Conflict: partis might be from:
+- pario,parere,peperi,partus Pf-Ppl-P/   -   -P to produce
+- pars,partis F-G-S part
+UNKNOWN: incendia
+UNKNOWN: confirmasti
+UNKNOWN: ipsum
+UNKNOWN: exiturum
+UNKNOWN: paulum
+Conflict: quod might be from:
+- qui,quae,quod N-   -S rel./inq.
+- quod Conj because
+UNKNOWN: reperti
+UNKNOWN: duo
+UNKNOWN: ipsa
+UNKNOWN: paulo
+UNKNOWN: interfecturos
+UNKNOWN: pollicerentur
+UNKNOWN: omnia
+UNKNOWN: vixdum
+UNKNOWN: coetu
+UNKNOWN: dimisso
+UNKNOWN: comperi
+UNKNOWN: maioribus
+UNKNOWN: munivi
+UNKNOWN: firmavi
+UNKNOWN: exclusi
+UNKNOWN: quos
+UNKNOWN: salutatum
+Conflict: cum might be from:
+- cum Prep w/Ab with
+- cum Conj when
+UNKNOWN: ipsi
+UNKNOWN: quos
+UNKNOWN: multis
+UNKNOWN: summis
+UNKNOWN: praedixeram

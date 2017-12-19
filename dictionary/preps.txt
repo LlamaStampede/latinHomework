@@ -1,0 +1,33 @@
+G
+CAUSA	because, for the sake (of)
+Ac
+ANTE	before
+PER	through, because of
+AD	to, toward
+PROPTER	on account of
+CIRCUM	around
+CONTRA	against
+VERSUS	against
+INTER	between
+EXTRA	outside of
+INTRA	within
+TRANS	across
+POST	after, behind
+SUB	under
+OB	on account of
+PRAETER	except for
+PROPE	near, about
+Ab
+A	from, by
+AB	from, by
+SINE	without
+DE	down from, about
+PRO	for
+CUM	with
+PRAE	before, in front of
+E	out from
+EX	out from
+SUB	under
+Ac&Ab
+IN	in, on/into, onto
+SUPER	above

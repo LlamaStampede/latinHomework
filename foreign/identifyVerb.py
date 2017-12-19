@@ -1,8 +1,8 @@
 #copyright Michael Lembck and Aiden Bailey
 #Steel is baad
 
-possibleWords = "paratus, parans, parabaris, parent, paravisse, parat, parabuntur, paraverint".split(", ")
-exampleVerb = "paro, parare, paravi, paratus".split(", ")
+#possibleWords = "paratus, parans, parabaris, parent, paravisse, parat, parabuntur, paraverint".split(", ")
+#exampleVerb = "paro, parare, paravi, paratus".split(", ")
 
 def indicative(word, verb): # checks all indicatives except perfect system of passives because they are 2 words
     #print(word, verb)
@@ -79,22 +79,21 @@ def checkVerb(word, verb):
     if indicative(word, verb) or infinitives(word, verb) or participal(word, verb):
         return(True)
     return(False)
+def main(word):
+    f = open("verbs.txt", "r")
+    verbList = f.read().split("\n")
+    for i in range(len(verbList)): #I get why you did this {ok ~m}
+        #print(verbList[i])
+        temp = verbList[i].split("\t")
+        verbList[i] = [[temp[0], temp[1], temp[2], temp[3]], temp[4], temp[5]]
 
-f = open("verbs.txt", "r")
-verbList = f.read().split("\n")
-for i in range(len(verbList)): #I get why you did this {ok ~m}
-    #print(verbList[i])
-    temp = verbList[i].split("\t")
-    verbList[i] = [[temp[0], temp[1], temp[2], temp[3]], temp[4], temp[5]]
+    f.close()
+    #verbList = [["4 prinparts", "definition"], [...]]
+    #print(indicative(possibleWords[7], verb))
 
-f.close()
-#verbList = [["4 prinparts", "definition"], [...]]
-#print(indicative(possibleWords[7], verb))
-
-while True:
-    x = raw_input("Enter a verb: ") #Ignore this edit, I'm looking into how to upgrade my python {yeah pls do ~m}
-    if x == "stop":
-        break
+    x = word#raw_input("Enter a verb: ") #Ignore this edit, I'm looking into how to upgrade my python {yeah pls do ~m}
+        #if x == "stop":
+        #break
     for verb in verbList:
         #print(verb[0][0])
         stop = False # The merge I mention below would eliminate the need for this line
@@ -103,9 +102,10 @@ while True:
             stop = checkVerb(x, verb[0])
             #print(verb)
         if stop == True:
-            print("Dictionary Entry: ", verb[0], "\nTranslation: ", verb[1])
+            return (verb[0], verb[1])
         else:
             stop = participal(x, verb[0]) # This line can't affect anything: the verb is about to change and "stop" is about to be reset (on line 100). Also it caused an error.
             #Also, I feel like lines 99, 100, and 102 could be combined:
                 # if (verb[0][0] == x[0] or verb[2][0] == x[0]) and checkVerb(x, verb[0].split(", ")): {Sounds good, go for it ~m}
                 # Note: I added {verb[2][0]} because some verbs change their first letter in the perfect (ago agere EGI actus)
+    return(None, None)
