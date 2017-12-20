@@ -1,7 +1,7 @@
 def format(final_list,errors,show_errors):
     output = open("../site/output.html","w+")
     
-    output.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Analysis Sheet</title><link rel="stylesheet" type="text/css" href="style.css"></head><body><h1>Analysis Sheet</h1><div id="sheet">')
+    output.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Analysis Sheet</title><link rel="stylesheet" type="text/css" href="style.css"></head><body><h1>Analysis Sheet</h1><p id="Center">Center</p><input type="checkbox"><div id="sheet">')
     
     for col in final_list:
         output.write("<ul>")
