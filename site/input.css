@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+  font-family: fantasy;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 40px;
+  font-size: 28pt;
+}
+form * {
+  font: 14pt Georgia;
+  border: solid 5px darkgreen;
+  box-sizing: border-box;
+}
+textarea {
+  height: 60%;
+  width: 75%;
+  position: absolute;
+  top: 20%;
+  left: 12.5%;
+  padding: 20px;
+}
+a {
+  border: none;
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+  width: 10%;
+}
+button {width: 100%;}
+button:hover {
+  background-color: pink;
+  font-weight: bold;
+  cursor: pointer;
+}

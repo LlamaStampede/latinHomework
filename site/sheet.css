@@ -19,7 +19,7 @@ h1 + input {
   width: 80%;
   margin-left: 1.5%;
   padding: 0 32px;
-  background-image: url(5x3v3.png);
+  background-image: url(5x3v4.png);
   background-repeat: repeat-y;
 }
 hr {
@@ -32,7 +32,8 @@ ul {
   float: left;
   padding: 0px;
   margin: 0 -1px 2px;
-  min-width: 40px;
+  min-width: 60px;
+  position: relative;
 }
 li {
   text-decoration: none;
@@ -43,12 +44,14 @@ li {
   font-family: georgia, serif;
   font-size: 11pt;
 }
-input[type="checkbox"] {
+li::selection, li span::selection {background-color: #04f; color: white;}
+p + input[type="checkbox"] {
   position: fixed;
   right: 85px;
   margin: 5px;
 }
-#Center {
+#Embed + input[type="checkbox"] {margin: 30px 55px 0 0;}
+#Center,#Embed {
   margin: 0;
   padding: 2px 10px 2px 25px;
   position: fixed;
@@ -57,21 +60,33 @@ input[type="checkbox"] {
   font-family: monospace;
   font-size: 10pt;
 }
-input:checked + #sheet > ul > li {text-align: center;}
-input[type="text"]{
-  width: 128px;
+#Embed {margin-top: 25px;}
+#Center + input:checked ~ #sheet > ul > li {text-align: center;}
+input[type="text"] {
   height: 10pt;
-  padding: 0;
+  padding: 0 2px;
   margin: -2px 2px;
   font-family: inherit;
   font-size: 11pt;
   background-color: lightgray;
   text-align: inherit;
+  border: none;
 }
-input.mini {width: 15px; text-align: center;}
-input.comment {width: 55px;}
+input.mini {
+  width: 1.3em;
+  border-bottom: 1px dashed;
+}
+input.comment {width: 50px; border-bottom: 1px solid;}
 ul:hover {background-color: lightgreen;}
-#sheet > ul > li:first-child {font-weight: bold;}
+#sheet > ul > li:first-of-type {font-weight: bold; padding-right: 20px;}
+#sheet ul input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border: 5px solid black;
+}
 li.error {
   position: fixed;
   top: 40%;
@@ -80,25 +95,36 @@ li.error {
   border: 2px solid red;
   height: 80px;
   visibility: hidden;
+  max-width: 16%;
 }
+li.error, li.error * {overflow-x: scroll;}
 li.error p {
   margin: 0;
   font-weight: bold;
-  font-size: 20pt;
+  font-size: 16pt;
+  margin: 0;
 }
 ul:hover > li.error {visibility: visible;}
 /*li::selection {background-color: red;}
 li::selection ~ li {background-color: blue;}
 span::selection ~ li.error {visibility: visible;}*/
+li:first-of-type:active ~ li.error, li.error:hover, input:checked ~ li.error, #Embed + input:checked ~ #sheet li.error {
+  float: none;
+  max-width: none;
+  visibility: visible;
+  position: relative;
+  padding: 0;
+  margin: -86px 1px 2px 4px;
+}
 li ul {
   float: none;
   border: none;
 }
 li ul li {
-  list-style: square;
+  list-style: none;
   border: none;
-  margin-left: 25px;
 }
+input[type="radio"] {margin: 0 5px 0 25px;}
 
 #report {
   clear: left;

@@ -62,6 +62,7 @@ fabula	-ae	f	story
 scientia	-ae	f	knowledge
 disciplina	-ae	f	discipline
 amentia	-ae	f	madness?insanity
+Africanus	-i	m	Africa
 amicus	-i	m	friend
 animus	-i	m	mind
 deus	-i	m	god
@@ -255,6 +256,7 @@ limen	liminis	n	threshold
 prex	precis	f	prayers
 funus	funeris	n	funeral?corpse
 timor	-oris	m	fear
+tutor	-oris	m	defender
 auctor	-oris	m	founder
 animal	-alis	n	soul
 decus	decoris	n	grace

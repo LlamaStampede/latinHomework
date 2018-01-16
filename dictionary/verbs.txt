@@ -15,6 +15,7 @@ loquor	loqui	locutum sum	-	speak
 labor	labi	lapsum sum	-	glide
 caedo	caedere	cecidi	caesum	-	cut
 servio	servire	servivi	servitum	serve
+tuto	tutare	tutari	tutatum	be defended
 effreno	effrenare	effrenavi	effrenatum	unbridle
 rapio	rapere	rapui	raptum	snatch, hasten
 pario	parere	peperi	partum	produce

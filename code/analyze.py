@@ -4,16 +4,24 @@ lines = f.read()
 f.close()
 
 usableText = []
-lastspace = False #prevents double spaces
+lastspace = True #prevents double spaces
+godown = True
 for i in range(0, len(lines)):
-    if lines[i].isalpha() or (lines[i] == " " and not lastspace):
-        usableText.append(lines[i])
-        if lines[i] == " ": lastspace = True
+    letter = lines[i]
+    if letter.isalpha() or (letter == " " and not lastspace):
+        if lastspace and letter.isalpha(): firstletter = True
+        else: firstletter = False
+        if firstletter and godown:
+            letter = letter.lower()
+            godown = False
+        usableText.append(letter)
+        if letter == " ": lastspace = True
         else: lastspace = False
+    if letter in [".",":",";"] and not firstletter:
+        godown = True
 while usableText[0] == " ":
     usableText.pop(0)
-usableText = "".join(usableText)
-usableText = usableText.split(" ")
+usableText = "".join(usableText).split(" ")
 
 realText = []
 for term in usableText:
@@ -21,12 +29,12 @@ for term in usableText:
     elif term == "modo" and realText[-1] == "non": realText[-1] = "non_modo"
     else: realText.append(term)
 
-from describe import *
-from expand import *
-
 method = raw_input("Output Method: ")
 if method == " ": method = 1
 else: method = 2
+
+from describe import *
+from expand import *
 
 # Phase: Collect
 def inc(term,list): # efficiently returns (term in list) boolean
@@ -144,12 +152,12 @@ report = []
 #print pos
 ind = 0
 for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
-    if ind < len(pos) - 1: nextword = pos[ind+1][0]
+    ind += 1
+    if ind < len(pos): nextword = pos[ind][0]
     else: nextword = "finish"
-    [final,rep] = expand(pts,method,nextword)
+    [final,rep] = expand(pts,method,nextword,ind)
     final_list.append(final)
     if rep != []: report.append(rep)
-    ind += 1
 
 import os
 os.remove("describe.pyc")
@@ -190,15 +198,16 @@ for col in range(len(final_list)): #dct compression
     if len(stem) == 2:
         if [stem[0][-1],stem[1][-2:]] == ["a","ae"]: final_list[col][1] = stem[0]+",-ae"
         elif [stem[0][-2:],stem[1][-1]] == ["us","i"]: final_list[col][1] = stem[0]+",-i"
+        elif [stem[0][-2:],stem[1][-1]] == ["um","i"]: final_list[col][1] = stem[0]+",-i"
         elif [stem[0][-2:],stem[1][-2:]] == ["us","us"]: final_list[col][1] = stem[0]+",-us"
         elif [stem[0][-2:],stem[1][-2:]] == ["es","ei"]: final_list[col][1] = stem[0]+",-ei"
         else:
-            for t in [["tas","tatis"],["tio","tionis"],["or","oris"],["is","e"]]:
+            for t in [["tas","tatis"],["tio","tionis"],["or","oris"],["is","e"],["ns","ntis"]]:
                 if [stem[0][-len(t[0]):],stem[1][-len(t[1]):]] == t:
                     final_list[col][1] = stem[0]+",-"+t[1]
     term = final_list[col][0]
     names = {"M":"Marcus","L":"Lucius"}
-    if term in names: final_list[col][1] = names[term]
+    if term in names: final_list[col][1::2] = [names[term],names[term]]
 
 if method == 1:
     from output1 import *
@@ -207,3 +216,4 @@ else:
     from output2 import *
     os.remove("output2.pyc")
 format(final_list,report,errors)
+#print report

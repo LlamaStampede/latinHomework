@@ -116,3 +116,4 @@ cupidus	-a	-um	eager
 liberalis	liberale	decent!liberal
 vetus	veteris	old
 iustus	-a	-um	just
+alacrior	alacrius	happier

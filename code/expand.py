@@ -227,6 +227,10 @@ def case(stem,blank): #nouns, pronouns, adjectives, participles
         degree = ""
         if pos == "adj": degree = stem[-1][3:]
         forms.append([word,"%s-%s-%s" % (gender,case,number[i/5])+degree]) #gender-case-number
+        if [decl,i] == [2,0]: #vocative
+            if root[-1] == "i": voc_end = ""
+            else: voc_end = "e"
+            forms.append([root+voc_end,"%s-V-S"%(gender)])
         if root == "e" and (i in [7,9] or [gender,i] == ["M",5]): forms.append(["i"+end,"%s-%s-%s"%(gender,cases[i%5],number[i/5])+degree])
         if root == "qu" and i == 0:
             if gender == "N": word = "quid"
@@ -242,7 +246,7 @@ def case(stem,blank): #nouns, pronouns, adjectives, participles
             forms.append([adv,"Adv"])
     return forms
 
-def expand(pts,method,nextword):
+def expand(pts,method,nextword,counter):
     rep = []
     term = pts.pop(0)
     fins = [term] #finalists, all aplicable forms will later be appended
@@ -251,15 +255,16 @@ def expand(pts,method,nextword):
             blank = "   "
             comment = ""
         elif method == 2:
-            blank = "<input type='text' class='mini'>"
+            blank = "<input type='text' class='mini' maxlength='2'>"
             comment = "<input type='text' class='comment'>"
+            if p[0] == "v" and p[1] == "ppl": blank = "   "
         apls = [term] #apls=aplicable forms
         forms = [] #every form of the word will be added
         if p[0] == "prep":
             if term == "a": dct = "ab"
             elif term == "e": dct = "ex"
             else: dct = term
-            fins.append([term,dct,"Prep+"+p[1][2],p[1][1],""]) #prep & adv (& con) are guaranteed matches
+            fins.append([term,dct,"Prep+"+p[1][2],p[1][1],comment]) #prep & adv (& con) are guaranteed matches
         elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],comment[:-1] + " value='w/'>"])
         elif p[0] == "conj": #trn is the conj equivalent of dfn
             if term in ["sed","at"]: trn = "but"
@@ -306,7 +311,7 @@ def expand(pts,method,nextword):
             elif p[1] == "pf": #perfect system (Pf,PPf,Fp)
                 forms += perfect(stem)
             elif p[1] == "ppl": #All participles, activated if term contains impf stem (CAPIEbam) or p.p.p. stem (CAPTus)
-                blank = "__"
+                #blank = "__"
                 for n in range(4): #0:PPplA 1:FPplP 2:FPplA 3:PfPplP
                     nom = stem[[3,4][n/2]] + ["ns","nd","ur",""][n] #0:parans 1:parand(us-a-um) 2:paratur(us-a-um) 3:parat(us-a-um)
                     root = stem[[3,4][n/2]] + ["nt","nd","ur",""][n] #0:parant(is) 1:parand(i-ae) 2:paratur(i-ae) 3:parat(i-ae)
@@ -415,7 +420,7 @@ def expand(pts,method,nextword):
                     forms += case([curdecl,curnom,curroot,gen,"adj(%s.)"%(degree)],blank)
         #print term, "()"
         for form in forms:
-            #print form, stem
+            #print form#, stem
             if term in [form[0],form[0][0].upper()+form[0][1:]]: apls.append([stem,form[1]]) #checks if term and form spelled the same
         if len(apls) != 1:
             difs = [] #for conflicting parsings (dat/abl pl)
@@ -461,6 +466,7 @@ def expand(pts,method,nextword):
                     dct = [root+"is"]
                     if decl in ["32","33"]: dct.append(neut)
                     if decl in ["31","33"]: dct.insert(0,masc)
+                    else: dct[0] = masc
                 if masc == "qui": dct = "qui quae quod".split(" ")
                 if masc == "hic": dct = "hic haec hoc".split(" ")
                 if masc in "ille iste".split(" "): dct = [masc,masc[:-1]+"a",masc[:-1]+"ud"]
@@ -476,6 +482,7 @@ def expand(pts,method,nextword):
                     dct[0] = dct[0][:-1] + "eo"
                 if stem[1] == "-": dct[0] = "-"
             dct = ",".join(dct)
+            if term in ["inquit","inquiunt","ait","aiunt"]: dct = {"i":"inquit","a":"ait"}[term[0]] #LThis line is a liar, inquit comes from inquam
             
             if degree == "(Pos.)": degree = ""
             elif degree != "": degree = " " + degree
@@ -484,13 +491,16 @@ def expand(pts,method,nextword):
             if p[0] == "pers" and len(term)>3 and term[-3:] == "cum": trn = "with " + trn
             if [trn,prsf[-1]] == ["to see","P"]: trn += "m"
             if p[0]+prsf[-3] == "vI": comment = "<input type='text' class='comment' value='fact'>"
-            if prsf == "Adv": comment = "<input type='text' class='comment' value='w/'>"
-            fins.append([term,dct,prsf,trn,comment]) #["regum","rex,regis","M-G-S","to rule",""]
+            curcom = comment
+            if p[0] == "adj": curcom = "<input type='text' class='comment' value='w/'>" #prsf == "Adv" or
+            fins.append([term,dct,prsf,trn,curcom]) #["regum","rex,regis","M-G-S","to rule",""]
     if len(fins) > 2 and term[:2] == "re" and len(nextword) > 6 and nextword[:6] == "public":
         reals = [term]
         for ind in range(1,len(fins)):
             if fins[ind][1] == "res,rei": reals.append(fins[ind])
         fins = reals
+    if term == "nihil":
+        fins = ["nihil",["nihil","nihil","<input type='text' class='comment'>","nothing","<input type='text' class='comment'>"]]
     if len(fins) > 2: #Conflict: Multiple Possibilities (ie.rei from res,rei:thing or reus,rei:defendant)
         cur = fins[1][1:5:2]
         for fin in fins[1:]:
@@ -503,7 +513,7 @@ def expand(pts,method,nextword):
         words = [fins[0]]
         for fin in fins[1:]:
             words.append(fin[1:4])
-        rep = ["multi"]+words #error reporting is notified
+        rep = ["multi",counter]+words #error reporting is notified
     elif len(fins) == 1: #Error: Term Unknown (new word not in glossaries)
         final = [term,comment,comment,comment,comment] #leaves blank spaces b/c origin unknown
         rep = ["unknown",term] #error reporting is notified
@@ -517,3 +527,4 @@ def expand(pts,method,nextword):
 #print expand(["huius",["prn",["hic","this"]]])
 #print expand(["posses",["v","sum",["sum","pot","potu","posse","-"]]])
 #print expand(["quod",["conj"],["prn",["qui","rel./inq. prn"]]])
+#print expand(["parantis",["v","ppl",["1","par","parav","para","parat","to prepare"]]],2,"myself",45)
