@@ -29,9 +29,7 @@ for term in usableText:
     elif term == "modo" and realText[-1] == "non": realText[-1] = "non_modo"
     else: realText.append(term)
 
-method = raw_input("Output Method: ")
-if method == " ": method = 1
-else: method = 2
+method = 0
 
 from describe import *
 from expand import *
@@ -159,28 +157,16 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     final_list.append(final)
     if rep != []: report.append(rep)
 
-import os
-os.remove("describe.pyc")
-os.remove("expand.pyc")
-
 #Phase: Format
 ppls = []
-while True:
-    parsing = raw_input("Parsing, y/n? ")
-    if parsing == "": parsing = "y"
-    if parsing in ["y","n"]: break
-    print "Invalid Response"
-while True:
-    errors = raw_input("Report errors, y/n? ")
-    if errors == "": errors = "y"
-    if errors in ["y","n"]: break
-    print "Invalid Response"
+parsing = "y" #Change to "n" to eliminate parsing
+errors = "y" #Change to "n" to eliminate error report
 
 for col in range(len(final_list)):
     if parsing == "n": final_list[col][2] = ""
     elif "Ppl" in final_list[col][2]:
         ppls.append(final_list[col][0:4])
-        final_list[col][2] = [0,"","<input type='text' value='%s'>"%(final_list[col][2])][method]
+        final_list[col][2] = [final_list[col][2],"","<input type='text' value='%s'>"%(final_list[col][2])][method]
 
 for col in range(len(final_list)): #dct compression
     stem = final_list[col][1].split(",")
@@ -209,11 +195,7 @@ for col in range(len(final_list)): #dct compression
     names = {"M":"Marcus","L":"Lucius"}
     if term in names: final_list[col][1::2] = [names[term],names[term]]
 
-if method == 1:
-    from output1 import *
-    os.remove("output1.pyc")
-else:
-    from output2 import *
-    os.remove("output2.pyc")
-format(final_list,report,errors)
+from output0 import *
+format(final_list,report,parsing,errors)
 #print report
+

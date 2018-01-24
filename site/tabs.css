@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+}
+label {
+  position: relative;
+  height: auto;
+}
+label:hover span {
+  background-color: #ccc;
+}
+span {
+  padding: 10px 15px;
+  border: 2px solid;
+  border-radius: 5px 5px 0 0;
+}
+input:checked + span {
+  background-color: rgba(0,150,250,.6);
+}
+input {
+  position: absolute;
+  opacity: 0;
+}
+label:hover input:checked + span {
+  background-color: rgba(60,130,180,.7)
+}
+
+
+section {
+  margin-top: 20px;
+  /*display: none;*/   /*To show one tab at a time*/
+}

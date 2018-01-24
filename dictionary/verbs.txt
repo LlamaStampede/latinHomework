@@ -13,7 +13,8 @@ molior	moliri	molitum sum	-	work at
 hortor	hortari	hortatum sum	-	urge
 loquor	loqui	locutum sum	-	speak
 labor	labi	lapsum sum	-	glide
-caedo	caedere	cecidi	caesum	-	cut
+caedo	caedere	cecidi	caesum	cut
+reprimo	reprimere	repressi	repressum	restrain
 servio	servire	servivi	servitum	serve
 tuto	tutare	tutari	tutatum	be defended
 effreno	effrenare	effrenavi	effrenatum	unbridle

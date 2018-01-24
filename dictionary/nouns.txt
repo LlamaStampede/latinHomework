@@ -113,7 +113,7 @@ legatus	-i	m	lieutenant
 tergum	-i	n	rear
 donum	-i	n	gift
 membrum	-i	n	limb
-templum	-i	n	temple
+templum	-i	n	region
 servus	-i	m	slave
 murus	-i	m	wall
 exemplum	-i	n	example
@@ -322,6 +322,7 @@ mulier	-eris	f	woman
 aedes	-is	f	building
 volucris	-is	c	bird
 fors	fortis	f	chance
+fletus	-us	m	tears
 manus	-us	f	hand, band
 domus	-us	f	home
 vultus	-us	m	expression
@@ -351,3 +352,4 @@ species	-ei	f	aspect
 detrimentum	-i	n	damage
 seditio	seditionis	f	sedition
 suspicio	suspicionis	f	suspicion
+magnitudo	magnitudinis	f	magnitude

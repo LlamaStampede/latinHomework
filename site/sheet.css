@@ -7,6 +7,14 @@ h1 {
   font-variant: small-caps;
   font-size: 32pt;
   margin: 8px 40px 0;
+  width: 280px;
+}
+h2 {
+  margin: 8px 40px 10px;
+  width: 280px;
+}
+.plain a:visited {
+  color: black;
 }
 h1 + input {
   position: fixed;
@@ -18,7 +26,8 @@ h1 + input {
 #sheet {
   width: 80%;
   margin-left: 1.5%;
-  padding: 0 32px;
+  padding: 0 0 0 32px;
+  box-sizing: border-box;
   background-image: url(5x3v4.png);
   background-repeat: repeat-y;
 }
@@ -39,11 +48,20 @@ li {
   text-decoration: none;
   list-style: none;
   border: solid 1px;
-  height: 12pt;
+  height: 20px;
   padding: 2px;
   font-family: georgia, serif;
   font-size: 11pt;
 }
+#auto li:not(.error) {padding: 0;}
+#auto #sheet > ul > li:first-of-type { /*Change back to allow first line editing*/
+  box-sizing: border-box;
+  height: 22px;
+}
+#auto li input[type="text"] {margin-top: 1px; padding: 2px;}
+#auto input[type="text"]:hover {background-color: inherit;}
+/**/#auto ul:hover input[type="text"] {background-color: inherit;}/**/
+#auto input[type="text"]::selection {background-color: #04f; color: white;}
 li::selection, li span::selection {background-color: #04f; color: white;}
 p + input[type="checkbox"] {
   position: fixed;
@@ -51,7 +69,10 @@ p + input[type="checkbox"] {
   margin: 5px;
 }
 #Embed + input[type="checkbox"] {margin: 30px 55px 0 0;}
-#Center,#Embed {
+#Parse + input[type="checkbox"] {margin: 55px -2px 0 0;}
+#Show + input[type="checkbox"] {margin: 80px 47px 0 0;}
+#Edit + input[type="checkbox"] {margin: 105px -10px 0 0;}
+#Center,#Embed,#Edit,#Parse,#Show {
   margin: 0;
   padding: 2px 10px 2px 25px;
   position: fixed;
@@ -61,7 +82,31 @@ p + input[type="checkbox"] {
   font-size: 10pt;
 }
 #Embed {margin-top: 25px;}
-#Center + input:checked ~ #sheet > ul > li {text-align: center;}
+#Parse {margin-top: 50px;}
+#Show {margin-top: 75px;}
+#Edit {margin-top: 100px;}
+#Center + input:checked ~ form #sheet > ul > li {text-align: center;}
+
+#auto input[type="text"] {
+  border: none;
+  font-family: inherit;
+  box-shadow: none;
+  text-align: inherit;
+  background-color: white;
+}
+#auto input[type="submit"] {
+  font: 14pt Georgia;
+  border: solid 5px darkgreen;
+  box-sizing: border-box;
+  width: 275px;
+  margin: 0 40px 20px;
+  transition: background-color .2s, font-weight .2s;
+}
+#auto input[type="submit"]:hover {
+  background-color: pink;
+  font-weight: bold;
+  cursor: pointer;
+}
 input[type="text"] {
   height: 10pt;
   padding: 0 2px;
@@ -73,12 +118,20 @@ input[type="text"] {
   border: none;
 }
 input.mini {
-  width: 1.3em;
+  width: 2.5em;
   border-bottom: 1px dashed;
 }
-input.comment {width: 50px; border-bottom: 1px solid;}
+datalist {
+  opacity: .4;
+  width: .2em;
+}
+input.comment {
+  box-sizing: border-box;
+  max-width: 40px;
+  border-bottom: 1px solid;
+}
 ul:hover {background-color: lightgreen;}
-#sheet > ul > li:first-of-type {font-weight: bold; padding-right: 20px;}
+#sheet > ul > li:first-of-type {font-weight: bold; padding: 2px 20px 2px 5px;}
 #sheet ul input[type="checkbox"] {
   width: 12px;
   height: 12px;
@@ -93,9 +146,12 @@ li.error {
   right: 1%;
   background-color: lightgreen;
   border: 2px solid red;
+  box-sizing: border-box;
   height: 80px;
   visibility: hidden;
+  box-sizing: border-box;
   max-width: 16%;
+  padding: 3px;
 }
 li.error, li.error * {overflow-x: scroll;}
 li.error p {
@@ -104,17 +160,19 @@ li.error p {
   font-size: 16pt;
   margin: 0;
 }
-ul:hover > li.error {visibility: visible;}
+#Show + input:checked ~ form ul:hover > li.error {visibility: visible;}
 /*li::selection {background-color: red;}
 li::selection ~ li {background-color: blue;}
 span::selection ~ li.error {visibility: visible;}*/
-li:first-of-type:active ~ li.error, li.error:hover, input:checked ~ li.error, #Embed + input:checked ~ #sheet li.error {
+
+/*Embed Errors*/
+#Show + input:checked ~ form li:first-of-type:active ~ li.error, #Show + input:checked ~ form li.error:hover, input:checked ~ li.error, #Embed + input:checked ~ #Show + input:checked ~ form #sheet li.error {
   float: none;
   max-width: none;
   visibility: visible;
   position: relative;
   padding: 0;
-  margin: -86px 1px 2px 4px;
+  margin: -85px 1px 5px 4px;
 }
 li ul {
   float: none;
@@ -145,3 +203,4 @@ input[type="radio"] {margin: 0 5px 0 25px;}
   height: auto
 }
 #report li:hover {background-color: gold;}
+.hidden {display: none;}

@@ -20,6 +20,11 @@ number = ["S","P"]
 vowels = ["a","e","i","o","u"]
 uau = {"M":"us","F":"a","N":"um"}
 specials = [["bonus","melior","optimus"],["malus","peior","pessimus"],["magnus","maior","maximus"],["parvus","minor","minimus"],["multus","pluror","plurimus"]]
+def trim(ray):
+    result = []
+    for item in ray:
+        if item not in result: result.append(item)
+    return result
 def deply(conj,voice):
     return (voice/6 == 1 or conj[-1] != "D") and (voice/6 == 0 or not conj[-1] in ["A","E"])
 def infin(c,stem):
@@ -202,6 +207,7 @@ def case(stem,blank): #nouns, pronouns, adjectives, participles
     if nom in ["mater","pater","frater"]: istem = False
     for i in range(10): #todo (istem ab sg rules)
         root = oroot
+        oi = i
         if i%5 == 3 and gender == "N": i -= 3 #N.G.R.1
         end = ends[i]
         if root == "qu":
@@ -222,8 +228,7 @@ def case(stem,blank): #nouns, pronouns, adjectives, participles
         if word == "aliius": word = "alius"
         if [root,i,gender] == ["e",0,"N"]: word = "id"
         
-        case = cases[i%5]
-        if [case,gender] == ["N","N"]: case = blank
+        case = cases[oi%5]
         degree = ""
         if pos == "adj": degree = stem[-1][3:]
         forms.append([word,"%s-%s-%s" % (gender,case,number[i/5])+degree]) #gender-case-number
@@ -235,7 +240,7 @@ def case(stem,blank): #nouns, pronouns, adjectives, participles
         if root == "qu" and i == 0:
             if gender == "N": word = "quid"
             else: word = "quis"
-            forms.append([word,"%s-%s-%s"%(gender,cases[i%5],number[i/5])])
+            forms.append([word,"%s-%s-%s"%(gender,cases[oi%5],number[i/5])])
         if pos == "pers": forms.append([word+"cum","%s-%s-%s"%(gender,case,number[i/5])])
         if [pos,i,gender] == ["adj",0,"N"]:
             if degree == "Pos" and decl != 3:
@@ -246,18 +251,24 @@ def case(stem,blank): #nouns, pronouns, adjectives, participles
             forms.append([adv,"Adv"])
     return forms
 
+def datalist(name,choices):
+    string = "</option><option".join(choices)
+    return name.join(["<input type='text' class='mini' maxlength='2' list='","'><datalist id='","'><option>"+string+"</option></datalist>"])
 def expand(pts,method,nextword,counter):
     rep = []
     term = pts.pop(0)
     fins = [term] #finalists, all aplicable forms will later be appended
     for p in pts: #p = possibile word ([do,dare,...])
-        if method == 1:
+        if method <= 1:
             blank = "   "
             comment = ""
+            advcom = ""
         elif method == 2:
             blank = "<input type='text' class='mini' maxlength='2'>"
             comment = "<input type='text' class='comment'>"
+            advcom = comment[:-1] + "value='w/'>"
             if p[0] == "v" and p[1] == "ppl": blank = "   "
+        if method == 0: advcom = "w/"
         apls = [term] #apls=aplicable forms
         forms = [] #every form of the word will be added
         if p[0] == "prep":
@@ -265,7 +276,7 @@ def expand(pts,method,nextword,counter):
             elif term == "e": dct = "ex"
             else: dct = term
             fins.append([term,dct,"Prep+"+p[1][2],p[1][1],comment]) #prep & adv (& con) are guaranteed matches
-        elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],comment[:-1] + " value='w/'>"])
+        elif p[0] == "adv": fins.append([term,term,"Adv",p[1][1],advcom])
         elif p[0] == "conj": #trn is the conj equivalent of dfn
             if term in ["sed","at"]: trn = "but"
             elif term == "autem": trn = "moreover"
@@ -273,6 +284,7 @@ def expand(pts,method,nextword,counter):
             elif term == "aut": trn = "or"
             elif term == "neque": trn = "neither, nor"
             elif term == "si": trn = "if"
+            elif term == "nisi": trn = "unless"
             elif term in ["tam","ita","sic"]: trn = "so, thus"
             elif term in ["enim","nam"]: trn = "for"
             elif term in ["ut","num","ne"]: trn = "."
@@ -288,7 +300,9 @@ def expand(pts,method,nextword,counter):
             letter = term[0]
             person = {"e":1,"m":1,"t":2,"s":3,"n":4,"v":5}[letter]
             num = number[(person-1)/3]
-            if person == 3: num = blank
+            if person == 3: num = "S+P"
+            persblank = blank
+            if method == 0: persblank = "[M+F+N]"
             for i in range(5):
                 if person == 1: end = ["go","ei","ihi","e","e"][i]
                 elif person in [2,3]: end = ["u","ui","ibi","e","e"][i]
@@ -298,8 +312,8 @@ def expand(pts,method,nextword,counter):
                 if [i,person] == [1,5]: words.append("vestrum")
                 if [i,person] != [0,3]:
                     for word in words:
-                        forms.append([word,blank+"-%s-%s"%(cases[i],num)])
-                        forms.append([word+"cum",blank+"-%s-%s"%(cases[i],num)])
+                        forms.append([word,persblank+"-%s-%s"%(cases[i],num)])
+                        forms.append([word+"cum",persblank+"-%s-%s"%(cases[i],num)])
             person = [3,1,2][person%3]
             dct = [0,"ego,mihi","tu,tui","-,sui"][person].split(",")
             dfn = "[%s]"%["I,me","you","he,she,it"][person-1]
@@ -423,30 +437,72 @@ def expand(pts,method,nextword,counter):
             #print form#, stem
             if term in [form[0],form[0][0].upper()+form[0][1:]]: apls.append([stem,form[1]]) #checks if term and form spelled the same
         if len(apls) != 1:
-            difs = [] #for conflicting parsings (dat/abl pl)
-            ld = 3
-            if p[0] == "v":
-                ld = 4
-                if p[1] == "ppl": ld = 6
-            for i in range(ld):
-                difs.append([])
+            if method == 0:
+                #print apls
+                lds = {1:[],3:[],4:[],6:[]}
+                for ld in lds:
+                    for i in range(ld):
+                        lds[ld].append([])
 
-            prsf = "" #prsf = Final Parsing (will include "   "-blankspaces for unknown values)
-            for apl in apls[1:]: #aplicable forms
-                prs = apl[1].split("-")
-                #print prs
-                for l in range(len(prs)):
-                    difs[l+ld-len(prs)].append(prs[l]) #separating parsings into different columns for comparison
-            for l in difs: #l is a value location (Gender,case,Tense,etc.)
-                value = True
-                for x in l:
-                    if x != l[0]: value = False
-                if len(l) != 0:
-                    if value:
-                        prsf += l[0] + "-" #if value is certain
-                        if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
-                    else: prsf += (blank + "-") #if value is indefinite
-            prsf = prsf[:-1] # eliminates extra dash: ...-G-P-
+                prsf = "" #prsf = Final Parsing (will include "   "-blankspaces for unknown values)
+                for apl in apls[1:]: #aplicable forms
+                    prs = apl[1].split("-")
+                    for i in range(len(prs)):
+                        lds[len(prs)][i].append(prs[i]) #separating parsings into different columns for comparison
+                pprs = []
+                #print lds
+                for ld in lds: #Work on this first | recheck, confuses me right now
+                    spook = ""
+                    for spot in lds[ld]:
+                        spot = trim(spot)
+                        if len(spot) == 1: spook += spot[0] + "-"
+                        elif len(spot) > 1: spook += "["+"+".join(spot)+"]-"
+                        if spot != [] and spot[0][-1] == "/": spook = spook[:-1]
+                    if len(spot) != 0: pprs.append(spook[:-1])
+                if len(pprs) == 1: prsf = pprs[0]
+                else:
+                    for prs in pprs:
+                        prsf += "{%s};"%(prs)
+                    prsf = prsf[:-1]
+            else:
+                difs = [] #for conflicting parsings (dat/abl pl)
+                ld = 3
+                if p[0] == "v":
+                    ld = 4
+                    if p[1] == "ppl": ld = 6
+                for i in range(ld):
+                    difs.append([])
+
+                prsf = "" #prsf = Final Parsing (will include "   "-blankspaces for unknown values)
+                for apl in apls[1:]: #aplicable forms
+                    prs = apl[1].split("-")
+                    #print prs
+                    for l in range(len(prs)):
+                        difs[l+ld-len(prs)].append(prs[l]) #separating parsings into different columns for comparison
+                for l in difs:  #l is a value location (Gender,case,Tense,etc.)
+                    if len(l) != 0:
+                        if method == 1:
+                            if len(trim(l)) == 1:
+                                prsf += l[0] + "-" #if value is certain
+                                if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
+                            else: prsf += (blank + "-") #if value is indefinite
+                        elif method == 2:
+                            string = str(l[0])
+                            vls = [l[0]]
+                            for x in l[1:]:
+                                if x not in vls:
+                                    string += "+"+str(x)
+                                    vls.append(x)
+                            #print term, string
+                            if "+" in string: prsf += datalist(term+str(counter)+string,string.split("+"))+"-"
+                            else: prsf += string + "-"
+                            if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
+                        else:
+                            a = "+".join(trim(l))
+                            if len(trim(l)) != 1: a = "[%s]"%(a)
+                            prsf += a
+                            if l[0][-1] != "/": prsf += "-"
+                if prsf != "": prsf = prsf[:-1] # eliminates extra dash: ...-G-P-
             
             degree = "" #For comparative/superlative adjectives
             if prsf[-1] == ")":
@@ -490,9 +546,13 @@ def expand(pts,method,nextword,counter):
             if prsf == "Adv": trn += " (Adv)"
             if p[0] == "pers" and len(term)>3 and term[-3:] == "cum": trn = "with " + trn
             if [trn,prsf[-1]] == ["to see","P"]: trn += "m"
-            if p[0]+prsf[-3] == "vI": comment = "<input type='text' class='comment' value='fact'>"
             curcom = comment
-            if p[0] == "adj": curcom = "<input type='text' class='comment' value='w/'>" #prsf == "Adv" or
+            #print term, p, "{%s}"%(prsf), pprs
+            if method == 2 and [p[0],prsf[-3]] == ["v","I"]: curcom = "<input type='text' class='comment' value='fact'>"
+            elif method == 0 and [p[0],len(pprs)] == ["v",1] and pprs[0][-3] == "I": curcom = "fact"
+            if prsf == "Adv" or p[0] == "adj":
+                if method == 2: curcom = "<input type='text' class='comment' value='w/'>"
+                elif method == 0: curcom = "w/"
             fins.append([term,dct,prsf,trn,curcom]) #["regum","rex,regis","M-G-S","to rule",""]
     if len(fins) > 2 and term[:2] == "re" and len(nextword) > 6 and nextword[:6] == "public":
         reals = [term]
@@ -500,7 +560,7 @@ def expand(pts,method,nextword,counter):
             if fins[ind][1] == "res,rei": reals.append(fins[ind])
         fins = reals
     if term == "nihil":
-        fins = ["nihil",["nihil","nihil","<input type='text' class='comment'>","nothing","<input type='text' class='comment'>"]]
+        fins = ["nihil",["nihil","nihil",comment,"nothing",comment]]
     if len(fins) > 2: #Conflict: Multiple Possibilities (ie.rei from res,rei:thing or reus,rei:defendant)
         cur = fins[1][1:5:2]
         for fin in fins[1:]:

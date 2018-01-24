@@ -1,4 +1,3 @@
-incredibilis	incredibile	incredible
 furiosus	-a	-um	raging
 improbus	-a	-um	wicked
 publicus	-a	-um	public
@@ -44,6 +43,7 @@ difficilis	difficile	difficult
 dulcis	dulce	sweet
 facilis	facile	easy
 fortis	forte	strong
+incredibilis	incredibile	incredible
 ingens	ingentis	huge
 iucundus	-a	-um	pleasant
 longus	-a	-um	long
@@ -117,3 +117,4 @@ liberalis	liberale	decent!liberal
 vetus	veteris	old
 iustus	-a	-um	just
 alacrior	alacrius	happier
+sanctus	-a	-um	sacred
