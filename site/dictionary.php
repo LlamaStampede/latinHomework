@@ -10,17 +10,37 @@
 </head>
 
 <body>
-  <form action="dictionary.php" method="post">
+  <header>
     <h1 id="dct"><a href="">Dictionary</a></h1>
-    <input type="Submit">
-    
-    <label><input type="radio" name="part" id="tabA"><span>Adjectives</span></label>
-    <label><input type="radio" name="part" id="tabN"><span>Nouns</span></label>
-    <label><input type="radio" name="part" id="tabV"><span>Verbs</span></label>
-    <script>
-    //Code to make sections appear when tab clicked.
-    </script>
-      
+    <div id="tabs">
+      <button class="tab" onclick='showTab(event,"adjs");'>Adjectives</button>
+      <button class="tab" onclick='showTab(event,"nouns");'>Nouns</button>
+      <button class="tab" onclick='showTab(event,"verbs");'>Verbs</button>
+    </div>
+  </header>
+  
+  <script>
+  function showTab(evt, part) {
+    // Declare all variables
+    var i, sections, tablinks;
+
+    sections = document.getElementsByTagName("section");
+    for (i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+
+    tablinks = document.getElementsByClassName("tab");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].id = "";
+    }
+
+    document.getElementById(part).style.display = "block";
+    evt.currentTarget.id = "active";
+    document.getElementById('submit').style.display = "block";
+}
+  </script>
+  
+  <form action="dictionary.php" method="post">
       <?php
       $ids = ["adjs","nouns","verbs"];
       $names = [];
@@ -57,7 +77,7 @@
         fclose($gloss);
       }
       ?>
-    </section>
+      <footer><div id="submit"><input type="Submit"></div></footer>
   </form>
 </body>
 

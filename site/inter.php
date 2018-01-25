@@ -20,9 +20,9 @@
   
   $filename = $_POST[filename];
   $pagename = $filename.".php";
-  $txtname = $filename.".txt"
-  copy("output.php",$pagename);
-  copy("sheet.txt",$txtname)
+  $txtname = $filename.".txt";
+  $empty = copy("output.php",$pagename);
+  $empty = copy("sheet.txt",$txtname);
   ?>
   <script>//location = "<?php echo $filename; ?>";</script>
   <h1><a href="">RECOMPILE</a></h1>

@@ -3,11 +3,11 @@ h1 {
   font-family: fantasy;
   font-variant: small-caps;
   font-weight: bold;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   margin-top: 40px;
   font-size: 28pt;
 }
-form button, textarea, input, table {
+textarea, input, table {
   font: 14pt Georgia;
   border: solid 5px darkgreen;
   box-sizing: border-box;
@@ -33,14 +33,14 @@ textarea {
   left: 45%;
   width: 10%;
 }*/
-button {
+input[type="submit"] {
   width: 20%;
   position: absolute;
   bottom: 10%;
   left: 40%;
   transition: background-color .2s, font-weight .2s;
 }
-button:hover, input[type="submit"]:hover {
+input[type="submit"]:hover {
   background-color: pink;
   font-weight: bold;
   cursor: pointer;

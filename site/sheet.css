@@ -85,7 +85,7 @@ p + input[type="checkbox"] {
 #Parse {margin-top: 50px;}
 #Show {margin-top: 75px;}
 #Edit {margin-top: 100px;}
-#Center + input:checked ~ form #sheet > ul > li {text-align: center;}
+#Center + input:checked ~ #sheet > ul > li {text-align: center;}
 
 #auto input[type="text"] {
   border: none;
@@ -160,13 +160,13 @@ li.error p {
   font-size: 16pt;
   margin: 0;
 }
-#Show + input:checked ~ form ul:hover > li.error {visibility: visible;}
+#Show + input:checked ~ #sheet ul:hover > li.error {visibility: visible;}
 /*li::selection {background-color: red;}
 li::selection ~ li {background-color: blue;}
 span::selection ~ li.error {visibility: visible;}*/
 
 /*Embed Errors*/
-#Show + input:checked ~ form li:first-of-type:active ~ li.error, #Show + input:checked ~ form li.error:hover, input:checked ~ li.error, #Embed + input:checked ~ #Show + input:checked ~ form #sheet li.error {
+#Show + input:checked ~ #sheet li:first-of-type:active ~ li.error, #Show + input:checked ~ #sheet li.error:hover, input:checked ~ li.error, #Embed + input:checked ~ #Show + input:checked ~ #sheet li.error {
   float: none;
   max-width: none;
   visibility: visible;
