@@ -1,0 +1,70 @@
+#test{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background-color: #777;
+}
+#test li{
+    display: inline-block;
+}
+#test li:hover {
+    background-color: #666;
+}
+#test li a,visited{
+    color: #ccc;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+#test li a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+#test li:hover ul{
+    /*font-family: sans-serif;
+    list-style: none;
+    background: #dddddd;
+    height: 200px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    background-color: #666;
+    border: 5px solid #777;
+    border-top: 0px;
+    margin-left: -5px;*/
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 200px;
+}
+#test li ul{
+    display: none;
+    position: absolute;
+    background-color: #666;
+    border: 5px solid #777;
+    border-top: 0px;
+    margin-left: -5px;
+    list-style-type: none;
+    padding: 0 0 0 0px;
+}
+#test li ul li{
+    height: 25%;
+    display: block;
+    line-style-type: none;
+}
+#test li ul li:hover{
+    background-color: #555;
+}
+#test li ul li a,visited{
+    color: #ccc;
+}
+#test li ul li a:hover{
+    color: #099;
+    
+}

@@ -1,0 +1,60 @@
+h1 {
+  text-align: center;
+  font-family: fantasy;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  font-size: 28pt;
+}
+textarea, input, table {
+  font: 14pt Georgia;
+  border: solid 5px darkgreen;
+  box-sizing: border-box;
+}
+textarea {
+  height: 60%;
+  width: 75%;
+  position: absolute;
+  top: 10%;
+  left: 12.5%;
+  padding: 20px;
+}
+#filename {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 75%;
+}
+/*a {
+  border: none;
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+  width: 10%;
+}*/
+input[type="submit"] {
+  width: 20%;
+  position: absolute;
+  bottom: 10%;
+  left: 40%;
+  transition: background-color .2s, font-weight .2s;
+}
+input[type="submit"]:hover {
+  background-color: pink;
+  font-weight: bold;
+  cursor: pointer;
+}
+#dct {font-size: 24pt;}
+#dct + input {width: 20%; margin: 5px 40%;}
+table, td, th {
+  margin: 0 auto 10px;
+  border: 1px solid;
+  text-align: right;
+}
+th {text-align: center; font-weight: bold;}
+td input {
+  width: 100%;
+  margin: 0;
+  border: none;
+}
