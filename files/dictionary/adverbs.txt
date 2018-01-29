@@ -59,4 +59,3 @@ formerly	quondam
 todo	denique
 .	quam
 surely	nonne
-thus	sic

@@ -100,6 +100,7 @@
     foreach ($sheet as $col) {
       echo "<ul id='".++$counter."'>";
       $subcounter = 0;
+      $error = [];
       foreach ($col as $row) {
         if (++$subcounter == 3 and $parsing == "n") {
           echo "<li><input type='text' name='".$counter."_".$subcounter."'></li>";
@@ -108,13 +109,18 @@
         } elseif ($subcounter <= 5) {
           echo "<li><input type='text' name='".$counter."_".$subcounter."' value='".$row."'></li>";
         } else {
-          echo "<li class='error'>".$row."</li>";
+          array_push($error,$row);
         }
+        if ($error !== []) {echo "<li class='error'>".implode("\t",$error)."</li>";}
           
       }
       echo "</ul>";
     }
-    echo "<hr class='vert'></div>";
+    echo "<hr class='vert'></div><div id='report'><ul>";
+    foreach ($report as $error) {
+      echo "<li>".implode(":",$error)."</li>";
+    }
+    echo "</ul></div>";
     ?>
   </form>
 </body>

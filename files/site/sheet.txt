@@ -3,27 +3,27 @@ y	y
 #Sheet
 sed	sed	Conj	but	
 sic	sic	Conj	so, thus	
-Scipio					UNKNOWN
+Scipio	Scipio,Scipionis	M-N-S	Scipio	
 ut	ut	Conj	.	
-avus					UNKNOWN
+avus	avus,-i	M-N-S	grandfather	
 hic					Conflict:	{hic	Adv	here}	{hic,haec,hoc	M-N-S	this}
 tuus	tuus,-a,-um	M-N-S	your	w/
 ut	ut	Conj	.	
 ego	ego,mihi	[M+F+N]-N-S	[I,me]	
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
 te	tu,tui	[M+F+N]-[Ac+Ab]-S	[you]	
-genui					UNKNOWN
-iustitiam					UNKNOWN
+genui	gigno,-ere,genui,genitus	1S-Pf-I-A	to give birth to	fact
+iustitiam	iustitia,-ae	F-Ac-S	justice	
 cole					UNKNOWN
 et	et	Conj	and	
-pietatem					UNKNOWN
+pietatem	pietas,-tatis	F-Ac-S	piety	
 quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
 cum					Conflict:	{cum	Prep+Ab	with}	{cum	Conj	when}
 magna	magnus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	great	w/
 in	in	Prep+Ab/Ac	in, on/into, onto	
 parentibus	parens,-ntis	C-[D+Ab]-P	parent	
 et	et	Conj	and	
-propinquis					UNKNOWN
+propinquis	propinquus,-a,-um	[M+F+N]-[D+Ab]-P	near	w/
 tum	tum	Adv	then	w/
 in	in	Prep+Ab/Ac	in, on/into, onto	
 patria	patria,-ae	F-[N+Ab]-S	fatherland	
@@ -38,14 +38,14 @@ caelum	caelum,-i	N-[N+Ac]-S	heavens
 et	et	Conj	and	
 in	in	Prep+Ab/Ac	in, on/into, onto	
 hunc	hic,haec,hoc	M-Ac-S	this	
-coetum					UNKNOWN
+coetum	coetus,-us	M-Ac-S	union	
 eorum	is,ea,eum	[M+N]-G-P	weak dem.	
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
 iam	iam	Adv	already	w/
 vixerunt	vivo,-ere,vixi,victus	3P-Pf-I-A	to live	fact
 et	et	Conj	and	
 corpore	corpus,corporis	N-Ab-S	body	
-laxati					UNKNOWN
+laxati	laxo(1)	Pf-Ppl-P/[M+N]-[G+N]-[S+P]	to loosen	
 illum	ille,illa,illud	M-Ac-S	that	
 incolunt					UNKNOWN
 locum	locus,-i	M-Ac-S	place	
@@ -54,12 +54,12 @@ vides	video,-ere,-i,visus	2S-P-I-A	to see	fact
 erat	sum,esse,fui	3S-Impf-I-A	to be	fact
 autem	autem	Conj	moreover	
 is	is,ea,eum	M-N-S	weak dem.	
-splendidissimo					UNKNOWN
-candore					UNKNOWN
+splendidissimo	splendidus,-a,-um	[M+F+N]-[D+Ab]-S	splendid (Sup.)	w/
+candore	candor,-oris	M-Ab-S	radiance	
 inter	inter	Prep+Ac	between	
 flammas	flamma,-ae	F-Ac-P	flame	
-circus					UNKNOWN
-elucens					UNKNOWN
+circus	circus,-i	M-N-S	circle	
+elucens	eluceo,-ere,eluxi,-us	P-Ppl-A/[M+F+N]-N-S	to shine forth	
 quem	qui,quae,quod	M-Ac-S	rel./inq.	
 vos	tu,tui	[M+F+N]-[N+Ac]-P	[you]	
 ut	ut	Conj	.	
@@ -67,14 +67,14 @@ a	ab	Prep+Ab	from, by
 Graiis					UNKNOWN
 accepistis	accipio,-ere,accepi,acceptus	2P-Pf-I-A	to accept	fact
 orbem	orbis,orbis	M-Ac-S	circle	
-lacteum					UNKNOWN
-nuncupatis					UNKNOWN
+lacteum	lacteus,-a,-um	[M+N]-[Ac+N]-S	milky	w/
+nuncupatis	nuncupo(1)		to call?name		Conflict:	{nuncupo,nuncupare,nuncupavi,nuncupatus	2P-P-I-A	to call?name}	{nuncupo,nuncupare,nuncupavi,nuncupatus	Pf-Ppl-P/[M+F+N]-[D+Ab]-P	to call?name}
 ex	ex	Prep+Ab	out from	
 quo	qui,quae,quod	[M+N]-Ab-S	rel./inq.	
 omnia	omnis,-e	N-[N+Ac]-P	all	w/
 mihi	ego,mihi	[M+F+N]-D-S	[I,me]	
-contemplanti					UNKNOWN
-praeclara					UNKNOWN
+contemplanti	contemplo(1)	P-Ppl-A/[M+F+N]-[D+Ab]-S	to regard	
+praeclara	praeclarus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	bright	w/
 cetera	ceterus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	the rest!others(pl)	w/
 et	et	Conj	and	
 mirabilia	mirabilis,-e	N-[N+Ac]-P	remarkable	w/
@@ -96,7 +96,7 @@ omnium	omnis,-e	[M+F+N]-G-P	all	w/
 quas	qui,quae,quod	F-Ac-P	rel./inq.	
 esse	sum,esse,fui	P-Inf-A	to be	
 numquam	numquam	Adv	never	w/
-suspicati					UNKNOWN
+suspicati	suspicor(1D)	Pf-Ppl-P/[M+N]-[G+N]-[S+P]	to suspect	
 sumus	sum,esse,fui	1P-P-I-A	to be	fact
 ex	ex	Prep+Ab	out from	
 quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
@@ -110,12 +110,12 @@ caelo	caelum,-i	N-[D+Ab]-S	heavens
 citima					UNKNOWN
 a	ab	Prep+Ab	from, by	
 terris	terra,-ae	F-[D+Ab]-P	land	
-luce	lux,lucis	F-Ab-S	light	
-lucebat					UNKNOWN
+luce					Conflict:	{luceo,lucere,luxi,-us	2S-P-Imp-A	to shine}	{lux,lucis	F-Ab-S	light}
+lucebat	luceo,-ere,luxi,-us	3S-Impf-I-A	to shine	fact
 aliena					UNKNOWN
 stellarum	stella,-ae	F-G-P	star	
 autem	autem	Conj	moreover	
-globi					UNKNOWN
+globi	globus,-i	M-[G+N]-[S+P]	globe	
 terrae	terra,-ae	F-[G+D+N]-[S+P]	land	
 magnitudinem	magnitudo,magnitudinis	F-Ac-S	magnitude	
 facile	facilis,-e	{Adv};{[M+F+N]-[Ab+N+Ac]-S(Pos.)}	easy	w/
@@ -133,11 +133,12 @@ me	ego,mihi	[M+F+N]-[Ac+Ab]-S	[I,me]
 imperii	imperium,-i	N-G-S	command	
 nostri					Conflict:	{noster,nostra,nostrum	[M+N]-[G+N]-[S(Pos.)+P(Pos.)]	our}	{ego,mihi	[M+F+N]-G-P	[I,me]}
 quo	qui,quae,quod	[M+N]-Ab-S	rel./inq.	
-quasi					UNKNOWN
+quasi	quasi	Conj	as if	
 punctum					UNKNOWN
 eius	is,ea,eum	[M+F+N]-G-S	weak dem.	
 attingimus					UNKNOWN
-paeniteretQuam					UNKNOWN
+paeniteret					UNKNOWN
+quam					Conflict:	{quam	Adv	.}	{qui,quae,quod	F-Ac-S	rel./inq.}
 cum					Conflict:	{cum	Prep+Ab	with}	{cum	Conj	when}
 magis					UNKNOWN
 intuerer					UNKNOWN
@@ -162,7 +163,7 @@ tibi	tu,tui	[M+F+N]-D-S	[you]
 orbibus	orbis,orbis	M-[D+Ab]-P	circle	
 vel					UNKNOWN
 potius					UNKNOWN
-globis					UNKNOWN
+globis	globus,-i	M-[D+Ab]-P	globe	
 conexa					UNKNOWN
 sunt	sum,esse,fui	3P-P-I-A	to be	fact
 omnia	omnis,-e	N-[N+Ac]-P	all	w/
@@ -206,7 +207,7 @@ caelum	caelum,-i	N-[N+Ac]-S	heavens
 ex	ex	Prep+Ab	out from	
 quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
 unum	unus,-a,-um		one		Conflict:	{unus,una,unum	[M+N]-[Ac+N]-S	one}	{unus,una,unum	[M+N]-[Ac+N]-S	one}
-globum					UNKNOWN
+globum	globus,-i	M-Ac-S	globe	
 possidet					UNKNOWN
 illa	ille,illa,illud	[F+N]-[N+Ab+Ac]-[S+P]	that	
 quam					Conflict:	{quam	Adv	.}	{qui,quae,quod	F-Ac-S	rel./inq.}
@@ -241,7 +242,6 @@ fere	fere	Adv	almost	w/
 regionem					UNKNOWN
 sol	sol,solis	M-N-S	sun	
 obtinet					UNKNOWN
-p					UNKNOWN
 dux	dux,ducis	C-N-S	leader	
 et	et	Conj	and	
 princeps	princeps,principis	[M+F+N]-[N+Ac]-S	chief	w/
@@ -258,7 +258,7 @@ magnitudine	magnitudo,magnitudinis	F-Ab-S	magnitude
 ut	ut	Conj	.	
 cuncta					UNKNOWN
 sua	suus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	refl. adj.	w/
-luce	lux,lucis	F-Ab-S	light	
+luce					Conflict:	{luceo,lucere,luxi,-us	2S-P-Imp-A	to shine}	{lux,lucis	F-Ab-S	light}
 lustret					UNKNOWN
 et	et	Conj	and	
 compleat					UNKNOWN
@@ -323,49 +323,38 @@ nutu					UNKNOWN
 suo	suus,-a,-um	[M+N]-[D+Ab]-S	refl. adj.	w/
 pondera	pondus,ponderis	N-[N+Ac]-P	weight	
 #Report
-UNKNOWN: Scipio
-UNKNOWN: avus
 Conflict: hic might be from:
 - hic Adv here
 - hic,haec,hoc M-N-S this
-UNKNOWN: genui
-UNKNOWN: iustitiam
 UNKNOWN: cole
-UNKNOWN: pietatem
 Conflict: cum might be from:
 - cum Prep+Ab with
 - cum Conj when
-UNKNOWN: propinquis
 Conflict: vita might be from:
 - vito,vitare,vitavi,vitatus 2S-P-Imp-A to avoid
 - vita,vitae F-[N+Ab]-S life
-UNKNOWN: coetum
-UNKNOWN: laxati
 UNKNOWN: incolunt
-UNKNOWN: splendidissimo
-UNKNOWN: candore
-UNKNOWN: circus
-UNKNOWN: elucens
 UNKNOWN: Graiis
-UNKNOWN: lacteum
-UNKNOWN: nuncupatis
-UNKNOWN: contemplanti
-UNKNOWN: praeclara
-UNKNOWN: suspicati
+Conflict: nuncupatis might be from:
+- nuncupo,nuncupare,nuncupavi,nuncupatus 2P-P-I-A to call?name
+- nuncupo,nuncupare,nuncupavi,nuncupatus Pf-Ppl-P/[M+F+N]-[D+Ab]-P to call?name
 UNKNOWN: citima
-UNKNOWN: lucebat
+Conflict: luce might be from:
+- luceo,lucere,luxi,-us 2S-P-Imp-A to shine
+- lux,lucis F-Ab-S light
 UNKNOWN: aliena
-UNKNOWN: globi
 Conflict: ita might be from:
 - eo,ire,ivi,itus Pf-Ppl-P/[F+N]-[N+Ab]-[S+P] to go
 - ita Conj so, thus
 Conflict: nostri might be from:
 - noster,nostra,nostrum [M+N]-[G+N]-[S(Pos.)+P(Pos.)] our
 - ego,mihi [M+F+N]-G-P [I,me]
-UNKNOWN: quasi
 UNKNOWN: punctum
 UNKNOWN: attingimus
-UNKNOWN: paeniteretQuam
+UNKNOWN: paeniteret
+Conflict: quam might be from:
+- quam Adv .
+- qui,quae,quod F-Ac-S rel./inq.
 Conflict: cum might be from:
 - cum Prep+Ab with
 - cum Conj when
@@ -379,7 +368,6 @@ UNKNOWN: aspicis
 UNKNOWN: Novem
 UNKNOWN: vel
 UNKNOWN: potius
-UNKNOWN: globis
 UNKNOWN: conexa
 Conflict: unus might be from:
 - unus Adv alone
@@ -406,7 +394,6 @@ UNKNOWN: motu
 Conflict: unum might be from:
 - unus,una,unum [M+N]-[Ac+N]-S one
 - unus,una,unum [M+N]-[Ac+N]-S one
-UNKNOWN: globum
 UNKNOWN: possidet
 Conflict: quam might be from:
 - quam Adv .
@@ -424,11 +411,13 @@ UNKNOWN: Martium
 UNKNOWN: subter
 UNKNOWN: regionem
 UNKNOWN: obtinet
-UNKNOWN: p
 UNKNOWN: moderator
 UNKNOWN: reliquorum
 UNKNOWN: temperatio
 UNKNOWN: cuncta
+Conflict: luce might be from:
+- luceo,lucere,luxi,-us 2S-P-Imp-A to shine
+- lux,lucis F-Ab-S light
 UNKNOWN: lustret
 UNKNOWN: compleat
 UNKNOWN: consequuntur
