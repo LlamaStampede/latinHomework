@@ -12,11 +12,12 @@
   ?></title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="sheet.css">
+  <link rel="icon" href="../favicon/favicon.ico">
 </head>
 
 <body>
   <h1 class="plain"><a href="">Analysis Sheet</a></h1>
-  <h2 class="plain"><a href="input.html">Input</a> <a href="dictionary.php">Dictionary</a></h2>
+  <h2 class="plain"><a href="input.html" target="Input">Input</a> <a href="dictionary.php" target="Dictionary">Dictionary</a></h2>
   <p id="Center">Center</p><input type="checkbox">
   <p id="Embed">Embed Errors</p><input type="checkbox">
   
@@ -57,6 +58,7 @@
         }
         fwrite($source,implode("\t",$line) . "\n");
       }
+      foreach ($report as $error)
       fclose($source);
     }
     $sheet = $report = [];

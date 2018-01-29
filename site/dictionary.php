@@ -3,10 +3,11 @@
 <html>
 
 <head>
-  <title>aiden - dictionary</title>
+  <title>Dictionary</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="input.css">
   <link rel="stylesheet" type="text/css" href="tabs.css">
+  <link rel="icon" href="../favicon/favicon.ico">
 </head>
 
 <body>
@@ -17,6 +18,7 @@
       <button class="tab" onclick='showTab(event,"nouns");'>Nouns</button>
       <button class="tab" onclick='showTab(event,"verbs");'>Verbs</button>
     </div>
+    <p><a href="#bottom">Skip to Bottom</a></p>
   </header>
   
   <script>
@@ -57,7 +59,7 @@
         if ($_SERVER[REQUEST_METHOD] == "POST" and $_POST[$id.$len] != "") {
           $gloss = fopen("../dictionary/".$ids[$i].".txt", "a");
           $row = [];
-          for ($j = 1; $j <= $len; $j++) {array_push($_POST[$id.$j]);}
+          for ($j = 1; $j <= $len; $j++) {array_push($row,$_POST[$id.$j]);}
           
           if ($_POST[$id."1"] == "") {$empty = array_shift($row);}
           fwrite($gloss, "\n" . implode("\t",$row));
@@ -77,7 +79,7 @@
         fclose($gloss);
       }
       ?>
-      <footer><div id="submit"><input type="Submit"></div></footer>
+      <footer><hr id="bottom"><div id="submit"><input type="Submit"></div></footer>
   </form>
 </body>
 

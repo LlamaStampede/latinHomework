@@ -12,6 +12,7 @@
   ?></title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="sheet.css">
+  <link rel="icon" href="../favicon/favicon.ico">
 </head>
 
 <body>

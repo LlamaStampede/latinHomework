@@ -4,8 +4,9 @@
 
 <head>
   <meta charset="utf-8">
-  <title>aiden - middleman</title>
-  <link rel="stylesheet" type="text/css" href="sheet.css">
+  <title>Constructor</title>
+  <link rel="stylesheet" type="text/css" href="input.css">
+  <link rel="icon" href="../favicon/favicon.ico">
 </head>
 
 <body>
@@ -25,7 +26,8 @@
   $empty = copy("sheet.txt",$txtname);
   ?>
   <script>//location = "<?php echo $filename; ?>";</script>
-  <h1><a href="">RECOMPILE</a></h1>
+  <h1><form method="post" action=""><input class="yeah" type="text" value="<?php echo $filename ?>" name="filename"><br><button class="submit">RECOMPILE</button><form></h1>
+  <h2><a href="<?php echo $pagename ?>" target="<?php echo ucfirst($filename) ?>">View</a></h2>
   
 </body>
 
