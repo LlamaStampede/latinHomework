@@ -1,7 +1,8 @@
 body {
-  /*background-color: lightblue;*/
+  background-color: lightblue;
   margin: 0;
 }
+#sheet ul {background-color: white;}
 h1 {
   font-family: fantasy;
   font-variant: small-caps;
@@ -28,7 +29,7 @@ h1 + input {
   margin-left: 1.5%;
   padding: 0 0 0 32px;
   box-sizing: border-box;
-  background-image: url(5x3v4.png);
+  background-image: url(5x3v5.png);
   background-repeat: repeat-y;
 }
 hr {
@@ -130,7 +131,7 @@ input.comment {
   max-width: 40px;
   border-bottom: 1px solid;
 }
-ul:hover {background-color: lightgreen;}
+#sheet ul:hover {background-color: lightgreen;}
 #sheet > ul > li:first-of-type {font-weight: bold; padding: 2px 20px 2px 5px;}
 #sheet ul input[type="checkbox"] {
   width: 12px;

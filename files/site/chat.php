@@ -17,7 +17,7 @@
 
 <body>
   <h1 class="plain"><a href="">Analysis Sheet</a></h1>
-  <h2 class="plain"><a href="input.html">Input</a> <a href="dictionary.php">Dictionary</a></h2>
+  <h2 class="plain"><a href="input.html" target="Input">Input</a> <a href="dictionary.php" target="Dictionary">Dictionary</a></h2>
   <p id="Center">Center</p><input type="checkbox">
   <p id="Embed">Embed Errors</p><input type="checkbox">
   
@@ -35,7 +35,7 @@
       fwrite($source,"#Info\n");
       if ($_POST[parsing] == "on") {fwrite($source,"y\t"); $parsing = "y";} else {fwrite($source,"n\t"); $parsing = "n";}
       if ($_POST[show_errors] == "on") {fwrite($source,"y\n"); $show_errors = "y";} else {fwrite($source,"n\n"); $show_errors = "n";}
-      fwrite($source,"#Sheet\n");
+      fwrite($source,"#Sheet");
       for ($x = 1; $x <= 1000; $x++) {
         if (!array_key_exists($x."_2",$_POST)) {break 1;}
         $line = [];
@@ -56,8 +56,9 @@
           }
           array_push($report,$line[0] + $error);
         }
-        fwrite($source,implode("\t",$line) . "\n");
+        fwrite($source,"\n" . implode("\t",$line));
       }
+      foreach ($report as $error)
       fclose($source);
     }
     $sheet = $report = [];
@@ -99,6 +100,7 @@
     foreach ($sheet as $col) {
       echo "<ul id='".++$counter."'>";
       $subcounter = 0;
+      $error = [];
       foreach ($col as $row) {
         if (++$subcounter == 3 and $parsing == "n") {
           echo "<li><input type='text' name='".$counter."_".$subcounter."'></li>";
@@ -107,13 +109,18 @@
         } elseif ($subcounter <= 5) {
           echo "<li><input type='text' name='".$counter."_".$subcounter."' value='".$row."'></li>";
         } else {
-          echo "<li class='error'>".$row."</li>";
+          array_push($error,$row);
         }
+        if ($error !== []) {echo "<li class='error'>".implode("\t",$error)."</li>";}
           
       }
       echo "</ul>";
     }
-    echo "<hr class='vert'></div>";
+    echo "<hr class='vert'></div><div id='report'><ul>";
+    foreach ($report as $error) {
+      echo "<li>".implode(":",$error)."</li>";
+    }
+    echo "</ul></div>";
     ?>
   </form>
 </body>
