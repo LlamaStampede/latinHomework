@@ -122,3 +122,4 @@ propinquus	-a	-um	near
 splendidus	-a	-um	splendid
 lacteus	-a	-um	milky
 praeclarus	-a	-um	bright
+sonus	-a	-um	sounding

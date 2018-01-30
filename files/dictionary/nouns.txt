@@ -361,3 +361,5 @@ coetus	coetus	m	union
 candor	candoris	m	radiance
 circus	-i	m	circle
 globus	-i	m	globe
+intervallum	-i	n	interval
+ratio	rationis	f	reason

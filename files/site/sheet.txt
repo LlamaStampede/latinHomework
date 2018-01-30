@@ -1,11 +1,157 @@
 #Info
 y	y
 #Sheet
-This	Michael L was here:	1/28/2018-6:55:24PM	Michael H was here:	1/28/2018-9:51:30PM
-is	Aiden B was here:	1/29/2018-2:29PM		
-the				
-default				
-analysis				
-sheet				
-format:				
-Latin Term				
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	CR ant: 
+cum				
+intuerer	intueor,intueri,intuitus sum	1S-Impf-S-D	I was gazing	
+stupens	stupeo,-ere,-ui,-us	P-Ppl-A/[M+F+N]-N-S	to be amazed	
+ut	ut	Conj	.	
+me	ego,mihi	[M+F+N]-[Ac+Ab]-S	[I,me]	
+recepi	recipio,-ere,recepi,receptus	1S-Pf-I-A	to recover	fact MV
+Quid			What?	
+hic				
+inquam				
+quis	qui,quae,quod	[M+F]-N-S	rel./inq.	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+conplet	conpleo,-ere,-evi,-etus		to fill	
+aures	auris,auris	F-[Ac]-P	ear	
+meas	meus,-a,-um	F-Ac-P	my	w/
+tantus	tantus,-a,-um	M-N-S	so great	w/
+et	et	Conj	and	
+tam	tam	Conj	so, thus	
+dulcis	dulcis,-e	[M]-[N]-S	sweet	w/
+sonus	sonus,-a,-um	M-N-S	sounding	w/
+Hic		M N S	this	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+inquit	inquit	2S-P-Imp-A	to he said	
+ille	ille,illa,illud	[M]-[N]-S	that  (sound)	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+intervallis	intervallum,-i	N-[Ab]-P	interval	means
+disiunctus		Pf Ppl P	to disjoin	
+inparibus		N Ab P	uneven	
+sed	sed	Conj	but	
+tamen	tamen	Conj	however	
+pro	pro	Prep+Ab	in proportion to	
+rata			established	means
+parte	pars,partis	F-Ab-S	part	
+ratione		F Ab S	reason	
+distinctis			distinct (intervals)	
+inpulsu		Ab S	inpulse	
+et	et	Conj	and	
+motu		AB S	motion	
+ipsorum	ipse,ipsa,ipsum	[M+N]-G-P	refl. adj.	
+orbium	orbis,orbis	M-G-P	orbs	
+efficitur			is effected	
+et	et	Conj	and	
+acuta				
+cum				
+gravibus	gravis,-e	[M+F+N]-[D+Ab]-P	heavy! serious	w/
+temperans				
+varios				
+aequabiliter				
+concentus				
+efficit				
+nec				
+enim	enim	Conj	for	
+silentio				
+tanti	tantus,-a,-um	[M+N]-[G+N]-[S(Pos.)+P(Pos.)]	so great	w/
+motus	moveo,-ere,-i,motus	Pf-Ppl-P/M-N-S	to move	
+incitari				
+possunt				
+et	et	Conj	and	
+natura	natura,-ae	F-[N+Ab]-S	nature	
+fert	fero,-rre,tuli,latus	3S-P-I-A	to bear, speak	fact
+ut	ut	Conj	.	
+extrema				
+ex	ex	Prep+Ab	out from	
+altera				
+parte	pars,partis	F-Ab-S	part	
+graviter				
+ex	ex	Prep+Ab	out from	
+altera				
+autem	autem	Conj	moreover	
+acute				
+sonent				
+quam				
+ob	ob	Prep+Ac	on account of	
+causam	causa,-ae	F-Ac-S	cause	
+summus				
+ille	ille,illa,illud	[M+N]-[N+V]-S	that	
+caeli	caelum,-i	N-G-S	heavens	
+stellifer				
+cursus				
+cuius	qui,quae,quod	[M+F+N]-G-S	rel./inq.	
+conversio				
+est	sum,esse,fui	3S-P-I-A	to be	fact
+concitatior				
+acuto				
+et	et	Conj	and	
+excitato				
+movetur	moveo,-ere,-i,motus	3S-P-I-P	to move	fact
+sono	sonus,-a,-um	[M+N]-[D+Ab]-S	sounding	w/
+gravissimo	gravis,-e	[M+F+N]-[D+Ab]-S	heavy! serious (Sup.)	w/
+autem	autem	Conj	moreover	
+hic				
+lunaris				
+atque	atque	Conj	and	
+infimus				
+nam	nam	Conj	for	
+terra	terra,-ae	F-[N+Ab]-S	land	
+nona				
+inmobilis				
+manens	maneo,-ere,-si,-sus	P-Ppl-A/[M+F+N]-N-S	to remain	
+una				
+sede	sedes,sedis	F-Ab-S	seat	
+semper	semper	Adv	always	w/
+haeret				
+complexa				
+medium	medius,-a,-um	[M+N]-[Ac+N]-S	middle	w/
+mundi	mundus,-i	M-[G+N]-[S+P]	world	
+locum	locus,-i	M-Ac-S	place	
+illi	ille,illa,illud	[M+F+N]-[D+N]-[S+P]	that	
+autem	autem	Conj	moreover	
+octo				
+cursus				
+in	in	Prep+Ab/Ac	in, on/into, onto	
+quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
+eadem				
+vis	vis,vis	F-[N+G]-S	force (pl)strength	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+duorum				
+septem				
+efficiunt				
+distinctos				
+intervallis	intervallum,-i	N-[D+Ab]-P	interval	
+sonos	sonus,-a,-um	M-Ac-P	sounding	w/
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+numerus	numerus,-i	M-N-S	number	
+rerum	res,-ei	F-G-P	thing	
+omnium	omnis,-e	[M+F+N]-G-P	all	w/
+fere	fere	Adv	almost	w/
+nodus				
+est	sum,esse,fui	3S-P-I-A	to be	fact
+quod				
+docti				
+homines	homo,hominis	M-[N+Ac]-P	human	
+nervis				
+imitati				
+atque	atque	Conj	and	
+cantibus				
+aperuerunt				
+sibi	-,sui	[M+F+N]-D-S+P	[he,she,it]	
+reditum				
+in	in	Prep+Ab/Ac	in, on/into, onto	
+hunc	hic,haec,hoc	M-Ac-S	this	
+locum	locus,-i	M-Ac-S	place	
+sicut				
+alii	alius,alia,aliud	[M+F+N]-[D+N]-[S+P]	other	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+praestantibus	praesto(1)	P-Ppl-A/[M+F+N]-[D+Ab]-P	to excel	
+ingeniis	ingenium,-i	N-[D+Ab]-P	ability	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+vita				
+humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
+divina				
+studia	studium,-i	N-[N+Ac]-P	eagerness	
+coluerunt				

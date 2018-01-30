@@ -21,7 +21,7 @@
   <p id="Center">Center</p><input type="checkbox">
   <p id="Embed">Embed Errors</p><input type="checkbox">
   
-  <form action="output.php" method="post" id="auto">
+  <form action="eighteen.php" method="post" id="auto">
     <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
     <p id="Show">Show Errors</p><input type="checkbox" name="show_errors" checked>
     <header>
@@ -35,7 +35,7 @@
       fwrite($source,"#Info\n");
       if ($_POST[parsing] == "on") {fwrite($source,"y\t"); $parsing = "y";} else {fwrite($source,"n\t"); $parsing = "n";}
       if ($_POST[show_errors] == "on") {fwrite($source,"y\n"); $show_errors = "y";} else {fwrite($source,"n\n"); $show_errors = "n";}
-      fwrite($source,"#Sheet\n");
+      fwrite($source,"#Sheet");
       for ($x = 1; $x <= 1000; $x++) {
         if (!array_key_exists($x."_2",$_POST)) {break 1;}
         $line = [];
@@ -56,7 +56,7 @@
           }
           array_push($report,$line[0] + $error);
         }
-        fwrite($source,implode("\t",$line) . "\n");
+        fwrite($source,"\n" . implode("\t",$line));
       }
       foreach ($report as $error)
       fclose($source);

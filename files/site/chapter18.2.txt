@@ -1,0 +1,248 @@
+#Info
+y	y
+#Sheet
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
+cum					Conflict:	{cum	Prep+Ab	with}	{cum	Conj	when}
+intuerer	intueor,intueri,intuitus sum	1S-Impf-S-D	to gaze	
+stupens	stupeo,-ere,-ui,-us	P-Ppl-A/[M+F+N]-N-S	to be stunned	
+ut	ut	Conj	.	
+me	ego,mihi	[M+F+N]-[Ac+Ab]-S	[I,me]	
+recepi	recipio,-ere,recepi,receptus	1S-Pf-I-A	to take back	fact
+Quid					UNKNOWN
+hic					Conflict:	{hic	Adv	here}	{hic,haec,hoc	M-N-S	this}
+inquam					UNKNOWN
+quis	qui,quae,quod	[M+F]-N-S	rel./inq.	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+conplet	conpleo,-ere,-evi,-etus		to fill		Conflict:	{conpleo,conplere,conplevi,conpletus	3S-P-I-A	to fill}	{conpleo,conplere,conplevi,conpletus	3S-Pf-I-A	to fill}
+aures	auris,auris	F-[N+Ac]-P	ear	
+meas	meus,-a,-um	F-Ac-P	my	w/
+tantus	tantus,-a,-um	M-N-S	so great	w/
+et	et	Conj	and	
+tam	tam	Conj	so, thus	
+dulcis	dulcis,-e	[M+F+N]-[N+G]-S	sweet	w/
+sonus	sonus,-a,-um	M-N-S	sounding	w/
+Hic					UNKNOWN
+est	sum,esse,fui	3S-P-I-A	to be	fact
+inquit	inquit	2S-P-Imp-A	to he said	
+ille	ille,illa,illud	[M+N]-[N+V]-S	that	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+intervallis	intervallum,-i	N-[D+Ab]-P	interval	
+disiunctus					UNKNOWN
+inparibus					UNKNOWN
+sed	sed	Conj	but	
+tamen	tamen	Conj	however	
+pro	pro	Prep+Ab	for	
+rata					UNKNOWN
+parte	pars,partis	F-Ab-S	part	
+ratione					UNKNOWN
+distinctis					UNKNOWN
+inpulsu					UNKNOWN
+et	et	Conj	and	
+motu					UNKNOWN
+ipsorum	ipse,ipsa,ipsum	[M+N]-G-P	refl. adj.	
+orbium	orbis,orbis	M-G-P	circle	
+efficitur					UNKNOWN
+et	et	Conj	and	
+acuta					UNKNOWN
+cum					Conflict:	{cum	Prep+Ab	with}	{cum	Conj	when}
+gravibus	gravis,-e	[M+F+N]-[D+Ab]-P	heavy! serious	w/
+temperans					UNKNOWN
+varios					UNKNOWN
+aequabiliter					UNKNOWN
+concentus					UNKNOWN
+efficit					UNKNOWN
+nec					UNKNOWN
+enim	enim	Conj	for	
+silentio					UNKNOWN
+tanti	tantus,-a,-um	[M+N]-[G+N]-[S(Pos.)+P(Pos.)]	so great	w/
+motus	moveo,-ere,-i,motus	Pf-Ppl-P/M-N-S	to move	
+incitari					UNKNOWN
+possunt					UNKNOWN
+et	et	Conj	and	
+natura	natura,-ae	F-[N+Ab]-S	nature	
+fert	fero,-rre,tuli,latus	3S-P-I-A	to bear, speak	fact
+ut	ut	Conj	.	
+extrema					UNKNOWN
+ex	ex	Prep+Ab	out from	
+altera					UNKNOWN
+parte	pars,partis	F-Ab-S	part	
+graviter					UNKNOWN
+ex	ex	Prep+Ab	out from	
+altera					UNKNOWN
+autem	autem	Conj	moreover	
+acute					UNKNOWN
+sonent					UNKNOWN
+quam					Conflict:	{quam	Adv	.}	{qui,quae,quod	F-Ac-S	rel./inq.}
+ob	ob	Prep+Ac	on account of	
+causam	causa,-ae	F-Ac-S	cause	
+summus					UNKNOWN
+ille	ille,illa,illud	[M+N]-[N+V]-S	that	
+caeli	caelum,-i	N-G-S	heavens	
+stellifer					UNKNOWN
+cursus					Conflict:	{curro,currere,cucurri,cursus	Pf-Ppl-P/M-N-S	to run}	{cursus,cursus	M-[N+G+Ac]-[S+P]	course}
+cuius	qui,quae,quod	[M+F+N]-G-S	rel./inq.	
+conversio					UNKNOWN
+est	sum,esse,fui	3S-P-I-A	to be	fact
+concitatior					UNKNOWN
+acuto					UNKNOWN
+et	et	Conj	and	
+excitato					UNKNOWN
+movetur	moveo,-ere,-i,motus	3S-P-I-P	to move	fact
+sono	sonus,-a,-um	[M+N]-[D+Ab]-S	sounding	w/
+gravissimo	gravis,-e	[M+F+N]-[D+Ab]-S	heavy! serious (Sup.)	w/
+autem	autem	Conj	moreover	
+hic					Conflict:	{hic	Adv	here}	{hic,haec,hoc	M-N-S	this}
+lunaris					UNKNOWN
+atque	atque	Conj	and	
+infimus					UNKNOWN
+nam	nam	Conj	for	
+terra	terra,-ae	F-[N+Ab]-S	land	
+nona					UNKNOWN
+inmobilis					UNKNOWN
+manens	maneo,-ere,-si,-sus	P-Ppl-A/[M+F+N]-N-S	to remain	
+una					Conflict:	{una	Adv	together}	{unus,una,unum	[F+N]-[N+Ab+Ac]-[S+P]	one}	{unus,una,unum	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	one}
+sede	sedes,sedis	F-Ab-S	seat	
+semper	semper	Adv	always	w/
+haeret					UNKNOWN
+complexa					UNKNOWN
+medium	medius,-a,-um	[M+N]-[Ac+N]-S	middle	w/
+mundi	mundus,-i	M-[G+N]-[S+P]	world	
+locum	locus,-i	M-Ac-S	place	
+illi	ille,illa,illud	[M+F+N]-[D+N]-[S+P]	that	
+autem	autem	Conj	moreover	
+octo					UNKNOWN
+cursus					Conflict:	{curro,currere,cucurri,cursus	Pf-Ppl-P/M-N-S	to run}	{cursus,cursus	M-[N+G+Ac]-[S+P]	course}
+in	in	Prep+Ab/Ac	in, on/into, onto	
+quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
+eadem					UNKNOWN
+vis	vis,vis	F-[N+G]-S	force (pl)strength	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+duorum					UNKNOWN
+septem					UNKNOWN
+efficiunt					UNKNOWN
+distinctos					UNKNOWN
+intervallis	intervallum,-i	N-[D+Ab]-P	interval	
+sonos	sonus,-a,-um	M-Ac-P	sounding	w/
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+numerus	numerus,-i	M-N-S	number	
+rerum	res,-ei	F-G-P	thing	
+omnium	omnis,-e	[M+F+N]-G-P	all	w/
+fere	fere	Adv	almost	w/
+nodus					UNKNOWN
+est	sum,esse,fui	3S-P-I-A	to be	fact
+quod					Conflict:	{qui,quae,quod	N-[N+Ac]-S	rel./inq.}	{quod	Conj	because}
+docti					Conflict:	{doceo,docere,docui,doctus	Pf-Ppl-P/[M+N]-[G+N]-[S+P]	to teach}	{doctus,docta,doctum	[M+N]-[G+N]-[S(Pos.)+P(Pos.)]	learned}
+homines	homo,hominis	M-[N+Ac]-P	human	
+nervis					UNKNOWN
+imitati					UNKNOWN
+atque	atque	Conj	and	
+cantibus					UNKNOWN
+aperuerunt					UNKNOWN
+sibi	-,sui	[M+F+N]-D-S+P	[he,she,it]	
+reditum					UNKNOWN
+in	in	Prep+Ab/Ac	in, on/into, onto	
+hunc	hic,haec,hoc	M-Ac-S	this	
+locum	locus,-i	M-Ac-S	place	
+sicut					UNKNOWN
+alii	alius,alia,aliud	[M+F+N]-[D+N]-[S+P]	other	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+praestantibus	praesto(1)	P-Ppl-A/[M+F+N]-[D+Ab]-P	to excel	
+ingeniis	ingenium,-i	N-[D+Ab]-P	ability	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+vita					Conflict:	{vito,vitare,vitavi,vitatus	2S-P-Imp-A	to avoid}	{vita,vitae	F-[N+Ab]-S	life}
+humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
+divina					UNKNOWN
+studia	studium,-i	N-[N+Ac]-P	eagerness	
+coluerunt					UNKNOWN
+#Report
+Conflict: cum might be from:
+- cum Prep+Ab with
+- cum Conj when
+UNKNOWN: Quid
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+UNKNOWN: inquam
+Conflict: conplet might be from:
+- conpleo,conplere,conplevi,conpletus 3S-P-I-A to fill
+- conpleo,conplere,conplevi,conpletus 3S-Pf-I-A to fill
+UNKNOWN: Hic
+UNKNOWN: disiunctus
+UNKNOWN: inparibus
+UNKNOWN: rata
+UNKNOWN: ratione
+UNKNOWN: distinctis
+UNKNOWN: inpulsu
+UNKNOWN: motu
+UNKNOWN: efficitur
+UNKNOWN: acuta
+Conflict: cum might be from:
+- cum Prep+Ab with
+- cum Conj when
+UNKNOWN: temperans
+UNKNOWN: varios
+UNKNOWN: aequabiliter
+UNKNOWN: concentus
+UNKNOWN: efficit
+UNKNOWN: nec
+UNKNOWN: silentio
+UNKNOWN: incitari
+UNKNOWN: possunt
+UNKNOWN: extrema
+UNKNOWN: altera
+UNKNOWN: graviter
+UNKNOWN: acute
+UNKNOWN: sonent
+Conflict: quam might be from:
+- quam Adv .
+- qui,quae,quod F-Ac-S rel./inq.
+UNKNOWN: summus
+UNKNOWN: stellifer
+Conflict: cursus might be from:
+- curro,currere,cucurri,cursus Pf-Ppl-P/M-N-S to run
+- cursus,cursus M-[N+G+Ac]-[S+P] course
+UNKNOWN: conversio
+UNKNOWN: concitatior
+UNKNOWN: acuto
+UNKNOWN: excitato
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+UNKNOWN: lunaris
+UNKNOWN: infimus
+UNKNOWN: nona
+UNKNOWN: inmobilis
+Conflict: una might be from:
+- una Adv together
+- unus,una,unum [F+N]-[N+Ab+Ac]-[S+P] one
+- unus,una,unum [F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)] one
+UNKNOWN: haeret
+UNKNOWN: complexa
+UNKNOWN: octo
+Conflict: cursus might be from:
+- curro,currere,cucurri,cursus Pf-Ppl-P/M-N-S to run
+- cursus,cursus M-[N+G+Ac]-[S+P] course
+UNKNOWN: eadem
+UNKNOWN: duorum
+UNKNOWN: septem
+UNKNOWN: efficiunt
+UNKNOWN: distinctos
+UNKNOWN: nodus
+Conflict: quod might be from:
+- qui,quae,quod N-[N+Ac]-S rel./inq.
+- quod Conj because
+Conflict: docti might be from:
+- doceo,docere,docui,doctus Pf-Ppl-P/[M+N]-[G+N]-[S+P] to teach
+- doctus,docta,doctum [M+N]-[G+N]-[S(Pos.)+P(Pos.)] learned
+UNKNOWN: nervis
+UNKNOWN: imitati
+UNKNOWN: cantibus
+UNKNOWN: aperuerunt
+UNKNOWN: reditum
+UNKNOWN: sicut
+Conflict: vita might be from:
+- vito,vitare,vitavi,vitatus 2S-P-Imp-A to avoid
+- vita,vitae F-[N+Ab]-S life
+UNKNOWN: divina
+UNKNOWN: coluerunt

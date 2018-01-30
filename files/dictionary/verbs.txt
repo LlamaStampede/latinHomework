@@ -187,3 +187,7 @@ eluceo	elucere	eluxi	-	shine forth
 nuncupo	nuncupare	nuncupavi	nuncupatum	call?name
 contemplo	contemplare	contemplavi	contemplatum	regard
 suspicor	suspicari	suspicatum sum	-	suspect
+intueor	intueri	intuitus sum	-	gaze
+stupeo	stupere	stupui	-	be stunned
+conpleo	conplere	conplevi	conpletus	fill
+disiungo	disiungere	disiunxi	disiunctus	seperate

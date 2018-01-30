@@ -21,7 +21,7 @@
   <p id="Center">Center</p><input type="checkbox">
   <p id="Embed">Embed Errors</p><input type="checkbox">
   
-  <form action="output.php" method="post" id="auto">
+  <form action="chat.php" method="post" id="auto">
     <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
     <p id="Show">Show Errors</p><input type="checkbox" name="show_errors" checked>
     <header>
