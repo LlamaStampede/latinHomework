@@ -3,7 +3,6 @@
 <html>
 
 <head>
-<<<<<<< HEAD
   <title><?php
   $pagename = end(explode("/",__FILE__));
   $filename = substr($pagename,0,strlen($pagename)-4);
