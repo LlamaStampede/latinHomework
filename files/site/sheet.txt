@@ -1,137 +1,157 @@
 #Info
 y	y
 #Sheet
-tum	tum	Adv	then	w/
-Africanus	Africanus,-i	M-N-S	Africa	
-sentio	sentio,-ire,sensi,sensus	1S-P-I-A	to sense	fact
-inquit	inquit	2S-P-Imp-A	to he said	
-te	tu,tui	[M+F+N]-[Ac+Ab]-S	[you]	
-sedem	sedes,sedis	F-Ac-S	seat	
-etiam	etiam	Adv	still	w/
-nunc	nunc	Adv	now	w/
-hominum	homo,hominis	M-G-P	human	
-ac	atque	Conj	and	
-domum	domus,-us	F-Ac-S	home	
-contemplari					UNKNOWN
-quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
-si	si	Conj	if	
-tibi	tu,tui	[M+F+N]-D-S	[you]	
-parva	parvus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	small	w/
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	CR ant: 
+cum				
+intuerer	intueor,intueri,intuitus sum	1S-Impf-S-D	I was gazing	
+stupens	stupeo,-ere,-ui,-us	P-Ppl-A/[M+F+N]-N-S	to be amazed	
 ut	ut	Conj	.	
+me	ego,mihi	[M+F+N]-[Ac+Ab]-S	[I,me]	
+recepi	recipio,-ere,recepi,receptus	1S-Pf-I-A	to recover	fact MV
+Quid			What?	
+hic				
+inquam				
+quis	qui,quae,quod	[M+F]-N-S	rel./inq.	
 est	sum,esse,fui	3S-P-I-A	to be	fact
-ita					Conflict:	{eo,ire,ivi,itus	Pf-Ppl-P/[F+N]-[N+Ab]-[S+P]	to go}	{ita	Conj	so, thus}
-videtur	video,-ere,-i,visus	3S-P-I-P	to seem	fact
-haec	hic,haec,hoc	N-[N+Ac]-P	this	
-caelestia					UNKNOWN
-semper	semper	Adv	always	w/
-spectato					UNKNOWN
-illa	ille,illa,illud	[F+N]-[N+Ab+Ac]-[S+P]	that	
-humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
-contemnito					UNKNOWN
-tu	tu,tui	[M+F+N]-N-S	[you]	
-enim	enim	Conj	for	
-quam					Conflict:	{quam	Adv	.}	{qui,quae,quod	F-Ac-S	rel./inq.}
-celebritatem					UNKNOWN
-sermonis					UNKNOWN
-hominum	homo,hominis	M-G-P	human	
-aut	aut	Conj	or	
-quam					Conflict:	{quam	Adv	.}	{qui,quae,quod	F-Ac-S	rel./inq.}
-expetendam					UNKNOWN
-consequi					UNKNOWN
-gloriam	gloria,-ae	F-Ac-S	glory	
-potes	potsum,posse,potui	2S-P-I-A	to be able	fact
-Vides					UNKNOWN
-habitari					UNKNOWN
-in	in	Prep+Ab/Ac	in, on/into, onto	
-terra	terra,-ae	F-[N+Ab]-S	land	
-raris					UNKNOWN
-et	et	Conj	and	
-angustis					UNKNOWN
-in	in	Prep+Ab/Ac	in, on/into, onto	
-locis	locus,-i	M-[D+Ab]-P	place	
-et	et	Conj	and	
-in	in	Prep+Ab/Ac	in, on/into, onto	
-ipsis	ipse,ipsa,ipsum	[M+F+N]-[D+Ab]-P	refl. adj.	
-quasi					UNKNOWN
-maculis					UNKNOWN
-ubi					UNKNOWN
-habitatur					UNKNOWN
-vastas					UNKNOWN
-solitudines					UNKNOWN
-interiectas					UNKNOWN
-eos	is,ea,eum	M-Ac-P	weak dem.	
-+que	+que	Conj	and	
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
-incolunt					UNKNOWN
-terram	terra,-ae	F-Ac-S	land	
-non_modo	non_modo	Adv	only	w/
-interruptos					UNKNOWN
-ita					Conflict:	{eo,ire,ivi,itus	Pf-Ppl-P/[F+N]-[N+Ab]-[S+P]	to go}	{ita	Conj	so, thus}
-esse	sum,esse,fui	P-Inf-A	to be	
-ut	ut	Conj	.	
-nihil	nihil		nothing	
-inter	inter	Prep+Ac	between	
-ipsos	ipse,ipsa,ipsum	M-Ac-P	refl. adj.	
-ab	ab	Prep+Ab	from, by	
-aliis	alius,alia,aliud	[M+F+N]-[D+Ab]-P	other	
-ad	ad	Prep+Ac	to, toward	
-alios	alius,alia,aliud	M-Ac-P	other	
-manare					UNKNOWN
-possit					UNKNOWN
+conplet	conpleo,-ere,-evi,-etus		to fill	
+aures	auris,auris	F-[Ac]-P	ear	
+meas	meus,-a,-um	F-Ac-P	my	w/
+tantus	tantus,-a,-um	M-N-S	so great	w/
+et	et	Conj	and	
+tam	tam	Conj	so, thus	
+dulcis	dulcis,-e	[M]-[N]-S	sweet	w/
+sonus	sonus,-a,-um	M-N-S	sounding	w/
+Hic		M N S	this	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+inquit	inquit	2S-P-Imp-A	to he said	
+ille	ille,illa,illud	[M]-[N]-S	that  (sound)	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+intervallis	intervallum,-i	N-[Ab]-P	interval	means
+disiunctus		Pf Ppl P	to disjoin	
+inparibus		N Ab P	uneven	
 sed	sed	Conj	but	
-partim					UNKNOWN
-obliquos					UNKNOWN
-partim					UNKNOWN
-transversos					UNKNOWN
-partim					UNKNOWN
-etiam	etiam	Adv	still	w/
-adversos	adversus,-a,-um	M-Ac-P	opposite	w/
-stare	sto(1)	{P-Inf-A};{2S-P-I-P}	to stand	
-vobis	tu,tui	[M+F+N]-[D+Ab]-P	[you]	
-a	ab	Prep+Ab	from, by	
+tamen	tamen	Conj	however	
+pro	pro	Prep+Ab	in proportion to	
+rata			established	means
+parte	pars,partis	F-Ab-S	part	
+ratione		F Ab S	reason	
+distinctis			distinct (intervals)	
+inpulsu		Ab S	inpulse	
+et	et	Conj	and	
+motu		AB S	motion	
+ipsorum	ipse,ipsa,ipsum	[M+N]-G-P	refl. adj.	
+orbium	orbis,orbis	M-G-P	orbs	
+efficitur			is effected	
+et	et	Conj	and	
+acuta				
+cum				
+gravibus	gravis,-e	[M+F+N]-[D+Ab]-P	heavy! serious	w/
+temperans				
+varios				
+aequabiliter				
+concentus				
+efficit				
+nec				
+enim	enim	Conj	for	
+silentio				
+tanti	tantus,-a,-um	[M+N]-[G+N]-[S(Pos.)+P(Pos.)]	so great	w/
+motus	moveo,-ere,-i,motus	Pf-Ppl-P/M-N-S	to move	
+incitari				
+possunt				
+et	et	Conj	and	
+natura	natura,-ae	F-[N+Ab]-S	nature	
+fert	fero,-rre,tuli,latus	3S-P-I-A	to bear, speak	fact
+ut	ut	Conj	.	
+extrema				
+ex	ex	Prep+Ab	out from	
+altera				
+parte	pars,partis	F-Ab-S	part	
+graviter				
+ex	ex	Prep+Ab	out from	
+altera				
+autem	autem	Conj	moreover	
+acute				
+sonent				
+quam				
+ob	ob	Prep+Ac	on account of	
+causam	causa,-ae	F-Ac-S	cause	
+summus				
+ille	ille,illa,illud	[M+N]-[N+V]-S	that	
+caeli	caelum,-i	N-G-S	heavens	
+stellifer				
+cursus				
+cuius	qui,quae,quod	[M+F+N]-G-S	rel./inq.	
+conversio				
+est	sum,esse,fui	3S-P-I-A	to be	fact
+concitatior				
+acuto				
+et	et	Conj	and	
+excitato				
+movetur	moveo,-ere,-i,motus	3S-P-I-P	to move	fact
+sono	sonus,-a,-um	[M+N]-[D+Ab]-S	sounding	w/
+gravissimo	gravis,-e	[M+F+N]-[D+Ab]-S	heavy! serious (Sup.)	w/
+autem	autem	Conj	moreover	
+hic				
+lunaris				
+atque	atque	Conj	and	
+infimus				
+nam	nam	Conj	for	
+terra	terra,-ae	F-[N+Ab]-S	land	
+nona				
+inmobilis				
+manens	maneo,-ere,-si,-sus	P-Ppl-A/[M+F+N]-N-S	to remain	
+una				
+sede	sedes,sedis	F-Ab-S	seat	
+semper	semper	Adv	always	w/
+haeret				
+complexa				
+medium	medius,-a,-um	[M+N]-[Ac+N]-S	middle	w/
+mundi	mundus,-i	M-[G+N]-[S+P]	world	
+locum	locus,-i	M-Ac-S	place	
+illi	ille,illa,illud	[M+F+N]-[D+N]-[S+P]	that	
+autem	autem	Conj	moreover	
+octo				
+cursus				
+in	in	Prep+Ab/Ac	in, on/into, onto	
 quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
-expectare					UNKNOWN
-gloriam	gloria,-ae	F-Ac-S	glory	
-certe	certus,-a,-um	{Adv};{[M+N]-V-S}	certain	w/
-nullam	nullus,-a,-um	F-Ac-S	none	
-potestis	potsum,posse,potui	2P-P-I-A	to be able	fact
-#Report
-UNKNOWN: contemplari
-Conflict: ita might be from:
-- eo,ire,ivi,itus Pf-Ppl-P/[F+N]-[N+Ab]-[S+P] to go
-- ita Conj so, thus
-UNKNOWN: caelestia
-UNKNOWN: spectato
-UNKNOWN: contemnito
-Conflict: quam might be from:
-- quam Adv .
-- qui,quae,quod F-Ac-S rel./inq.
-UNKNOWN: celebritatem
-UNKNOWN: sermonis
-Conflict: quam might be from:
-- quam Adv .
-- qui,quae,quod F-Ac-S rel./inq.
-UNKNOWN: expetendam
-UNKNOWN: consequi
-UNKNOWN: Vides
-UNKNOWN: habitari
-UNKNOWN: raris
-UNKNOWN: angustis
-UNKNOWN: quasi
-UNKNOWN: maculis
-UNKNOWN: ubi
-UNKNOWN: habitatur
-UNKNOWN: vastas
-UNKNOWN: solitudines
-UNKNOWN: interiectas
-UNKNOWN: incolunt
-UNKNOWN: interruptos
-Conflict: ita might be from:
-- eo,ire,ivi,itus Pf-Ppl-P/[F+N]-[N+Ab]-[S+P] to go
-- ita Conj so, thus
-UNKNOWN: manare
-UNKNOWN: possit
-UNKNOWN: partim
-UNKNOWN: obliquos
-UNKNOWN: transversos
-UNKNOWN: expectare
+eadem				
+vis	vis,vis	F-[N+G]-S	force (pl)strength	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+duorum				
+septem				
+efficiunt				
+distinctos				
+intervallis	intervallum,-i	N-[D+Ab]-P	interval	
+sonos	sonus,-a,-um	M-Ac-P	sounding	w/
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+numerus	numerus,-i	M-N-S	number	
+rerum	res,-ei	F-G-P	thing	
+omnium	omnis,-e	[M+F+N]-G-P	all	w/
+fere	fere	Adv	almost	w/
+nodus				
+est	sum,esse,fui	3S-P-I-A	to be	fact
+quod				
+docti				
+homines	homo,hominis	M-[N+Ac]-P	human	
+nervis				
+imitati				
+atque	atque	Conj	and	
+cantibus				
+aperuerunt				
+sibi	-,sui	[M+F+N]-D-S+P	[he,she,it]	
+reditum				
+in	in	Prep+Ab/Ac	in, on/into, onto	
+hunc	hic,haec,hoc	M-Ac-S	this	
+locum	locus,-i	M-Ac-S	place	
+sicut				
+alii	alius,alia,aliud	[M+F+N]-[D+N]-[S+P]	other	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+praestantibus	praesto(1)	P-Ppl-A/[M+F+N]-[D+Ab]-P	to excel	
+ingeniis	ingenium,-i	N-[D+Ab]-P	ability	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+vita				
+humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
+divina				
+studia	studium,-i	N-[N+Ac]-P	eagerness	
+coluerunt				

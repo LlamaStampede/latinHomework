@@ -3,7 +3,6 @@
 <html>
 
 <head>
-<<<<<<< HEAD
   <title><?php
   $pagename = end(explode("/",__FILE__));
   $filename = substr($pagename,0,strlen($pagename)-4);
@@ -14,28 +13,14 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="sheet.css">
   <link rel="icon" href="../favicon/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-
-<ul id="test">
-<li><a href="output.php">Home</a></li><li>
-<a href="dictionary.php">Dictionary</a></li><li>
-<a href="input.html">Input</a></li><li>
-<a class = "current">Dream of Scipio<img src= "https://image.flaticon.com/icons/png/512/60/60995.png" width = "13" height = "13"></a>
-<ul>
-<li><a href="chapter16.php">Chapter 16</a></li><li>
-<a href="chapter17.php">Chapter 17</a></li><li>
-<a class = "current">Chapter 18</a></li><li>
-<a href="chapter19.php">Chapter 19</a></li><li>
-<a href="chapter20.php">Chapter 20</a></li>
-</ul>
-</li>
-</ul>
-<h1 class="plain"><a href="">Analysis Sheet</a></h1>
-<p id="Center">Center</p><input type="checkbox" checked>
-<p id="Embed">Embed Errors</p><input type="checkbox">
+  <h1 class="plain"><a href="">Analysis Sheet</a></h1>
+  <h2 class="plain"><a href="input.html" target="Input">Input</a> <a href="dictionary.php" target="Dictionary">Dictionary</a></h2>
+  <p id="Center">Center</p><input type="checkbox">
+  <p id="Embed">Embed Errors</p><input type="checkbox">
+  
   <form action="<?php echo $pagename ?>" method="post" id="auto">
     <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
     <p id="Show">Show Errors</p><input type="checkbox" name="show_errors" checked>
@@ -118,7 +103,7 @@
       $error = [];
       foreach ($col as $row) {
         if (++$subcounter == 3 and $parsing == "n") {
-          echo "<li><input type='text' name='".$counter."_".$subcounter."' value='".$row."'></li>";
+          echo "<li><input type='text' name='".$counter."_".$subcounter."'></li>";
         } elseif ($subcounter == 1) { /*Delete to allow editing the first line*/
           echo "<li>".$row."<input class='hidden' name='".$counter."_1' value='".$row."'></li>";
         } elseif ($subcounter <= 5) {

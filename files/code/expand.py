@@ -291,6 +291,7 @@ def expand(pts,method,nextword,counter):
             elif term == "dum": trn = "while/until"
             elif term == "cum": trn = "when"
             elif term == "quod": trn = "because"
+            elif term == "quasi": trn = "as if"
             else: trn = "and"
 
             if term == "ac": dct = "atque"

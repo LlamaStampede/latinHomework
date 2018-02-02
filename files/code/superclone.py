@@ -135,7 +135,7 @@ for term in ex_terms:
         if term in stem[2:4] or term[:len(stem[1])] == stem[1] or compable(term,stem[1]): pos[-1].append(["adj",stem])
 
     #conjunctions
-    conjs = ["atque","+que","ac","et","sed","at","aut","autem","tamen","si","tam","ita","sic","ut","num","ne","neque","enim","nam","dum","cum","quod"]
+    conjs = ["atque","+que","ac","et","sed","at","aut","autem","tamen","si","tam","ita","sic","ut","num","ne","neque","enim","nam","dum","cum","quod","quasi"]
     if term in conjs: pos[-1].append(["conj"])
     #personal pronouns
     for letter in ["m","t","s","n","v"]:

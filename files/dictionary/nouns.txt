@@ -353,4 +353,13 @@ detrimentum	-i	n	damage
 seditio	seditionis	f	sedition
 suspicio	suspicionis	f	suspicion
 magnitudo	magnitudinis	f	magnitude
-
+Scipio	Scipionis	m	Scipio
+avus	avi	m	grandfather
+iustitia	iustitiae	f	justice
+pietas	pietatis	f	piety
+coetus	coetus	m	union
+candor	candoris	m	radiance
+circus	-i	m	circle
+globus	-i	m	globe
+intervallum	-i	n	interval
+ratio	rationis	f	reason

@@ -3,8 +3,8 @@ y	y
 #Sheet
 quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
 cum					Conflict:	{cum	Prep+Ab	with}	{cum	Conj	when}
-intuerer	intueor,intueri,intuitus sum	1S-Impf-S-D	to gaze	
-stupens	stupeo,-ere,-ui,-us	P-Ppl-A/[M+F+N]-N-S	to be stunned	
+intuerer					UNKNOWN
+stupens					UNKNOWN
 ut	ut	Conj	.	
 me	ego,mihi	[M+F+N]-[Ac+Ab]-S	[I,me]	
 recepi	recipio,-ere,recepi,receptus	1S-Pf-I-A	to take back	fact
@@ -14,7 +14,7 @@ inquam					UNKNOWN
 quis	qui,quae,quod	[M+F]-N-S	rel./inq.	
 est	sum,esse,fui	3S-P-I-A	to be	fact
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
-conplet	conpleo,-ere,-evi,-etus		to fill		Conflict:	{conpleo,conplere,conplevi,conpletus	3S-P-I-A	to fill}	{conpleo,conplere,conplevi,conpletus	3S-Pf-I-A	to fill}
+conplet					UNKNOWN
 aures	auris,auris	F-[N+Ac]-P	ear	
 meas	meus,-a,-um	F-Ac-P	my	w/
 tantus	tantus,-a,-um	M-N-S	so great	w/
@@ -27,15 +27,15 @@ est	sum,esse,fui	3S-P-I-A	to be	fact
 inquit	inquit	2S-P-Imp-A	to he said	
 ille	ille,illa,illud	[M+N]-[N+V]-S	that	
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
-intervallis	intervallum,-i	N-[D+Ab]-P	interval	
-disiunctus	disiungo,-ere,disiunxi,disiunctus	Pf-Ppl-P/M-N-S	to seperate	
+intervallis					UNKNOWN
+disiunctus					UNKNOWN
 inparibus					UNKNOWN
 sed	sed	Conj	but	
 tamen	tamen	Conj	however	
 pro	pro	Prep+Ab	for	
 rata					UNKNOWN
 parte	pars,partis	F-Ab-S	part	
-ratione	ratio,-tionis	F-Ab-S	reason	
+ratione					UNKNOWN
 distinctis					UNKNOWN
 inpulsu					UNKNOWN
 et	et	Conj	and	
@@ -122,42 +122,12 @@ duorum					UNKNOWN
 septem					UNKNOWN
 efficiunt					UNKNOWN
 distinctos					UNKNOWN
-intervallis	intervallum,-i	N-[D+Ab]-P	interval	
+intervallis					UNKNOWN
 sonos	sonus,-a,-um	M-Ac-P	sounding	w/
->>>>>>> aiden
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
 numerus	numerus,-i	M-N-S	number	
 rerum	res,-ei	F-G-P	thing	
 omnium	omnis,-e	[M+F+N]-G-P	all	w/
-<<<<<<< HEAD
-fere	fere	Adv	nearly	w/
-nodus			the knot	
-est	sum,esse,fui	3S-P-I-A	to be	fact
-quod			which	
-docti			learned	
-homines	homo,hominis	M-[N+Ac]-P	human	
-nervis		M Ab Pl	strings	
-imitati		P I D	imitated	
-atque	atque	Conj	and	
-cantibus		M Ab Pl	songs	
-aperuerunt			reveal, open up	
-sibi	-,sui	[M+F+N]-D-S+P	[he,she,it]	benefit
-reditum			a return	
-in	in	Prep+Ab/Ac	in, on/into, onto	
-hunc	hic,haec,hoc	M-Ac-S	this	
-locum	locus,-i	M-Ac-S	place	
-sicut			just like	
-alii	alius,alia,aliud	[M+F+N]-[D+N]-[S+P]	other	
-qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
-praestantibus	praesto(1)	P-Ppl-A/[M+F+N]-[D+Ab]-P	to outstanding	
-ingeniis	ingenium,-i	N-[D+Ab]-P	talent	
-in	in	Prep+Ab/Ac	in, on/into, onto	
-vita			life	
-humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
-divina		N Ac P	divine	
-studia	studium,-i	N-[Ac]-P	studies	
-coluerunt			cultivated	
-=======
 fere	fere	Adv	almost	w/
 nodus					UNKNOWN
 est	sum,esse,fui	3S-P-I-A	to be	fact
@@ -185,21 +155,99 @@ humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
 divina					UNKNOWN
 studia	studium,-i	N-[N+Ac]-P	eagerness	
 coluerunt					UNKNOWN
+hoc	hic,haec,hoc	[M+N]-Ab-S	this	
+sonitu					UNKNOWN
+oppletae					UNKNOWN
+aures	auris,auris	F-[N+Ac]-P	ear	
+hominum	homo,hominis	M-G-P	human	
+obsurduerunt					UNKNOWN
+nec					UNKNOWN
+est	sum,esse,fui	3S-P-I-A	to be	fact
+ullus	ullus,-a,-um	M-N-S	any	
+hebetior					UNKNOWN
+sensus					Conflict:	{sentio,sentire,sensi,sensus	Pf-Ppl-P/M-N-S	to sense}	{sensus,sensus	M-[N+G+Ac]-[S+P]	sense}
+in	in	Prep+Ab/Ac	in, on/into, onto	
+vobis	tu,tui	[M+F+N]-[D+Ab]-P	[you]	
+sicut					UNKNOWN
+ubi					UNKNOWN
+Nilus					UNKNOWN
+ad	ad	Prep+Ac	to, toward	
+illa	ille,illa,illud	[F+N]-[N+Ab+Ac]-[S+P]	that	
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
+Catadupa					UNKNOWN
+nominantur					UNKNOWN
+praecipitat					UNKNOWN
+ex	ex	Prep+Ab	out from	
+altissimis					UNKNOWN
+montibus	mons,-ntis	M-[D+Ab]-P	mountain	
+ea	is,ea,eum	[F+N]-[N+Ab+Ac]-[S+P]	weak dem.	
+gens	gens,-ntis	F-N-S	clan	
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
+illum	ille,illa,illud	M-Ac-S	that	
+locum	locus,-i	M-Ac-S	place	
+adcolit					UNKNOWN
+propter	propter	Prep+Ac	on account of	
+magnitudinem	magnitudo,magnitudinis	F-Ac-S	magnitude	
+sonitus					UNKNOWN
+sensu	sensus,-us	M-Ab-S	sense	
+audiendi	audio,-ire,-ivi,-itus	F-Ppl-P/[M+N]-[G+N]-[S+P]	to hear	
+caret	careo,-ere,-ui,-iturus	3S-P-I-A	to be free (from)	fact
+hic					Conflict:	{hic	Adv	here}	{hic,haec,hoc	M-N-S	this}
+vero	verus,-a,-um	[M+N]-[D+Ab]-S	true	w/
+tantus	tantus,-a,-um	M-N-S	so great	w/
+est	sum,esse,fui	3S-P-I-A	to be	fact
+totius	totus,-a,-um	[M+F+N]-G-S	all	
+mundi	mundus,-i	M-[G+N]-[S+P]	world	
+incitatissima					UNKNOWN
+conversione					UNKNOWN
+sonitus					UNKNOWN
+ut	ut	Conj	.	
+eum	is,ea,eum	M-Ac-S	weak dem.	
+aures	auris,auris	F-[N+Ac]-P	ear	
+hominum	homo,hominis	M-G-P	human	
+capere	capio,-ere,cepi,-tus	P-Inf-A	to seize	
+non	non	Adv	not	w/
+possint					UNKNOWN
+sicut					UNKNOWN
+intueri					UNKNOWN
+solem	sol,solis	M-Ac-S	sun	
+adversum	adversus,-a,-um	[M+N]-[Ac+N]-S	opposite	w/
+nequitis					UNKNOWN
+eius	is,ea,eum	[M+F+N]-G-S	weak dem.	
++que	+que	Conj	and	
+radiis					UNKNOWN
+acies	acies,-ei	F-[N+Ac]-[S+P]	line	
+vestra	vester,vestra,vestrum	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	your	w/
+sensus					Conflict:	{sentio,sentire,sensi,sensus	Pf-Ppl-P/M-N-S	to sense}	{sensus,sensus	M-[N+G+Ac]-[S+P]	sense}
++que	+que	Conj	and	
+vincitur	vinco,-ere,vici,victus	3S-P-I-P	to conquer	fact
+haec	hic,haec,hoc	N-[N+Ac]-P	this	
+ego	ego,mihi	[M+F+N]-N-S	[I,me]	
+admirans					UNKNOWN
+referebam					UNKNOWN
+tamen	tamen	Conj	however	
+oculos	oculus,-i	M-Ac-P	eye	
+ad	ad	Prep+Ac	to, toward	
+terram	terra,-ae	F-Ac-S	land	
+identidem					UNKNOWN
 #Report
 Conflict: cum might be from:
 - cum Prep+Ab with
 - cum Conj when
+UNKNOWN: intuerer
+UNKNOWN: stupens
 UNKNOWN: Quid
 Conflict: hic might be from:
 - hic Adv here
 - hic,haec,hoc M-N-S this
 UNKNOWN: inquam
-Conflict: conplet might be from:
-- conpleo,conplere,conplevi,conpletus 3S-P-I-A to fill
-- conpleo,conplere,conplevi,conpletus 3S-Pf-I-A to fill
+UNKNOWN: conplet
 UNKNOWN: Hic
+UNKNOWN: intervallis
+UNKNOWN: disiunctus
 UNKNOWN: inparibus
 UNKNOWN: rata
+UNKNOWN: ratione
 UNKNOWN: distinctis
 UNKNOWN: inpulsu
 UNKNOWN: motu
@@ -274,3 +322,33 @@ Conflict: vita might be from:
 - vita,vitae F-[N+Ab]-S life
 UNKNOWN: divina
 UNKNOWN: coluerunt
+UNKNOWN: sonitu
+UNKNOWN: oppletae
+UNKNOWN: obsurduerunt
+UNKNOWN: hebetior
+Conflict: sensus might be from:
+- sentio,sentire,sensi,sensus Pf-Ppl-P/M-N-S to sense
+- sensus,sensus M-[N+G+Ac]-[S+P] sense
+UNKNOWN: ubi
+UNKNOWN: Nilus
+UNKNOWN: Catadupa
+UNKNOWN: nominantur
+UNKNOWN: praecipitat
+UNKNOWN: altissimis
+UNKNOWN: adcolit
+UNKNOWN: sonitus
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+UNKNOWN: incitatissima
+UNKNOWN: conversione
+UNKNOWN: possint
+UNKNOWN: intueri
+UNKNOWN: nequitis
+UNKNOWN: radiis
+Conflict: sensus might be from:
+- sentio,sentire,sensi,sensus Pf-Ppl-P/M-N-S to sense
+- sensus,sensus M-[N+G+Ac]-[S+P] sense
+UNKNOWN: admirans
+UNKNOWN: referebam
+UNKNOWN: identidem

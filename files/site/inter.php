@@ -4,9 +4,11 @@
 
 <head>
 <meta charset="utf-8">
-<title>Latin Middleman</title>
+<title>Constructor</title>
 <link rel="stylesheet" type="text/css" href="sheet.css">
 <link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="icon" href="../favicon/favicon.ico">
+  <style>.hidden {display: none;}</style>
 </head>
 
 <body>
@@ -35,14 +37,21 @@
     echo exec("cd ../code\npython superclone.py");
 
     $filename = $_POST[filename];
+    if ($filename != "output") {
     $pagename = $filename.".php";
     $txtname = $filename.".txt";
     $empty = copy("output.php",$pagename);
     $empty = copy("sheet.txt",$txtname);
-    ?>
-<script>//location = "<?php echo $filename; ?>";</script>
-<h1><a href="">RECOMPILE</a></h1>
-
+  }
+  ?>
+  <script>//location = "<?php echo $filename; ?>";</script>
+  <h1><form method="post" action="">
+    <input class="yeah" type="text" value="<?php echo $filename ?>" name="filename"><br>
+    <textarea class="hidden"><?php echo $_POST[rawText] ?></textarea>
+    <button class="submit">RECOMPILE</button>
+  <form></h1>
+  <h2><a href="<?php echo $pagename ?>" target="<?php echo ucfirst($filename) ?>">View</a></h2>
+  
 </body>
 
 </html>

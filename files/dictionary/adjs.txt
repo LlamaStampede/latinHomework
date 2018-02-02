@@ -118,3 +118,8 @@ vetus	veteris	old
 iustus	-a	-um	just
 alacrior	alacrius	happier
 sanctus	-a	-um	sacred
+propinquus	-a	-um	near
+splendidus	-a	-um	splendid
+lacteus	-a	-um	milky
+praeclarus	-a	-um	bright
+sonus	-a	-um	sounding

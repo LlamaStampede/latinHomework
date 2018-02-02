@@ -180,3 +180,14 @@ intercedo	intercedere	intercessi	intercessum	intercede/interrupt
 interficio	interficere	interfeci	interfectum	kill
 suspicio	suspicere	suspexi	suspectum	suspect
 libo	libare	libavi	libatum	spill/dedicate
+gigno	gignere	genui	genitum	give birth to
+laxo	laxare	laxavi	laxatum	loosen
+luceo	lucere	luxi	-	shine
+eluceo	elucere	eluxi	-	shine forth
+nuncupo	nuncupare	nuncupavi	nuncupatum	call?name
+contemplo	contemplare	contemplavi	contemplatum	regard
+suspicor	suspicari	suspicatum sum	-	suspect
+intueor	intueri	intuitus sum	-	gaze
+stupeo	stupere	stupui	-	be stunned
+conpleo	conplere	conplevi	conpletus	fill
+disiungo	disiungere	disiunxi	disiunctus	seperate
