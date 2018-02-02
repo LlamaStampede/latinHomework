@@ -1,0 +1,190 @@
+#Info
+n	n
+#Sheet
+sed	sed	Conj	but	
+sic	sic	Conj	so, thus	
+Scipio					UNKNOWN
+ut	ut	Conj	.	
+avus					UNKNOWN
+hic					Conflict:	{hic	Adv	here}	{hic,haec,hoc	M-N-S	this}
+tuus	tuus,-a,-um	M-N-S	your	w/
+ut	ut	Conj	.	
+ego	ego,mihi		[I,me]		Conflict:	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+te	tu,tui	[M+F+N]-[Ac+Ab]-S	[you]	
+genui					UNKNOWN
+iustitiam					UNKNOWN
+cole					UNKNOWN
+et	et	Conj	and	
+pietatem					UNKNOWN
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
+cum					Conflict:	{cum	Prep+Ab	with}	{cum	Conj	when}
+magna	magnus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	great	w/
+in	in	Prep+Ab/Ac	in, on/into, onto	
+parentibus	parens,-ntis	C-[D+Ab]-P	parent	
+et	et	Conj	and	
+propinquis					UNKNOWN
+tum	tum	Adv	then	w/
+in	in	Prep+Ab/Ac	in, on/into, onto	
+patria	patria,-ae	F-[N+Ab]-S	fatherland	
+maxima	magnus,-a,-um	[F+N]-[N+Ac]-[S(Sup.)+P(Sup.)]	great	w/
+est	sum,esse,fui	3S-P-I-A	to be	fact
+ea	is,ea,eum	[F+N]-[N+Ab+Ac]-[S+P]	weak dem.	
+vita					Conflict:	{vito,vitare,vitavi,vitatus	2S-P-Imp-A	to avoid}	{vita,vitae	F-[N+Ab]-S	life}
+via	via,-ae	F-[N+Ab]-S	street	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+in	in	Prep+Ab/Ac	in, on/into, onto	
+caelum	caelum,-i	N-[N+Ac]-S	heavens	
+et	et	Conj	and	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+hunc	hic,haec,hoc	M-Ac-S	this	
+coetum					UNKNOWN
+eorum	is,ea,eum	[M+N]-G-P	weak dem.	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+iam	iam	Adv	already	w/
+vixerunt	vivo,-ere,vixi,victus	3P-Pf-I-A	to live	fact
+et	et	Conj	and	
+corpore	corpus,corporis	N-Ab-S	body	
+laxati					UNKNOWN
+illum	ille,illa,illud	M-Ac-S	that	
+incolunt					UNKNOWN
+locum	locus,-i	M-Ac-S	place	
+quem	qui,quae,quod	M-Ac-S	rel./inq.	
+vides	video,-ere,-i,visus	2S-P-I-A	to see	fact
+erat	sum,esse,fui	3S-Impf-I-A	to be	fact
+autem	autem	Conj	moreover	
+is	is,ea,eum	M-N-S	weak dem.	
+splendidissimo					UNKNOWN
+candore					UNKNOWN
+inter	inter	Prep+Ac	between	
+flammas	flamma,-ae	F-Ac-P	flame	
+circus					UNKNOWN
+elucens					UNKNOWN
+quem	qui,quae,quod	M-Ac-S	rel./inq.	
+vos	tu,tui	[M+F+N]-[N+Ac]-P	[you]	
+ut	ut	Conj	.	
+a	ab	Prep+Ab	from, by	
+Graiis					UNKNOWN
+accepistis	accipio,-ere,accepi,acceptus	2P-Pf-I-A	to accept	fact
+orbem	orbis,orbis	M-Ac-S	circle	
+lacteum					UNKNOWN
+nuncupatis					UNKNOWN
+ex	ex	Prep+Ab	out from	
+quo	qui,quae,quod	[M+N]-Ab-S	rel./inq.	
+omnia	omnis,-e	N-[N+Ac]-P	all	w/
+mihi	ego,mihi	[M+F+N]-D-S	[I,me]	
+contemplanti					UNKNOWN
+praeclara					UNKNOWN
+cetera	ceterus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	the rest!others(pl)	w/
+et	et	Conj	and	
+mirabilia	mirabilis,-e	N-[N+Ac]-P	remarkable	w/
+videbantur	video,-ere,-i,visus	3P-Impf-I-P	to seem	fact
+erant	sum,esse,fui	3P-Impf-I-A	to be	fact
+autem	autem	Conj	moreover	
+eae	is,ea,eum	F-N-P	weak dem.	
+stellae	stella,-ae	F-[G+D+N]-[S+P]	star	
+quas	qui,quae,quod	F-Ac-P	rel./inq.	
+numquam	numquam	Adv	never	w/
+ex	ex	Prep+Ab	out from	
+hoc	hic,haec,hoc	[M+N]-Ab-S	this	
+loco	locus,-i	M-[D+Ab]-S	place	
+vidimus	video,-ere,-i,visus	1P-Pf-I-A	to see	fact
+et	et	Conj	and	
+eae	is,ea,eum	F-N-P	weak dem.	
+magnitudines	magnitudo,magnitudinis	F-[N+Ac]-P	magnitude	
+omnium	omnis,-e	[M+F+N]-G-P	all	w/
+quas	qui,quae,quod	F-Ac-P	rel./inq.	
+esse	sum,esse,fui	P-Inf-A	to be	
+numquam	numquam	Adv	never	w/
+suspicati					UNKNOWN
+sumus	sum,esse,fui	1P-P-I-A	to be	fact
+ex	ex	Prep+Ab	out from	
+quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
+erat	sum,esse,fui	3S-Impf-I-A	to be	fact
+ea	is,ea,eum	[F+N]-[N+Ab+Ac]-[S+P]	weak dem.	
+minima	parvus,-a,-um	[F+N]-[N+Ac]-[S(Sup.)+P(Sup.)]	small	w/
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
+ultima	ultimus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	last	w/
+a	ab	Prep+Ab	from, by	
+caelo	caelum,-i	N-[D+Ab]-S	heavens	
+citima					UNKNOWN
+a	ab	Prep+Ab	from, by	
+terris	terra,-ae	F-[D+Ab]-P	land	
+luce	lux,lucis	F-Ab-S	light	
+lucebat					UNKNOWN
+aliena					UNKNOWN
+stellarum	stella,-ae	F-G-P	star	
+autem	autem	Conj	moreover	
+globi					UNKNOWN
+terrae	terra,-ae	F-[G+D+N]-[S+P]	land	
+magnitudinem	magnitudo,magnitudinis	F-Ac-S	magnitude	
+facile	facilis,-e	{Adv};{[M+F+N]-[Ab+N+Ac]-S(Pos.)}	easy	w/
+vincebant	vinco,-ere,vici,victus	3P-Impf-I-A	to conquer	fact
+iam	iam	Adv	already	w/
+ipsa	ipse,ipsa,ipsum	[F+N]-[N+Ab+Ac]-[S+P]	refl. adj.	
+terra	terra,-ae	F-[N+Ab]-S	land	
+ita					Conflict:	{eo,ire,ivi,itus	Pf-Ppl-P/[F+N]-[N+Ab]-[S+P]	to go}	{ita	Conj	so, thus}
+mihi	ego,mihi	[M+F+N]-D-S	[I,me]	
+parva	parvus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	small	w/
+visa	video,-ere,-i,visus	Pf-Ppl-P/[F+N]-[N+Ab]-[S+P]	to see	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+ut	ut	Conj	.	
+me	ego,mihi	[M+F+N]-[Ac+Ab]-S	[I,me]	
+imperii	imperium,-i	N-G-S	command	
+nostri					Conflict:	{noster,nostra,nostrum	[M+N]-[G+N]-[S(Pos.)+P(Pos.)]	our}	{ego,mihi	[M+F+N]-G-P	[I,me]}
+quo	qui,quae,quod	[M+N]-Ab-S	rel./inq.	
+quasi					UNKNOWN
+punctum					UNKNOWN
+eius	is,ea,eum	[M+F+N]-G-S	weak dem.	
+attingimus					UNKNOWN
+paeniteret					UNKNOWN
+#Report
+UNKNOWN: Scipio
+UNKNOWN: avus
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+Conflict: ego might be from:
+- ego,mihi [M+F+N]-N-S [I,me]
+- ego,mihi [M+F+N]-N-S [I,me]
+- ego,mihi [M+F+N]-N-S [I,me]
+- ego,mihi [M+F+N]-N-S [I,me]
+- ego,mihi [M+F+N]-N-S [I,me]
+UNKNOWN: genui
+UNKNOWN: iustitiam
+UNKNOWN: cole
+UNKNOWN: pietatem
+Conflict: cum might be from:
+- cum Prep+Ab with
+- cum Conj when
+UNKNOWN: propinquis
+Conflict: vita might be from:
+- vito,vitare,vitavi,vitatus 2S-P-Imp-A to avoid
+- vita,vitae F-[N+Ab]-S life
+UNKNOWN: coetum
+UNKNOWN: laxati
+UNKNOWN: incolunt
+UNKNOWN: splendidissimo
+UNKNOWN: candore
+UNKNOWN: circus
+UNKNOWN: elucens
+UNKNOWN: Graiis
+UNKNOWN: lacteum
+UNKNOWN: nuncupatis
+UNKNOWN: contemplanti
+UNKNOWN: praeclara
+UNKNOWN: suspicati
+UNKNOWN: citima
+UNKNOWN: lucebat
+UNKNOWN: aliena
+UNKNOWN: globi
+Conflict: ita might be from:
+- eo,ire,ivi,itus Pf-Ppl-P/[F+N]-[N+Ab]-[S+P] to go
+- ita Conj so, thus
+Conflict: nostri might be from:
+- noster,nostra,nostrum [M+N]-[G+N]-[S(Pos.)+P(Pos.)] our
+- ego,mihi [M+F+N]-G-P [I,me]
+UNKNOWN: quasi
+UNKNOWN: punctum
+UNKNOWN: attingimus
+UNKNOWN: paeniteret

@@ -1,0 +1,188 @@
+#Info
+n	n
+#Sheet
+quam	Connecting relative		which (earth)	
+cum			when	
+magis		adv	more intently	
+intuerer	speak(young to buds)	1 S Impf S P	gazed	circumstantial
+Quaeso	"    "		I beg	
+inquit	inquit	2S-P-Imp-A	to he said	
+Africanus	Africanus,-i	M-N-S	Africa	(speaker the older)
+quous	"		how long	
++que	+que	Conj	and	
+humi	humus,-i	F-Locative-[S-P]	earth	(on the)
+defixa		Pf Ppl P / F N S	be chained	
+tua	tuus,-a,-um	[F]-[N]-[S]	your	w/
+mens	mens,-ntis	F-N-S	mind	w/ defixa
+erit	sum,esse,fui	3S-F-I-A	to be	fact
+Nonne		Adv	SURELY??	
+aspicis		2 S P I A	see	
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	(2) which	
+in	in	Prep+Ab/Ac	(1) into	
+templa	templum,-i	N-Ac-P	regions	
+veneris	venio,-ire,-i,-tus	2S-[Pf]-[S]-A	to come	Indirect Question
+Novem		indeclinable	nine	
+tibi	tu,tui	[M+F+N]-D-S	Hey you!	ethical
+orbibus	orbis,orbis	M-[Ab]-P	by orbs	
+vel		conj	or	
+potius		comp adv	rather	(he cant find words)
+globis		[M]-Ab-Pl	by globes	
+conexa		Pf - Ppl - P / N N P	connected	
+sunt	sum,esse,fui	3P-P-I-A	to be	fact
+omnia	omnis,-e	N-[N]-P	all (these things)	subject
+quorum	qui,quae,quod	[M+N]-G-P	rel./inq.	
+unus		M N S	one	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+caelestis	estis, estis, este	M N S	heavenly	w/ (globus)
+extumus	extimus, -a, -um	M N S	the outermost	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+reliquos		M Ac Pl	the others	
+omnes	omnis,-e	[M]-[Ac]-P	all	w/
+complectitur		3 S P I P	embraced	
+summus		M N S	highest	
+ipse	ipse,ipsa,ipsum	[M]-[N]-S	refl. adj.	
+deus	deus,-i	M-N-S	god	
+arcens	arceo, ere, ui, -	P Ppl A / M N S	to keep in	
+et	et	Conj	and	
+continens	contineo,-ere,-ui,contentus	P-Ppl-A/[M+F+N]-N-S	to contain	
+ceteros	ceterus,-a,-um	M-Ac-P	the rest!others(pl)	w/
+in	in	Prep+Ab/Ac	in, on/into, onto	
+quo	qui,quae,quod	[M+N]-Ab-S	rel./inq.	(those globes)
+sunt	sum,esse,fui	3P-P-I-A	to be	fact
+infixi			fasten	w/ sunt
+illi	ille,illa,illud	[M]-[N]-[P]	those (globes)	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+volvuntur		3 S P I P	revolve	MIDDLE VOICE
+stellarum	stella,-ae	F-G-P	star	
+cursus		M N Pl	courses	
+sempiterni		M N Pl (adj)	everlasting	
+cui	qui,quae,quod	[M+F+N]-D-S	rel./inq.	(under which) w/ sub
+subiecti		Pf Ppl P / M N Pl	placed (under)	
+sunt	sum,esse,fui	3P-P-I-A	to be	fact
+septem		indecl.	seven	
+qui	qui,quae,quod	M-N-[P]	rel./inq.	(courses)
+versantur	o (1)	3 Pl P I P	turn	MIDDLE VOICE
+retro			backwards	
+contrario		M Ab S	contrary	
+motu		M Ab S	move	
+atque	atque	Conj	((contrary) to)	
+caelum	caelum,-i	N-[N+Ac]-S	heaven	IDIOMATIC
+ex	ex	Prep+Ab	out	
+quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	of which	
+unum	unus,-a,-um		one	
+globum		M A S	globe	
+possidet			possesed	
+illa	ille,illa,illud	[F+N]-[N+Ab+Ac]-[S+P]	that	(heavenly body)
+quam			which	
+in	in	Prep+Ab/Ac	on	
+terris	terra,-ae	F-[D+Ab]-P	earth	
+Saturniam		F A S	Saturn	
+nominant	o (1)	3 Pl P I A	they called	
+deinde			Next	
+est	sum,esse,fui	3S-P-I-A	there is	fact
+hominum	homo,hominis	M-G-P	human	
+generi	genus,generis	N-D-S	origin	
+prosperus	us a um	M N S	successful	after subj
+et	et	Conj	and	
+salutaris		M N S	healthful	after subj then (D)
+ille	ille,illa,illud	[M]-[N]-S	that	
+fulgor		M N S	flashing	subject
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+dicitur	dico,-ere,dixi,-tus	3S-P-I-P	to call	fact
+Iovis		M N S	Jupiter	
+tum	tum	Adv	then	w/ implied ("est")
+rutilus	us a um	M N S	red, golden red	
+horribilis	is is e	[MAS][CNS][XGS]	horrible	implied ("flashing")
++que	+que	Conj	and	
+terris	terra,-ae	F-[D]-P	land	hostility or nearness
+quem	qui,quae,quod	M-Ac-S	rel./inq.	
+Martium	mars martis	M G pl	Mars	
+dicitis	dico,-ere,dixi,-tus	2P-P-I-A	to call	fact
+deinde		adv	then	
+subter		prep + [Ac]&Ab	beneath	
+mediam	medius,-a,-um	F-Ac-S	middle	w/ regionem
+fere	fere	Adv	nearly	w/ mediam
+regionem		F A S	region	
+sol	sol,solis	M-N-S	sun	subj
+obtinet		3 S P I A	obtain	
+p		IGNORE	FOR	DELETION
+dux	dux,ducis	C-N-S	leader	appositions
+et	et	Conj	and	
+princeps	princeps,principis	[M+F+N]-[N+Ac]-S	chief	w/
+et	et	Conj	and	
+moderator		M N S	moderator	
+luminum	lumen,luminis	N-G-P	light (celestial bodies)	
+reliquorum		M G Pl	others	
+mens	mens,-ntis	F-N-S	mind	
+mundi	mundus,-i	M-[G]-[S]	universe	
+et	et	Conj	and	
+temperatio	tio tionis	F N S	regulator	(tuning) of universe
+tanta	tantus,-a,-um	[F]-[Ab]-[S]	(with) such a great	w/
+magnitudine	magnitudo,magnitudinis	F-Ab-S	magnitude	
+ut	ut	Conj	.	with the result that
+cuncta	us a um	F N S	all things	
+sua	suus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	refl. adj.	w/
+luce	lux,lucis	F-Ab-S	light	with
+lustret	lustro (1)	3 S P S A	purify	result
+et	et	Conj	and	
+compleat	eo ere evi etus	3 S P SA	to fill up	result
+hunc	hic,haec,hoc	M-Ac-S	this	
+ut	ut	Conj	as	
+comites	comes,comitis	C-[N]-P	comrade	appoistion
+consequuntur		3 Pl P I D	to follow up	
+Veneris		F G S	Venus	
+alter	alter,altra,altrum	M-N-S	either	(course)
+alter	alter,altra,altrum	M-N-S	either	
+Mercurii		M [GS] [NPl]	Mercury	
+cursus		M [NS][GS][NPl]	circuits	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+infimo	us a um	(superl) [MN] [DAb] S	lowest	
++que	+que	Conj	and	
+orbe	orbis,orbis	M-Ab-S	circle	
+luna	luna,-ae	F-[N+Ab]-S	moon	
+radiis		M [D/Ab] Pl	radius	
+solis	sol solis		sun	
+accensa		F N S	attached (adj)	
+convertitur		3 S P I P	turn	
+infra		prep + acc/ adv	below	
+autem	autem	Conj	moreover	
+iam	iam	Adv	already	w/
+nihil	nihil	indecl	nothing	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+nisi			unless / if not	
+mortale	mortalis,-e	{Adv};{[M+F+N]-[Ab+N+Ac]-S(Pos.)}	mortal	w/
+et	et	Conj	and	
+caducum		N [NA] S	falling	
+praeter	praeter	Prep+Ac	except for	
+animos	animus,-i	M-Ac-P	souls	
+munere	munus,muneris	N-Ab-S	the gift 	by way of  
+deorum	deus,-i	M-G-P	god	
+hominum	homo,hominis	M-G-P	human	w/ generi
+generi	genus,generis	N-D-S	origin	
+datos	do(1)	Pf-Ppl-P/M-Ac-P	to give	
+supra		Prep + ac / adv	above/ beyond	
+lunam	luna,-ae	F-Ac-S	moon	
+sunt	sum,esse,fui	3P-P-I-A	to be	fact
+aeterna		N-[N+Ac]-P	eternal (adj)	
+omnia	omnis,-e	N-[N+Ac]-P	all	w/ aeterna
+nam	nam	Conj	for	
+ea	is,ea,eum	[F+N]-[N+Ab+Ac]-[S+P]	weak dem.	stella
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	which
+est	sum,esse,fui	3S-P-I-A	to be	fact
+media	medius,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	middle	w/
+et	et	Conjunction	and	
+nona		F [N A] Pl	Nineth	
+tellus	tellus,telluris	F-N-S	earth	apposition
+neque	neque	Conj	neither, nor	
+movetur	moveo,-ere,-i,motus	3S-P-I-P	to moves	fact
+et	et	Conj	and	
+infima	us a um		lowest	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+et	et	Conj	and	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+eam	is,ea,eum	F-Ac-S	weak dem.	
+feruntur	fero,-rre,tuli,latus	3P-P-I-P	are carried	fact
+omnia	omnis,-e	N-[N]-P	all	subj
+nutu	us us	M Ab S	by its own nodding	"gravity"
+suo	suus,-a,-um	[M+N]-[D+Ab]-S	refl. adj. (their own)	w/
+pondera	pondus,ponderis	N-[N]-P	weight	subj

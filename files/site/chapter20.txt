@@ -1,0 +1,97 @@
+#Info
+n	n
+#Sheet
+tum	tum	Adv	then	w/
+Africanus	Africanus,-i	M-N-S	Africa	
+sentio	sentio,-ire,sensi,sensus	1S-P-I-A	to sense	fact
+inquit	inquit	2S-P-Imp-A	to he said	
+te	tu,tui	[M+F+N]-[Ac+Ab]-S	[you]	
+sedem	sedes,sedis	F-Ac-S	seat	
+etiam	etiam	Adv	still	w/
+nunc	nunc	Adv	now	w/
+hominum	homo,hominis	M-G-P	human	
+ac	atque	Conj	and	
+domum	domus,-us	F-Ac-S	home	
+contemplari					UNKNOWN
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
+si	si	Conj	if	
+tibi	tu,tui	[M+F+N]-D-S	[you]	
+parva	parvus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	small	w/
+ut	ut	Conj	.	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+ita					Conflict:	{eo,ire,ivi,itus	Pf-Ppl-P/[F+N]-[N+Ab]-[S+P]	to go}	{ita	Conj	so, thus}
+videtur	video,-ere,-i,visus	3S-P-I-P	to seem	fact
+haec	hic,haec,hoc	N-[N+Ac]-P	this	
+caelestia					UNKNOWN
+semper	semper	Adv	always	w/
+spectato					UNKNOWN
+illa	ille,illa,illud	[F+N]-[N+Ab+Ac]-[S+P]	that	
+humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
+contemnito					UNKNOWN
+tu	tu,tui	[M+F+N]-N-S	[you]	
+enim	enim	Conj	for	
+quam					Conflict:	{quam	Adv	.}	{qui,quae,quod	F-Ac-S	rel./inq.}
+celebritatem					UNKNOWN
+sermonis					UNKNOWN
+hominum	homo,hominis	M-G-P	human	
+aut	aut	Conj	or	
+quam					Conflict:	{quam	Adv	.}	{qui,quae,quod	F-Ac-S	rel./inq.}
+expetendam					UNKNOWN
+consequi					UNKNOWN
+gloriam	gloria,-ae	F-Ac-S	glory	
+potes	potsum,posse,potui	2S-P-I-A	to be able	fact
+Vides					UNKNOWN
+habitari					UNKNOWN
+in	in	Prep+Ab/Ac	in, on/into, onto	
+terra	terra,-ae	F-[N+Ab]-S	land	
+raris					UNKNOWN
+et	et	Conj	and	
+angustis					UNKNOWN
+in	in	Prep+Ab/Ac	in, on/into, onto	
+locis	locus,-i	M-[D+Ab]-P	place	
+et	et	Conj	and	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+ipsis	ipse,ipsa,ipsum	[M+F+N]-[D+Ab]-P	refl. adj.	
+quasi					UNKNOWN
+maculis					UNKNOWN
+ubi					UNKNOWN
+habitatur					UNKNOWN
+vastas					UNKNOWN
+solitudines					UNKNOWN
+interiectas					UNKNOWN
+eos	is,ea,eum	M-Ac-P	weak dem.	
++que	+que	Conj	and	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+incolunt					UNKNOWN
+terram	terra,-ae	F-Ac-S	land	
+non_modo	non_modo	Adv	only	w/
+interruptos					UNKNOWN
+ita					Conflict:	{eo,ire,ivi,itus	Pf-Ppl-P/[F+N]-[N+Ab]-[S+P]	to go}	{ita	Conj	so, thus}
+esse	sum,esse,fui	P-Inf-A	to be	
+ut	ut	Conj	.	
+nihil	nihil		nothing	
+inter	inter	Prep+Ac	between	
+ipsos	ipse,ipsa,ipsum	M-Ac-P	refl. adj.	
+ab	ab	Prep+Ab	from, by	
+aliis	alius,alia,aliud	[M+F+N]-[D+Ab]-P	other	
+ad	ad	Prep+Ac	to, toward	
+alios	alius,alia,aliud	M-Ac-P	other	
+manare					UNKNOWN
+possit					UNKNOWN
+sed	sed	Conj	but	
+partim					UNKNOWN
+obliquos					UNKNOWN
+partim					UNKNOWN
+transversos					UNKNOWN
+partim					UNKNOWN
+etiam	etiam	Adv	still	w/
+adversos	adversus,-a,-um	M-Ac-P	opposite	w/
+stare	sto(1)	{P-Inf-A};{2S-P-I-P}	to stand	
+vobis	tu,tui	[M+F+N]-[D+Ab]-P	[you]	
+a	ab	Prep+Ab	from, by	
+quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
+expectare					UNKNOWN
+gloriam	gloria,-ae	F-Ac-S	glory	
+certe	certus,-a,-um	{Adv};{[M+N]-V-S}	certain	w/
+nullam	nullus,-a,-um	F-Ac-S	none	
+potestis	potsum,posse,potui	2P-P-I-A	to be able	fact
