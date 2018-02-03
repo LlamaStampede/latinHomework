@@ -6,6 +6,7 @@ h1 {
   margin-bottom: 10px;
   margin-top: 40px;
   font-size: 28pt;
+  z-index: 1;
 }
 h2, h2 a, input.yeah {text-align: center; color: black;}
 header p {font-family: monospace; letter-spacing: -0.5px; font-size: 11pt;}
@@ -23,12 +24,12 @@ textarea {
   top: 32%;
   left: 12.5%;
   padding: 20px;
-  z-index: -1;
 =======*/
-  height: 60%;
+  z-index: -1;
+  height: 40%;
   width: 75%;
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 12.5%;
   padding: 20px;
 /*>>>>>>> aiden*/

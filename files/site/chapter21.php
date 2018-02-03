@@ -19,17 +19,17 @@
 <body>
 
 <ul id="test">
-    <li><a class = "current">Home</a></li><li>
+    <li><a href = "#">Home</a></li><li>
     <a href="dictionary.php">Dictionary</a></li><li>
     <a href="input.html">Input</a></li><li>
-    <a>Dream of Scipio</a>
+    <a class = "current">Dream of Scipio</a>
         <ul>
             <li><a href="chapter16.php">Chapter 16</a></li><li>
                 <a href="chapter17.php">Chapter 17</a></li><li>
                 <a href="chapter18.php">Chapter 18</a></li><li>
                 <a href="chapter19.php">Chapter 19</a></li><li>
                 <a href="chapter20.php">Chapter 20</a></li><li>
-                <a href="chapter21.php">Chapter 21</a></li>
+                <a class = "current">Chapter 21</a></li>
         </ul>
     </li>
 </ul>

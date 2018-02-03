@@ -1,5 +1,5 @@
 #Info
-n	n
+y	y
 #Sheet
 sed	sed	Conj	but	Paulus speaking to Yo
 sic	sic	Conj	so, thus	unger Scipio (father)  
@@ -35,7 +35,7 @@ via	via,-ae	F-[N]-S	path	pred nom
 est	sum,esse,fui	3S-P-I-A	to be	fact
 in	in	Prep+Ab/Ac	in, on/into, onto	
 caelum	caelum,-i	N-[Ac]-S	heavens	
-et	et	Conj	and	
+et	et	Conj	and	conjunction
 in	in	Prep+Ab/Ac	in, on/[into], onto	
 hunc	hic,haec,hoc	M-Ac-S	this	
 coetum	coitus, us	M Ac S	meeting	

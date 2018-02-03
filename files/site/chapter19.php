@@ -28,7 +28,8 @@
 <a href="chapter17.php">Chapter 17</a></li><li>
 <a href="chapter18.php">Chapter 18</a></li><li>
 <a class = "current">Chapter 19</a></li><li>
-<a href="chapter20.php">Chapter 20</a></li>
+<a href="chapter20.php">Chapter 20</a></li><li>
+<a href="chapter21.php">Chapter 21</a></li>
 </ul>
 </li>
 </ul>
