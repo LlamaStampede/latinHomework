@@ -57,5 +57,8 @@ now	etiam_num
 whether	num
 formerly	quondam
 todo	denique
-.	quam
+rather	quam
 surely	nonne
+partly	partim
+by day	diu
+successively	deinceps

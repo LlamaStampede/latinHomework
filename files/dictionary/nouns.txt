@@ -363,3 +363,22 @@ circus	-i	m	circle
 globus	-i	m	globe
 intervallum	-i	n	interval
 ratio	rationis	f	reason
+cingula	-ae	f	belt
+inpulsus	-us	m	impetus
+motus	-us	m	motion
+celebritas	celebritatis	f	multitude/renown
+sermo	sermonis	m	discussion
+macula	-ae	f	stain
+solitudo	solitudinis	f	solitude
+vertex	verticis	m	vortex
+pruina	-ae	f	rime
+ardor	ardoris	m	flame
+aquilo	aquilonis	m	north wind
+Atlanticus	-i	m	Atlantic
+Oceanus	-i	m	Ocean
+oriens	orientis	m	rise
+austrum	austri	n	purple
+angustia	-ae	f	narrow pass
+proles	prolis	f	offspring
+eluvio	eluvionis	f	inundation
+exustio	exustionis	f	conflagration

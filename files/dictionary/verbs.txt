@@ -191,3 +191,39 @@ intueor	intueri	intuitus sum	-	gaze
 stupeo	stupere	stupui	-	be stunned
 conpleo	conplere	conplevi	conpletus	fill
 disiungo	disiungere	disiunxi	disiunctus	seperate
+reor	reri	ratus sum	-	measure
+reor	reri	ratus sum	-	measure
+distinguo	distingere	distinxi	distinctus	divide
+efficio	efficere	effeci	effectus	produce
+specto	spectare	spectare	spectatus	spectate
+contemno	contemnere	contempsi	contemptus	scorn
+expeto	expetere	expetivi	expetitus	desire
+consequor	consequi	consecutus sum	-	pursue
+habito	habitare	habitavi	habitatus	inhabit
+vasto	vastare	vastavi	vastatus	devastate
+intericio	intericere	interieci	interiectus	insert
+incolo	incolere	incolui	-	dwell
+interrumpo	interrumpere	interrupi	interruptus	interrupt
+mano	manare	manavi	manatus	pour
+expecto	expectare	expectavi	expectatus	expect
+redimio	redimire	redimivi	redimitus	surround
+circumdo	circumdare	circumdedi	circumdatus	envelop
+diverto	divertere	diverti	diversus	divert
+obrigesco	obrigescere	obrigui	-	stiffen
+torreo	torrere	torrui	tostus	scorch
+insisto	insistere	institi	-	insist
+urgeo	urgere	ursi	-	urge
+subicio	subicere	subieci	subiectus	throw under
+contingo	contingere	contigi	contactus	touch
+colo	colere	colui	coltus	cultivate
+angusto	angustare	angustavi	angustatus	constrict
+circumfundo	circumfundere	circumfudi	circumfusus	pour around
+transcendo	transcendere	transcendi	transcensus	go across
+obeo	obire	obivi	obitus	go to meet
+amputo	amputare	amputavi	amputatus	amputate
+proficio	proficere	profeci	profectus	accomplish
+dilato	dilatare	dilatavi	dilatatus	dilate
+prodo	prodere	prodidi	proditus	project
+accido	accidere	accidi	accisus	cut up
+adsequor	adsequi	adsecutus sum	-	go after
+nascor	nasci	natus sum	-	be born

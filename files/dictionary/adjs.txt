@@ -123,3 +123,18 @@ splendidus	-a	-um	splendid
 lacteus	-a	-um	milky
 praeclarus	-a	-um	bright
 sonus	-a	-um	sounding
+cingula	-a	-um	two
+caelestis	caeleste	heavenly
+rarus	-a	-um	rare/few
+angustus	-a	-um	confined
+obliquus	-a	-um	oblique
+transverus	-a	-um	lying across
+subnixus	-a	-um	relying on (w/Ab)
+habitabilis	habitabile	habitable
+australis	australe	southern
+latus	-a	-um	wide
+reliquus	-a	-um	rest of
+futurus	-a	-um	future
+posterus	-a	-um	coming after
+aeternus	-a	-um	eternal
+diuturnus	-a	-um	lasting
