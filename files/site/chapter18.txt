@@ -117,6 +117,7 @@ in	in	Prep+Ab/Ac	in, on/into, onto
 quibus	qui,quae,quod	[M+F+N]-[D+Ab]-P	rel./inq.	
 eadem			the same	
 vis	vis,vis	F-[N+G]-S	force (pl)strength	
+<<<<<<< HEAD
 est	sum,esse,fui	3S-P-I-A	there is	fact
 duorum		M N pl	gods	(Merc and Venus)
 septem			seven	
@@ -124,10 +125,25 @@ efficiunt			produce
 distinctos		M Ac Pl	distinct	
 intervallis		N Ab Pl	intervalls	respect
 sonos		M Ac Pl	sound	
+=======
+est	sum,esse,fui	3S-P-I-A	to be	fact
+duorum					UNKNOWN
+septem					UNKNOWN
+efficiunt					UNKNOWN
+distinctos					UNKNOWN
+intervallis	intervallum,-i	N-[D+Ab]-P	interval	
+sonos	sonus,-a,-um	M-Ac-P	sounding	w/
+>>>>>>> aiden
+>>>>>>> aiden
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
 numerus	numerus,-i	M-N-S	number	
 rerum	res,-ei	F-G-P	thing	
 omnium	omnis,-e	[M+F+N]-G-P	all	w/
+<<<<<<< HEAD
+fere	fere	Adv	nearly	w/
+nodus			the knot	
+=======
+<<<<<<< HEAD
 fere	fere	Adv	nearly	w/
 nodus			the knot	
 est	sum,esse,fui	3S-P-I-A	to be	fact
@@ -155,3 +171,127 @@ humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
 divina		N Ac P	divine	
 studia	studium,-i	N-[Ac]-P	studies	
 coluerunt			cultivated	
+=======
+fere	fere	Adv	almost	w/
+nodus					UNKNOWN
+>>>>>>> aiden
+est	sum,esse,fui	3S-P-I-A	to be	fact
+quod			which	
+docti			learned	
+homines	homo,hominis	M-[N+Ac]-P	human	
+nervis		M Ab Pl	strings	
+imitati		P I D	imitated	
+atque	atque	Conj	and	
+cantibus		M Ab Pl	songs	
+aperuerunt			reveal, open up	
+sibi	-,sui	[M+F+N]-D-S+P	[he,she,it]	benefit
+reditum			a return	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+hunc	hic,haec,hoc	M-Ac-S	this	
+locum	locus,-i	M-Ac-S	place	
+sicut			just like	
+alii	alius,alia,aliud	[M+F+N]-[D+N]-[S+P]	other	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+praestantibus	praesto(1)	P-Ppl-A/[M+F+N]-[D+Ab]-P	to outstanding	
+ingeniis	ingenium,-i	N-[D+Ab]-P	talent	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+vita			life	
+humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
+<<<<<<< HEAD
+divina		N Ac P	divine	
+studia	studium,-i	N-[Ac]-P	studies	
+coluerunt			cultivated	
+=======
+divina					UNKNOWN
+studia	studium,-i	N-[N+Ac]-P	eagerness	
+coluerunt					UNKNOWN
+#Report
+Conflict: cum might be from:
+- cum Prep+Ab with
+- cum Conj when
+UNKNOWN: Quid
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+UNKNOWN: inquam
+Conflict: conplet might be from:
+- conpleo,conplere,conplevi,conpletus 3S-P-I-A to fill
+- conpleo,conplere,conplevi,conpletus 3S-Pf-I-A to fill
+UNKNOWN: Hic
+UNKNOWN: inparibus
+UNKNOWN: rata
+UNKNOWN: distinctis
+UNKNOWN: inpulsu
+UNKNOWN: motu
+UNKNOWN: efficitur
+UNKNOWN: acuta
+Conflict: cum might be from:
+- cum Prep+Ab with
+- cum Conj when
+UNKNOWN: temperans
+UNKNOWN: varios
+UNKNOWN: aequabiliter
+UNKNOWN: concentus
+UNKNOWN: efficit
+UNKNOWN: nec
+UNKNOWN: silentio
+UNKNOWN: incitari
+UNKNOWN: possunt
+UNKNOWN: extrema
+UNKNOWN: altera
+UNKNOWN: graviter
+UNKNOWN: acute
+UNKNOWN: sonent
+Conflict: quam might be from:
+- quam Adv .
+- qui,quae,quod F-Ac-S rel./inq.
+UNKNOWN: summus
+UNKNOWN: stellifer
+Conflict: cursus might be from:
+- curro,currere,cucurri,cursus Pf-Ppl-P/M-N-S to run
+- cursus,cursus M-[N+G+Ac]-[S+P] course
+UNKNOWN: conversio
+UNKNOWN: concitatior
+UNKNOWN: acuto
+UNKNOWN: excitato
+Conflict: hic might be from:
+- hic Adv here
+- hic,haec,hoc M-N-S this
+UNKNOWN: lunaris
+UNKNOWN: infimus
+UNKNOWN: nona
+UNKNOWN: inmobilis
+Conflict: una might be from:
+- una Adv together
+- unus,una,unum [F+N]-[N+Ab+Ac]-[S+P] one
+- unus,una,unum [F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)] one
+UNKNOWN: haeret
+UNKNOWN: complexa
+UNKNOWN: octo
+Conflict: cursus might be from:
+- curro,currere,cucurri,cursus Pf-Ppl-P/M-N-S to run
+- cursus,cursus M-[N+G+Ac]-[S+P] course
+UNKNOWN: eadem
+UNKNOWN: duorum
+UNKNOWN: septem
+UNKNOWN: efficiunt
+UNKNOWN: distinctos
+UNKNOWN: nodus
+Conflict: quod might be from:
+- qui,quae,quod N-[N+Ac]-S rel./inq.
+- quod Conj because
+Conflict: docti might be from:
+- doceo,docere,docui,doctus Pf-Ppl-P/[M+N]-[G+N]-[S+P] to teach
+- doctus,docta,doctum [M+N]-[G+N]-[S(Pos.)+P(Pos.)] learned
+UNKNOWN: nervis
+UNKNOWN: imitati
+UNKNOWN: cantibus
+UNKNOWN: aperuerunt
+UNKNOWN: reditum
+UNKNOWN: sicut
+Conflict: vita might be from:
+- vito,vitare,vitavi,vitatus 2S-P-Imp-A to avoid
+- vita,vitae F-[N+Ab]-S life
+UNKNOWN: divina
+UNKNOWN: coluerunt
+>>>>>>> aiden

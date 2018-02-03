@@ -1,5 +1,9 @@
 #Info
+<<<<<<< HEAD
 y	y
+=======
+n	n
+>>>>>>> aiden
 #Sheet
 sed	sed	Conj	but	Paulus speaking to Yo
 sic	sic	Conj	so, thus	unger Scipio (father)  
@@ -35,7 +39,11 @@ via	via,-ae	F-[N]-S	path	pred nom
 est	sum,esse,fui	3S-P-I-A	to be	fact
 in	in	Prep+Ab/Ac	in, on/into, onto	
 caelum	caelum,-i	N-[Ac]-S	heavens	
+<<<<<<< HEAD
 et	et	Conj	and	conjunction
+=======
+et	et	Conj	and	
+>>>>>>> aiden
 in	in	Prep+Ab/Ac	in, on/[into], onto	
 hunc	hic,haec,hoc	M-Ac-S	this	
 coetum	coitus, us	M Ac S	meeting	
@@ -137,4 +145,8 @@ quasi			as if it were
 punctum		M Ac S	a point	
 eius	is,ea,eum	[M+F+N]-G-S	weak dem.	
 attingimus		1 Pl P I A	to touch	
+<<<<<<< HEAD
 paeniteret		3 S Imp S A	it made (Ac) sorry (D)	result
+=======
+paeniteret		3 S Imp S A	it made (Ac) sorry (D)	result
+>>>>>>> aiden

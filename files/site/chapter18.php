@@ -14,11 +14,13 @@
   <link rel="stylesheet" type="text/css" href="sheet.css">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="icon" href="../favicon/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="menu.css">
 </head>
 
 <body>
 
 <ul id="test">
+<<<<<<< HEAD
     <li><a href = "output.php">Home</a></li><li>
     <a href="dictionary.php">Dictionary</a></li><li>
     <a href="input.html">Input</a></li><li>
@@ -32,10 +34,25 @@
                 <a href="chapter21.php">Chapter 21</a></li>
         </ul>
     </li>
+=======
+<li><a href="output.php">Home</a></li><li>
+<a href="dictionary.php">Dictionary</a></li><li>
+<a href="input.html">Input</a></li><li>
+<a class = "current">Dream of Scipio<img src= "https://image.flaticon.com/icons/png/512/60/60995.png" width = "13" height = "13"></a>
+<ul>
+<li><a href="chapter16.php">Chapter 16</a></li><li>
+<a href="chapter17.php">Chapter 17</a></li><li>
+<a class = "current">Chapter 18</a></li><li>
+<a href="chapter19.php">Chapter 19</a></li><li>
+<a href="chapter20.php">Chapter 20</a></li>
+</ul>
+</li>
+>>>>>>> aiden
 </ul>
 <h1 class="plain"><a href="">Analysis Sheet</a></h1>
 <p id="Center">Center</p><input type="checkbox" checked>
 <p id="Embed">Embed Errors</p><input type="checkbox">
+<<<<<<< HEAD
 <p id="Study">Study mode</p><input type="checkbox">
 <form action="<?php echo $pagename ?>" method="post" id="auto">
   <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
@@ -44,6 +61,16 @@
     <input type="submit" value="Save">
   </header>
   <?php
+=======
+  <form action="<?php echo $pagename ?>" method="post" id="auto">
+    <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
+    <p id="Show">Show Errors</p><input type="checkbox" name="show_errors" checked>
+    <header>
+      <input type="submit" value="Save">
+    </header>
+    <?php
+    echo "<h1>" . $_SERVER[REQUEST_METHOD] . "</h1>";
+>>>>>>> aiden
     if ($_SERVER[REQUEST_METHOD] == "POST") {
         $sheet = $report = [];
         $source = fopen($txtname,"w");

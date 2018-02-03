@@ -17,6 +17,7 @@ textarea, input, table, .submit {
   box-sizing: border-box;
 }
 textarea {
+<<<<<<< HEAD
 /*<<<<<<< HEAD
   height: 40%;
   width: 75%;
@@ -33,16 +34,29 @@ textarea {
   left: 12.5%;
   padding: 20px;
 /*>>>>>>> aiden*/
+=======
+  height: 60%; /*HEAD: 40%*/
+  width: 75%;
+  position: absolute;
+  top: 10%; /*HEAD: 32%*/
+  left: 12.5%;
+  padding: 20px;
+  /*HEAD: z-index: -1*/
+>>>>>>> aiden
 }
 #filename {
   width: 100%;
   text-align: center;
   position: absolute;
+<<<<<<< HEAD
 /*<<<<<<< HEAD
   top: 85%;
 =======*/
   top: 75%;
 /*>>>>>>> aiden*/
+=======
+  top: 75%; /*HEAD: 85%*/
+>>>>>>> aiden
 }
 /*a {
   border: none;
@@ -64,6 +78,11 @@ input[type="submit"]:hover {
 input[type="submit"], .submit {
   width: 20%;
   transition: background-color .2s, font-weight .2s;
+  /*HEAD:
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+  */
 }
 input[type="submit"] {
   position: absolute;

@@ -6,7 +6,10 @@
 <meta charset="utf-8">
 <title>Constructor</title>
 <link rel="stylesheet" type="text/css" href="sheet.css">
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="styles.css">
+=======
+>>>>>>> aiden
 <link rel="icon" href="../favicon/favicon.ico">
   <style>.hidden {display: none;}</style>
 </head>

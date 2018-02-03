@@ -1,4 +1,5 @@
 #Info
+<<<<<<< HEAD
 y	y
 #Sheet
 hoc	hic,haec,hoc	[M+N]-Ab-S	this	
@@ -25,12 +26,41 @@ nominantur
 praecipitat			rushes	
 ex	ex	Prep+Ab	out from	
 altissimis				
+=======
+n	n
+#Sheet
+hoc	hic,haec,hoc	[M+N]-Ab-S	this	
+sonitu					UNKNOWN
+oppletae					UNKNOWN
+aures	auris,auris	F-[N+Ac]-P	ear	
+hominum	homo,hominis	M-G-P	human	
+obsurduerunt					UNKNOWN
+nec					UNKNOWN
+est	sum,esse,fui	3S-P-I-A	to be	fact
+ullus	ullus,-a,-um	M-N-S	any	
+hebetior					UNKNOWN
+sensus					Conflict:	{sentio,sentire,sensi,sensus	Pf-Ppl-P/M-N-S	to sense}	{sensus,sensus	M-[N+G+Ac]-[S+P]	sense}
+in	in	Prep+Ab/Ac	in, on/into, onto	
+vobis	tu,tui	[M+F+N]-[D+Ab]-P	[you]	
+sicut					UNKNOWN
+ubi					UNKNOWN
+Nilus					UNKNOWN
+ad	ad	Prep+Ac	to, toward	
+illa	ille,illa,illud	[F+N]-[N+Ab+Ac]-[S+P]	that	
+quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
+Catadupa					UNKNOWN
+nominantur					UNKNOWN
+praecipitat					UNKNOWN
+ex	ex	Prep+Ab	out from	
+altissimis					UNKNOWN
+>>>>>>> aiden
 montibus	mons,-ntis	M-[D+Ab]-P	mountain	
 ea	is,ea,eum	[F+N]-[N+Ab+Ac]-[S+P]	weak dem.	
 gens	gens,-ntis	F-N-S	clan	
 quae	qui,quae,quod	[F+N]-[N+Ac]-P	rel./inq.	
 illum	ille,illa,illud	M-Ac-S	that	
 locum	locus,-i	M-Ac-S	place	
+<<<<<<< HEAD
 adcolit			inhabits	
 propter	propter	Prep+Ac	on account of	
 magnitudinem	magnitudo,magnitudinis	F-Ac-S	magnitude	
@@ -47,12 +77,31 @@ mundi	mundus,-i	M-[G]-[S]	world
 incitatissima			very rapidly	
 conversione			revolution	
 sonitus		M N S	sound	
+=======
+adcolit					UNKNOWN
+propter	propter	Prep+Ac	on account of	
+magnitudinem	magnitudo,magnitudinis	F-Ac-S	magnitude	
+sonitus					UNKNOWN
+sensu	sensus,-us	M-Ab-S	sense	
+audiendi	audio,-ire,-ivi,-itus	F-Ppl-P/[M+N]-[G+N]-[S+P]	to hear	
+caret	careo,-ere,-ui,-iturus	3S-P-I-A	to be free (from)	fact
+hic					Conflict:	{hic	Adv	here}	{hic,haec,hoc	M-N-S	this}
+vero	verus,-a,-um	[M+N]-[D+Ab]-S	true	w/
+tantus	tantus,-a,-um	M-N-S	so great	w/
+est	sum,esse,fui	3S-P-I-A	to be	fact
+totius	totus,-a,-um	[M+F+N]-G-S	all	
+mundi	mundus,-i	M-[G+N]-[S+P]	world	
+incitatissima					UNKNOWN
+conversione					UNKNOWN
+sonitus					UNKNOWN
+>>>>>>> aiden
 ut	ut	Conj	.	
 eum	is,ea,eum	M-Ac-S	weak dem.	
 aures	auris,auris	F-[N+Ac]-P	ear	
 hominum	homo,hominis	M-G-P	human	
 capere	capio,-ere,cepi,-tus	P-Inf-A	to seize	
 non	non	Adv	not	w/
+<<<<<<< HEAD
 possint		3 Pl	able	result
 sicut			just as/like	
 intueri				
@@ -76,3 +125,28 @@ oculos	oculus,-i	M-Ac-P	eye
 ad	ad	Prep+Ac	to, toward	
 terram	terra,-ae	F-Ac-S	land	
 identidem			again and again	
+=======
+possint					UNKNOWN
+sicut					UNKNOWN
+intueri					UNKNOWN
+solem	sol,solis	M-Ac-S	sun	
+adversum	adversus,-a,-um	[M+N]-[Ac+N]-S	opposite	w/
+nequitis					UNKNOWN
+eius	is,ea,eum	[M+F+N]-G-S	weak dem.	
++que	+que	Conj	and	
+radiis					UNKNOWN
+acies	acies,-ei	F-[N+Ac]-[S+P]	line	
+vestra	vester,vestra,vestrum	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	your	w/
+sensus					Conflict:	{sentio,sentire,sensi,sensus	Pf-Ppl-P/M-N-S	to sense}	{sensus,sensus	M-[N+G+Ac]-[S+P]	sense}
++que	+que	Conj	and	
+vincitur	vinco,-ere,vici,victus	3S-P-I-P	to conquer	fact
+haec	hic,haec,hoc	N-[N+Ac]-P	this	
+ego	ego,mihi		[I,me]		Conflict:	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}	{ego,mihi	[M+F+N]-N-S	[I,me]}
+admirans					UNKNOWN
+referebam					UNKNOWN
+tamen	tamen	Conj	however	
+oculos	oculus,-i	M-Ac-P	eye	
+ad	ad	Prep+Ac	to, toward	
+terram	terra,-ae	F-Ac-S	land	
+identidem					UNKNOWN
+>>>>>>> aiden

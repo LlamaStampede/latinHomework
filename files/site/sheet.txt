@@ -154,6 +154,7 @@ vita					Conflict:	{vito,vitare,vitavi,vitatus	2S-P-Imp-A	to avoid}	{vita,vitae	
 humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
 divina					UNKNOWN
 studia	studium,-i	N-[N+Ac]-P	eagerness	
+<<<<<<< HEAD
 coluerunt					UNKNOWN
 #Report
 Conflict: cum might be from:
@@ -244,3 +245,6 @@ Conflict: vita might be from:
 - vita,vitae F-[N+Ab]-S life
 UNKNOWN: divina
 UNKNOWN: coluerunt
+=======
+coluerunt				
+>>>>>>> aiden

@@ -1,16 +1,29 @@
 body {
+<<<<<<< HEAD
 	background-color: #aaeae9
+=======
+	background-color: #aaeae9; /*AIDEN: lightblue*/
+	/*AIDEN: margin: 0;*/
+>>>>>>> aiden
 }
 #sheet ul {background-color: white;}
 h1 {
   font-family: fantasy;
   font-variant: small-caps;
   font-size: 32pt;
+<<<<<<< HEAD
   margin: 15px 40px 0;
   width: 280px;
 }
 h2 {
   margin: 15px 40px 10px;
+=======
+  margin: 15px/*A: 8px*/ 40px 0;
+  width: 280px;
+}
+h2 {
+  margin: 15px/*A: 8px*/ 40px 10px;
+>>>>>>> aiden
   width: 280px;
 }
 .plain a:visited {
@@ -26,12 +39,20 @@ h1 + input {
 #sheet {
   width: 80%;
   margin-left: 1.5%;
+<<<<<<< HEAD
   margin: 50;
+=======
+  /*HEAD: margin: 50;*/
+>>>>>>> aiden
   padding: 0 0 0 32px;
   box-sizing: border-box;
   background-image: url(5x3v4.png); /* might have to change to 5x3v5 */
   background-repeat: repeat-y;
+<<<<<<< HEAD
   z-index: -2;
+=======
+  /*HEAD: z-index: -2;*/
+>>>>>>> aiden
 }
 hr {
   clear: left;
@@ -55,9 +76,17 @@ hr {
   font-family: georgia, serif;
   font-size: 11pt;
 }
+<<<<<<< HEAD
 #sheet ul:not(:hover) li { /*might be repetitive*/
   background-color: white;
 }
+=======
+/*
+For opaque blocks:
+#sheet ul:not(:hover) li {
+  background-color: white;
+}*/
+>>>>>>> aiden
 #auto li:not(.error) {padding: 0;}
 #auto #sheet > ul > li:first-of-type { /*Change back to allow first line editing*/
   box-sizing: border-box;
@@ -76,9 +105,14 @@ p + input[type="checkbox"] {
 #Embed + input[type="checkbox"] {margin: 30px 55px 0 0; display: none;}
 #Parse + input[type="checkbox"] {margin: 55px -2px 0 0; display: none;}
 #Show + input[type="checkbox"] {margin: 80px 47px 0 0;  display: none;}
+<<<<<<< HEAD
 #Edit + input[type="checkbox"] {margin: 105px -10px 0 0; display: none;}
 #Study + input[type="checkbox"] {margin: 30px 38px 0 0;}
 #Center,#Embed,#Edit,#Parse,#Show, #Study {
+=======
+#Study + input[type="checkbox"] {margin: 30px 38px 0 0;}
+#Center,#Embed,#Edit,#Parse,#Show,#Study {
+>>>>>>> aiden
   margin: 0;
   padding: 2px 10px 2px 25px;
   position: fixed;
@@ -87,12 +121,18 @@ p + input[type="checkbox"] {
   font-family: monospace;
   font-size: 10pt;
 }
+#Embed, #Edit, #Parse, #Show {display: none;} /*(HEAD)*/
+
 #Embed {margin-top: 25px;}
 #Parse {margin-top: 50px;}
 #Show {margin-top: 75px;}
 #Edit {margin-top: 100px;}
 #Study {margin-top: 25px;}
+<<<<<<< HEAD
 #Center + input:checked ~ #sheet > ul > li {text-align: center;} /* if these don’t work add form in between ~ and # */
+=======
+#Center + input:checked ~ form #sheet > ul > li {text-align: center;} /* if these don’t work add form in between ~ and # */
+>>>>>>> aiden
 #Study + input:checked ~ #sheet > ul li:not(:first-child){display: none;}
 #Study + input:checked ~ #sheet > ul {border: none;}
 #Study + input:checked ~ #sheet > ul > li {border: none; border-bottom: solid 1px; margin-left: -10px}
@@ -109,10 +149,18 @@ p + input[type="checkbox"] {
   font: 14pt Georgia;
   border: solid 5px darkgreen;
   box-sizing: border-box;
+<<<<<<< HEAD
   width: 134px;
   transition: background-color .2s, font-weight .2s; /* might need to add margin: 0 40px 20px; */
   top: 240px;
   position: fixed;
+=======
+  width: 134px; /*AIDEN: 275px*/
+	/*AIDEN: margin: 0 40px 20px; */
+  transition: background-color .2s, font-weight .2s;
+  position: fixed;
+	top: 240px;
+>>>>>>> aiden
   right: 25px;
 }
 #auto input[type="submit"]:hover {
