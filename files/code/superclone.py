@@ -137,10 +137,11 @@ for term in ex_terms:
     #conjunctions
     conjs = ["atque","+que","ac","et","sed","at","aut","autem","tamen","si","tam","ita","sic","ut","num","ne","neque","enim","nam","dum","cum","quod","quasi"]
     if term in conjs: pos[-1].append(["conj"])
+    
     #personal pronouns
     for letter in ["m","t","s","n","v"]:
         if term[0] == letter: pos[-1].append(["pers"])
-        if term == "ego": pos[-1].append(["pers"])
+    if term == "ego": pos[-1].append(["pers"])
 
 
 #Phase: Select
@@ -197,3 +198,4 @@ for col in range(len(final_list)): #dct compression
 from output0 import *
 format(final_list,report,parsing,errors)
 #print report
+

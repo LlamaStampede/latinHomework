@@ -13,7 +13,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="sheet.css">
   <link rel="icon" href="../favicon/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="menu.css">
 </head>
 
 <body>
@@ -28,8 +28,7 @@
 <a href="chapter17.php">Chapter 17</a></li><li>
 <a href="chapter18.php">Chapter 18</a></li><li>
 <a class = "current">Chapter 19</a></li><li>
-<a href="chapter20.php">Chapter 20</a></li><li>
-<a href="chapter21.php">Chapter 21</a></li>
+<a href="chapter20.php">Chapter 20</a></li>
 </ul>
 </li>
 </ul>
