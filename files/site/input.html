@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Input</title>
+  <link rel="stylesheet" type="text/css" href="input.css">
+  <link rel="icon" href="../favicon/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="menu.css">
+</head>
+
+<body>
+  <ul id="test">
+      <li><a href="output.php">Home</a></li>
+      <li><a href="dictionary.php">Dictionary</a></li>
+      <li><a class="current">Input</a></li>
+      <li><a href="#">Dream of Scipio<img src= "https://image.flaticon.com/icons/png/512/60/60995.png" width = "13" height = "13"></a>
+          <ul>
+              <li><a href="chapter16.php">Chapter 16</a></li>
+              <li><a href="chapter17.php">Chapter 17</a></li>
+              <li><a href="chapter18.php">Chapter 18</a></li>
+              <li><a href="chapter19.php">Chapter 19</a></li>
+              <li><a href="chapter20.php">Chapter 20</a></li>
+          </ul>
+      </li>
+  </ul>
+  <h1>Input Box</h1>
+  <form action="inter.php" method="post">
+    <textarea maxlength="2500" placeholder="Input Area" name="rawText"></textarea>
+    <div id="filename">File Name: <input type="text" placeholder="output" name="filename"></div>
+    <input type="submit" value="Enter">
+  </form>
+  
+</body>
+
+</html>

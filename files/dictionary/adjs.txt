@@ -1,0 +1,125 @@
+furiosus	-a	-um	raging
+improbus	-a	-um	wicked
+publicus	-a	-um	public
+antiquus	-a	-um	ancient
+magnus	-a	-um	great
+meus	-a	-um	my
+multus	-a	-um	many
+tuus	-a	-um	your
+avarus	-a	-um	greedy
+paucus	-a	-um	few(pl)
+Romanus	-a	-um	Roman
+bellus	-a	-um	handsome
+bonus	-a	-um	good
+humanus	-a	-um	human
+malus	-a	-um	bad
+parvus	-a	-um	small
+stultus	-a	-um	foolish
+verus	-a	-um	true
+liber	libera	liberum	free
+noster	nostra	nostrum	our
+pulcher	pulchra	pulchrum	beautiful
+sanus	-a	-um	sane
+Graecus	-a	-um	Greek
+perpetuus	-a	-um	continuous
+plenus	-a	-um	abundant
+salvus	-a	-um	safe
+secundus	-a	-um	second
+vester	vestra	vestrum	your
+novus	-a	-um	new
+beatus	-a	-um	happy
+amicus	-a	-um	friendly
+carus	-a	-um	dear
+acerbus	-a	-um	bitter
+doctus	-a	-um	learned
+fortunatus	-a	-um	fortunate
+suus	-a	-um	refl. adj.
+miser	misera	miserum	wretched
+unus	-a	-um	one
+acer	acris	acre	sharp
+brevis	breve	short
+celer	celeris	celere	swift
+difficilis	difficile	difficult
+dulcis	dulce	sweet
+facilis	facile	easy
+fortis	forte	strong
+incredibilis	incredibile	incredible
+ingens	ingentis	huge
+iucundus	-a	-um	pleasant
+longus	-a	-um	long
+omnis	omne	all
+potens	potentis	able
+caecus	-a	-um	blind
+levis	leve	light
+clarus	-a	-um	clear
+mortalis	mortale	mortal
+certus	-a	-um	certain
+gravis	grave	heavy! serious
+immortalis	immortale	immortal
+communis	commune	common
+dexter	dextra	dextrum	right-hand
+sinister	sinistra	sinistrum	left-hand
+asper	aspera	asperum	rough
+aequus	-a	-um	level
+felix	felicis	lucky
+incertus	-a	-um	uncertain
+Latinus	-a	-um	Latin
+medius	-a	-um	middle
+magnanimus	-a	-um	magnanimous
+ferox	ferocis	fierce! savage
+fidelis	fidele	loyal
+geminus	-a	-um	twin
+sapiens	sapientis	wise
+ultimus	-a	-um	last
+pudicus	-a	-um	modest
+superbus	-a	-um	arrogant
+tristis	triste	sad
+turpis	turpe	ugly
+urbanus	-a	-um	urban
+diligens	diligentis	diligent
+dissimilis	dissimile	different
+gracilis	gracile	slender
+humilis	humile	humble
+primus	-a	-um	first
+similis	simile	similar
+superus	-a	-um	superior
+utilis	utile	useful
+mortuus	-a	-um	dead
+princeps	principis	chief
+dignus	-a	-um	worthy
+durus	-a	-um	hard
+tantus	-a	-um	so great
+ceterus	-a	-um	the rest!others(pl)
+quantus	-a	-um	how great
+ridiculus	-a	-um	ridiculous
+vivus	-a	-um	alive
+mediocris	medicre	mediocre
+dives	divitis	rich
+par	paris	equal
+pauper	pauperis	poor
+candidus	-a	-um	bright
+merus	-a	-um	pure
+suavis	suave	sweet
+adversus	-a	-um	opposite
+talis	tale	such
+iratus	-a	-um	angry
+absens	absentis	absent
+gratus	-a	-um	pleasing
+idoneus	-a	-um	suitable
+immotus	-a	-um	unmoved
+firmus	-a	-um	firm
+infirmus	-a	-um	weak
+mirabilis	mirabilie	remarkable
+pristinus	-a	-um	former
+sublimis	sublime	lofty
+cupidus	-a	-um	eager
+liberalis	liberale	decent!liberal
+vetus	veteris	old
+iustus	-a	-um	just
+alacrior	alacrius	happier
+sanctus	-a	-um	sacred
+propinquus	-a	-um	near
+splendidus	-a	-um	splendid
+lacteus	-a	-um	milky
+praeclarus	-a	-um	bright
+sonus	-a	-um	sounding
