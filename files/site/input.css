@@ -16,18 +16,19 @@ textarea, input, table, .submit {
   box-sizing: border-box;
 }
 textarea {
-  height: 60%;
+  height: 60%; /*HEAD: 40%*/
   width: 75%;
   position: absolute;
-  top: 10%;
+  top: 10%; /*HEAD: 32%*/
   left: 12.5%;
   padding: 20px;
+  /*HEAD: z-index: -1*/
 }
 #filename {
   width: 100%;
   text-align: center;
   position: absolute;
-  top: 75%;
+  top: 75%; /*HEAD: 85%*/
 }
 /*a {
   border: none;
@@ -39,6 +40,11 @@ textarea {
 input[type="submit"], .submit {
   width: 20%;
   transition: background-color .2s, font-weight .2s;
+  /*HEAD:
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+  */
 }
 input[type="submit"] {
   position: absolute;

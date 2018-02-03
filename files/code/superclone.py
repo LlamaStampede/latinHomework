@@ -130,7 +130,7 @@ for term in ex_terms:
         if stem[2] == term[:len(stem[2])] or term == stem[1]: pos[-1].append(["n",stem])
 
     #adjectives
-    
+
     for stem in astems:
         if term in stem[2:4] or term[:len(stem[1])] == stem[1] or compable(term,stem[1]): pos[-1].append(["adj",stem])
 

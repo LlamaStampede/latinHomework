@@ -8,4 +8,4 @@ default
 analysis				
 sheet				
 format:				
-Latin Term				
+Latin Term	dictionary entry	parsing	translation	comment

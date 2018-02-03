@@ -124,10 +124,40 @@ efficiunt					UNKNOWN
 distinctos					UNKNOWN
 intervallis	intervallum,-i	N-[D+Ab]-P	interval	
 sonos	sonus,-a,-um	M-Ac-P	sounding	w/
+>>>>>>> aiden
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
 numerus	numerus,-i	M-N-S	number	
 rerum	res,-ei	F-G-P	thing	
 omnium	omnis,-e	[M+F+N]-G-P	all	w/
+<<<<<<< HEAD
+fere	fere	Adv	nearly	w/
+nodus			the knot	
+est	sum,esse,fui	3S-P-I-A	to be	fact
+quod			which	
+docti			learned	
+homines	homo,hominis	M-[N+Ac]-P	human	
+nervis		M Ab Pl	strings	
+imitati		P I D	imitated	
+atque	atque	Conj	and	
+cantibus		M Ab Pl	songs	
+aperuerunt			reveal, open up	
+sibi	-,sui	[M+F+N]-D-S+P	[he,she,it]	benefit
+reditum			a return	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+hunc	hic,haec,hoc	M-Ac-S	this	
+locum	locus,-i	M-Ac-S	place	
+sicut			just like	
+alii	alius,alia,aliud	[M+F+N]-[D+N]-[S+P]	other	
+qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
+praestantibus	praesto(1)	P-Ppl-A/[M+F+N]-[D+Ab]-P	to outstanding	
+ingeniis	ingenium,-i	N-[D+Ab]-P	talent	
+in	in	Prep+Ab/Ac	in, on/into, onto	
+vita			life	
+humana	humanus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	human	w/
+divina		N Ac P	divine	
+studia	studium,-i	N-[Ac]-P	studies	
+coluerunt			cultivated	
+=======
 fere	fere	Adv	almost	w/
 nodus					UNKNOWN
 est	sum,esse,fui	3S-P-I-A	to be	fact

@@ -12,46 +12,37 @@
   ?></title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="sheet.css">
-  <link rel="stylesheet" type="text/css" href="menu.css">
   <link rel="icon" href="../favicon/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="menu.css">
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <?php 
-      $tabfile = fopen("menu.txt","r");
-      while(!feof($tabfile)) {
-        $line = chop(fgets($tabfile),"\n");
-        if ($line[0] == "#") {
-          $phase = $line;
-          if ($phase == "#Dream") {
-            echo "<li><a>Dream of Scipio</a><ul>";
-          }
-        } else {
-          list($link,$label) = explode("|",$line);
-          $addin = "";
-        if ($pagename == $link) {$addin = " class='current'"; /*$link = ""*/}
-          echo "<li".$addin."><a href='".$link."'>".$label."</a></li>";
-        }
-      }
-      echo "</ul</li>";
-      fclose($tabfile);
-      ?>
-    </ul>
-  </nav>
-      
-  <h1 class="plain"><a href="">Analysis Sheet</a></h1>
-  <p id="Center">Center</p><input type="checkbox">
-  <p id="Embed">Embed Errors</p><input type="checkbox">
-  <p id="Study">Study mode</p><input type="checkbox">
-  
+
+<ul id="test">
+<li><a href="output.php">Home</a></li><li>
+<a href="dictionary.php">Dictionary</a></li><li>
+<a href="input.html">Input</a></li><li>
+<a class = "current">Dream of Scipio<img src= "https://image.flaticon.com/icons/png/512/60/60995.png" width = "13" height = "13"></a>
+<ul>
+<li><a href="chapter16.php">Chapter 16</a></li><li>
+<a class = "current">Chapter 17</a></li><li>
+<a href="chapter18.php">Chapter 18</a></li><li>
+<a href="chapter19.php">Chapter 19</a></li><li>
+<a href="chapter20.php">Chapter 20</a></li>
+</ul>
+</li>
+</ul>
+<h1 class="plain"><a href="">Analysis Sheet</a></h1>
+<p id="Center">Center</p><input type="checkbox" checked>
+<p id="Embed">Embed Errors</p><input type="checkbox">
   <form action="<?php echo $pagename ?>" method="post" id="auto">
     <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
     <p id="Show">Show Errors</p><input type="checkbox" name="show_errors" checked>
-    <input type="submit" value="Save">
+    <header>
+      <input type="submit" value="Save">
+    </header>
     <?php
-    //echo "<h1>" . $_SERVER[REQUEST_METHOD] . "</h1>";
+    echo "<h1>" . $_SERVER[REQUEST_METHOD] . "</h1>";
     if ($_SERVER[REQUEST_METHOD] == "POST") {
       $sheet = $report = [];
       $source = fopen($txtname,"w");
@@ -108,6 +99,16 @@
     }
     fclose($source);
     
+    /*foreach ([$sheet,$report] as $list) {
+      foreach ($list as $entry) {
+        foreach($entry as $row) {
+          echo " ", $row;
+        }
+        echo "<br>";
+      }
+      echo "<br>";
+    }*/
+    
     echo "<div id='sheet'>";
     $counter = 0;
     foreach ($sheet as $col) {
@@ -115,10 +116,9 @@
       $subcounter = 0;
       $error = [];
       foreach ($col as $row) {
-        $subcounter++;
-        /*if (++$subcounter == 3 and $parsing == "n") {
-          echo "<li><input type='text' name='".$counter."_".$subcounter."'></li>";
-        } else*/if ($subcounter == 1) { /*Delete to allow editing the first line*/
+        if (++$subcounter == 3 and $parsing == "n") {
+          echo "<li><input type='text' name='".$counter."_".$subcounter."' value='".$row."'></li>";
+        } elseif ($subcounter == 1) { /*Delete to allow editing the first line*/
           echo "<li>".$row."<input class='hidden' name='".$counter."_1' value='".$row."'></li>";
         } elseif ($subcounter <= 5) {
           echo "<li><input type='text' name='".$counter."_".$subcounter."' value='".$row."'></li>";
@@ -138,5 +138,3 @@
     ?>
   </form>
 </body>
-
-</html>
