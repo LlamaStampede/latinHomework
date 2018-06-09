@@ -1,0 +1,194 @@
+txt | atque | ego      | ut   | primum        | fletu     
+dct | atque | ego,mihi | ut   | primus,-a,-um | fletus,-us
+prs | Conj  |    -N-S  | Conj |    -   -S     | M-Ab-S    
+trn | and   | [I,me]   | .    | first         | tears     
+cmt |       |          |      |               |           
+----------------------------------------------------------------------
+txt | represso                        | loqui                   
+dct | reprimo,-ere,repressi,repressus | loquor,loqui,locutus sum
+prs |                                 | P-Inf-D                 
+trn | to restrain                     | to speak                
+cmt |                                 |                         
+----------------------------------------------------------------------
+txt | posse              | coepi                    | Quaeso | inquam
+dct | potsum,posse,potui | -,coepisse,coepi,coeptus |        |       
+prs | P-Inf-A            | 1S-Pf-I-A                |        |       
+trn | to be able         | to begin                 |        |       
+cmt |                    |                          |        |       
+----------------------------------------------------------------------
+txt | pater        | sanctissime | atque | optime       | quoniam
+dct | pater,patris |             | atque | bonus,-a,-um |        
+prs | M-N-S        |             | Conj  |    -V-       |        
+trn | father       |             | and   | good         |        
+cmt |              |             |       |              |        
+----------------------------------------------------------------------
+txt | haec         | est          | vita | ut   | Africanum   
+dct | hic,haec,hoc | sum,esse,fui |      | ut   | Africanus,-i
+prs | N-   -P      | 3S-P-I-A     |      | Conj | M-Ac-S      
+trn | this         | to be        |      | .    | Africa      
+cmt |              |              |      |      |             
+----------------------------------------------------------------------
+txt | audio                 | dicere              | quid         
+dct | audio,-ire,-ivi,-itus | dico,-ere,dixi,-tus | qui,quae,quod
+prs | 1S-P-I-A              | 2S-   -   -         | N-   -S      
+trn | to hear               | to speak            | rel./inq.    
+cmt |                       |                     |              
+----------------------------------------------------------------------
+txt | moror | in                | terris    | quin | huc | ad        
+dct |       | in                | terra,-ae |      |     | ad        
+prs |       | Prep+Ab/Ac        | F-   -P   |      |     | Prep+Ac   
+trn |       | in, on/into, onto | land      |      |     | to, toward
+cmt |       |                   |           |      |     |           
+----------------------------------------------------------------------
+txt | vos       | venire             | propero | Non | est         
+dct | tu,tui    | venio,-ire,-i,-tus |         |     | sum,esse,fui
+prs |    -   -P | P-Inf-A            |         |     | 3S-P-I-A    
+trn | [you]     | to come            |         |     | to be       
+cmt |           |                    |         |     |             
+----------------------------------------------------------------------
+
+
+txt | ita | inquit     | ille            | nisi | enim | deus   
+dct |     | inquit     | ille,illa,illud |      | enim | deus,-i
+prs |     | 2S-P-Imp-A |    -   -S       |      | Conj | M-N-S  
+trn |     | to he said | that            |      | for  | god    
+cmt |     |            |                 |      |      |        
+----------------------------------------------------------------------
+txt | is        | cuius         | hoc          | templum   
+dct | is,ea,eum | qui,quae,quod | hic,haec,hoc | templum,-i
+prs | M-N-S     |    -G-S       |    -Ab-S     | N-   -S   
+trn | weak dem. | rel./inq.     | this         | region    
+cmt |           |               |              |           
+----------------------------------------------------------------------
+txt | est          | omne        | quod | conspicis | istis
+dct | sum,esse,fui | omnis,-e    |      |           |      
+prs | 3S-P-I-A     |    -   -    |      |           |      
+trn | to be        | all         |      |           |      
+cmt |              |             |      |           |      
+----------------------------------------------------------------------
+txt | te        | corporis        | custodiis | liberaverit  | huc
+dct | tu,tui    | corpus,corporis |           | libero(1)    |    
+prs |    -   -S | N-G-S           |           | 3S-   -   -A |    
+trn | [you]     | body            |           | to free      |    
+cmt |           |                 |           |              |    
+----------------------------------------------------------------------
+txt | tibi    | aditus | patere             | non         
+dct | tu,tui  |        | pateo,-ere,-ui,-us | non         
+prs |    -D-S |        | P-Inf-A            | Adv         
+trn | [you]   |        | to lie open        | not         
+cmt |         |        |                    |  value='w/'>
+----------------------------------------------------------------------
+txt | potest             | homines      | enim | sunt        
+dct | potsum,posse,potui | homo,hominis | enim | sum,esse,fui
+prs | 3S-P-I-A           | M-   -P      | Conj | 3P-P-I-A    
+trn | to be able         | human        | for  | to be       
+cmt |                    |              |      |             
+----------------------------------------------------------------------
+txt | hac          | lege | generati | qui           | tuerentur
+dct | hic,haec,hoc |      |          | qui,quae,quod |          
+prs | F-Ab-S       |      |          | M-N-          |          
+trn | this         |      |          | rel./inq.     |          
+cmt |              |      |          |               |          
+----------------------------------------------------------------------
+txt | illum           | globum | quem          | in               
+dct | ille,illa,illud |        | qui,quae,quod | in               
+prs | M-Ac-S          |        | M-Ac-S        | Prep+Ab/Ac       
+trn | that            |        | rel./inq.     | in, on/into, onto
+cmt |                 |        |               |                  
+----------------------------------------------------------------------
+
+
+txt | hoc          | templo     | medium        | vides              
+dct | hic,haec,hoc | templum,-i | medius,-a,-um | video,-ere,-i,visus
+prs |    -Ab-S     | N-   -S    |    -   -S     | 2S-P-I-A           
+trn | this         | region     | middle        | to see             
+cmt |              |            |               |                    
+----------------------------------------------------------------------
+txt | quae          | terra     | dicitur             | iis      
+dct | qui,quae,quod | terra,-ae | dico,-ere,dixi,-tus | is,ea,eum
+prs |    -   -P     | F-   -S   | 3S-P-I-P            |    -   -P
+trn | rel./inq.     | land      | to speak            | weak dem.
+cmt |               |           |                     |          
+----------------------------------------------------------------------
+txt | +que | animus    | datus   | est          | ex      
+dct | +que | animus,-i | do(1)   | sum,esse,fui | ex      
+prs | Conj | M-N-S     |         | 3S-P-I-A     | Prep+Ab 
+trn | and  | mind      | to give | to be        | out from
+cmt |      |           |         |              |         
+----------------------------------------------------------------------
+txt | illis           | sempiternis | ignibus     | quae         
+dct | ille,illa,illud |             | ignis,ignis | qui,quae,quod
+prs |    -   -P       |             | M-   -P     |    -   -P    
+trn | that            |             | fire        | rel./inq.    
+cmt |                 |             |             |              
+----------------------------------------------------------------------
+txt | sidera        | et   | stellas    | vocatis | quae         
+dct | sidus,sideris | et   | stella,-ae | voco(1) | qui,quae,quod
+prs | N-   -P       | Conj | F-Ac-P     |         |    -   -P    
+trn | star          | and  | star       | to call | rel./inq.    
+cmt |               |      |            |         |              
+----------------------------------------------------------------------
+txt | globosae | et   | rotundae | divinis | animatae | mentibus  
+dct |          | et   |          |         |          | mens,-ntis
+prs |          | Conj |          |         |          | F-   -P   
+trn |          | and  |          |         |          | mind      
+cmt |          |      |          |         |          |           
+----------------------------------------------------------------------
+txt | circulos | suos        | orbes       | +que | conficiunt
+dct |          | suus,-a,-um | orbis,orbis | +que |           
+prs |          | M-Ac-P      | M-   -P     | Conj |           
+trn |          | refl. adj.  | circle      | and  |           
+cmt |          |             |             |      |           
+----------------------------------------------------------------------
+txt | celeritate | mirabili     | quare | et   | tibi    | Publi
+dct |            | mirabilis,-e |       | et   | tu,tui  |      
+prs |            |    -   -S    |       | Conj |    -D-S |      
+trn |            | remarkable   |       | and  | [you]   |      
+cmt |            |              |       |      |         |      
+----------------------------------------------------------------------
+
+
+txt | et   | piis | omnibus   | retinendus | animus    | est         
+dct | et   |      | omnis,-e  |            | animus,-i | sum,esse,fui
+prs | Conj |      |    -   -P |            | M-N-S     | 3S-P-I-A    
+trn | and  |      | all       |            | mind      | to be       
+cmt |      |      |           |            |           |             
+----------------------------------------------------------------------
+txt | in                | custodia | corporis        | nec | iniussu
+dct | in                |          | corpus,corporis |     |        
+prs | Prep+Ab/Ac        |          | N-G-S           |     |        
+trn | in, on/into, onto |          | body            |     |        
+cmt |                   |          |                 |     |        
+----------------------------------------------------------------------
+txt | eius      | a        | quo           | ille           
+dct | is,ea,eum | ab       | qui,quae,quod | ille,illa,illud
+prs |    -G-S   | Prep+Ab  |    -Ab-S      |    -   -S      
+trn | weak dem. | from, by | rel./inq.     | that           
+cmt |           |          |               |                
+----------------------------------------------------------------------
+txt | est          | vobis     | datus   | ex       | hominum     
+dct | sum,esse,fui | tu,tui    | do(1)   | ex       | homo,hominis
+prs | 3S-P-I-A     |    -   -P |         | Prep+Ab  | M-G-P       
+trn | to be        | [you]     | to give | out from | human       
+cmt |              |           |         |          |             
+----------------------------------------------------------------------
+txt | vita | migrandum | est          | ne   | munus        
+dct |      |           | sum,esse,fui | ne   | munus,muneris
+prs |      |           | 3S-P-I-A     | Conj | N-   -S      
+trn |      |           | to be        | .    | offering     
+cmt |      |           |              |      |              
+----------------------------------------------------------------------
+txt | humanum        | adsignatum | a        | deo     | defugisse
+dct | humanus,-a,-um |            | ab       | deus,-i |          
+prs |    -   -S      |            | Prep+Ab  | M-   -S |          
+trn | human          |            | from, by | god     |          
+cmt |                |            |          |         |          
+----------------------------------------------------------------------
+txt | videamini          
+dct | video,-ere,-i,visus
+prs | 2P-P-S-P           
+trn | to seem            
+cmt |                    
+----------------------------------------------------------------------
+
+

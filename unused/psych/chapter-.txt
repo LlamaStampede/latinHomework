@@ -1,0 +1,61 @@
+txt | quae | cum       | ita                  | sint          
+dct |      | cum       | eo,ire,ivi,itus      | sum,esse,fui,-
+prs |      | Prep w/Ab | Pf-Ppl-P/   -   -    | 3P-P-S-A      
+trn |      | with      | to go                | to be         
+cmt |      |           |                      |               
+----------------------------------------------------------------------
+txt | Catilina | dubitas            | si   | emori
+dct |          | dubito(1)          | si   |      
+prs |          | 2S-P-I-A           | Conj |      
+trn |          | to doubt, hesitate | if   |      
+cmt |          |                    |      |      
+----------------------------------------------------------------------
+txt | aequo               | animo        | non | potes               
+dct | aequus,aequa,aequum | animus,animi | non | potsum,posse,potui,-
+prs |    -   -S           | M-   -S      | Adv | 2S-P-I-A            
+trn | level               | mind         | not | to be able          
+cmt |                     |              |     |                     
+----------------------------------------------------------------------
+txt | abire                   | in                | aliquas
+dct | abeo,abire,abivi,abitus | in                |        
+prs | 2S-Fp-I-A               | Prep w/Ac/Ab      |        
+trn | to leave                | in, on/into, onto |        
+cmt |                         |                   |        
+----------------------------------------------------------------------
+txt | terras       | et   | vitam | istam | multis             
+dct | terra,terrae | et   |       |       | multus,multa,multum
+prs | F-Ac-P       | Conj |       |       |    -   -P          
+trn | land         | and  |       |       | many               
+cmt |              |      |       |       |                    
+----------------------------------------------------------------------
+txt | suppliciis           | iustis | debitis                  | +que
+dct | supplicium,supplicii |        | debeo,-ere,debui,debitus | +que
+prs | N-   -P              |        | Pf-Ppl-P/   -   -P       | Conj
+trn | penalty              |        | to ought, hesitate       | and 
+cmt |                      |        |                          |     
+----------------------------------------------------------------------
+txt | ereptam                    | fugae      | solitudini | +que
+dct | eripio,-ere,eripui,ereptus | fuga,fugae |            | +que
+prs | Pf-Ppl-P/F-Ac-S            | F-   -     |            | Conj
+trn | to snatch away             | flight     |            | and 
+cmt |                            |            |            |     
+----------------------------------------------------------------------
+txt | mandare
+dct |        
+prs |        
+trn |        
+cmt |        
+----------------------------------------------------------------------
+Unknown: quae
+Unknown: Catilina
+Unknown: emori
+Unknown: aliquas
+Conflict: vitam might be from:
+- vito,vitare,vitavi,vitatus 1S-P-S-A
+- vita,vitae F-Ac-S
+Unknown: istam
+Conflict: iustis might be from:
+- iuvo,iuvare,iuvi,iutus 2P-Pf-I-A
+- iustus,iusta,iustum    -   -P
+Unknown: solitudini
+Unknown: mandare
