@@ -14,3 +14,6 @@ Relevance:
 This project does not carry any significance to anyone not translating Latin for homework. It probably also does not help most Latin students, as it only outputs a very specific format of translated latin.
 
 Please do not edit this project unless you have the expressed permission of its creators.
+
+Current bugs include faulty menu and bad error reporting.
+

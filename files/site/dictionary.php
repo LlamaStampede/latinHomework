@@ -17,7 +17,7 @@
         <li><a href="output.php">Home</a></li>
         <li class="current"><a href="dictionary.php">Dictionary</a></li>
         <li><a href="input.html">Input</a></li>
-        <li>Dream of Scipio
+        <li><span class="a">Dream of Scipio</span>
             <ul>
                 <li><a href="chapter16.php">Chapter 16</a></li>
                 <li><a href="chapter17.php">Chapter 17</a></li>
