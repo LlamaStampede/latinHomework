@@ -32,7 +32,7 @@
           list($link,$label) = explode("|",$line);
           $addin = "";
         if ($pagename == $link) {$addin = " class='current'"; /*$link = ""*/}
-          echo "<li".$addin."><a href='".$link."'>".$label."</a></li>";
+          echo "<li$addin><a href='$link'>$label</a></li>";
         }
       }
       echo "</ul</li>";

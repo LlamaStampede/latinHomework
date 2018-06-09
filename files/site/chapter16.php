@@ -18,11 +18,11 @@
 
 <body>
 
-<ul id="test">
+<nav><ul>
 <li><a href="output.php">Home</a></li><li>
 <a href="dictionary.php">Dictionary</a></li><li>
 <a href="input.html">Input</a></li><li>
-<a class = "current">Dream of Scipio<img src= "https://image.flaticon.com/icons/png/512/60/60995.png" width = "13" height = "13"></a>
+<a class = "current">Dream of Scipio</a>
 <ul>
 <li><a class = "current">Chapter 16</a></li><li>
 <a href="chapter17.php">Chapter 17</a></li><li>
@@ -31,7 +31,7 @@
 <a href="chapter20.php">Chapter 20</a></li>
 </ul>
 </li>
-</ul>
+</ul></nav>
 <h1 class="plain"><a href="">Analysis Sheet</a></h1>
 <p id="Center">Center</p><input type="checkbox" checked>
 <p id="Embed">Embed Errors</p><input type="checkbox">

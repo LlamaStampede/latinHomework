@@ -15,5 +15,5 @@ This project does not carry any significance to anyone not translating Latin for
 
 Please do not edit this project unless you have the expressed permission of its creators.
 
-Current bugs include faulty menu and bad error reporting.
+Current bugs include bad error reporting.
 
