@@ -3,8 +3,8 @@ y	y
 #Sheet
 arma	arma(1D)	N-[N+Ac]-S	weapons	
 virum	vir,viri	M-Ac-S	man	
-+que	+que	Conj	and	
-cano				fact
++que	+que	Conj	and	hallo
+cano	cano,-ere,ceceni,-tus	1S-P-I-A	to sing	fact
 Troiae	Troia,-ae	F-[G+D+N]-[S+P]	Troy	
 qui	qui,quae,quod	M-N-[S+P]	rel./inq.	
 primus	primus,-a,-um	M-N-S	first	w/

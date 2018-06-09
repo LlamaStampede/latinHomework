@@ -228,3 +228,4 @@ accido	accidere	accidi	accisus	cut up
 adsequor	adsequi	adsecutus sum	-	go after
 nascor	nasci	natus sum	-	be born
 iacto	iactare	iactavi	iactatus	cast
+cano	canere	ceceni	cantus	sing
