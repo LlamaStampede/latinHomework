@@ -83,7 +83,7 @@ teneo	tenere	tenui	tentum	hold
 vito	vitare	vitavi	vitatum	avoid
 committo	committere	commisi	commissum	entrust
 exspecto	exspectare	exspectavi	exspectatum	wait for
-iacio	iacere	ieci	iectum	throw, hurl
+iacio	iacere	ieci	iactum	throw, hurl
 eicio	eicere	eieci	eiectum	throw out
 timeo	timere	timui	-	be afraid
 admitto	admittere	admisi	admissum	receive
@@ -227,3 +227,4 @@ prodo	prodere	prodidi	proditus	project
 accido	accidere	accidi	accisus	cut up
 adsequor	adsequi	adsecutus sum	-	go after
 nascor	nasci	natus sum	-	be born
+iacto	iactare	iactavi	iactatus	cast

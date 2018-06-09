@@ -16,7 +16,11 @@ nav li {
 nav > ul > li {
   box-sizing: border-box;
 }
+<<<<<<< Updated upstream
 nav a, nav .a {
+=======
+nav a {
+>>>>>>> Stashed changes
   text-decoration: none;
   color: inherit;
   height: 48px;

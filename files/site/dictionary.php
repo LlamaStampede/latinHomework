@@ -17,7 +17,11 @@
         <li><a href="output.php">Home</a></li>
         <li class="current"><a href="dictionary.php">Dictionary</a></li>
         <li><a href="input.html">Input</a></li>
+<<<<<<< Updated upstream
         <li><span class="a">Dream of Scipio</span>
+=======
+        <li>Dream of Scipio
+>>>>>>> Stashed changes
             <ul>
                 <li><a href="chapter16.php">Chapter 16</a></li>
                 <li><a href="chapter17.php">Chapter 17</a></li>

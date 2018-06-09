@@ -10,32 +10,32 @@ qui	qui,quae,quod	M-N-[S+P]	rel./inq.
 primus	primus,-a,-um	M-N-S	first	w/
 ab	ab	Prep+Ab	from, by	
 oris	os,oris	N-G-S	mouth	
-Italiam	Italia,-ae	F-Ac-S	Italy	
+Italiam	Italia,-ae	F-Ac-S	Italy		UNKNOWN
 fato	fatum,-i	N-[D+Ab]-S	fate	
 profugus					UNKNOWN
 Lavinia					UNKNOWN
 +que	+que	Conj	and	
-venit	venio,-ire,-i,-tus		to come		Conflict:	{venio,venire,veni,ventus	3S-P-I-A	to come}	{venio,venire,veni,ventus	3S-Pf-I-A	to come}
+venit	venio,-ire,-i,-tus		to come		Conflict:
 litora	litus,litoris	N-[N+Ac]-P	shore	
 multum	multus,-a,-um	[M+N]-[Ac+N]-S	many	w/
 ille	ille,illa,illud	[M+N]-[N+V]-S	that	
 et	et	Conj	and	
 terris	terra,-ae	F-[D+Ab]-P	land	
-iactatus	iacto(1)	Pf-Ppl-P/M-N-S	to cast	
+iactatus					UNKNOWN
 et	et	Conj	and	
 alto	alo,-ere,-ui,-tus	Pf-Ppl-P/[M+N]-[D+Ab]-S	to nourish	
 vi	vis,vis	F-D-S	force (pl)strength	
 superum	superus,-a,-um	[M+N]-[Ac+N]-S	superior	w/
 saevae					UNKNOWN
 memorem					UNKNOWN
-Iunonis	Iuno,Iunonis	F-G-S	Juno	
+Iunonis					UNKNOWN
 ob	ob	Prep+Ac	on account of	
-iram					Conflict:	{eo,ire,ivi,itus	1S-Ppf-I-A	to go}	{ira,irae	F-Ac-S	anger}
+iram					Conflict:
 multa	multus,-a,-um	[F+N]-[N+Ab+Ac]-[S(Pos.)+P(Pos.)]	many	w/
 quo	qui,quae,quod	[M+N]-Ab-S	rel./inq.	
 +que	+que	Conj	and	
 et	et	Conj	and	
-bello					Conflict:	{bellum,belli	N-[D+Ab]-S	war}	{bellus,bella,bellum	[M+N]-[D+Ab]-S	handsome}
+bello					Conflict:
 passus	patior,pati,passus sum	Pf-Ppl-P/M-N-S	to endure	
 dum	dum	Conj	while/until	
 conderet	condo,-ere,-idi,-itus	3S-Impf-S-A	to establish	
@@ -56,13 +56,16 @@ moenia	moenia,moeniis	N-[N+Ac]-S	city walls
 Romae					UNKNOWN
 #Report
 UNKNOWN: cano
+UNKNOWN: Italiam
 UNKNOWN: profugus
 UNKNOWN: Lavinia
 Conflict: venit might be from:
 - venio,venire,veni,ventus 3S-P-I-A to come
 - venio,venire,veni,ventus 3S-Pf-I-A to come
+UNKNOWN: iactatus
 UNKNOWN: saevae
 UNKNOWN: memorem
+UNKNOWN: Iunonis
 Conflict: iram might be from:
 - eo,ire,ivi,itus 1S-Ppf-I-A to go
 - ira,irae F-Ac-S anger
@@ -74,3 +77,4 @@ UNKNOWN: Latio
 UNKNOWN: unde
 UNKNOWN: Albani
 UNKNOWN: Romae
+

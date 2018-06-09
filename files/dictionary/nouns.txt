@@ -382,3 +382,6 @@ angustia	-ae	f	narrow pass
 proles	prolis	f	offspring
 eluvio	eluvionis	f	inundation
 exustio	exustionis	f	conflagration
+Troia	Troiae	f	Troy
+Italia	Italiae	f	Italy
+Iuno	Iunonis	f	Juno
