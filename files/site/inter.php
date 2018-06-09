@@ -70,6 +70,8 @@
               else {array_push($newline,$line[$c2]);}
               if (count($line) == $c2 + 1) {break;}
             }
+          } else if ($line == "") {
+            $newline = $from[$c1];
           } else {
             $newline = $line;
           }

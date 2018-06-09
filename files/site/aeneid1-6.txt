@@ -54,3 +54,23 @@ atque	atque	Conj	and
 altae	alo,-ere,-ui,-tus	Pf-Ppl-P/F-[G+D+N]-[S+P]	to nourish	
 moenia	moenia,moeniis	N-[N+Ac]-S	city walls	
 Romae				
+#Report
+UNKNOWN: profugus
+UNKNOWN: Lavinia
+Conflict: venit might be from:
+- venio,venire,veni,ventus 3S-P-I-A to come
+- venio,venire,veni,ventus 3S-Pf-I-A to come
+UNKNOWN: saevae
+UNKNOWN: memorem
+Conflict: iram might be from:
+- eo,ire,ivi,itus 1S-Ppf-I-A to go
+- ira,irae F-Ac-S anger
+Conflict: bello might be from:
+- bellum,belli N-[D+Ab]-S war
+- bellus,bella,bellum [M+N]-[D+Ab]-S handsome
+UNKNOWN: inferret
+UNKNOWN: Latio
+UNKNOWN: unde
+UNKNOWN: Albani
+UNKNOWN: Romae
+

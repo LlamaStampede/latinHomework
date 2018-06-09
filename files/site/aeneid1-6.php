@@ -6,7 +6,7 @@
   <title><?php
   $pagename = end(explode("/",__FILE__));
   $filename = substr($pagename,0,strlen($pagename)-4);
-  $txtname = $filename.".txt";
+  $txtname = "$filename.txt";
   if ($txtname == "output.txt") {$txtname = "sheet.txt";}
   echo ucfirst($filename);
   ?></title>
@@ -60,28 +60,26 @@
       if ($_POST[show_errors] == "on") {fwrite($source,"y\n"); $show_errors = "y";} else {fwrite($source,"n\n"); $show_errors = "n";}
       fwrite($source,"#Sheet");
       for ($x = 1; $x <= 1000; $x++) {
-        if (!array_key_exists($x."_2",$_POST)) {break 1;}
+        if (!array_key_exists("${x}_2",$_POST)) {break;}
         $line = [];
         for ($y = 1; $y <= 5; $y++) {
-          array_push($line, $_POST[$x . "_" . $y]);
+          array_push($line, $_POST["${x}_$y"]);
         }
-        if (array_key_exists($x."_6",$_POST)) {
-          $error = [$_POST[$x."_0"]];
-          array_push($line,$_POST[$x ."_6"]);
-          array_push($error,$_POST[$x ."_6"]);
-          if ($_POST[$x."_6"] == "Conflict:") {
+        if (array_key_exists("${x}_6",$_POST)) {
+          $error = [$_POST["${x}_1"],$_POST["${x}_6"]];
+          if ($_POST["${x}_6"] == "Conflict:") {
             for ($z = 7; $z <= 11; $z ++) {
-              if (array_key_exists($x . "_" . $z, $_POST)) {
-                array_push($error,$_POST[$x . "_" . $z]);
-                array_push($line,$_POST[$x . "_" . $z]);
-              } else {break 1;}
+              if (array_key_exists("${x}_$z", $_POST)) {
+                array_push($error,$_POST["${x}_$z"]);
+              } else {break;}
             }
           }
-          array_push($report,$line[0] + $error);
+          array_push($report,$error);
+          array_push($line,$error);
         }
         fwrite($source,"\n" . implode("\t",$line));
       }
-      foreach ($report as $error)
+      foreach ($report as $error) /*I forget what this is for (its been months)*/
       fclose($source);
     }
     $sheet = $report = [];
@@ -96,13 +94,13 @@
           case "#Info":
             $parsing = $line[0];
             $show_errors = $line[1];
-            break 1;
+            break;
           case "#Sheet":
             if ($line != "") {array_push($sheet,$line);}
-            break 1;
+            break;
           case "#Report":
             array_push($report,$line);
-            break 1;
+            break;
         }
       }
     }
@@ -111,17 +109,16 @@
     echo "<div id='sheet'>";
     $counter = 0;
     foreach ($sheet as $col) {
+      if ($col == [""]) {break;}
       echo "<ul id='".++$counter."'>";
       $subcounter = 0;
       $error = [];
       foreach ($col as $row) {
         $subcounter++;
-        /*if (++$subcounter == 3 and $parsing == "n") {
-          echo "<li><input type='text' name='".$counter."_".$subcounter."'></li>";
-        } else*/if ($subcounter == 1) { /*Delete to allow editing the first line*/
-          echo "<li>".$row."<input class='hidden' name='".$counter."_1' value='".$row."'></li>";
+        if ($subcounter == 1) { /*Delete to allow editing the first line*/
+          echo "<li>$row<input class='hidden' name='{$counter}_1' value='$row'></li>";
         } elseif ($subcounter <= 5) {
-          echo "<li><input type='text' name='".$counter."_".$subcounter."' value='".$row."'></li>";
+          echo "<li><input type='text' name='${counter}_$subcounter' value='$row'></li>";
         } else {
           array_push($error,$row);
         }

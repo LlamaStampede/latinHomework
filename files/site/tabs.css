@@ -8,6 +8,8 @@ button.tab {
   padding: 10px 15px;
   border: 2px solid;
   border-radius: 5px 5px 0 0;
+  font-size: larger;
+  font-family: monospace;
 }
 button#active {
   background-color: rgba(0,180,250,.6);
