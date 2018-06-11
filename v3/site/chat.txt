@@ -1,0 +1,11 @@
+#Info
+y	y
+#Sheet
+This	Michael L was here:	1/28/2018-6:55:24PM	Michael H was here:	1/28/2018-9:51:30PM
+is	Aiden B was here:	1/29/2018-2:29PM		
+the				
+default				
+analysis				
+sheet				
+format:				
+Latin Term	dictionary entry	parsing	translation	comment
