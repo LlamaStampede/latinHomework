@@ -30,7 +30,7 @@ h1 + input {
   /*HEAD: margin: 50;*/
   padding: 0 0 0 32px;
   box-sizing: border-box;
-  background-image: url(5x3v5.png);
+  background-image: url(5x3v6.png);
   background-repeat: repeat-y;
   /*HEAD: z-index: -2;*/
 }
@@ -150,7 +150,7 @@ input.comment {
   border-bottom: 1px solid;
 }
 #sheet ul:hover {background-color: lightgreen;}
-#sheet > ul > li:first-of-type {font-weight: bold; padding: 2px 20px 2px 5px;}
+#sheet > ul > li:first-of-type {font-weight: bold; padding: 2px 5px 2px;}
 #sheet ul input[type="checkbox"] {
   width: 12px;
   height: 12px;
