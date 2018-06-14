@@ -17,6 +17,11 @@
 </head>
 
 <body>
+  <nav><ul>
+      <li class="current"><a href="output.php">Home</a></li>
+      <li><a href="dictionary.php">Dictionary</a></li>
+      <li><a href="input.html">Input</a></li>
+  </ul></nav>
   <nav>
     <ul>
       <?php 

@@ -19,18 +19,9 @@
 
 <body>
 <nav><ul>
-<li><a href="output.php">Home</a></li><li>
-<a href="dictionary.php">Dictionary</a></li><li>
-<a class = "current" href="input.html">Input</a></li><li>
-<a href="#">Dream of Scipio</a>
-<ul>
-<li><a href="chapter16.php">Chapter 16</a></li><li>
-<a href="chapter17.php">Chapter 17</a></li><li>
-<a href="chapter18.php">Chapter 18</a></li><li>
-<a href="chapter19.php">Chapter 19</a></li><li>
-<a href="chapter20.php">Chapter 20</a></li>
-</ul>
-</li>
+<li><a href="output.php">Home</a></li>
+<li><a href="dictionary.php">Dictionary</a></li>
+<li><a class="current" href="input.html">Input</a></li>
 </ul></nav>
 
 <?php
@@ -40,7 +31,7 @@
         fclose($rawText);
     }
 
-    echo exec("cd ../code\npython superclone.py");
+    echo exec("cd ../code\npython main.py");
 
     $filename = $_POST[filename];
     if ($filename != "output") {

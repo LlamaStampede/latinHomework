@@ -13,7 +13,6 @@ EXTRA	outside of
 INTRA	within
 TRANS	across
 POST	after, behind
-SUB	under
 OB	on account of
 PRAETER	except for
 PROPE	near, about
@@ -27,7 +26,7 @@ CUM	with
 PRAE	before, in front of
 E	out from
 EX	out from
-SUB	under
 Ab/Ac
 IN	in, on/into, onto
 SUPER	above
+SUB	under

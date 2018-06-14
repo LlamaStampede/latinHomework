@@ -74,7 +74,7 @@ def decl(noun):
     if gen == "-" + suf: root = nom[:-noms[sufs[suf]]]
     elif "-" in gen: root = nom[:-2] + gen[1:-len(suf)]
     else: root = gen[:-len(suf)]
-    return [sufs[suf],nom,root,gend.upper(),trn]
+    return [sufs[suf],nom,root,gend.upper(),trn] #gend.upper() => ["N","M","F","C"]
 
 def adecl(adj):
     if [adj[1][-1],adj[2][-2:]] == ["a","um"]: decl = 212

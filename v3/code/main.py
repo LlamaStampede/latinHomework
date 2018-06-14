@@ -8,6 +8,7 @@ lastspace = True #prevents double spaces
 godown = True
 for i in range(0, len(lines)):
     letter = lines[i]
+    if letter in [" ","\t","\n"]: letter = " "
     if letter.isalpha() or (letter == " " and not lastspace):
         if lastspace and letter.isalpha(): firstletter = True
         else: firstletter = False
@@ -28,8 +29,6 @@ for term in usableText:
     if len(term) > 3 and term[-3:] == "que" and not term in ["atque", "quemque", "neque", "plerumque","denique"]: realText += [term[:-3],"+que"]
     elif term == "modo" and realText[-1] == "non": realText[-1] = "non_modo"
     else: realText.append(term)
-
-method = 0
 
 from describe import *
 from expand import *
@@ -55,11 +54,12 @@ advList = glossary("adverbs")
 nounList = glossary("nouns")
 adjList = glossary("adjs")
 
-ex_terms = realText #raw_input("Enter a term: ").split(" ")
-#ex_terms = ["imus"]
+#realText = raw_input("Enter a term: ").split(" ")
+#realText = ["imus"]
 
 preps = []
 for prep in prepList:
+    # preps.append([prep[term].lower(),prep[trn],["G","Ac","Ab","Ab/Ac"]prep[takesCase])
     if len(prep) == 1:
         phase = prep[0]
     else:
@@ -86,7 +86,7 @@ for adj in adjList:
 
 #Phase: Assemble
 specials = [["bonus","melior","optimus"], ["malus","peior","pessimus"], ["magnus","maior","maximus"], ["parvus","minor","minimus"], ["multus","pluror","plurimus"]]
-def compable(term,adjroot):
+def compable(term,adjroot): #given an adjroot, tells if the adj can make the term
     for spec in specials:
         if adjroot == spec[0][:-2]:
             for i in range(1,3):
@@ -94,7 +94,7 @@ def compable(term,adjroot):
     return False
 
 pos = [] #pos = list of all terms in passage and their possible stems
-for term in ex_terms:
+for term in realText:
     pos.append([term])
 
     adv = inc(term,advs) #adv = {term is an adverb, yes/no}
@@ -153,21 +153,11 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     ind += 1
     if ind < len(pos): nextword = pos[ind][0]
     else: nextword = "finish"
-    [final,rep] = expand(pts,method,nextword,ind)
+    [final,rep] = expand(pts,nextword,ind)
     final_list.append(final)
-    if rep != []: report.append(rep)
+    report.append(rep)
 
 #Phase: Format
-ppls = []
-parsing = "y" #Change to "n" to eliminate parsing
-errors = "y" #Change to "n" to eliminate error report
-
-for col in range(len(final_list)):
-    if parsing == "n": final_list[col][2] = ""
-    elif "Ppl" in final_list[col][2]:
-        ppls.append(final_list[col][0:4])
-        final_list[col][2] = [final_list[col][2],"","<input type='text' value='%s'>"%(final_list[col][2])][method]
-
 for col in range(len(final_list)): #dct compression
     stem = final_list[col][1].split(",")
     if len(stem) > 1 and len(stem[1]) >= 3:
@@ -195,7 +185,7 @@ for col in range(len(final_list)): #dct compression
     names = {"M":"Marcus","L":"Lucius"}
     if term in names: final_list[col][1::2] = [names[term],names[term]]
 
-from output0 import *
-format(final_list,report,parsing,errors)
+from output5 import *
+format(final_list,report)
 #print report
 

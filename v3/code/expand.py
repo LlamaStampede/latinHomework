@@ -254,21 +254,17 @@ def case(stem,blank): #nouns, pronouns, adjectives, participles
 def datalist(name,choices):
     string = "</option><option".join(choices)
     return name.join(["<input type='text' class='mini' maxlength='2' list='","'><datalist id='","'><option>"+string+"</option></datalist>"])
-def expand(pts,method,nextword,counter):
-    rep = []
+def expand(pts,nextword):
     term = pts.pop(0)
     fins = [term] #finalists, all aplicable forms will later be appended
     for p in pts: #p = possibile word ([do,dare,...])
-        if method <= 1:
-            blank = "   "
-            comment = ""
-            advcom = ""
-        elif method == 2:
-            blank = "<input type='text' class='mini' maxlength='2'>"
-            comment = "<input type='text' class='comment'>"
-            advcom = comment[:-1] + "value='w/'>"
-            if p[0] == "v" and p[1] == "ppl": blank = "   "
-        if method == 0: advcom = "w/"
+        
+        #This section used to be applicable to different output methods, now it only works for method=0
+        blank = "   "
+        comment = ""
+        advcom = ""
+        advcom = "w/"
+        
         apls = [term] #apls=aplicable forms
         forms = [] #every form of the word will be added
         if p[0] == "prep":
@@ -302,8 +298,7 @@ def expand(pts,method,nextword,counter):
             person = {"e":1,"m":1,"t":2,"s":3,"n":4,"v":5}[letter]
             num = number[(person-1)/3]
             if person == 3: num = "S+P"
-            persblank = blank
-            if method == 0: persblank = "[M+F+N]"
+            persblank = "[M+F+N]"
             for i in range(5):
                 if person == 1: end = ["go","ei","ihi","e","e"][i]
                 elif person in [2,3]: end = ["u","ui","ibi","e","e"][i]
@@ -438,72 +433,34 @@ def expand(pts,method,nextword,counter):
             #print form#, stem
             if term in [form[0],form[0][0].upper()+form[0][1:]]: apls.append([stem,form[1]]) #checks if term and form spelled the same
         if len(apls) != 1:
-            if method == 0:
-                #print apls
-                lds = {1:[],3:[],4:[],6:[]}
-                for ld in lds:
-                    for i in range(ld):
-                        lds[ld].append([])
-
-                prsf = "" #prsf = Final Parsing (will include "   "-blankspaces for unknown values)
-                for apl in apls[1:]: #aplicable forms
-                    prs = apl[1].split("-")
-                    for i in range(len(prs)):
-                        lds[len(prs)][i].append(prs[i]) #separating parsings into different columns for comparison
-                pprs = []
-                #print lds
-                for ld in lds: #Work on this first | recheck, confuses me right now
-                    spook = ""
-                    for spot in lds[ld]:
-                        spot = trim(spot)
-                        if len(spot) == 1: spook += spot[0] + "-"
-                        elif len(spot) > 1: spook += "["+"+".join(spot)+"]-"
-                        if spot != [] and spot[0][-1] == "/": spook = spook[:-1]
-                    if len(spot) != 0: pprs.append(spook[:-1])
-                if len(pprs) == 1: prsf = pprs[0]
-                else:
-                    for prs in pprs:
-                        prsf += "{%s};"%(prs)
-                    prsf = prsf[:-1]
-            else:
-                difs = [] #for conflicting parsings (dat/abl pl)
-                ld = 3
-                if p[0] == "v":
-                    ld = 4
-                    if p[1] == "ppl": ld = 6
+            
+            #This section used to work for multiple methods, now it only works for method=0
+            #print apls
+            lds = {1:[],3:[],4:[],6:[]}
+            for ld in lds:
                 for i in range(ld):
-                    difs.append([])
+                    lds[ld].append([])
 
-                prsf = "" #prsf = Final Parsing (will include "   "-blankspaces for unknown values)
-                for apl in apls[1:]: #aplicable forms
-                    prs = apl[1].split("-")
-                    #print prs
-                    for l in range(len(prs)):
-                        difs[l+ld-len(prs)].append(prs[l]) #separating parsings into different columns for comparison
-                for l in difs:  #l is a value location (Gender,case,Tense,etc.)
-                    if len(l) != 0:
-                        if method == 1:
-                            if len(trim(l)) == 1:
-                                prsf += l[0] + "-" #if value is certain
-                                if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
-                            else: prsf += (blank + "-") #if value is indefinite
-                        elif method == 2:
-                            string = str(l[0])
-                            vls = [l[0]]
-                            for x in l[1:]:
-                                if x not in vls:
-                                    string += "+"+str(x)
-                                    vls.append(x)
-                            #print term, string
-                            if "+" in string: prsf += datalist(term+str(counter)+string,string.split("+"))+"-"
-                            else: prsf += string + "-"
-                            if l[0][-1] == "/": prsf = prsf[:-1] #eliminates dash after slash: ...-A/-M-...
-                        else:
-                            a = "+".join(trim(l))
-                            if len(trim(l)) != 1: a = "[%s]"%(a)
-                            prsf += a
-                            if l[0][-1] != "/": prsf += "-"
-                if prsf != "": prsf = prsf[:-1] # eliminates extra dash: ...-G-P-
+            prsf = "" #prsf = Final Parsing (will include "   "-blankspaces for unknown values)
+            for apl in apls[1:]: #aplicable forms
+                prs = apl[1].split("-")
+                for i in range(len(prs)):
+                    lds[len(prs)][i].append(prs[i]) #separating parsings into different columns for comparison
+            pprs = []
+            #print lds
+            for ld in lds: #Work on this first | recheck, confuses me right now
+                spook = ""
+                for spot in lds[ld]:
+                    spot = trim(spot)
+                    if len(spot) == 1: spook += spot[0] + "-"
+                    elif len(spot) > 1: spook += "["+"+".join(spot)+"]-"
+                    if spot != [] and spot[0][-1] == "/": spook = spook[:-1]
+                if len(spot) != 0: pprs.append(spook[:-1])
+            if len(pprs) == 1: prsf = pprs[0]
+            else:
+                for prs in pprs:
+                    prsf += "{%s};"%(prs)
+                prsf = prsf[:-1]
             
             degree = "" #For comparative/superlative adjectives
             if prsf[-1] == ")":
@@ -549,11 +506,8 @@ def expand(pts,method,nextword,counter):
             if [trn,prsf[-1]] == ["to see","P"]: trn += "m"
             curcom = comment
             #print term, p, "{%s}"%(prsf), pprs
-            if method == 2 and [p[0],prsf[-3]] == ["v","I"]: curcom = "<input type='text' class='comment' value='fact'>"
-            elif method == 0 and [p[0],len(pprs)] == ["v",1] and pprs[0][-3] == "I": curcom = "fact"
-            if prsf == "Adv" or p[0] == "adj":
-                if method == 2: curcom = "<input type='text' class='comment' value='w/'>"
-                elif method == 0: curcom = "w/"
+            if [p[0],len(pprs)] == ["v",1] and pprs[0][-3] == "I": curcom = "fact"
+            if prsf == "Adv" or p[0] == "adj": curcom = "w/"
             fins.append([term,dct,prsf,trn,curcom]) #["regum","rex,regis","M-G-S","to rule",""]
     if len(fins) > 2 and term[:2] == "re" and len(nextword) > 6 and nextword[:6] == "public":
         reals = [term]
@@ -574,11 +528,13 @@ def expand(pts,method,nextword,counter):
         words = [fins[0]]
         for fin in fins[1:]:
             words.append(fin[1:4])
-        rep = ["multi",counter]+words #error reporting is notified
+        rep = ["multi"]+words #error reporting is notified
     elif len(fins) == 1: #Error: Term Unknown (new word not in glossaries)
         final = [term,comment,comment,comment,comment] #leaves blank spaces b/c origin unknown
         rep = ["unknown",term] #error reporting is notified
-    else: final = fins[1] #when program is running smoothly
+    else:
+        final = fins[1] #when program is running smoothly
+        rep = ["none",term]
     return [final,rep]
 #print expand(["fert",["v","p",["3F","fer","tul","fere","lat","to bear"]]])
 #print expand(["fiebat",["v","p",["3i","faci","tul","facie","fact","do"]]])
