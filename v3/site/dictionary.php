@@ -5,9 +5,10 @@
 <head>
   <title>Dictionary</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="input.css">
-  <link rel="stylesheet" type="text/css" href="tabs.css">
-  <link rel="stylesheet" type="text/css" href="menu.css">
+  <link rel="stylesheet" type="text/css" href="css/input.css">
+  <link rel="stylesheet" type="text/css" href="css/tabs.css">
+  <link rel="stylesheet" type="text/css" href="css/dictionary.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
   <link rel="icon" href="../favicon/favicon.ico">
   <style>
   #toTop {display: none; position: fixed; bottom: 70px; left: 50px;}
@@ -94,7 +95,7 @@
         
         foreach ($ids as $part) {
           $colString = join(", ", $allCols[$part]);
-          $table = $conn->query("SELECT $colString FROM $part")->fetchAll();
+          $table = $conn->query("SELECT $colString FROM $part")->fetchAll(); //This could be changed later on to include PDO::FETCH_ASSOC
           //var_dump($table);
           $title = ["adjs"=>"Adjectives", "nouns"=>"Nouns", "verbs"=>"Verbs"][$part];
           $width = count($allCols[$part]);

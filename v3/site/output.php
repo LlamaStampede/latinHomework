@@ -4,139 +4,109 @@
 
 <head>
   <title><?php
-  $pagename = end(explode("/",__FILE__));
-  $filename = substr($pagename,0,strlen($pagename)-4);
-  $txtname = "$filename.txt";
-  if ($txtname == "output.txt") {$txtname = "sheet.txt";}
-  echo ucfirst($filename);
-  ?></title>
+  $method = $_SERVER[REQUEST_METHOD];
+  /*if ($method == "POST") {$address = $_POST["address"];}
+  else {$address = $_GET["address"];}*/
+  $address = htmlspecialchars($_REQUEST["address"]);
+  echo $address;?></title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="sheet.css">
-  <link rel="stylesheet" type="text/css" href="menu.css">
+  <link rel="stylesheet" type="text/css" href="css/sheet.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
   <link rel="icon" href="../favicon/favicon.ico">
 </head>
 
 <body>
   <nav><ul>
-      <li class="current"><a href="output.php">Home</a></li>
+      <li class="current"><a href="">Home</a></li>
       <li><a href="dictionary.php">Dictionary</a></li>
       <li><a href="input.html">Input</a></li>
   </ul></nav>
-  <nav>
-    <ul>
-      <?php 
-      $tabfile = fopen("menu.txt","r");
-      while(!feof($tabfile)) {
-        $line = chop(fgets($tabfile),"\n");
-        if ($line[0] == "#") {
-          $phase = $line;
-          if ($phase == "#Dream") {
-            echo "<li><a>Dream of Scipio</a><ul>";
-          }
-        } else {
-          list($link,$label) = explode("|",$line);
-          $addin = "";
-        if ($pagename == $link) {$addin = " class='current'"; /*$link = ""*/}
-          echo "<li$addin><a href='$link'>$label</a></li>";
-        }
-      }
-      echo "</ul</li>";
-      fclose($tabfile);
-      ?>
-    </ul>
-  </nav>
       
-  <h1 class="plain"><a href="">Analysis Sheet</a></h1>
+  <h1 class="plain"><a href="output.php?address=<?php echo $address ?>">Analysis Sheet</a></h1>
   <p id="Center">Center</p><input type="checkbox">
   <p id="Embed">Embed Errors</p><input type="checkbox">
   <p id="Study">Study mode</p><input type="checkbox">
   
-  <form action="<?php echo $pagename ?>" method="post" id="auto">
+  <form action="output.php" method="post" id="auto"> 
     <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
     <p id="Show">Show Errors</p><input type="checkbox" name="show_errors" checked>
     <input type="submit" value="Save">
+    <input class="hidden" name="address" value="<?php echo $address; ?>">
     <?php
-    //echo "<h1>" . $_SERVER[REQUEST_METHOD] . "</h1>";
-    if ($_SERVER[REQUEST_METHOD] == "POST") {
-      $sheet = $report = [];
-      $source = fopen($txtname,"w");
-      fwrite($source,"#Info\n");
-      if ($_POST[parsing] == "on") {fwrite($source,"y\t"); $parsing = "y";} else {fwrite($source,"n\t"); $parsing = "n";}
-      if ($_POST[show_errors] == "on") {fwrite($source,"y\n"); $show_errors = "y";} else {fwrite($source,"n\n"); $show_errors = "n";}
-      fwrite($source,"#Sheet");
-      for ($x = 1; $x <= 1000; $x++) {
-        if (!array_key_exists("${x}_2",$_POST)) {break;}
-        $line = [];
-        for ($y = 1; $y <= 5; $y++) {
-          array_push($line, $_POST["${x}_$y"]);
-        }
-        if (array_key_exists("${x}_6",$_POST)) {
-          $error = [$_POST["${x}_1"],$_POST["${x}_6"]];
-          if ($_POST["${x}_6"] == "Conflict:") {
-            for ($z = 7; $z <= 11; $z ++) {
-              if (array_key_exists("${x}_$z", $_POST)) {
-                array_push($error,$_POST["${x}_$z"]);
-              } else {break;}
-            }
-          }
-          array_push($report,$error);
-          array_push($line,$error);
-        }
-        fwrite($source,"\n" . implode("\t",$line));
-      }
-      foreach ($report as $error) /*I forget what this is for (its been months)*/
-      fclose($source);
-    }
-    $sheet = $report = [];
-    $source = fopen($txtname,"r");
-    while (!feof($source)) {
-      $line = chop(fgets($source),"\n");
-      if ($line[0] == "#") {
-        $phase = $line;
-      } else {
-        $line = explode("\t",$line);
-        switch ($phase) {
-          case "#Info":
-            $parsing = $line[0];
-            $show_errors = $line[1];
-            break;
-          case "#Sheet":
-            if ($line != "") {array_push($sheet,$line);}
-            break;
-          case "#Report":
-            array_push($report,$line);
-            break;
-        }
-      }
-    }
-    fclose($source);
+    $conn = new PDO("mysql:host=127.0.0.1; dbname=TLD_SHT", "tld_main", "paramus");
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    echo "<div id='sheet'>";
-    $counter = 0;
-    foreach ($sheet as $col) {
-      if ($col == [""]) {break;}
-      echo "<ul id='".++$counter."'>";
-      $subcounter = 0;
-      $error = [];
-      foreach ($col as $row) {
-        $subcounter++;
-        if ($subcounter == 1) { /*Delete to allow editing the first line*/
-          echo "<li>$row<input class='hidden' name='{$counter}_1' value='$row'></li>";
-        } elseif ($subcounter <= 5) {
-          echo "<li><input type='text' name='${counter}_$subcounter' value='$row'></li>";
-        } else {
-          array_push($error,$row);
+    //echo "<h1>" . $_SERVER[REQUEST_METHOD] /*or $method*/ . "</h1>";
+    //Include: <input name="address" value="$address"> ... <button type="submit">Change</button>
+    $cols = ["trm","dct","prs","trn","cmt"];
+    if ($method == "POST") {
+      try {
+        
+        $sheet = $report = [];
+        $stmt = $conn->prepare("UPDATE ${address}_main SET trm=:trm, dct=:dct, prs=:prs, trn=:trn, cmt=:cmt WHERE id=:id;"); //Similar security problems
+        $stmt->bindParam(":id",$id);
+        foreach ($cols as $col) {
+          $stmt->bindParam(":$col",$GLOBALS[$col]);
         }
-        if ($error !== []) {echo "<li class='error'>".implode("\t",$error)."</li>";}
+        
+        $id = 1;
+        while(array_key_exists("${id}_dct",$_POST)) {
+          foreach ($cols as $col) {
+            $input = $_POST["${id}_$col"];
+            if ($input === "") {$GLOBALS[$col] = null;}
+            else {$GLOBALS[$col] = $input;}
+          }
           
+          //list($trm,$dct,$prs,$trn,$cmt) = 
+          $stmt->execute();
+          $id++;
+        }
+        //TODO: error-editing
+      } catch (PDOException $e) {
+        echo $e->getMessage();
       }
-      echo "</ul>";
     }
-    echo "<hr class='vert'></div><div id='report'><ul>";
-    foreach ($report as $error) {
-      echo "<li>".implode(":",$error)."</li>";
+    try {
+      //This doesn't work:
+      //$stmt = $conn->prepare("SELECT trm, dct, prs, trn, cmt FROM :table;");
+      //$stmt->bindParam(":table",$table);
+      //$table = "${address}_main";
+      //But this does:
+      $stmt = $conn->prepare("SELECT trm, dct, prs, trn, cmt FROM ${address}_main;");
+      //However, I think it might be unsafe (SQL Injection)
+      
+      $stmt->execute();
+      $sheet = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $sheetString = "<div id='sheet'>";
+      $i = 1; //counter
+      
+      foreach ($sheet as $col) {
+        $sheetString .= "<ul id='$i'>";
+        $j = 0; //subcounter
+        foreach ($col as $row) { // null automatically becomes "", no need to change manually
+          if ($j == 0) {
+            $sheetString .= "<li>$row<input class='hidden' type='text' name='${i}_trm' value='$row'></li>";
+            //TODO: (Not here) Change parsing mode to topline-editing mode //Either checkbox on the side or doubleclick the topline
+          } else {
+            $key = $cols[$j];
+            $sheetString .= "<li><input type='text' name='${i}_$key' value='$row'></li>";
+          }
+          $j++;
+        }
+        //Line about error
+        $sheetString .= "</ul>";
+        $i++;
+      }
+      $sheeString .= "</div>";
+      echo $sheetString;
+    } catch (PDOException $e) {
+      echo $e->getMessage();
     }
-    echo "</ul></div>";
+    
+    //TODO: Main Error Report
+    
+    $conn = null;
     ?>
   </form>
 </body>

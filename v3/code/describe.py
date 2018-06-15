@@ -66,6 +66,7 @@ def decl(noun):
     pls = {"arum":1,"orum":2,"um":3,"uum":4,"erum":5}
     noms = [0,1,2,2,2,2]
     [nom,gen,gend,trn] = noun
+    gend = ["N","M","F","C"][gend] #This line added due to database implementation
     if gend == "n": noms[4] = 1
     if gen[-1] == "m": sufs = pls
     else: sufs = decls

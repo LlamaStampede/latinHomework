@@ -1,0 +1,13 @@
+body {background-color: lightblue /* #aaeae9 */}
+.hidden {display: none;}
+
+#filename {
+  padding: 4px;
+  font-family: georgia, serif;
+  font-size: 11pt;
+  background-color: lightgray;
+}
+
+.submit {font-size: inherit;}
+form {position: absolute; top: 60px; left: 40px;}
+form * {margin: 20px;}

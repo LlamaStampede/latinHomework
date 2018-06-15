@@ -32,6 +32,7 @@ for term in usableText:
 
 from describe import *
 from expand import *
+import pymysql
 
 # Phase: Collect
 def inc(term,list): # efficiently returns (term in list) boolean
@@ -40,19 +41,27 @@ def inc(term,list): # efficiently returns (term in list) boolean
             return [True,item]
     return [False]
 
+db = pymysql.connect("127.0.0.1","tld_main","paramus","TLD_DCT")
+cursor = db.cursor()
+
 def glossary(url):
-    f = open("../dictionary/"+url+".txt","r")
-    gloss = f.read().split("\n")
-    f.close()
-    for i in range(len(gloss)):
-        gloss[i] = gloss[i].split("\t")
+    cursor.execute("SELECT * FROM {0};".format(url))
+    results = cursor.fetchall()
+    gloss = []
+    for row in results:
+        row = list(row[1:])
+        while row[0] == None:
+            row.pop(0)
+        gloss.append(row) # CONSIDER: Changing some data lists to tuples later in the code
     return gloss
 
 verbList = glossary("verbs")
 prepList = glossary("preps")
-advList = glossary("adverbs")
+advList = glossary("advs")
 nounList = glossary("nouns")
 adjList = glossary("adjs")
+
+db.close()
 
 #realText = raw_input("Enter a term: ").split(" ")
 #realText = ["imus"]
@@ -63,7 +72,7 @@ for prep in prepList:
     if len(prep) == 1:
         phase = prep[0]
     else:
-        preps.append([prep[0].lower(),prep[1],phase])
+        preps.append([prep[0].lower(),prep[2],["G","Ac","Ab","Ab/Ac"][prep[1]]])
 advs = []
 for adv in advList:
     advs.append(adv[::-1])
@@ -153,7 +162,7 @@ for pts in pos: #pts = possible terms: ["ducet",[duco,ducere,...],[do,dare,...]]
     ind += 1
     if ind < len(pos): nextword = pos[ind][0]
     else: nextword = "finish"
-    [final,rep] = expand(pts,nextword,ind)
+    [final,rep] = expand(pts,nextword)
     final_list.append(final)
     report.append(rep)
 
@@ -189,3 +198,4 @@ from output5 import *
 format(final_list,report)
 #print report
 
+#print ""
