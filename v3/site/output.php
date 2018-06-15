@@ -27,11 +27,29 @@
   <p id="Embed">Embed Errors</p><input type="checkbox">
   <p id="Study">Study mode</p><input type="checkbox">
   
+  <script>
+    function escapeHTML(text) { //FROM: https://stackoverflow.com/questions/1787322/htmlspecialchars-equivalent-in-javascript/4835406#4835406
+      var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+
+      return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+    function goto() {
+      var address = document.getElementById("address").value;
+      location = "output.php?address=" + escapeHTML(address);
+    }
+  </script>
+  
   <form action="output.php" method="post" id="auto"> 
     <p id="Parse">Parse</p><input type="checkbox" name="parsing" checked>
     <p id="Show">Show Errors</p><input type="checkbox" name="show_errors" checked>
     <input type="submit" value="Save">
-    <input class="hidden" name="address" value="<?php echo $address; ?>">
+    <p id="SheetName">Sheet Name: <input name="address" id="address" value="<?php echo $address; ?>"><button type="button" onclick="goto()">Go</button></p>
     <?php
     $conn = new PDO("mysql:host=127.0.0.1; dbname=TLD_SHT", "tld_main", "paramus");
     // set the PDO error mode to exception

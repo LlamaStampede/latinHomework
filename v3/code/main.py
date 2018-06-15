@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Phase: Prepare
 f = open("rawText.txt", "r")
 lines = f.read()
@@ -199,3 +201,4 @@ format(final_list,report)
 #print report
 
 #print ""
+#print "Done"

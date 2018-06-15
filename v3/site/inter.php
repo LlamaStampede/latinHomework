@@ -25,7 +25,9 @@
     fwrite($afile,$_POST[address]); //Same with this for <input class="hidden">
     fclose($afile);
     
-    echo exec("cd ../code\npython main.py");
+    $op = [];
+    exec("cd ../code\npython main.py",$op); #Alternatively ...\n./main.py
+    var_dump($op);
     
     $address = $_POST[address];
   ?>
@@ -33,7 +35,7 @@
   <form method="post" action="#">
     <?php echo $_SERVER[REQUEST_METHOD] ?>
     <h1>Analysis Sheet Constructor</h1>
-    <input id="filename" type="text" value="<?php echo $address ?>" name="address"><br>
+    <input id="address" type="text" value="<?php echo $address ?>" name="address"><br>
     <textarea class="hidden" name="rawText"><?php echo $_POST[rawText] ?></textarea>
     <button class="submit">RECOMPILE</button>
     <h2><a href="output.php?address=<?php echo $address ?>" target="<?php echo $address ?>">View</a></h2>

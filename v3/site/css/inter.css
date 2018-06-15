@@ -1,11 +1,12 @@
 body {background-color: lightblue /* #aaeae9 */}
 .hidden {display: none;}
 
-#filename {
+#address {
   padding: 4px;
   font-family: georgia, serif;
-  font-size: 11pt;
+  font-size: 13pt;
   background-color: lightgray;
+  border: none;
 }
 
 .submit {font-size: inherit;}

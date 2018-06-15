@@ -58,7 +58,7 @@ def format(final_list,errors):
                 cursor.execute("SELECT {0} FROM {1}_main WHERE id={2} LIMIT 1;".format(col,address,i+1))
                 result = cursor.fetchone()
                 if result[0] == None:
-                    cursor.execute("UPDATE {0}_main SET {1}={2} WHERE id={3} LIMIT 1;".format(address,col,final_list[i][j],i+1))
+                    cursor.execute("UPDATE {0}_main SET {1}='{2}' WHERE id={3} LIMIT 1;".format(address,col,final_list[i][j],i+1))
                     db.commit()
     db.close()
 

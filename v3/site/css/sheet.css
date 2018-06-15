@@ -103,6 +103,9 @@ p + input[type="checkbox"] {
 #Study + input:checked ~ form #sheet > ul > li {border: none; border-bottom: solid 1px;}
 #Study + input:checked ~ form #sheet  {background-image: none;}
 
+#SheetName {margin-left: 40px;}
+#SheetName * {font-family: inherit; font-size: inherit;}
+
 #auto input[type="text"] {
   border: none;
   font-family: inherit;
