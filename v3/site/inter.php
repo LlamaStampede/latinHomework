@@ -27,7 +27,6 @@
     
     $op = [];
     exec("cd ../code\npython main.py",$op); #Alternatively ...\n./main.py
-    var_dump($op);
     
     $address = $_POST[address];
   ?>

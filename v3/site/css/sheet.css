@@ -201,7 +201,7 @@ input:checked ~ li.error,
 	z-index: 1;
   margin: -85px 1px 5px 4px;
 }
-#Show + input:not(:checked) ~ #report {display: none;}
+
 #sheet li ul {
   float: none;
   border: none;
@@ -212,23 +212,7 @@ input:checked ~ li.error,
 }
 input[type="radio"] {margin: 0 5px 0 25px;}
 
-#report {
-  clear: left;
-}
-#report ul {
-  float: none;
-  padding: 0 5%;
-  column-count: 4;
-}
-#report ul:hover {background-color: transparent;}
-#report ul li {
-  float: none;
-  border: none;
-  position: static;
-  margin: 0;
-  padding-bottom: 10px;
-  overflow: hidden;
-  height: auto
-}
-#report li:hover {background-color: gold;}
+
 .hidden {display: none;}
+
+#BlueGreen {position: fixed; top: 80px; right: 300px; font-size: inherit;}

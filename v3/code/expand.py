@@ -256,6 +256,7 @@ def datalist(name,choices):
     return name.join(["<input type='text' class='mini' maxlength='2' list='","'><datalist id='","'><option>"+string+"</option></datalist>"])
 def expand(pts,nextword):
     term = pts.pop(0)
+    if term == "moenia": print pts
     fins = [term] #finalists, all aplicable forms will later be appended
     for p in pts: #p = possibile word ([do,dare,...])
         
@@ -284,7 +285,7 @@ def expand(pts,nextword):
             elif term in ["tam","ita","sic"]: trn = "so, thus"
             elif term in ["enim","nam"]: trn = "for"
             elif term in ["ut","num","ne"]: trn = "."
-            elif term == "dum": trn = "while/until"
+            elif term == "dum": trn = "while(I)/until(S)"
             elif term == "cum": trn = "when"
             elif term == "quod": trn = "because"
             elif term == "quasi": trn = "as if"
@@ -535,6 +536,7 @@ def expand(pts,nextword):
     else:
         final = fins[1] #when program is running smoothly
         rep = ["none",term]
+    if term == "moenia": print fins
     return [final,rep]
 #print expand(["fert",["v","p",["3F","fer","tul","fere","lat","to bear"]]])
 #print expand(["fiebat",["v","p",["3i","faci","tul","facie","fact","do"]]])

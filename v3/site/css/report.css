@@ -1,0 +1,23 @@
+
+#report ul {
+  padding: 0 5%;
+}
+#report ul:hover {background-color: transparent;}
+#report ul li {
+  float: none;
+  border: none;
+  position: static;
+  margin: 0 0 4px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  height: auto;
+  font-size: 16pt;
+}
+#report li:hover {background-color: gold;}
+#report li button {
+  font-size: 13pt;
+  padding: 0 2px;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 4px;
+}

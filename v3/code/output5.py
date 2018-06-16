@@ -47,7 +47,8 @@ def format(final_list,errors):
         for col in final_list:
             valueString = ""
             for row in col:
-                valueString += "'{0}', ".format(row)
+                if row == "": valueString += "NULL, "
+                else: valueString += "'{0}', ".format(row)
             cursor.execute("INSERT INTO {0}_main (trm,dct,prs,trn,cmt) VALUES ({1});".format(address,valueString[:-2]))
             db.commit()
     
