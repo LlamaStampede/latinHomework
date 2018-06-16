@@ -175,13 +175,15 @@ input.comment {
   max-width: 16%;
   padding: 3px;
 }
-li.error, li.error * {overflow-x: scroll;}
+li.error {overflow-x: scroll;}
+li.error li {overflow-x: show; white-space: nowrap;}
 li.error p {
   margin: 0;
   font-weight: bold;
   font-size: 16pt;
   margin: 0;
 }
+#sheet li.error ul {background-color: inherit;}
 #Show + input:checked ~ #sheet ul:hover > li.error {visibility: visible;}
 /*li::selection {background-color: red;}
 li::selection ~ li {background-color: blue;}

@@ -98,6 +98,7 @@
       $sheet = $stmt->fetchAll(PDO::FETCH_ASSOC);
       $sheetString = "<div id='sheet'>";
       $i = 1; //counter
+      $unknowns = [];
       
       foreach ($sheet as $col) {
         $sheetString .= "<ul id='$i'>";
@@ -112,7 +113,21 @@
           }
           $j++;
         }
-        //Line about error
+        $trm = $col["trm"];
+        $type = $conn->query("SELECT type FROM ${address}_error WHERE trm='$trm' LIMIT 1;")->fetch();
+        $type = $type[0];
+        if ($type == "unknown") {
+          array_push($unknowns, $trm);
+          $sheetString .= "<li class='error'>UNKNOWN</li>";
+        } else if ($type == "multi") {
+          $sheetString .= "<li class='error'>Conflict:<ul>";
+          $confs = $conn->query("SELECT conf1, conf2, conf3 FROM ${address}_error WHERE trm='$trm' LIMIT 1;")->fetch();
+          for ($k = 0; $k < 3; $k++) {
+            if ($confs[$k] == null) {break;}
+            $sheetString .= "<li>" . $confs[$k] . "</li>";
+          }
+          $sheetString .= "</ul></li>";
+        }
         $sheetString .= "</ul>";
         $i++;
       }
