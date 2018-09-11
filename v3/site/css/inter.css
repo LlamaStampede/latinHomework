@@ -1,0 +1,14 @@
+body {background-color: lightblue /* #aaeae9 */}
+.hidden {display: none;}
+
+#address {
+  padding: 4px;
+  font-family: georgia, serif;
+  font-size: 13pt;
+  background-color: lightgray;
+  border: none;
+}
+
+.submit {font-size: inherit;}
+form {position: absolute; top: 60px; left: 40px;}
+form * {margin: 20px;}

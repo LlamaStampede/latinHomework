@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Input</title>
+  <link rel="stylesheet" type="text/css" href="css/input.css">
+  <link rel="stylesheet" type="text/css" href="css/textinput.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="icon" href="../favicon/favicon.ico">
+</head>
+
+<body>
+  <nav><ul>
+      <li><a href="output.php">Home</a></li>
+      <li><a href="dictionary.php">Dictionary</a></li>
+      <li class="current"><a>Input</a></li>
+  </ul></nav>
+  
+  <h1>Input Box</h1>
+  <form action="inter.php" method="post">
+    <textarea maxlength="2500" placeholder="Input Area" name="rawText"></textarea>
+    <div id="filename">Passage Name: <input type="text" placeholder="output" name="address"></div> <!-- filename=>address here and in all css-->
+    <input type="submit" value="Enter">
+  </form>
+  
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+body {
+	background-color: lightblue; /* #aaeae9*/
+	/*AIDEN: margin: 0;*/
+}
+#sheet ul {background-color: white;}
+h1 {
+  font-family: fantasy;
+  font-variant: small-caps;
+  font-size: 32pt;
+  margin: 15px/*A: 8px*/ 40px 0;
+  width: 280px;
+}
+h2 {
+  margin: 15px/*A: 8px*/ 40px 10px;
+  width: 280px;
+}
+.plain a:visited {
+  color: black;
+}
+h1 + input {
+  position: fixed;
+  right: 50px;
+  top: 50px;
+  border: 2px dashed;
+  height: 20px;
+}
+#sheet {
+  width: 80%;
+  margin-left: 1.5%;
+  /*HEAD: margin: 50;*/
+  padding: 0 0 0 32px;
+  box-sizing: border-box;
+  background-image: url(5x3v6.png);
+  background-repeat: repeat-y;
+  /*HEAD: z-index: -2;*/
+}
+hr {
+  clear: left;
+  height: 0;
+  border: none;
+}
+#sheet ul {
+  border: solid 1px;
+  float: left;
+  padding: 0px;
+  margin: 0 -1px 2px;
+  min-width: 60px;
+  position: relative;
+}
+#sheet li {
+  text-decoration: none;
+  list-style: none;
+  border: solid 1px;
+  height: 20px;
+  padding: 2px;
+  font-family: georgia, serif;
+  font-size: 11pt;
+}
+/*
+For opaque blocks:
+#sheet ul:not(:hover) li {
+  background-color: white;
+}*/
+#auto li:not(.error) {padding: 0;}
+#auto #sheet > ul > li:first-of-type { /*Change back to allow first line editing*/
+  box-sizing: border-box;
+  height: 22px;
+}
+#auto li input[type="text"] {margin-top: 1px; padding: 2px;}
+#auto input[type="text"]:hover {background-color: inherit;}
+/**/#auto ul:hover input[type="text"] {background-color: inherit;}/**/
+#auto input[type="text"]::selection {background-color: #04f; color: white;}
+li::selection, li span::selection {background-color: #04f; color: white;}
+p + input[type="checkbox"] {
+  position: fixed;
+  right: 85px;
+  margin: 5px;
+	margin-top: -20px;
+}
+#Embed + input[type="checkbox"] {margin: 30px 55px 0 0; /*display: none;*/}
+#Parse + input[type="checkbox"] {margin: 55px -2px 0 0;}
+#Show + input[type="checkbox"] {margin: 80px 47px 0 0;  /*display: none;*/}
+#Study + input[type="checkbox"] {margin: 5px 38px 0 0;}
+#Center,#Embed,#Edit,#Parse,#Show,#Study {
+  margin: -25px 0 0;
+  padding: 2px 10px 2px 25px;
+  position: fixed;
+  right: 25px;
+  border: dashed 1px;
+  font-family: monospace;
+  font-size: 10pt;
+}
+/*#Embed, #Edit, #Parse, #Show {display: none;} /*(HEAD)*/
+
+#Embed {margin-top: 25px;}
+#Parse {margin-top: 50px;}
+#Show {margin-top: 75px;}
+#Edit {margin-top: 100px;}
+#Study {margin-top: 0;}
+#Center + input:checked ~ form #sheet > ul > li {text-align: center;} /* if these don’t work add form in between ~ and # */
+#Study + input:checked ~ form #sheet > ul li:not(:first-child){display: none;}
+#Study + input:checked ~ form #sheet > ul {border: none; margin-right: 3px;}
+#Study + input:checked ~ form #sheet > ul > li {border: none; border-bottom: solid 1px;}
+#Study + input:checked ~ form #sheet  {background-image: none;}
+
+#SheetName {margin-left: 40px;}
+#SheetName * {font-family: inherit; font-size: inherit;}
+
+#auto input[type="text"] {
+  border: none;
+  font-family: inherit;
+  box-shadow: none;
+  text-align: inherit;
+  background-color: white;
+}
+#auto input[type="submit"] {
+  font: 14pt Georgia;
+  border: solid 5px darkgreen;
+  box-sizing: border-box;
+  width: 134px; /*AIDEN: 275px*/
+	/*AIDEN: margin: 0 40px 20px; */
+  transition: background-color .2s, font-weight .2s;
+  position: fixed;
+	top: 240px;
+  right: 25px;
+}
+#auto input[type="submit"]:hover {
+  background-color: pink;
+  font-weight: bold;
+  cursor: pointer;
+}
+input[type="text"] {
+  height: 10pt;
+  padding: 0 2px;
+  margin: -2px 2px;
+  font-family: inherit;
+  font-size: 11pt;
+  background-color: lightgray;
+  text-align: inherit;
+  border: none;
+}
+input.mini {
+  width: 2.5em;
+  border-bottom: 1px dashed;
+}
+datalist {
+  opacity: .4;
+  width: .2em;
+}
+input.comment {
+  box-sizing: border-box;
+  max-width: 40px;
+  border-bottom: 1px solid;
+}
+#sheet ul:hover {background-color: lightgreen;}
+#sheet > ul > li:first-of-type {font-weight: bold; padding: 2px 5px 2px;}
+#sheet ul input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border: 5px solid black;
+}
+#sheet li.error {
+  position: fixed;
+  top: 40%;
+  right: 1%;
+  background-color: lightgreen;
+  border: 2px solid red;
+  box-sizing: border-box;
+  height: 80px;
+  visibility: hidden;
+  box-sizing: border-box;
+  max-width: 16%;
+  padding: 3px;
+}
+li.error {overflow-x: scroll;}
+li.error li {overflow-x: show; white-space: nowrap;}
+li.error p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16pt;
+  margin: 0;
+}
+#sheet li.error ul {background-color: inherit;}
+#Show + input:checked ~ #sheet ul:hover > li.error {visibility: visible;}
+/*li::selection {background-color: red;}
+li::selection ~ li {background-color: blue;}
+span::selection ~ li.error {visibility: visible;}*/
+
+/*Embed Errors*/
+#Show + input:checked ~ #sheet li:first-of-type:active ~ li.error,
+#Show + input:checked ~ #sheet li.error:hover,
+input:checked ~ li.error,
+#Embed + input:checked ~ form #Show + input:checked ~ #sheet li.error {
+  float: none;
+  max-width: 149px;
+  visibility: visible;
+  position: relative;
+	z-index: 1;
+  margin: -85px 1px 5px 4px;
+}
+
+#sheet li ul {
+  float: none;
+  border: none;
+}
+#sheet li ul li {
+  list-style: none;
+  border: none;
+}
+input[type="radio"] {margin: 0 5px 0 25px;}
+
+
+.hidden {display: none;}
+
+#BlueGreen {position: fixed; top: 80px; right: 300px; font-size: inherit;}

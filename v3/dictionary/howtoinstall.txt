@@ -1,0 +1,8 @@
+Command Line:
+mysql -u root -p TLD_DCT < /path/to/dictionary.sql
+mysql -u root -p TLD_SHT < /path/to/sheets.sql
+
+MySQL:
+CREATE USER 'tld_main'@'localhost' IDENTIFIED BY 'paramus';
+GRANT ALL PRIVILEGES ON `TLD_DCT`.* TO `tld_main`@`localhost`;
+GRANT ALL PRIVILEGES ON `TLD_SHT`.* TO `tld_main`@`localhost`;
