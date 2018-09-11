@@ -113,9 +113,9 @@
       
       $stmt->execute();
       $sheet = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      $sheetString = "<div id='sheet'>\n";
+      $sheetString = "<div id='sheet'>";
       $i = 1; //counter
-      $unknowns = [];
+      $unknowns = $conflicts = [];
       
       foreach ($sheet as $col) {
         $sheetString .= "<ul id='$i'>\n";
@@ -137,25 +137,32 @@
           array_push($unknowns, $trm);
           $sheetString .= "<li class='error'>UNKNOWN</li>\n";
         } else if ($type == "multi") {
+          $conflictString = $trm;
           $sheetString .= "<li class='error'>Conflict:<ul>\n";
           $confs = $conn->query("SELECT conf1, conf2, conf3 FROM ${address}_error WHERE trm='$trm' LIMIT 1;")->fetch();
           for ($k = 0; $k < 3; $k++) {
             if ($confs[$k] == null) {break;}
             $sheetString .= "<li>" . $confs[$k] . "</li>\n";
+            $conflictString .= $confs[k];
           }
+          array_push($conflicts, $conflictString);
           $sheetString .= "</ul></li>\n";
         }
-        $sheetString .= "</ul>\n";
+        $sheetString .= "</ul>";
         $i++;
       }
-      $sheetString .= "<hr>\n</div>\n";
+      $sheetString .= "<hr></div>\n";
       echo $sheetString;
       
-      $reportString = "<div id='report'>\n<ul>\n";
+      $reportString = "<div id='report'>\n<h3>Unknowns:</h3>\n<ul>\n";
       foreach ($unknowns as $unknown) {
-        $reportString .= "<li><button type='button' onclick='deleteUnknown(\"$unknown\")'>X</button>$unknown\n<input class='hidden' type='checkbox' name='del_$unknown' value='on'>\n</li>\n";
+        $reportString .= "<li><button type='button' onclick='deleteUnknown(\"$unknown\")'>X</button>$unknown<input class='hidden' type='checkbox' name='del_$unknown' value='on'></li>\n";
       }
-      $reportString .= "</ul>\n</div>";
+      $reportString .= "</ul>\n<h3>Conficts:</h3>\n<ul>";
+      foreach ($conflicts as $conflict) {
+        $reportString .= "<li><button type='button' onclick='deleteUnknown(\"$conflict\")'>X</button>$conflict<input class='hidden' type='checkbox' name='del_$conflict' value='on'></li>\n";
+      }
+      $reportString .= "</ul></div>";
       echo $reportString;
     } catch (PDOException $e) {
       echo $e->getMessage();

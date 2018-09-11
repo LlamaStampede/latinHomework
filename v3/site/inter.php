@@ -29,6 +29,7 @@
     exec("cd ../code\npython main.py",$op); #Alternatively ...\n./main.py
     
     $address = $_POST[address];
+    // Define rawText better is possible future change
   ?>
   
   <form method="post" action="#">
